@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('wmimo_theme');
+        if (t) {
+          document.documentElement.setAttribute('data-theme', t);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TUN 虚拟网卡配置 - Wmimo 使用文档</title>
+  <meta name="description" content="Wmimo TUN 虚拟网卡模式配置说明、原理与 Linux 权限设置。">
+  <link rel="icon" type="image/png" href="../assets/images/app_icon_128.png">
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body class="ambient-bg">
+  <div class="ambient-glow-top"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/images/app_icon_128.png" alt="Wmimo Logo">
+        <span>Wmimo</span>
+      </a>
+
+      <nav>
+        <ul class="nav-desktop">
+          <li><a href="../index.html" class="nav-link">首页</a></li>
+          <li><a href="../download.html" class="nav-link">下载</a></li>
+          <li><a href="index.html" class="nav-link active">使用文档</a></li>
+          <li><a href="../community.html" class="nav-link">关于与赞助</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="切换主题">
+          <span class="theme-icon-slot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </span>
+        </button>
+
+        <a href="../download.html" class="btn btn-primary btn-sm">下载客户端</a>
+
+        <button class="mobile-toggle-btn" aria-label="菜单">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <a href="../index.html" class="nav-link">首页</a>
+    <a href="../download.html" class="nav-link">下载中心</a>
+    <a href="index.html" class="nav-link active">使用文档</a>
+    <a href="../community.html" class="nav-link">关于与赞助</a>
+  </div>
+
+  <main class="container">
+    <div class="docs-layout">
+      <!-- Left Sidebar Navigation -->
+      <aside class="docs-sidebar">
+        <div class="docs-sidebar-search">
+          <div class="sidebar-search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="sidebar-search-input" id="sidebarSearchInput" placeholder="搜索文档章节..." autocomplete="off">
+            <button class="sidebar-search-clear" id="sidebarSearchClear" aria-label="清空搜索" style="display: none;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <div class="sidebar-search-empty" id="sidebarSearchEmpty" style="display: none;">无匹配文档章节</div>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title">快速起步</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="index.html">快速上手指南</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title">核心功能与配置</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="modes.html">出站与分流模式</a></li>
+            <li class="docs-nav-item active"><a href="tun.html">TUN 虚拟网卡</a></li>
+            <li class="docs-nav-item"><a href="dns.html">DNS 与 Fake-IP 防污染</a></li>
+            <li class="docs-nav-item"><a href="rules.html">高级规则与进程分流</a></li>
+            <li class="docs-nav-item"><a href="protocols.html">新一代协议与 NAT</a></li>
+            <li class="docs-nav-item"><a href="sniffer.html">域名与协议嗅探器 (Sniffer)</a></li>
+            <li class="docs-nav-item"><a href="groups.html">策略组调度与自动容灾</a></li>
+            <li class="docs-nav-item"><a href="lan.html">局域网共享与游戏主机代理</a></li>
+            <li class="docs-nav-item"><a href="dashboard.html">外部控制器与 Web 仪表盘</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title">生态与常见问题</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="clients.html">客户端生态导航</a></li>
+            <li class="docs-nav-item"><a href="faq.html">常见问题排查 (FAQ)</a></li>
+            <li class="docs-nav-item"><a href="build.html">从源码本地编译</a></li>
+          </ul>
+        </div>
+
+      </aside>
+
+
+
+      <!-- Center Content -->
+      <section class="docs-content">
+        <article class="docs-article">
+          <div class="docs-article-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+            <div>
+              <h1>TUN 虚拟网卡模式配置</h1>
+              <p>了解 TUN 虚拟网卡的工作原理以及在各操作系统下的权限配置要求。</p>
+            </div>
+            <a href="tun.md" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="flex-shrink: 0;">
+              <span>📄 查看 .md 源码</span>
+            </a>
+          </div>
+
+
+          <h2>🛡️ TUN 模式概述</h2>
+          <p>
+            传统系统代理仅能接管支持 HTTP/Socks5 协议的浏览器应用，而 <strong>TUN 模式</strong> 在操作系统底层创建虚拟网络设备（L3 Virtual Network Device），接管全系统的 IP 层数据包。
+          </p>
+          <ul>
+            <li><strong>全应用支持</strong>：无缝支持命令行工具（git, curl, docker）、游戏客户端与系统级服务；</li>
+            <li><strong>智能防污染</strong>：内置 Fake-IP / Redir-Host DNS 引擎，彻底解决 DNS 污染；</li>
+            <li><strong>局域网直连</strong>：自动绕过局域网 IP 与国内白名单，不影响本地网络设备互访。</li>
+          </ul>
+
+          <h2>🪟 Windows 配置</h2>
+          <p>
+            在 Wmimo 设置中直接开启 <strong>“TUN 虚拟网卡模式”</strong> 开关。当系统弹出 UAC 提权提示时，点击“是”允许加载 Wintun 驱动即可。
+          </p>
+
+          <h2>🐧 Linux 权限设置</h2>
+          <p>
+            在 Linux 下，TUN 虚拟网卡创建需要 <code>CAP_NET_ADMIN</code> 权限。您可以通过终端执行以下指令完成提权：
+          </p>
+          <div class="code-block-wrapper">
+            <div class="code-header">
+              <span>Bash</span>
+              <button class="code-copy-btn">复制</button>
+            </div>
+            <pre class="code-content">sudo setcap cap_net_admin,cap_net_bind_service=+ep /path/to/wmimo-core</pre>
+          </div>
+
+          <h2>📱 Android 移动端</h2>
+          <p>
+            Android 系统由系统级 <strong>VpnService</strong> 原生驱动，首次连接时在弹出的系统 VPN 授权提示中点击“确定”即可。
+          </p>
+
+          <div class="docs-pagination">
+            <a href="modes.html" class="docs-pag-btn">
+              <span class="sub">上一篇</span>
+              <span class="title">← 出站与分流模式</span>
+            </a>
+            <a href="dns.html" class="docs-pag-btn" style="text-align: right;">
+              <span class="sub">下一篇</span>
+              <span class="title">DNS 与 Fake-IP →</span>
+            </a>
+          </div>
+
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Wmimo Project. Open source under GPL-3.0 License.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+

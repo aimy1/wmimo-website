@@ -1,0 +1,111 @@
+/**
+ * Wmimo Official Website - Minimalist Design System Tokens
+ */
+
+:root {
+  /* Brand Primary */
+  --brand-primary: #00BCDF;
+  --brand-primary-rgb: 0, 188, 223;
+  --brand-primary-light: #38BDF8;
+  --brand-primary-dark: #0284C7;
+
+  /* Status Colors */
+  --status-green: #10B981;
+  --status-green-rgb: 16, 185, 129;
+  --status-amber: #F59E0B;
+  --status-red: #EF4444;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, Monaco, monospace;
+
+  /* Geometry */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-card: 18px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* Dark Theme (Default) */
+[data-theme="dark"],
+:root:not([data-theme="light"]) {
+  --bg-app: #0A0E17;
+  --bg-card: #121929;
+  --bg-card-elevated: #182238;
+  --bg-subtle: rgba(255, 255, 255, 0.04);
+  --bg-input: #0E1422;
+  --header-bg: rgba(10, 14, 23, 0.85);
+
+  --border-color: rgba(255, 255, 255, 0.09);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  --code-bg: #0D121F;
+  --code-border: rgba(255, 255, 255, 0.08);
+  --code-text: #E2E8F0;
+  
+  --badge-bg: rgba(0, 188, 223, 0.14);
+  --badge-text: #38BDF8;
+
+  --callout-tip-bg: rgba(16, 185, 129, 0.08);
+  --callout-tip-border: rgba(16, 185, 129, 0.3);
+  --callout-info-bg: rgba(0, 188, 223, 0.08);
+  --callout-info-border: rgba(0, 188, 223, 0.3);
+
+  --table-head-bg: #141B2D;
+  --table-hover-bg: rgba(255, 255, 255, 0.02);
+
+  --shadow-card: 0 4px 24px -1px rgba(0, 0, 0, 0.35), 0 2px 8px -1px rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 12px 32px -4px rgba(0, 0, 0, 0.45);
+  --ambient-glow: rgba(0, 188, 223, 0.12);
+  --hero-glow-1: rgba(0, 188, 223, 0.16);
+  --grid-line: rgba(255, 255, 255, 0.035);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-app: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-card-elevated: #FFFFFF;
+  --bg-subtle: #F1F5F9;
+  --bg-input: #FFFFFF;
+  --header-bg: rgba(248, 250, 252, 0.85);
+
+  --border-color: #E2E8F0;
+  --border-subtle: rgba(15, 23, 42, 0.06);
+
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+
+  --code-bg: #0F172A;
+  --code-border: #1E293B;
+  --code-text: #F1F5F9;
+
+  --badge-bg: rgba(0, 188, 223, 0.12);
+  --badge-text: #0284C7;
+
+  --callout-tip-bg: rgba(16, 185, 129, 0.06);
+  --callout-tip-border: rgba(16, 185, 129, 0.35);
+  --callout-info-bg: rgba(0, 188, 223, 0.06);
+  --callout-info-border: rgba(0, 188, 223, 0.35);
+
+  --table-head-bg: #F1F5F9;
+  --table-hover-bg: #F8FAFC;
+
+  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-hover: 0 12px 30px -4px rgba(15, 23, 42, 0.12);
+  --ambient-glow: rgba(0, 188, 223, 0.06);
+  --hero-glow-1: rgba(0, 188, 223, 0.08);
+  --grid-line: rgba(15, 23, 42, 0.035);
+}
+
+

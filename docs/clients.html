@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('wmimo_theme');
+        if (t) {
+          document.documentElement.setAttribute('data-theme', t);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>客户端生态导航与对比 - Wmimo 使用文档</title>
+  <meta name="description" content="主流 Clash 与 Mihomo 客户端生态汇总表，涵盖活跃维护与停更替代推荐。">
+  <link rel="icon" type="image/png" href="../assets/images/app_icon_128.png">
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body class="ambient-bg">
+  <div class="ambient-glow-top"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/images/app_icon_128.png" alt="Wmimo Logo">
+        <span>Wmimo</span>
+      </a>
+
+      <nav>
+        <ul class="nav-desktop">
+          <li><a href="../index.html" class="nav-link">首页</a></li>
+          <li><a href="../download.html" class="nav-link">下载</a></li>
+          <li><a href="index.html" class="nav-link active">使用文档</a></li>
+          <li><a href="../community.html" class="nav-link">关于与赞助</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="切换主题">
+          <span class="theme-icon-slot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </span>
+        </button>
+
+        <a href="../download.html" class="btn btn-primary btn-sm">下载客户端</a>
+
+        <button class="mobile-toggle-btn" aria-label="菜单">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <a href="../index.html" class="nav-link">首页</a>
+    <a href="../download.html" class="nav-link">下载中心</a>
+    <a href="index.html" class="nav-link active">使用文档</a>
+    <a href="../community.html" class="nav-link">关于与赞助</a>
+  </div>
+
+  <main class="container">
+    <div class="docs-layout">
+      <!-- Left Sidebar Navigation -->
+      <aside class="docs-sidebar">
+        <div class="docs-sidebar-search">
+          <div class="sidebar-search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="sidebar-search-input" id="sidebarSearchInput" placeholder="搜索文档章节..." autocomplete="off">
+            <button class="sidebar-search-clear" id="sidebarSearchClear" aria-label="清空搜索" style="display: none;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <div class="sidebar-search-empty" id="sidebarSearchEmpty" style="display: none;">无匹配文档章节</div>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title">快速起步</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="index.html">快速上手指南</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title">核心功能与配置</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="modes.html">出站与分流模式</a></li>
+            <li class="docs-nav-item"><a href="tun.html">TUN 虚拟网卡</a></li>
+            <li class="docs-nav-item"><a href="dns.html">DNS 与 Fake-IP 防污染</a></li>
+            <li class="docs-nav-item"><a href="rules.html">高级规则与进程分流</a></li>
+            <li class="docs-nav-item"><a href="protocols.html">新一代协议与 NAT</a></li>
+            <li class="docs-nav-item"><a href="sniffer.html">域名与协议嗅探器 (Sniffer)</a></li>
+            <li class="docs-nav-item"><a href="groups.html">策略组调度与自动容灾</a></li>
+            <li class="docs-nav-item"><a href="lan.html">局域网共享与游戏主机代理</a></li>
+            <li class="docs-nav-item"><a href="dashboard.html">外部控制器与 Web 仪表盘</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title">生态与常见问题</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item active"><a href="clients.html">客户端生态导航</a></li>
+            <li class="docs-nav-item"><a href="faq.html">常见问题排查 (FAQ)</a></li>
+            <li class="docs-nav-item"><a href="build.html">从源码本地编译</a></li>
+          </ul>
+        </div>
+
+      </aside>
+
+
+      <!-- Center Content -->
+      <section class="docs-content">
+        <article class="docs-article">
+          <div class="docs-article-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+            <div>
+              <h1>Clash / Mihomo 客户端生态导航</h1>
+              <p>汇总主流的 Clash 与 Mihomo 客户端生态项目，方便您查找与对比选型。</p>
+            </div>
+            <a href="clients.md" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="flex-shrink: 0;">
+              <span>📄 查看 .md 源码</span>
+            </a>
+          </div>
+
+          <div class="callout callout-info">
+            <div class="callout-body">
+              <strong>⚠️ 温馨提示：</strong> 已停更的客户端通常不再维护内核，无法兼容 Hysteria 2、TUIC、VLESS Reality 等新协议，建议迁移至活跃维护、更安全美观的新客户端。
+            </div>
+          </div>
+
+          <h2>📊 Clash / Mihomo 客户端汇总表</h2>
+          <div class="docs-table-wrapper">
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>客户端</th>
+                  <th>状态</th>
+                  <th>Win</th>
+                  <th>Mac</th>
+                  <th>Android</th>
+                  <th>iOS</th>
+                  <th>Linux</th>
+                  <th>仓库 / 链接</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background: rgba(var(--brand-primary-rgb), 0.06); font-weight: 600;">
+                  <td><strong style="color: var(--brand-primary);">★ Wmimo</strong></td>
+                  <td><span class="badge badge-green">🟢 活跃</span></td>
+                  <td>✅</td>
+                  <td>⏳ 适配中</td>
+                  <td>✅</td>
+                  <td>⏳ 适配中</td>
+                  <td>✅</td>
+                  <td><a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener">GitHub 官方</a></td>
+                </tr>
+                <tr>
+                  <td><strong>FlClash</strong></td>
+                  <td><span class="badge badge-green">🟢 活跃</span></td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>❌</td>
+                  <td>✅</td>
+                  <td><a href="https://github.com/chen08209/FlClash/releases" target="_blank" rel="noopener">官方 Releases</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Clash Verge Rev</strong></td>
+                  <td><span class="badge badge-green">🟢 活跃</span></td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>✅</td>
+                  <td><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="noopener">官方 Releases</a></td>
+                </tr>
+                <tr>
+                  <td><strong>ClashMi</strong></td>
+                  <td><span class="badge badge-green">🟢 活跃</span></td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td><a href="https://github.com/KaringX/clashmi/releases" target="_blank" rel="noopener">官方 Releases</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Hiddify Next</strong></td>
+                  <td><span class="badge badge-green">🟢 活跃</span></td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td><a href="https://github.com/hiddify/hiddify-app/releases" target="_blank" rel="noopener">官方 Releases</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Clash Meta for Android</strong></td>
+                  <td><span class="badge badge-green">🟢 活跃</span></td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>✅</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td><a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" rel="noopener">官方 Releases</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Karing</strong></td>
+                  <td><span class="badge badge-green">🟢 活跃</span></td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td><a href="https://github.com/KaringX/karing/releases" target="_blank" rel="noopener">官方 Releases</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Sing-box</strong></td>
+                  <td><span class="badge badge-green">🟢 活跃</span></td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td><a href="https://github.com/SagerNet/sing-box/releases" target="_blank" rel="noopener">官方 Releases</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Clash Nyanpasu</strong></td>
+                  <td><span class="badge badge-green">🟢 活跃</span></td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td><a href="https://github.com/libnyanpasu/clash-nyanpasu/releases" target="_blank" rel="noopener">官方 Releases</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Clash-Party</strong></td>
+                  <td><span class="badge badge-green">🟢 活跃</span></td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td><a href="https://github.com/mihomo-party-org/clash-party/releases" target="_blank" rel="noopener">官方 Releases</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Shadowrocket (小火箭)</strong></td>
+                  <td><span class="badge badge-green">🟢 活跃</span></td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>✅</td>
+                  <td>❌</td>
+                  <td><a href="https://apps.apple.com/us/app/shadowrocket/id932747118" target="_blank" rel="noopener">App Store</a></td>
+                </tr>
+                <tr style="opacity: 0.75;">
+                  <td><strong>Clash for Windows (CFW)</strong></td>
+                  <td><span class="badge badge-amber" style="background: rgba(239, 68, 68, 0.15); color: #EF4444;">🔴 停更</span></td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td><a href="https://github.com/clashbk/clash_for_windows/" target="_blank" rel="noopener">备份仓库</a></td>
+                </tr>
+                <tr style="opacity: 0.75;">
+                  <td><strong>Clash for Android (CFA)</strong></td>
+                  <td><span class="badge badge-amber" style="background: rgba(239, 68, 68, 0.15); color: #EF4444;">🔴 停更</span></td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>✅</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td><a href="https://github.com/clashbk/clash_for_android" target="_blank" rel="noopener">备份仓库</a></td>
+                </tr>
+                <tr style="opacity: 0.75;">
+                  <td><strong>Clash Verge (旧版)</strong></td>
+                  <td><span class="badge badge-amber" style="background: rgba(239, 68, 68, 0.15); color: #EF4444;">🔴 停更</span></td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>✅</td>
+                  <td><a href="https://github.com/clashbk/Clash_Verge" target="_blank" rel="noopener">备份仓库</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>🎯 各平台客户端选型推荐</h2>
+          <ul>
+            <li><strong>Windows 用户</strong>：推荐 <strong>Wmimo</strong>（基于 Flutter + Mihomo 核心，18px 现代化微卡片设计，支持 TUN 虚拟网卡与全功能托盘）或 <a href="https://github.com/chen08209/FlClash/releases" target="_blank" rel="noopener">FlClash</a>。</li>
+            <li><strong>Linux 用户</strong>：推荐 <strong>Wmimo</strong>（提供 AppImage, Deb, RPM, Arch 多发行版原生打包支持）。</li>
+            <li><strong>Android 用户</strong>：推荐 <strong>Wmimo</strong>（Flutter 跨平台原生架构，内存开销低）或 <a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" rel="noopener">Clash Meta for Android</a>。</li>
+            <li><strong>iOS 用户</strong>：推荐 <a href="https://apps.apple.com/us/app/shadowrocket/id932747118" target="_blank" rel="noopener">Shadowrocket</a> 或 <a href="https://apps.apple.com/us/app/surge-5/id1442620678" target="_blank" rel="noopener">Surge for iOS</a>。</li>
+          </ul>
+
+          <div class="docs-pagination">
+            <a href="dashboard.html" class="docs-pag-btn">
+              <span class="sub">上一篇</span>
+              <span class="title">← 外部控制器与仪表盘</span>
+            </a>
+            <a href="faq.html" class="docs-pag-btn" style="text-align: right;">
+              <span class="sub">下一篇</span>
+              <span class="title">常见问题 (FAQ) →</span>
+            </a>
+          </div>
+
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Wmimo Project. Open source under GPL-3.0 License.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+

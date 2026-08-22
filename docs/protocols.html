@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('wmimo_theme');
+        if (t) {
+          document.documentElement.setAttribute('data-theme', t);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新一代协议与 Full Cone NAT - Wmimo 使用文档</title>
+  <meta name="description" content="深入了解 Hysteria 2、TUIC v5、VLESS Reality 协议原理以及 Wmimo 的 Full Cone NAT 游戏联机优化配置。">
+  <link rel="icon" type="image/png" href="../assets/images/app_icon_128.png">
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body class="ambient-bg">
+  <div class="ambient-glow-top"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/images/app_icon_128.png" alt="Wmimo Logo">
+        <span>Wmimo</span>
+      </a>
+
+      <nav>
+        <ul class="nav-desktop">
+          <li><a href="../index.html" class="nav-link">首页</a></li>
+          <li><a href="../download.html" class="nav-link">下载</a></li>
+          <li><a href="index.html" class="nav-link active">使用文档</a></li>
+          <li><a href="../community.html" class="nav-link">关于与赞助</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="切换主题">
+          <span class="theme-icon-slot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </span>
+        </button>
+
+        <a href="../download.html" class="btn btn-primary btn-sm">下载客户端</a>
+
+        <button class="mobile-toggle-btn" aria-label="菜单">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <a href="../index.html" class="nav-link">首页</a>
+    <a href="../download.html" class="nav-link">下载中心</a>
+    <a href="index.html" class="nav-link active">使用文档</a>
+    <a href="../community.html" class="nav-link">关于与赞助</a>
+  </div>
+
+  <main class="container">
+    <div class="docs-layout">
+      <!-- Left Sidebar Navigation -->
+      <aside class="docs-sidebar">
+        <div class="docs-sidebar-search">
+          <div class="sidebar-search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="sidebar-search-input" id="sidebarSearchInput" placeholder="搜索文档章节..." autocomplete="off">
+            <button class="sidebar-search-clear" id="sidebarSearchClear" aria-label="清空搜索" style="display: none;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <div class="sidebar-search-empty" id="sidebarSearchEmpty" style="display: none;">无匹配文档章节</div>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title">快速起步</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="index.html">快速上手指南</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title">核心功能与配置</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="modes.html">出站与分流模式</a></li>
+            <li class="docs-nav-item"><a href="tun.html">TUN 虚拟网卡</a></li>
+            <li class="docs-nav-item"><a href="dns.html">DNS 与 Fake-IP 防污染</a></li>
+            <li class="docs-nav-item"><a href="rules.html">高级规则与进程分流</a></li>
+            <li class="docs-nav-item active"><a href="protocols.html">新一代协议与 NAT</a></li>
+            <li class="docs-nav-item"><a href="sniffer.html">域名与协议嗅探器 (Sniffer)</a></li>
+            <li class="docs-nav-item"><a href="groups.html">策略组调度与自动容灾</a></li>
+            <li class="docs-nav-item"><a href="lan.html">局域网共享与游戏主机代理</a></li>
+            <li class="docs-nav-item"><a href="dashboard.html">外部控制器与 Web 仪表盘</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title">生态与常见问题</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="clients.html">客户端生态导航</a></li>
+            <li class="docs-nav-item"><a href="faq.html">常见问题排查 (FAQ)</a></li>
+            <li class="docs-nav-item"><a href="build.html">从源码本地编译</a></li>
+          </ul>
+        </div>
+
+      </aside>
+
+      <!-- Center Content -->
+      <section class="docs-content">
+        <article class="docs-article">
+          <div class="docs-article-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+            <div>
+              <h1>新一代网络协议与 Full Cone NAT 指南</h1>
+              <p>详解 Hysteria 2、TUIC v5、VLESS Reality 协议优势及游戏全锥型 NAT 优化。</p>
+            </div>
+            <a href="protocols.md" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="flex-shrink: 0;">
+              <span>📄 查看 .md 源码</span>
+            </a>
+          </div>
+
+          <h2>⚡ 新一代协议横向对比</h2>
+          <div class="docs-table-wrapper">
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>协议名称</th>
+                  <th>传输机制</th>
+                  <th>核心优势</th>
+                  <th>最佳场景</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Hysteria 2</strong></td>
+                  <td>基于 UDP (QUIC Brutal)</td>
+                  <td>突破 TCP 丢包退避限制，自动拥塞感知，晚高峰带宽压榨</td>
+                  <td>跨国高丢包、恶劣弱网、大文件高速下载</td>
+                </tr>
+                <tr>
+                  <td><strong>TUIC v5</strong></td>
+                  <td>基于 UDP (0-RTT QUIC)</td>
+                  <td>握手延迟极低，连接复用性能优异</td>
+                  <td>移动端多基站频繁切换、网页高频冲浪</td>
+                </tr>
+                <tr>
+                  <td><strong>VLESS Reality</strong></td>
+                  <td>基于 TCP/TLS</td>
+                  <td>消除自签名证书特征，直接借用目标权威站点 TLS 证书</td>
+                  <td>严苛封锁环境、长期稳定办公</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>🎮 Full Cone NAT（全锥型 NAT）游戏联机优化</h2>
+          <p>
+            在开启 Wmimo 的 TUN 虚拟网卡模式进行外服主机与 PC 联机游戏时，NAT 类型直接决定了能否顺利与队友建立 P2P 直连。
+          </p>
+          <div class="callout callout-info">
+            <div class="callout-body">
+              <strong>为什么需要 Full Cone NAT？</strong>
+              普通的对称型 NAT（Symmetric NAT / Type D）会为每个连接分配不同的公网端口，导致游戏内无法直连。开启 <code>endpoint-independent-nat: true</code> 后，公网映射端口保持恒定，游戏内 NAT 类型可自动提升至 <strong>Open (Type A)</strong>。
+            </div>
+          </div>
+
+          <div class="code-block-wrapper">
+            <button class="code-copy-btn">复制</button>
+            <pre><code>tun:
+  enable: true
+  stack: system
+  endpoint-independent-nat: true  # 启用全锥型 NAT 穿透
+  auto-route: true</code></pre>
+          </div>
+
+          <div class="docs-pagination">
+            <a href="rules.html" class="docs-pag-btn">
+              <span class="sub">上一篇</span>
+              <span class="title">← 高级规则与进程分流</span>
+            </a>
+            <a href="sniffer.html" class="docs-pag-btn" style="text-align: right;">
+              <span class="sub">下一篇</span>
+              <span class="title">域名与协议嗅探器 →</span>
+            </a>
+          </div>
+
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Wmimo Project. Open source under GPL-3.0 License.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('wmimo_theme');
+        if (t) {
+          document.documentElement.setAttribute('data-theme', t);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于与赞助 - Wmimo 开源致谢</title>
+  <meta name="description" content="Wmimo 开源致谢名单、GPL-3.0 许可证与赞助支持方式。">
+  <link rel="icon" type="image/png" href="assets/images/app_icon_128.png">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body class="ambient-bg">
+  <div class="ambient-glow-top"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/app_icon_128.png" alt="Wmimo Logo">
+        <span>Wmimo</span>
+      </a>
+
+      <nav>
+        <ul class="nav-desktop">
+          <li><a href="index.html" class="nav-link">首页</a></li>
+          <li><a href="download.html" class="nav-link">下载</a></li>
+          <li><a href="docs/index.html" class="nav-link">使用文档</a></li>
+          <li><a href="community.html" class="nav-link active">关于与赞助</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="切换主题">
+          <span class="theme-icon-slot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </span>
+        </button>
+
+        <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+
+        <button class="mobile-toggle-btn" aria-label="菜单">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <a href="index.html" class="nav-link">首页</a>
+    <a href="download.html" class="nav-link">下载中心</a>
+    <a href="docs/index.html" class="nav-link">使用文档</a>
+    <a href="community.html" class="nav-link active">关于与赞助</a>
+  </div>
+
+  <main class="container">
+    <!-- Hero Header -->
+    <section class="page-hero">
+      <h1>关于与赞助支持</h1>
+      <p>Wmimo 遵循 GPL-3.0 开源协议分发，感谢开源社区中每一位开发者的贡献与支持</p>
+      <div>
+        <span class="release-meta-badge">
+          <span>🌟 社区驱动 · 纯净开源 · 自由分发</span>
+        </span>
+      </div>
+    </section>
+
+    <div class="community-layout">
+      <!-- Sponsor Card -->
+      <section class="sponsor-section">
+        <div class="sponsor-main-card interactive-tilt spotlight-card">
+          <!-- Left QR Column -->
+          <div class="sponsor-qr-col">
+            <div class="sponsor-qr-box">
+              <img src="assets/images/donate_qr.png" alt="Aptos USDT 捐赠收款二维码">
+            </div>
+            <div class="sponsor-qr-badge">APTOS · USDT</div>
+            <div class="sponsor-qr-hint">支持 Aptos 生态钱包扫码</div>
+          </div>
+
+          <!-- Right Details Column -->
+          <div class="sponsor-details-col">
+            <div>
+              <div class="sponsor-header-row">
+                <div class="sponsor-title-wrap">
+                  <h2 class="sponsor-title">💖 赞助项目与持续维护</h2>
+                  <span class="sponsor-badge-tag">支持开发者</span>
+                </div>
+              </div>
+              <p class="sponsor-desc" style="margin-top: 8px;">
+                Wmimo 是一款完全免费、无广告的开源代理客户端。多平台构建环境、测试设备采购及服务器维护均由开发者个人独立承担。如果您觉得 Wmimo 提升了您的网络体验，欢迎请作者喝杯咖啡，支持项目持续迭代与优化！
+              </p>
+            </div>
+
+            <!-- Network & Token Metadata Pills -->
+            <div class="sponsor-meta-pills">
+              <div class="sponsor-meta-pill">
+                <span>币种：</span>
+                <code>USDT</code>
+              </div>
+              <div class="sponsor-meta-pill">
+                <span>网络：</span>
+                <code>APTOS (Aptos Mainnet)</code>
+              </div>
+            </div>
+
+            <!-- Address Copy Box -->
+            <div class="crypto-box">
+              <div class="crypto-addr-wrap">
+                <svg class="crypto-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+                <div class="crypto-addr" title="0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345">0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345</div>
+              </div>
+              <button onclick="copyToClipboard('0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345', '已复制 Aptos USDT 收款地址')" class="btn btn-primary btn-sm crypto-copy-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                <span>复制地址</span>
+              </button>
+            </div>
+
+            <!-- Footer / Contact Row -->
+            <div class="sponsor-footer-row">
+              <div class="sponsor-contact-item">
+                <span>📬 开发者联系邮箱：</span>
+                <strong>aisaniya@proton.me</strong>
+              </div>
+              <div style="display: flex; gap: 10px;">
+                <a href="mailto:aisaniya@proton.me" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <span>发送邮件</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Acknowledgements Section -->
+      <section class="ack-section">
+        <div class="community-section-header">
+          <h2 class="community-section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            <span>致谢与上游生态</span>
+          </h2>
+          <p class="community-section-sub">Wmimo 的诞生与发展离不开以下顶尖开源项目与核心贡献者的支持与灵感</p>
+        </div>
+
+        <div class="ack-grid">
+          <!-- Item 1 -->
+          <div class="ack-card interactive-tilt spotlight-card">
+            <div class="ack-card-top">
+              <div class="ack-card-header">
+                <div class="ack-icon-box">🌟</div>
+                <div>
+                  <h3 class="ack-card-title">GooRingX (vowe)</h3>
+                  <div class="ack-role-tag">设计与架构灵感</div>
+                </div>
+              </div>
+              <span class="ack-badge">Contributor</span>
+            </div>
+            <p class="ack-card-desc">
+              杰出的开源贡献、现代 UI 设计思路与架构灵感指导，为项目奠定了坚实的审美与交互基调。
+            </p>
+            <div class="ack-card-footer">
+              <span style="color: var(--text-muted);">核心灵感导师</span>
+              <span style="color: var(--brand-primary); font-weight: 600;">开源贡献</span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="ack-card interactive-tilt spotlight-card">
+            <div class="ack-card-top">
+              <div class="ack-card-header">
+                <div class="ack-icon-box">🚀</div>
+                <div>
+                  <h3 class="ack-card-title">MetaCubeX (Mihomo)</h3>
+                  <div class="ack-role-tag">通用代理核心</div>
+                </div>
+              </div>
+              <span class="ack-badge">Core Engine</span>
+            </div>
+            <p class="ack-card-desc">
+              提供顶级高性能、全协议通用的通用代理核心，具备卓越的规则分流、TUN 虚拟网卡接管与网络调度能力。
+            </p>
+            <div class="ack-card-footer">
+              <span style="color: var(--text-muted);">Go 核心引擎</span>
+              <span style="color: var(--brand-primary); font-weight: 600;">MetaCubeX</span>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="ack-card interactive-tilt spotlight-card">
+            <div class="ack-card-top">
+              <div class="ack-card-header">
+                <div class="ack-icon-box">💙</div>
+                <div>
+                  <h3 class="ack-card-title">Flutter 团队与社区</h3>
+                  <div class="ack-role-tag">跨平台 UI 框架</div>
+                </div>
+              </div>
+              <span class="ack-badge">UI Framework</span>
+            </div>
+            <p class="ack-card-desc">
+              高效的自渲染管线与跨平台开发生态，使 Wmimo 能够在 Windows、Linux 与 Android 上提供极致丝滑的交互体验。
+            </p>
+            <div class="ack-card-footer">
+              <span style="color: var(--text-muted);">Google Flutter</span>
+              <span style="color: var(--brand-primary); font-weight: 600;">Cross-Platform</span>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="ack-card interactive-tilt spotlight-card">
+            <div class="ack-card-top">
+              <div class="ack-card-header">
+                <div class="ack-icon-box">🌐</div>
+                <div>
+                  <h3 class="ack-card-title">开源规则与协议生态</h3>
+                  <div class="ack-role-tag">社区规则集与 GEO 库</div>
+                </div>
+              </div>
+              <span class="ack-badge">Ecosystem</span>
+            </div>
+            <p class="ack-card-desc">
+              感谢全球开源社区维护的分流规则集、GEO 数据库与协议实现，为智能流量调度与防泄漏提供了强大支撑。
+            </p>
+            <div class="ack-card-footer">
+              <span style="color: var(--text-muted);">Community Driven</span>
+              <span style="color: var(--brand-primary); font-weight: 600;">Open Data</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Open Source License Section -->
+      <section class="license-section">
+        <div class="license-card interactive-tilt spotlight-card">
+          <div class="license-left">
+            <div class="license-title-row">
+              <h3 class="license-title">开源许可证与代码准则</h3>
+              <span class="license-pill">GPL-3.0 License</span>
+            </div>
+            <p class="license-desc">
+              Wmimo 严格遵循 <strong>GNU General Public License v3.0</strong> 开源协议分发与维护。您可以自由下载、使用、修改和分发源代码，但任何衍生版本必须保持同等的开源授权。
+            </p>
+            <div class="license-tags">
+              <span class="license-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>完全开源透明</span>
+              </span>
+              <span class="license-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>免费自由使用</span>
+              </span>
+              <span class="license-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>允许修改与再分发</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="license-actions">
+            <a href="https://github.com/aimy1/Wmimo/blob/main/LICENSE" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span>查看 LICENSE 文本</span>
+            </a>
+            <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>访问 GitHub 仓库</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Wmimo Project. Open source under GPL-3.0 License.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

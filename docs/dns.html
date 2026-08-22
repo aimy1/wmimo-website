@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('wmimo_theme');
+        if (t) {
+          document.documentElement.setAttribute('data-theme', t);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNS 配置与 Fake-IP 防污染解析 - Wmimo 使用文档</title>
+  <meta name="description" content="详解 Wmimo (Mihomo 核心) 的 Fake-IP 增强模式原理、国内直连分流与防污染 DNS 配置最佳实践。">
+  <link rel="icon" type="image/png" href="../assets/images/app_icon_128.png">
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body class="ambient-bg">
+  <div class="ambient-glow-top"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/images/app_icon_128.png" alt="Wmimo Logo">
+        <span>Wmimo</span>
+      </a>
+
+      <nav>
+        <ul class="nav-desktop">
+          <li><a href="../index.html" class="nav-link">首页</a></li>
+          <li><a href="../download.html" class="nav-link">下载</a></li>
+          <li><a href="index.html" class="nav-link active">使用文档</a></li>
+          <li><a href="../community.html" class="nav-link">关于与赞助</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="切换主题">
+          <span class="theme-icon-slot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </span>
+        </button>
+
+        <a href="../download.html" class="btn btn-primary btn-sm">下载客户端</a>
+
+        <button class="mobile-toggle-btn" aria-label="菜单">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <a href="../index.html" class="nav-link">首页</a>
+    <a href="../download.html" class="nav-link">下载中心</a>
+    <a href="index.html" class="nav-link active">使用文档</a>
+    <a href="../community.html" class="nav-link">关于与赞助</a>
+  </div>
+
+  <main class="container">
+    <div class="docs-layout">
+      <!-- Left Sidebar Navigation -->
+      <aside class="docs-sidebar">
+        <div class="docs-sidebar-search">
+          <div class="sidebar-search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="sidebar-search-input" id="sidebarSearchInput" placeholder="搜索文档章节..." autocomplete="off">
+            <button class="sidebar-search-clear" id="sidebarSearchClear" aria-label="清空搜索" style="display: none;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <div class="sidebar-search-empty" id="sidebarSearchEmpty" style="display: none;">无匹配文档章节</div>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title">快速起步</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="index.html">快速上手指南</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title">核心功能与配置</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="modes.html">出站与分流模式</a></li>
+            <li class="docs-nav-item"><a href="tun.html">TUN 虚拟网卡</a></li>
+            <li class="docs-nav-item active"><a href="dns.html">DNS 与 Fake-IP 防污染</a></li>
+            <li class="docs-nav-item"><a href="rules.html">高级规则与进程分流</a></li>
+            <li class="docs-nav-item"><a href="protocols.html">新一代协议与 NAT</a></li>
+            <li class="docs-nav-item"><a href="sniffer.html">域名与协议嗅探器 (Sniffer)</a></li>
+            <li class="docs-nav-item"><a href="groups.html">策略组调度与自动容灾</a></li>
+            <li class="docs-nav-item"><a href="lan.html">局域网共享与游戏主机代理</a></li>
+            <li class="docs-nav-item"><a href="dashboard.html">外部控制器与 Web 仪表盘</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title">生态与常见问题</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="clients.html">客户端生态导航</a></li>
+            <li class="docs-nav-item"><a href="faq.html">常见问题排查 (FAQ)</a></li>
+            <li class="docs-nav-item"><a href="build.html">从源码本地编译</a></li>
+          </ul>
+        </div>
+
+      </aside>
+
+      <!-- Center Content -->
+      <section class="docs-content">
+        <article class="docs-article">
+          <div class="docs-article-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+            <div>
+              <h1>DNS 配置与 Fake-IP 防污染解析最佳实践</h1>
+              <p>深入解析 Wmimo 默认采用的 Fake-IP 增强模式机制与国内直连分流配置。</p>
+            </div>
+            <a href="dns.md" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="flex-shrink: 0;">
+              <span>📄 查看 .md 源码</span>
+            </a>
+          </div>
+
+          <h2>⚡ 为什么优先推荐 Fake-IP 模式？</h2>
+          <p>
+            传统的 <code>redir-host</code> 模式必须先在本地发起远程 DNS 查询，不仅存在 50~200ms 的额外等待，未加密的 DNS 还极易被旁路节点篡改或记录。
+          </p>
+          <div class="callout callout-tip">
+            <div class="callout-body">
+              <strong>🚀 Fake-IP 工作原理：</strong>
+              当应用发起域名请求时，Wmimo 内置 DNS 立即在本地从预留池（如 <code>198.18.0.0/16</code>）返回一个虚拟 IP（耗时 &lt; 1ms）。当应用向该 IP 发起连接时，Wmimo 拦截并还原原始域名，由远端代理节点直接在本地完成目标域名的真实解析，<strong>彻底杜绝本地 DNS 污染与 DNS 泄露</strong>。
+            </div>
+          </div>
+
+          <h2>🛠️ 标准双向防污染 DNS 配置示例</h2>
+          <div class="code-block-wrapper">
+            <button class="code-copy-btn">复制</button>
+            <pre><code>dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  
+  # Fake-IP 过滤清单（确保特定系统网络测试获取真实 IP）
+  fake-ip-filter:
+    - "*.lan"
+    - "*.local"
+    - "localhost.ptlogin2.qq.com"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "time.*.com"
+    - "ntp.*.com"
+
+  # 默认无策略命中时使用的解析服务器
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+
+  # 国内直连加速与分流策略
+  nameserver-policy:
+    "geosite:cn,private":
+      - 223.5.5.5
+      - 119.29.29.29
+    "geosite:geolocation-!cn":
+      - "https://1.1.1.1/dns-query#Proxy"
+      - "https://8.8.8.8/dns-query#Proxy"</code></pre>
+          </div>
+
+          <h2>📋 关键配置字段说明</h2>
+          <div class="docs-table-wrapper">
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>字段参数</th>
+                  <th>说明与推荐配置</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>enhanced-mode</code></td>
+                  <td>DNS 增强模式，推荐设置为 <code>fake-ip</code>。</td>
+                </tr>
+                <tr>
+                  <td><code>fake-ip-range</code></td>
+                  <td>虚拟保留 IP 网段，默认 <code>198.18.0.1/16</code>。</td>
+                </tr>
+                <tr>
+                  <td><code>nameserver-policy</code></td>
+                  <td>基于 GeoSite 标签的分流解析：国内域名走国内 DNS，海外域名走加密 DoH。</td>
+                </tr>
+                <tr>
+                  <td><code>fake-ip-filter</code></td>
+                  <td>排除列表，保证局域网服务与 NTP 时间服务能够拿到真实物理 IP。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="docs-pagination">
+            <a href="tun.html" class="docs-pag-btn">
+              <span class="sub">上一篇</span>
+              <span class="title">← TUN 虚拟网卡</span>
+            </a>
+            <a href="rules.html" class="docs-pag-btn" style="text-align: right;">
+              <span class="sub">下一篇</span>
+              <span class="title">高级规则与进程分流 →</span>
+            </a>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Wmimo Project. Open source under GPL-3.0 License.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
