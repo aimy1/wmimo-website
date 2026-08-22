@@ -1,4 +1,4 @@
-﻿# Wmimo 官方网站与多页面文档中心
+# Wmimo 官方网站与多页面文档中心
 
 <div align="center">
   <img src="assets/images/app_icon_256.png" width="88" height="88" alt="Wmimo Logo" />
@@ -13,7 +13,7 @@
 ### 1. 主站页面
 - **[首页 (index.html)](index.html)**：极简左右分栏首屏、真实客户端实机运行视窗、4 大核心特性。
 - **[下载中心 (download.html)](download.html)**：智能识别当前操作系统，提供 Windows、Linux 各大发行版与 Android 安装包直达。
-- **[关于与赞助 (community.html)](community.html)**：GPL-3.0 开源协议、社区鸣谢名单与 APTOS USDT 赞助。
+- **[关于与赞助 (community.html)](community.html)**：APTOS USDT 赞助通道与开发者联系方式。
 
 ### 2. 双模使用文档系统 (`docs/`)
 每个文档页面均同时提供 **Web 网页交互版 (`.html`)** 与 **纯 Markdown 源文件 (`.md`)**：
