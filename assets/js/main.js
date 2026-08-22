@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
    Interactive 3D Tilt & Cursor Spotlight Engine
    ========================================================================== */
 function init3DTilt() {
+  if (window.matchMedia && !window.matchMedia('(hover: hover)').matches) {
+    return; // Touch devices skip mousemove 3D tilt for smooth scroll
+  }
   const tiltElements = document.querySelectorAll('.interactive-tilt, .spotlight-card, .feature-card, .platform-card, .screenshot-wrapper, .download-featured-card');
 
   tiltElements.forEach(el => {
@@ -250,7 +253,14 @@ function initMobileNav() {
 
   if (!toggleBtn || !drawer) return;
 
-  toggleBtn.addEventListener('click', () => {
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>`;
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     const isOpen = drawer.classList.toggle('is-open');
     toggleBtn.setAttribute('aria-expanded', isOpen);
     toggleBtn.innerHTML = isOpen
@@ -259,10 +269,19 @@ function initMobileNav() {
   });
 
   drawer.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      drawer.classList.remove('is-open');
-      toggleBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>`;
-    });
+    link.addEventListener('click', closeDrawer);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (drawer.classList.contains('is-open') && !drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
+      closeDrawer();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+      closeDrawer();
+    }
   });
 }
 

@@ -13,6 +13,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -25,12 +26,13 @@ body {
   display: flex;
   flex-direction: column;
   transition: background-color var(--transition-normal), color var(--transition-normal);
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -60,16 +62,16 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 800; }
-h2 { font-size: clamp(1.75rem, 3vw, 2.4rem); }
-h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); }
-h4 { font-size: 1.2rem; }
-h5 { font-size: 1.05rem; }
-h6 { font-size: 0.9rem; }
+h1 { font-size: clamp(1.85rem, 4.5vw, 3.2rem); font-weight: 800; }
+h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
+h3 { font-size: clamp(1.18rem, 2vw, 1.5rem); }
+h4 { font-size: 1.12rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.88rem; }
 
 p {
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.68;
 }
 
 a {
@@ -92,22 +94,29 @@ code, pre {
   font-family: var(--font-mono);
 }
 
-/* Utilities */
+/* Container & Layout */
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
   padding-right: 24px;
 }
 
+@media (max-width: 640px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 .container-narrow {
-  max-width: 960px;
+  max-width: 900px;
 }
 
 .container-wide {
-  max-width: 1400px;
+  max-width: 1320px;
 }
 
 .text-gradient {
@@ -131,7 +140,7 @@ code, pre {
 .gap-8 { gap: 32px; }
 
 /* ==========================================================================
-   Advanced Cyber Background Grid & Ambient Aurora Glows
+   Background Grid & Ambient Lighting
    ========================================================================== */
 .ambient-bg {
   position: relative;
@@ -143,8 +152,8 @@ code, pre {
   top: -240px;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
-  height: 650px;
+  width: 800px;
+  height: 550px;
   background: radial-gradient(circle, var(--hero-glow-1) 0%, rgba(var(--brand-primary-rgb), 0) 70%);
   pointer-events: none;
   z-index: 0;
@@ -152,17 +161,13 @@ code, pre {
   animation: auroraFloat 12s ease-in-out infinite alternate;
 }
 
-.ambient-glow-secondary {
-  position: absolute;
-  top: 400px;
-  right: -100px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(60px);
-  animation: floatSoft 8s ease-in-out infinite alternate;
+@media (max-width: 640px) {
+  .ambient-glow-top {
+    width: 360px;
+    height: 360px;
+    top: -120px;
+    filter: blur(35px);
+  }
 }
 
 .ambient-grid {
@@ -174,7 +179,7 @@ code, pre {
   background-image: 
     linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: 48px 48px;
+  background-size: 40px 40px;
   mask-image: radial-gradient(ellipse at 50% 30%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 80%);
   -webkit-mask-image: radial-gradient(ellipse at 50% 30%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 80%);
   pointer-events: none;
@@ -182,59 +187,31 @@ code, pre {
 }
 
 /* ==========================================================================
-   Advanced Keyframe Animations
+   Keyframe Animations
    ========================================================================== */
 @keyframes auroraFloat {
   0% { transform: translateX(-50%) translateY(0) scale(1); }
-  50% { transform: translateX(-48%) translateY(30px) scale(1.08); }
-  100% { transform: translateX(-52%) translateY(-15px) scale(0.96); }
+  50% { transform: translateX(-48%) translateY(20px) scale(1.05); }
+  100% { transform: translateX(-52%) translateY(-10px) scale(0.98); }
 }
 
 @keyframes pulseGlow {
   0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 0.95; transform: scale(1.04); }
+  50% { opacity: 0.95; transform: scale(1.03); }
 }
 
 @keyframes floatSoft {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-@keyframes spinSlow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes shimmerSweep {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-@keyframes laserRay {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes rippleWave {
-  0% { transform: scale(0); opacity: 0.6; }
-  100% { transform: scale(3.5); opacity: 0; }
-}
-
-.animate-float {
-  animation: floatSoft 5s ease-in-out infinite;
-}
-
-.animate-glow {
-  animation: pulseGlow 4s ease-in-out infinite;
+  50% { transform: translateY(-6px); }
 }
 
 /* ==========================================================================
-   Scroll-Driven Stagger Reveal System
+   Scroll-Driven Reveal System
    ========================================================================== */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -245,16 +222,14 @@ code, pre {
 
 .reveal-stagger > * {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-stagger.is-revealed > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.is-revealed > *:nth-child(2) { transition-delay: 0.12s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.is-revealed > *:nth-child(3) { transition-delay: 0.19s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.is-revealed > *:nth-child(4) { transition-delay: 0.26s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.is-revealed > *:nth-child(5) { transition-delay: 0.33s; opacity: 1; transform: translateY(0); }
-.reveal-stagger.is-revealed > *:nth-child(6) { transition-delay: 0.40s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-revealed > *:nth-child(2) { transition-delay: 0.10s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-revealed > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-revealed > *:nth-child(4) { transition-delay: 0.20s; opacity: 1; transform: translateY(0); }
 
 /* ==========================================================================
    Interactive 3D Tilt & Dynamic Spotlight
@@ -263,6 +238,12 @@ code, pre {
   transform-style: preserve-3d;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
   will-change: transform;
+}
+
+@media (hover: none) {
+  .interactive-tilt {
+    transform: none !important;
+  }
 }
 
 .spotlight-card {
@@ -280,7 +261,7 @@ code, pre {
   border-radius: inherit;
   background: radial-gradient(
     600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(var(--brand-primary-rgb), 0.12),
+    rgba(var(--brand-primary-rgb), 0.1),
     transparent 40%
   );
   opacity: 0;
@@ -292,4 +273,3 @@ code, pre {
 .spotlight-card:hover::after {
   opacity: 1;
 }
-
