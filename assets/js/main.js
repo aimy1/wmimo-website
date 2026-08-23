@@ -157,7 +157,8 @@ function animateCounter(el) {
 function initBackToTop() {
   const btn = document.createElement('button');
   btn.className = 'back-to-top-btn';
-  btn.setAttribute('aria-label', '回到顶部');
+  btn.setAttribute('aria-label', window.WmimoI18n ? window.WmimoI18n.t('btn.back_to_top') : '回到顶部');
+  btn.setAttribute('title', window.WmimoI18n ? window.WmimoI18n.t('btn.back_to_top') : '回到顶部');
   btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>`;
   document.body.appendChild(btn);
 
@@ -188,7 +189,9 @@ function initTheme() {
       const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
       const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
       applyTheme(newTheme);
-      showToast(newTheme === 'dark' ? '已切换至黑曜石深色主题' : '已切换至极简浅色主题');
+      const darkMsg = window.WmimoI18n ? window.WmimoI18n.t('toast.theme_dark') : '已切换至深色主题';
+      const lightMsg = window.WmimoI18n ? window.WmimoI18n.t('toast.theme_light') : '已切换至浅色主题';
+      showToast(newTheme === 'dark' ? darkMsg : lightMsg);
     });
   });
 }
@@ -359,10 +362,11 @@ function initCodeCopy() {
       if (!codeBlock) return;
       const code = codeBlock.querySelector('code, pre')?.innerText || '';
       
-      window.copyToClipboard(code.trim(), '代码已复制');
+      const copySuccessMsg = window.WmimoI18n ? window.WmimoI18n.t('toast.code_copied') : '代码已复制';
+      window.copyToClipboard(code.trim(), copySuccessMsg);
       
       const originalText = btn.innerText;
-      btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>已复制</span>`;
+      btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>${copySuccessMsg}</span>`;
       btn.classList.add('copied');
 
       setTimeout(() => {
@@ -475,7 +479,7 @@ function initServerNoticeModal() {
           <div class="modal-icon-badge">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           </div>
-          <h3 class="modal-title">服务维护与更新提示</h3>
+          <h3 class="modal-title" data-i18n="modal.notice_title">服务维护与更新提示</h3>
         </div>
         <button class="modal-close-btn" id="modalCloseBtn" aria-label="关闭提示">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -483,14 +487,14 @@ function initServerNoticeModal() {
       </div>
 
       <div class="modal-body">
-        <p>尊敬的用户：</p>
-        <p style="margin-top: 6px;">
+        <p data-i18n="modal.notice_greeting">尊敬的用户：</p>
+        <p style="margin-top: 6px;" data-i18n-html="modal.notice_p1">
           受近期主服务器维护影响，客户端内置的<strong>在线更新通道暂时无法提供服务</strong>。
         </p>
-        <div class="modal-notice-highlight">
+        <div class="modal-notice-highlight" data-i18n-html="modal.notice_highlight">
           🚀 获取最新构建版本（v1.0.33）及各平台安装包，还请直接前往 <strong>GitHub Releases</strong> 官方页面下载。
         </div>
-        <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">
+        <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;" data-i18n="modal.notice_footer_note">
           * 服务恢复后将第一时间恢复应用内静默升级通道，给您带来的不便敬请谅解。
         </p>
       </div>
@@ -498,18 +502,21 @@ function initServerNoticeModal() {
       <div class="modal-footer">
         <label style="margin-right: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text-muted); cursor: pointer; user-select: none;">
           <input type="checkbox" id="modalNeverShowCheckbox" style="accent-color: var(--brand-primary); cursor: pointer;">
-          <span>7天内不再提示</span>
+          <span data-i18n="modal.dont_show_7d">7天内不再提示</span>
         </label>
-        <button class="btn btn-secondary" id="modalDismissBtn">我已知晓</button>
+        <button class="btn btn-secondary" id="modalDismissBtn" data-i18n="modal.btn_ack">我已知晓</button>
         <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.0.33" target="_blank" rel="noopener" class="btn btn-primary" id="modalGithubBtn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          <span>前往 GitHub 下载</span>
+          <span data-i18n="modal.btn_github">前往 GitHub 下载</span>
         </a>
       </div>
     </div>
   `;
 
   document.body.appendChild(modal);
+  if (window.WmimoI18n) {
+    window.WmimoI18n.applyTranslations();
+  }
 
   setTimeout(() => {
     modal.classList.add('is-open');

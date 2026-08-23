@@ -12,6 +12,12 @@
         } else {
           document.documentElement.setAttribute('data-theme', 'dark');
         }
+        var l = localStorage.getItem('wmimo_lang');
+        if (!l) {
+          l = (navigator.language && navigator.language.startsWith('zh')) ? 'zh' : 'en';
+        }
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-CN' : 'en');
       } catch (e) {}
     })();
   </script>
@@ -39,23 +45,32 @@
 
       <nav>
         <ul class="nav-desktop">
-          <li><a href="../index.html" class="nav-link">首页</a></li>
-          <li><a href="../download.html" class="nav-link">下载</a></li>
-          <li><a href="index.html" class="nav-link active">使用文档</a></li>
-          <li><a href="../community.html" class="nav-link">关于与赞助</a></li>
+          <li><a href="../index.html" class="nav-link" data-i18n="nav.home">首页</a></li>
+          <li><a href="../download.html" class="nav-link" data-i18n="nav.download">下载</a></li>
+          <li><a href="index.html" class="nav-link active" data-i18n="nav.docs">使用文档</a></li>
+          <li><a href="../community.html" class="nav-link" data-i18n="nav.about">关于与赞助</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <button class="theme-toggle-btn" aria-label="切换主题">
+        <button class="lang-toggle-btn" id="langToggleBtn" aria-label="切换语言" title="切换语言 / Switch Language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="lang-code-label">EN</span>
+        </button>
+
+        <button class="theme-toggle-btn" aria-label="切换主题" data-i18n-aria="nav.theme_toggle">
           <span class="theme-icon-slot">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           </span>
         </button>
 
-        <a href="../download.html" class="btn btn-primary btn-sm">下载客户端</a>
+        <a href="../download.html" class="btn btn-primary btn-sm" data-i18n="nav.download_app">下载客户端</a>
 
-        <button class="mobile-toggle-btn" aria-label="菜单">
+        <button class="mobile-toggle-btn" aria-label="菜单" data-i18n-aria="nav.menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
@@ -64,10 +79,20 @@
 
   <!-- Mobile Drawer -->
   <div class="mobile-drawer">
-    <a href="../index.html" class="nav-link">首页</a>
-    <a href="../download.html" class="nav-link">下载中心</a>
-    <a href="index.html" class="nav-link active">使用文档</a>
-    <a href="../community.html" class="nav-link">关于与赞助</a>
+    <a href="../index.html" class="nav-link" data-i18n="nav.home">首页</a>
+    <a href="../download.html" class="nav-link" data-i18n="nav.download_center">下载中心</a>
+    <a href="index.html" class="nav-link active" data-i18n="nav.docs">使用文档</a>
+    <a href="../community.html" class="nav-link" data-i18n="nav.about">关于与赞助</a>
+      <div class="mobile-drawer-footer">
+      <button class="btn btn-secondary mobile-lang-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span data-i18n="nav.mobile_lang">English / 简体中文</span>
+      </button>
+    </div>
   </div>
 
   <main class="container">
@@ -77,42 +102,42 @@
         <div class="docs-sidebar-search">
           <div class="sidebar-search-box">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="text" class="sidebar-search-input" id="sidebarSearchInput" placeholder="搜索文档章节..." autocomplete="off">
+            <input type="text" class="sidebar-search-input" id="sidebarSearchInput" placeholder="搜索文档章节..." data-i18n-placeholder="docs.search_placeholder" autocomplete="off">
             <button class="sidebar-search-clear" id="sidebarSearchClear" aria-label="清空搜索" style="display: none;">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </button>
           </div>
-          <div class="sidebar-search-empty" id="sidebarSearchEmpty" style="display: none;">无匹配文档章节</div>
+          <div class="sidebar-search-empty" id="sidebarSearchEmpty" style="display: none;" data-i18n="docs.search_empty">无匹配文档章节</div>
         </div>
 
         <div class="docs-nav-group">
-          <div class="docs-nav-title">快速起步</div>
+          <div class="docs-nav-title" data-i18n="docs.group_quickstart">快速起步</div>
           <ul class="docs-nav-list">
-            <li class="docs-nav-item"><a href="index.html">快速上手指南</a></li>
+            <li class="docs-nav-item"><a href="index.html" data-i18n="docs.item_quickstart">快速上手指南</a></li>
           </ul>
         </div>
 
         <div class="docs-nav-group">
-          <div class="docs-nav-title">核心功能与配置</div>
+          <div class="docs-nav-title" data-i18n="docs.group_core">核心功能与配置</div>
           <ul class="docs-nav-list">
-            <li class="docs-nav-item"><a href="modes.html">出站与分流模式</a></li>
-            <li class="docs-nav-item"><a href="tun.html">TUN 虚拟网卡</a></li>
-            <li class="docs-nav-item active"><a href="dns.html">DNS 与 Fake-IP 防污染</a></li>
-            <li class="docs-nav-item"><a href="rules.html">高级规则与进程分流</a></li>
-            <li class="docs-nav-item"><a href="protocols.html">新一代协议与 NAT</a></li>
-            <li class="docs-nav-item"><a href="sniffer.html">域名与协议嗅探器 (Sniffer)</a></li>
-            <li class="docs-nav-item"><a href="groups.html">策略组调度与自动容灾</a></li>
-            <li class="docs-nav-item"><a href="lan.html">局域网共享与游戏主机代理</a></li>
-            <li class="docs-nav-item"><a href="dashboard.html">外部控制器与 Web 仪表盘</a></li>
+            <li class="docs-nav-item"><a href="modes.html" data-i18n="docs.item_modes">出站与分流模式</a></li>
+            <li class="docs-nav-item"><a href="tun.html" data-i18n="docs.item_tun">TUN 虚拟网卡</a></li>
+            <li class="docs-nav-item active"><a href="dns.html" data-i18n="docs.item_dns">DNS 与 Fake-IP 防污染</a></li>
+            <li class="docs-nav-item"><a href="rules.html" data-i18n="docs.item_rules">高级规则与进程分流</a></li>
+            <li class="docs-nav-item"><a href="protocols.html" data-i18n="docs.item_protocols">新一代协议与 NAT</a></li>
+            <li class="docs-nav-item"><a href="sniffer.html" data-i18n="docs.item_sniffer">域名与协议嗅探器 (Sniffer)</a></li>
+            <li class="docs-nav-item"><a href="groups.html" data-i18n="docs.item_groups">策略组调度与自动容灾</a></li>
+            <li class="docs-nav-item"><a href="lan.html" data-i18n="docs.item_lan">局域网共享与游戏主机代理</a></li>
+            <li class="docs-nav-item"><a href="dashboard.html" data-i18n="docs.item_dashboard">外部控制器与 Web 仪表盘</a></li>
           </ul>
         </div>
 
         <div class="docs-nav-group">
-          <div class="docs-nav-title">生态与常见问题</div>
+          <div class="docs-nav-title" data-i18n="docs.group_ecosystem">生态与常见问题</div>
           <ul class="docs-nav-list">
-            <li class="docs-nav-item"><a href="clients.html">客户端生态导航</a></li>
-            <li class="docs-nav-item"><a href="faq.html">常见问题排查 (FAQ)</a></li>
-            <li class="docs-nav-item"><a href="build.html">从源码本地编译</a></li>
+            <li class="docs-nav-item"><a href="clients.html" data-i18n="docs.item_clients">客户端生态导航</a></li>
+            <li class="docs-nav-item"><a href="faq.html" data-i18n="docs.item_faq">常见问题排查 (FAQ)</a></li>
+            <li class="docs-nav-item"><a href="build.html" data-i18n="docs.item_build">从源码本地编译</a></li>
           </ul>
         </div>
 
@@ -127,7 +152,7 @@
               <p>深入解析 Wmimo 默认采用的 Fake-IP 增强模式机制与国内直连分流配置。</p>
             </div>
             <a href="dns.md" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="flex-shrink: 0;">
-              <span>📄 查看 .md 源码</span>
+              <span data-i18n="docs.view_md">📄 查看 .md 源码</span>
             </a>
           </div>
 
@@ -209,11 +234,11 @@
 
           <div class="docs-pagination">
             <a href="tun.html" class="docs-pag-btn">
-              <span class="sub">上一篇</span>
+              <span class="sub" data-i18n="docs.pag_prev">上一篇</span>
               <span class="title">← TUN 虚拟网卡</span>
             </a>
             <a href="rules.html" class="docs-pag-btn" style="text-align: right;">
-              <span class="sub">下一篇</span>
+              <span class="sub" data-i18n="docs.pag_next">下一篇</span>
               <span class="title">高级规则与进程分流 →</span>
             </a>
           </div>
@@ -226,11 +251,12 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom">
-        <div>© 2026 Wmimo Project. Open source under GPL-3.0 License.</div>
+        <div data-i18n="footer.copyright">© 2026 Wmimo Project. Open source under GPL-3.0 License.</div>
       </div>
     </div>
   </footer>
 
+  <script src="../assets/js/i18n.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -12,6 +12,13 @@
         } else {
           document.documentElement.setAttribute('data-theme', 'dark');
         }
+
+        var l = localStorage.getItem('wmimo_lang');
+        if (!l) {
+          l = (navigator.language && navigator.language.startsWith('zh')) ? 'zh' : 'en';
+        }
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-CN' : 'en');
       } catch (e) {}
     })();
   </script>
@@ -39,15 +46,24 @@
 
       <nav>
         <ul class="nav-desktop">
-          <li><a href="index.html" class="nav-link">首页</a></li>
-          <li><a href="download.html" class="nav-link">下载</a></li>
-          <li><a href="docs/index.html" class="nav-link">使用文档</a></li>
-          <li><a href="community.html" class="nav-link active">关于与赞助</a></li>
+          <li><a href="index.html" class="nav-link" data-i18n="nav.home">首页</a></li>
+          <li><a href="download.html" class="nav-link" data-i18n="nav.download">下载</a></li>
+          <li><a href="docs/index.html" class="nav-link" data-i18n="nav.docs">使用文档</a></li>
+          <li><a href="community.html" class="nav-link active" data-i18n="nav.about">关于与赞助</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <button class="theme-toggle-btn" aria-label="切换主题">
+        <button class="lang-toggle-btn" id="langToggleBtn" aria-label="切换语言" title="切换语言 / Switch Language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="lang-code-label">EN</span>
+        </button>
+
+        <button class="theme-toggle-btn" aria-label="切换主题" data-i18n-aria="nav.theme_toggle">
           <span class="theme-icon-slot">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           </span>
@@ -55,10 +71,10 @@
 
         <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span>GitHub</span>
+          <span data-i18n="nav.github">GitHub</span>
         </a>
 
-        <button class="mobile-toggle-btn" aria-label="菜单">
+        <button class="mobile-toggle-btn" aria-label="菜单" data-i18n-aria="nav.menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
@@ -67,17 +83,27 @@
 
   <!-- Mobile Drawer -->
   <div class="mobile-drawer">
-    <a href="index.html" class="nav-link">首页</a>
-    <a href="download.html" class="nav-link">下载中心</a>
-    <a href="docs/index.html" class="nav-link">使用文档</a>
-    <a href="community.html" class="nav-link active">关于与赞助</a>
+    <a href="index.html" class="nav-link" data-i18n="nav.home">首页</a>
+    <a href="download.html" class="nav-link" data-i18n="nav.download_center">下载中心</a>
+    <a href="docs/index.html" class="nav-link" data-i18n="nav.docs">使用文档</a>
+    <a href="community.html" class="nav-link active" data-i18n="nav.about">关于与赞助</a>
+    <div class="mobile-drawer-footer">
+      <button class="btn btn-secondary mobile-lang-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span data-i18n="nav.mobile_lang">English / 简体中文</span>
+      </button>
+    </div>
   </div>
 
   <main class="container">
     <!-- Clean Hero Header -->
     <section class="page-hero">
-      <h1>赞助与支持</h1>
-      <p>Wmimo 致力于提供极简、纯净与高性能的代理体验，感谢您的支持与陪伴</p>
+      <h1 data-i18n="community.hero_title">关于与赞助支持</h1>
+      <p data-i18n="community.hero_subtitle">Wmimo 致力于提供极简、纯净与高性能的代理体验，感谢您的支持与陪伴</p>
     </section>
 
     <!-- Clean Focused Sponsor Card -->
@@ -94,13 +120,13 @@
         <!-- Info & Address -->
         <div class="sponsor-clean-info">
           <div>
-            <h2 class="sponsor-clean-title">💖 赞助项目</h2>
-            <p class="sponsor-clean-desc" style="margin-top: 6px;">
+            <h2 class="sponsor-clean-title" data-i18n="community.sponsor_title">💖 赞助项目</h2>
+            <p class="sponsor-clean-desc" style="margin-top: 6px;" data-i18n="community.sponsor_desc">
               如果 Wmimo 帮助到了你，欢迎请作者喝杯咖啡，支持项目的持续维护与多平台适配。
             </p>
           </div>
 
-          <div class="sponsor-clean-meta">
+          <div class="sponsor-clean-meta" data-i18n-html="community.crypto_currency">
             <span>币种：<code>USDT</code></span>
             <span>·</span>
             <span>网络：<code>APTOS</code></span>
@@ -111,17 +137,17 @@
             <div class="sponsor-clean-addr-text" title="0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345">
               0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345
             </div>
-            <button onclick="copyToClipboard('0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345', '已复制收款地址')" class="btn btn-primary btn-sm">
+            <button onclick="copyToClipboard('0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345', (window.WmimoI18n ? window.WmimoI18n.t('community.addr_copied') : '已复制收款地址'))" class="btn btn-primary btn-sm" data-i18n="community.btn_copy_addr">
               复制地址
             </button>
           </div>
 
           <!-- Footer Contact -->
           <div class="sponsor-clean-footer">
-            <span>📬 开发者联系邮箱：<strong>aisaniya@proton.me</strong></span>
+            <span><span data-i18n="community.dev_email_label">📬 开发者联系邮箱：</span><strong>aisaniya@proton.me</strong></span>
             <a href="mailto:aisaniya@proton.me" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              <span>发送邮件</span>
+              <span data-i18n="community.btn_send_email">发送邮件</span>
             </a>
           </div>
         </div>
@@ -133,11 +159,12 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom">
-        <div>© 2026 Wmimo Project. All rights reserved.</div>
+        <div data-i18n="footer.copyright">© 2026 Wmimo Project. Open source under GPL-3.0 License.</div>
       </div>
     </div>
   </footer>
 
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
