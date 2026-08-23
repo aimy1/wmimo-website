@@ -232,20 +232,8 @@ code, pre {
 .reveal-stagger.is-revealed > *:nth-child(4) { transition-delay: 0.20s; opacity: 1; transform: translateY(0); }
 
 /* ==========================================================================
-   Interactive 3D Tilt & Dynamic Spotlight
+   Dynamic Spotlight Highlight Engine
    ========================================================================== */
-.interactive-tilt {
-  transform-style: preserve-3d;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
-  will-change: transform;
-}
-
-@media (hover: none) {
-  .interactive-tilt {
-    transform: none !important;
-  }
-}
-
 .spotlight-card {
   position: relative;
   overflow: hidden;

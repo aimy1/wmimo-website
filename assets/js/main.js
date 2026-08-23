@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCodeCopy();
   initBackToTop();
   initScrollReveal();
-  init3DTilt();
+  initSpotlight();
   initMagneticHover();
   initStatCounters();
   initServerNoticeModal();
@@ -23,15 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /* ==========================================================================
-   Interactive 3D Tilt & Cursor Spotlight Engine
+   Cursor Spotlight Engine (No 3D Tilt/Deflection)
    ========================================================================== */
-function init3DTilt() {
-  if (window.matchMedia && !window.matchMedia('(hover: hover)').matches) {
-    return; // Touch devices skip mousemove 3D tilt for smooth scroll
-  }
-  const tiltElements = document.querySelectorAll('.interactive-tilt, .spotlight-card, .feature-card, .platform-card, .screenshot-wrapper, .download-featured-card');
+function initSpotlight() {
+  const spotlightElements = document.querySelectorAll('.spotlight-card, .feature-card, .platform-card, .screenshot-wrapper, .download-featured-card, .card');
 
-  tiltElements.forEach(el => {
+  spotlightElements.forEach(el => {
     // Add spotlight class if not already present
     el.classList.add('spotlight-card');
 
@@ -43,23 +40,6 @@ function init3DTilt() {
       // Spotlight coordinates
       el.style.setProperty('--mouse-x', `${x}px`);
       el.style.setProperty('--mouse-y', `${y}px`);
-
-      // 3D Tilt calculation
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = ((y - centerY) / centerY) * -5; // Max 5deg tilt for subtle elegance
-      const rotateY = ((x - centerX) / centerX) * 5;
-
-      el.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-2px)`;
-    });
-
-    el.addEventListener('mouseleave', () => {
-      el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
-      el.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
-    });
-
-    el.addEventListener('mouseenter', () => {
-      el.style.transition = 'transform 0.1s ease-out';
     });
   });
 }
