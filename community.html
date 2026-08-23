@@ -100,15 +100,85 @@
   </div>
 
   <main class="container">
-    <!-- Clean Hero Header -->
-    <section class="page-hero">
-      <h1 data-i18n="community.hero_title">关于与赞助支持</h1>
-      <p data-i18n="community.hero_subtitle">Wmimo 致力于提供极简、纯净与高性能的代理体验，感谢您的支持与陪伴</p>
+    <!-- Playful Tsundere Hero Header -->
+    <section class="page-hero" style="text-align: center;">
+      <div class="tsundere-badge" data-i18n="community.hero_badge">(⁄ ⁄•⁄ω⁄•⁄ ⁄) 傲娇开发者的秘密补给站</div>
+      <h1 data-i18n="community.hero_title">哼，才……才不是特意求你赞助呢！</h1>
+      <p data-i18n="community.hero_subtitle" style="max-width: 680px; margin: 0 auto;">（扭头）就算你不投喂咖啡，Wmimo 也……也会一直开源免费维护下去的啦！但如果你非要请客的话……我也不是不能勉强收下啦！</p>
     </section>
 
-    <!-- Clean Focused Sponsor Card -->
+    <!-- 1. Interactive Tsundere Speech Bubble Card -->
+    <div class="tsundere-dialogue-wrap spotlight-card" id="tsundereBox">
+      <div class="tsundere-avatar-box" id="tsundereAvatar" title="点我一下试试？">
+        <span>(｀・ω・´)</span>
+      </div>
+      <div class="tsundere-bubble-content">
+        <div class="tsundere-bubble-header">
+          <span class="tsundere-name">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#EC4899"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <span data-i18n="community.dialogue_name">傲娇开发者 · 戳我试试</span>
+          </span>
+          <button class="tsundere-poke-btn" id="pokeBtn" onclick="pokeTsundere(event)">
+            <span data-i18n="community.btn_poke">👉 戳一下</span>
+          </button>
+        </div>
+        <div class="tsundere-text" id="tsundereQuote">
+          “才、才没有每天盯着钱包余额看呢！笨蛋！”
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Feeding Tiers Energy Grid -->
+    <section class="tsundere-tiers-section">
+      <h3 class="tsundere-section-title" data-i18n="community.tiers_title">☕ 投喂能量段位表</h3>
+      <div class="tsundere-tiers-grid">
+        <!-- Tier 1 -->
+        <div class="tsundere-tier-card spotlight-card" onclick="spawnFloatingHeart(event, '☕')">
+          <div>
+            <div class="tsundere-tier-icon">☕</div>
+            <div class="tsundere-tier-name" data-i18n="community.tier1_name">1 杯冰美式</div>
+            <div class="tsundere-tier-price" data-i18n="community.tier1_price">约 1.5 USDT</div>
+            <ul class="tsundere-tier-buffs">
+              <li data-i18n="community.tier1_buff1">⚡ Bug 修复速度 +20%</li>
+              <li data-i18n="community.tier1_buff2">🧊 傲娇度 -5%</li>
+            </ul>
+          </div>
+          <div class="tsundere-tier-quote" data-i18n="community.tier1_quote">“喝了这杯咖啡，今晚就加急修一个 Bug 好啦……”</div>
+        </div>
+
+        <!-- Tier 2 (Featured) -->
+        <div class="tsundere-tier-card featured spotlight-card" onclick="spawnFloatingHeart(event, '🧋')">
+          <div>
+            <div class="tsundere-tier-icon">🧋</div>
+            <div class="tsundere-tier-name" data-i18n="community.tier2_name">1 杯波霸奶茶</div>
+            <div class="tsundere-tier-price" data-i18n="community.tier2_price">约 3.0 USDT</div>
+            <ul class="tsundere-tier-buffs">
+              <li data-i18n="community.tier2_buff1">🚀 多平台打包动力 +50%</li>
+              <li data-i18n="community.tier2_buff2">✨ 掉落隐藏更新与新特性</li>
+            </ul>
+          </div>
+          <div class="tsundere-tier-quote" data-i18n="community.tier2_quote">“才不是喜欢甜的呢！只是……大脑写代码需要糖分！”</div>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="tsundere-tier-card spotlight-card" onclick="spawnFloatingHeart(event, '🍰')">
+          <div>
+            <div class="tsundere-tier-icon">🍰</div>
+            <div class="tsundere-tier-name" data-i18n="community.tier3_name">豪华下午茶套餐</div>
+            <div class="tsundere-tier-price" data-i18n="community.tier3_price">约 10.0 USDT</div>
+            <ul class="tsundere-tier-buffs">
+              <li data-i18n="community.tier3_buff1">💖 全天心率平稳，不写屎山代码</li>
+              <li data-i18n="community.tier3_buff2">🌟 解锁作者超级感激与心愿清单</li>
+            </ul>
+          </div>
+          <div class="tsundere-tier-quote" data-i18n="community.tier3_quote">“呜哇……真、真的请这么多吗？！谢、谢谢你啦……”</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Clean Focused Crypto Sponsor Card -->
     <div class="sponsor-clean-container">
-      <div class="sponsor-clean-card">
+      <div class="sponsor-clean-card spotlight-card">
         <!-- QR Code -->
         <div class="sponsor-clean-qr">
           <div class="sponsor-clean-qr-img-box">
@@ -120,16 +190,16 @@
         <!-- Info & Address -->
         <div class="sponsor-clean-info">
           <div>
-            <h2 class="sponsor-clean-title" data-i18n="community.sponsor_title">💖 赞助项目</h2>
+            <h2 class="sponsor-clean-title" data-i18n="community.sponsor_title">💖 投喂通道（悄悄收下）</h2>
             <p class="sponsor-clean-desc" style="margin-top: 6px;" data-i18n="community.sponsor_desc">
-              如果 Wmimo 帮助到了你，欢迎请作者喝杯咖啡，支持项目的持续维护与多平台适配。
+              如果 Wmimo 真的有帮到你（才不信呢），欢迎请作者喝杯咖啡，给开源开发加点动力……笨蛋！
             </p>
           </div>
 
           <div class="sponsor-clean-meta" data-i18n-html="community.crypto_currency">
             <span>币种：<code>USDT</code></span>
             <span>·</span>
-            <span>网络：<code>APTOS</code></span>
+            <span>网络：<code>APTOS</code> (超低手续费)</span>
           </div>
 
           <!-- Address Box with One-Click Copy -->
@@ -137,7 +207,7 @@
             <div class="sponsor-clean-addr-text" title="0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345">
               0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345
             </div>
-            <button onclick="copyToClipboard('0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345', (window.WmimoI18n ? window.WmimoI18n.t('community.addr_copied') : '已复制收款地址'))" class="btn btn-primary btn-sm" data-i18n="community.btn_copy_addr">
+            <button onclick="handleCopyAddress(event)" class="btn btn-primary btn-sm" data-i18n="community.btn_copy_addr">
               复制地址
             </button>
           </div>
@@ -153,6 +223,43 @@
         </div>
       </div>
     </div>
+
+    <!-- 4. Tsundere Q&A Mini Theater -->
+    <section class="tsundere-qa-section">
+      <h3 class="tsundere-section-title" data-i18n="community.qa_title">💬 傲娇问答小剧场</h3>
+      <div class="tsundere-qa-grid">
+        <div class="tsundere-qa-card spotlight-card">
+          <div class="tsundere-qa-q">
+            <span>❓</span>
+            <span data-i18n="community.q1_title">赞助了会有专属特权或去广告吗？</span>
+          </div>
+          <div class="tsundere-qa-a" data-i18n="community.q1_ans">
+            并·没·有！Wmimo 永远 100% 纯净开源无广告！所有人一视同仁！……不过作者会在心里悄悄给你画个小红心啦。
+          </div>
+        </div>
+
+        <div class="tsundere-qa-card spotlight-card">
+          <div class="tsundere-qa-q">
+            <span>💸</span>
+            <span data-i18n="community.q2_title">为什么选 Aptos 网络的 USDT 呀？</span>
+          </div>
+          <div class="tsundere-qa-a" data-i18n="community.q2_ans">
+            因为 Aptos 转账手续费只要 0.0001 美元，便宜到可以忽略不计！才不想让你花冤枉的手续费给矿工呢，笨蛋！
+          </div>
+        </div>
+
+        <div class="tsundere-qa-card spotlight-card">
+          <div class="tsundere-qa-q">
+            <span>🌟</span>
+            <span data-i18n="community.q3_title">囊中羞涩可以白嫖吗？</span>
+          </div>
+          <div class="tsundere-qa-a" data-i18n="community.q3_ans">
+            当……当然可以！开源软件就是要大家用得开心！去 GitHub 给仓库点个免费的 🌟 Star，本开发者也会超级开心的啦！
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
@@ -166,5 +273,104 @@
 
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    // Tsundere Dialogue & Particle Engine
+    const tsundereQuotesZh = [
+      "“才、才没有每天盯着钱包余额看呢！笨蛋！”",
+      "“盯—— (·_· ) 只是路过看看吗？哼，随便你啦！”",
+      "“代码自己会写，但是冰美式不会自己从天而降啊！”",
+      "“要……要是收到赞助的话，今晚就加急修一个 Bug 好啦……”",
+      "“别总戳我啦！去 GitHub 点个 🌟 Star 也是可以的嘛！”",
+      "“（悄悄收下）……下、下不为例哦！(⁄ ⁄•⁄ω⁄•⁄ ⁄)”",
+      "“就算你请我喝奶茶，我也不会写屎山代码的！”"
+    ];
+
+    const tsundereQuotesEn = [
+      "“I-It's not like I check my wallet balance every day! Idiot!”",
+      "“Stares... (·_· ) Just browsing? Hmph, suit yourself!”",
+      "“Code can be written by itself, but iced Americano doesn't fall from the sky!”",
+      "“I-If I get a sponsor, maybe I'll fix an extra bug tonight...”",
+      "“Stop poking me! Giving a 🌟 Star on GitHub is fine too!”",
+      "“(Silently accepts) ...D-Don't make this a habit, okay?! (⁄ ⁄•⁄ω⁄•⁄ ⁄)”",
+      "“Even if you buy me boba, I won't write spaghetti code!”"
+    ];
+
+    const tsundereAvatars = ["(｀・ω・´)", "(⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)", "( > < )", "( ˘ ³˘)♥", "( ⊙_⊙ )", "(¬_¬ )"];
+    let currentQuoteIndex = 0;
+
+    function pokeTsundere(e) {
+      if (e) e.stopPropagation();
+      const lang = (window.WmimoI18n ? window.WmimoI18n.getCurrentLang() : 'zh');
+      const quotes = (lang === 'en' ? tsundereQuotesEn : tsundereQuotesZh);
+      currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+
+      const quoteEl = document.getElementById('tsundereQuote');
+      const avatarEl = document.getElementById('tsundereAvatar');
+
+      if (quoteEl) {
+        quoteEl.style.opacity = '0';
+        setTimeout(() => {
+          quoteEl.textContent = quotes[currentQuoteIndex];
+          quoteEl.style.opacity = '1';
+        }, 150);
+      }
+
+      if (avatarEl) {
+        const nextAvatar = tsundereAvatars[Math.floor(Math.random() * tsundereAvatars.length)];
+        avatarEl.querySelector('span').textContent = nextAvatar;
+      }
+
+      spawnFloatingHeart(e, ['💖', '✨', '☕', '🧋', '🍰'][Math.floor(Math.random() * 5)]);
+    }
+
+    function spawnFloatingHeart(e, emoji = '💖') {
+      const x = e ? (e.clientX || (e.touches && e.touches[0].clientX) || window.innerWidth / 2) : window.innerWidth / 2;
+      const y = e ? (e.clientY || (e.touches && e.touches[0].clientY) || window.innerHeight / 2) : window.innerHeight / 2;
+
+      const particle = document.createElement('div');
+      particle.className = 'floating-particle';
+      particle.textContent = emoji;
+      particle.style.left = `${x + (Math.random() * 40 - 20)}px`;
+      particle.style.top = `${y + (Math.random() * 20 - 10)}px`;
+      document.body.appendChild(particle);
+
+      setTimeout(() => particle.remove(), 1200);
+    }
+
+    function handleCopyAddress(e) {
+      if (e) e.stopPropagation();
+      const addr = '0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345';
+      const toastMsg = (window.WmimoI18n ? window.WmimoI18n.t('community.addr_copied') : '（脸红）收到啦……才没有很开心呢！');
+      
+      if (window.copyToClipboard) {
+        window.copyToClipboard(addr, toastMsg);
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(addr);
+        if (window.showToast) window.showToast(toastMsg);
+      }
+
+      // Burst 5 hearts
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          spawnFloatingHeart(e, ['💖', '💕', '✨', '☕', '🥰'][i % 5]);
+        }, i * 80);
+      }
+    }
+
+    // Avatar click event & language change listener
+    document.addEventListener('DOMContentLoaded', () => {
+      const avatar = document.getElementById('tsundereAvatar');
+      if (avatar) {
+        avatar.addEventListener('click', (e) => pokeTsundere(e));
+      }
+      window.addEventListener('wmimo_lang_change', (e) => {
+        const lang = e.detail ? e.detail.lang : 'zh';
+        const quoteEl = document.getElementById('tsundereQuote');
+        if (quoteEl) {
+          quoteEl.textContent = (lang === 'en' ? tsundereQuotesEn[0] : tsundereQuotesZh[0]);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
