@@ -123,7 +123,6 @@
       'docs.item_clients': '客户端生态导航',
       'docs.item_faq': '常见问题排查 (FAQ)',
       'docs.item_build': '从源码本地编译',
-      'docs.view_md': '📄 查看 .md 源码',
       'docs.pag_prev': '上一篇',
       'docs.pag_next': '下一篇',
 
@@ -259,7 +258,6 @@
       'docs.item_clients': 'Client Ecosystem Navigation',
       'docs.item_faq': 'Troubleshooting & FAQ',
       'docs.item_build': 'Build from Source',
-      'docs.view_md': '📄 View .md Source',
       'docs.pag_prev': 'Previous',
       'docs.pag_next': 'Next',
 
