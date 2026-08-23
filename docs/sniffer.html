@@ -147,16 +147,16 @@
       <section class="docs-content">
         <article class="docs-article">
           <div class="docs-article-header">
-            <h1>域名与协议嗅探器 (Sniffer) 实战指南</h1>
-            <p>从 TLS SNI、HTTP 与 QUIC 首包中自动提取真实目标域名，解决纯 IP 流量无法命中分流规则的问题。</p>
+            <h1 data-i18n="doc_sniff.title">域名与协议嗅探器 (Sniffer) 实战指南</h1>
+            <p data-i18n="doc_sniff.subtitle">从 TLS SNI、HTTP 与 QUIC 首包中自动提取真实目标域名，解决纯 IP 流量无法命中分流规则的问题。</p>
           </div>
 
-          <h2>🔍 嗅探器工作原理</h2>
+          <h2 data-i18n="doc_sniff.h2_how">🔍 嗅探器工作原理</h2>
           <p>
             部分移动应用或游戏在联网时直接向目标 IP 发起请求，导致域名分流规则失效。Sniffer 能在 TCP/UDP 握手阶段截获首包，解析真实域名并<strong>重新触发规则匹配</strong>。
           </p>
 
-          <h2>🛠️ 标准嗅探器配置示例</h2>
+          <h2 data-i18n="doc_sniff.h2_config">🛠️ 标准嗅探器配置示例</h2>
           <div class="code-block-wrapper">
             <button class="code-copy-btn">复制</button>
             <pre><code>sniffer:
@@ -187,11 +187,11 @@
           <div class="docs-pagination">
             <a href="protocols.html" class="docs-pag-btn">
               <span class="sub" data-i18n="docs.pag_prev">上一篇</span>
-              <span class="title">← 新一代协议与 NAT</span>
+              <span class="title" data-i18n="doc_sniff.prev_title">← 新一代协议与 NAT</span>
             </a>
             <a href="groups.html" class="docs-pag-btn" style="text-align: right;">
               <span class="sub" data-i18n="docs.pag_next">下一篇</span>
-              <span class="title">策略组调度与自动容灾 →</span>
+              <span class="title" data-i18n="doc_sniff.next_title">策略组调度与自动容灾 →</span>
             </a>
           </div>
         </article>

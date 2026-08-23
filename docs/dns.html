@@ -147,22 +147,22 @@
       <section class="docs-content">
         <article class="docs-article">
           <div class="docs-article-header">
-            <h1>DNS 配置与 Fake-IP 防污染解析最佳实践</h1>
-            <p>深入解析 Wmimo 默认采用的 Fake-IP 增强模式机制与国内直连分流配置。</p>
+            <h1 data-i18n="doc_dns.title">DNS 配置与 Fake-IP 防污染解析最佳实践</h1>
+            <p data-i18n="doc_dns.subtitle">深入解析 Wmimo 默认采用的 Fake-IP 增强模式机制与国内直连分流配置。</p>
           </div>
 
-          <h2>⚡ 为什么优先推荐 Fake-IP 模式？</h2>
+          <h2 data-i18n="doc_dns.h2_why">⚡ 为什么优先推荐 Fake-IP 模式？</h2>
           <p>
             传统的 <code>redir-host</code> 模式必须先在本地发起远程 DNS 查询，不仅存在 50~200ms 的额外等待，未加密的 DNS 还极易被旁路节点篡改或记录。
           </p>
           <div class="callout callout-tip">
             <div class="callout-body">
-              <strong>🚀 Fake-IP 工作原理：</strong>
+              <strong data-i18n="doc_dns.callout_title">🚀 Fake-IP 工作原理：</strong>
               当应用发起域名请求时，Wmimo 内置 DNS 立即在本地从预留池（如 <code>198.18.0.0/16</code>）返回一个虚拟 IP（耗时 &lt; 1ms）。当应用向该 IP 发起连接时，Wmimo 拦截并还原原始域名，由远端代理节点直接在本地完成目标域名的真实解析，<strong>彻底杜绝本地 DNS 污染与 DNS 泄露</strong>。
             </div>
           </div>
 
-          <h2>🛠️ 标准双向防污染 DNS 配置示例</h2>
+          <h2 data-i18n="doc_dns.h2_config">🛠️ 标准双向防污染 DNS 配置示例</h2>
           <div class="code-block-wrapper">
             <button class="code-copy-btn">复制</button>
             <pre><code>dns:
@@ -197,31 +197,31 @@
       - "https://8.8.8.8/dns-query#Proxy"</code></pre>
           </div>
 
-          <h2>📋 关键配置字段说明</h2>
+          <h2 data-i18n="doc_dns.h2_table">📋 关键配置字段说明</h2>
           <div class="docs-table-wrapper">
             <table class="docs-table">
               <thead>
                 <tr>
-                  <th>字段参数</th>
-                  <th>说明与推荐配置</th>
+                  <th data-i18n="doc_dns.th_field">字段参数</th>
+                  <th data-i18n="doc_dns.th_desc">说明与推荐配置</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td><code>enhanced-mode</code></td>
-                  <td>DNS 增强模式，推荐设置为 <code>fake-ip</code>。</td>
+                  <td data-i18n-html="doc_dns.f_enhanced_desc">DNS 增强模式，推荐设置为 <code>fake-ip</code>。</td>
                 </tr>
                 <tr>
                   <td><code>fake-ip-range</code></td>
-                  <td>虚拟保留 IP 网段，默认 <code>198.18.0.1/16</code>。</td>
+                  <td data-i18n-html="doc_dns.f_range_desc">虚拟保留 IP 网段，默认 <code>198.18.0.1/16</code>。</td>
                 </tr>
                 <tr>
                   <td><code>nameserver-policy</code></td>
-                  <td>基于 GeoSite 标签的分流解析：国内域名走国内 DNS，海外域名走加密 DoH。</td>
+                  <td data-i18n="doc_dns.f_policy_desc">基于 GeoSite 标签的分流解析：国内域名走国内 DNS，海外域名走加密 DoH。</td>
                 </tr>
                 <tr>
                   <td><code>fake-ip-filter</code></td>
-                  <td>排除列表，保证局域网服务与 NTP 时间服务能够拿到真实物理 IP。</td>
+                  <td data-i18n="doc_dns.f_filter_desc">排除列表，保证局域网服务与 NTP 时间服务能够拿到真实物理 IP。</td>
                 </tr>
               </tbody>
             </table>
@@ -230,11 +230,11 @@
           <div class="docs-pagination">
             <a href="tun.html" class="docs-pag-btn">
               <span class="sub" data-i18n="docs.pag_prev">上一篇</span>
-              <span class="title">← TUN 虚拟网卡</span>
+              <span class="title" data-i18n="doc_dns.prev_title">← TUN 虚拟网卡</span>
             </a>
             <a href="rules.html" class="docs-pag-btn" style="text-align: right;">
               <span class="sub" data-i18n="docs.pag_next">下一篇</span>
-              <span class="title">高级规则与进程分流 →</span>
+              <span class="title" data-i18n="doc_dns.next_title">高级规则与进程分流 →</span>
             </a>
           </div>
         </article>

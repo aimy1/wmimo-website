@@ -149,26 +149,18 @@
       <section class="docs-content">
         <article class="docs-article">
           <div class="docs-article-header">
-            <h1>常见问题排查 (FAQ)</h1>
-            <p>收集了用户在使用 Wmimo 过程中最常见的问题与解决方案。</p>
+            <h1 data-i18n="doc_faq.title">常见问题排查 (FAQ)</h1>
+            <p data-i18n="doc_faq.subtitle">收集了用户在使用 Wmimo 过程中最常见的问题与解决方案。</p>
           </div>
 
 
-          <h2>1. 导入订阅时提示连接超时？</h2>
-          <p>
-            • 检查订阅链接是否能够通过本地浏览器直接下载；<br>
-            • 确认当前运营商 DNS 是否能够解析订阅服务器域名；<br>
-            • 可尝试在设置中配置自定义 DNS（如 <code>223.5.5.5</code> / <code>119.29.29.29</code>）后重试。
-          </p>
+          <h2 data-i18n="doc_faq.q1_title">1. 导入订阅时提示连接超时？</h2>
+          <p data-i18n-html="doc_faq.q1_desc">• 检查订阅链接是否能够通过本地浏览器直接下载；<br>• 确认当前运营商 DNS 是否能够解析订阅服务器域名；<br>• 可尝试在设置中配置自定义 DNS（如 <code>223.5.5.5</code> / <code>119.29.29.29</code>）后重试。</p>
 
-          <h2>2. 开启 TUN 模式后无法打开网页？</h2>
-          <p>
-            • 检查是否与其他 VPN 或虚拟网卡工具（如其他代理客户端）同时运行产生了路由冲突；<br>
-            • 退出其他代理工具，在 Wmimo 中关闭 TUN 并重新开启一次；<br>
-            • 检查防火墙是否拦截了 <code>wmimo-core</code> 进程的网络出站请求。
-          </p>
+          <h2 data-i18n="doc_faq.q2_title">2. 开启 TUN 模式后无法打开网页？</h2>
+          <p data-i18n-html="doc_faq.q2_desc">• 检查是否与其他 VPN 或虚拟网卡工具（如其他代理客户端）同时运行产生了路由冲突；<br>• 退出其他代理工具，在 Wmimo 中关闭 TUN 并重新开启一次；<br>• 检查防火墙是否拦截了 <code>wmimo-core</code> 进程的网络出站请求。</p>
 
-          <h2>3. Linux AppImage 无法在 Ubuntu 24.04 运行？</h2>
+          <h2 data-i18n="doc_faq.q3_title">3. Linux AppImage 无法在 Ubuntu 24.04 运行？</h2>
           <p>
             Ubuntu 24.04 默认不再附带旧版 libfuse2 库。通过终端安装即可正常运行：
           </p>
@@ -180,7 +172,7 @@
             <pre class="code-content">sudo apt update && sudo apt install libfuse2 -y</pre>
           </div>
 
-          <h2>4. 订阅更新后节点没有刷新？</h2>
+          <h2 data-i18n="doc_faq.q4_title">4. 订阅更新后节点没有刷新？</h2>
           <p>
             进入 <strong>“配置管理”</strong>，点击对应订阅配置右侧的刷新图标手动触发一次全量拉取。
           </p>
@@ -188,11 +180,11 @@
           <div class="docs-pagination">
             <a href="clients.html" class="docs-pag-btn">
               <span class="sub" data-i18n="docs.pag_prev">上一篇</span>
-              <span class="title">← 客户端生态导航</span>
+              <span class="title" data-i18n="doc_faq.prev_title">← 客户端生态导航</span>
             </a>
             <a href="build.html" class="docs-pag-btn" style="text-align: right;">
               <span class="sub" data-i18n="docs.pag_next">下一篇</span>
-              <span class="title">从源码本地编译 →</span>
+              <span class="title" data-i18n="doc_faq.next_title">从源码本地编译 →</span>
             </a>
           </div>
 

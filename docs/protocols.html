@@ -147,52 +147,52 @@
       <section class="docs-content">
         <article class="docs-article">
           <div class="docs-article-header">
-            <h1>新一代网络协议与 Full Cone NAT 指南</h1>
-            <p>详解 Hysteria 2、TUIC v5、VLESS Reality 协议优势及游戏全锥型 NAT 优化。</p>
+            <h1 data-i18n="doc_proto.title">新一代网络协议与 Full Cone NAT 指南</h1>
+            <p data-i18n="doc_proto.subtitle">详解 Hysteria 2、TUIC v5、VLESS Reality 协议优势及游戏全锥型 NAT 优化。</p>
           </div>
 
-          <h2>⚡ 新一代协议横向对比</h2>
+          <h2 data-i18n="doc_proto.h2_compare">⚡ 新一代协议横向对比</h2>
           <div class="docs-table-wrapper">
             <table class="docs-table">
               <thead>
                 <tr>
-                  <th>协议名称</th>
-                  <th>传输机制</th>
-                  <th>核心优势</th>
-                  <th>最佳场景</th>
+                  <th data-i18n="doc_proto.th_name">协议名称</th>
+                  <th data-i18n="doc_proto.th_transport">传输机制</th>
+                  <th data-i18n="doc_proto.th_advantage">核心优势</th>
+                  <th data-i18n="doc_proto.th_scenario">最佳场景</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td><strong>Hysteria 2</strong></td>
-                  <td>基于 UDP (QUIC Brutal)</td>
-                  <td>突破 TCP 丢包退避限制，自动拥塞感知，晚高峰带宽压榨</td>
-                  <td>跨国高丢包、恶劣弱网、大文件高速下载</td>
+                  <td data-i18n="doc_proto.hy2_trans">基于 UDP (QUIC Brutal)</td>
+                  <td data-i18n="doc_proto.hy2_adv">突破 TCP 丢包退避限制，自动拥塞感知，晚高峰带宽压榨</td>
+                  <td data-i18n="doc_proto.hy2_scene">跨国高丢包、恶劣弱网、大文件高速下载</td>
                 </tr>
                 <tr>
                   <td><strong>TUIC v5</strong></td>
-                  <td>基于 UDP (0-RTT QUIC)</td>
-                  <td>握手延迟极低，连接复用性能优异</td>
-                  <td>移动端多基站频繁切换、网页高频冲浪</td>
+                  <td data-i18n="doc_proto.tuic_trans">基于 UDP (0-RTT QUIC)</td>
+                  <td data-i18n="doc_proto.tuic_adv">握手延迟极低，连接复用性能优异</td>
+                  <td data-i18n="doc_proto.tuic_scene">移动端多基站频繁切换、网页高频冲浪</td>
                 </tr>
                 <tr>
                   <td><strong>VLESS Reality</strong></td>
-                  <td>基于 TCP/TLS</td>
-                  <td>消除自签名证书特征，直接借用目标权威站点 TLS 证书</td>
-                  <td>严苛封锁环境、长期稳定办公</td>
+                  <td data-i18n="doc_proto.vless_trans">基于 TCP/TLS</td>
+                  <td data-i18n="doc_proto.vless_adv">消除自签名证书特征，直接借用目标权威站点 TLS 证书</td>
+                  <td data-i18n="doc_proto.vless_scene">严苛封锁环境、长期稳定办公</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>🎮 Full Cone NAT（全锥型 NAT）游戏联机优化</h2>
+          <h2 data-i18n="doc_proto.h2_nat">🎮 Full Cone NAT（全锥型 NAT）游戏联机优化</h2>
           <p>
             在开启 Wmimo 的 TUN 虚拟网卡模式进行外服主机与 PC 联机游戏时，NAT 类型直接决定了能否顺利与队友建立 P2P 直连。
           </p>
           <div class="callout callout-info">
             <div class="callout-body">
-              <strong>为什么需要 Full Cone NAT？</strong>
-              普通的对称型 NAT（Symmetric NAT / Type D）会为每个连接分配不同的公网端口，导致游戏内无法直连。开启 <code>endpoint-independent-nat: true</code> 后，公网映射端口保持恒定，游戏内 NAT 类型可自动提升至 <strong>Open (Type A)</strong>。
+              <strong data-i18n="doc_proto.nat_callout_title">为什么需要 Full Cone NAT？</strong>
+              <span data-i18n-html="doc_proto.nat_callout_body">普通的对称型 NAT（Symmetric NAT / Type D）会为每个连接分配不同的公网端口，导致游戏内无法直连。开启 <code>endpoint-independent-nat: true</code> 后，公网映射端口保持恒定，游戏内 NAT 类型可自动提升至 <strong>Open (Type A)</strong>。</span>
             </div>
           </div>
 
@@ -208,11 +208,11 @@
           <div class="docs-pagination">
             <a href="rules.html" class="docs-pag-btn">
               <span class="sub" data-i18n="docs.pag_prev">上一篇</span>
-              <span class="title">← 高级规则与进程分流</span>
+              <span class="title" data-i18n="doc_proto.prev_title">← 高级规则与进程分流</span>
             </a>
             <a href="sniffer.html" class="docs-pag-btn" style="text-align: right;">
               <span class="sub" data-i18n="docs.pag_next">下一篇</span>
-              <span class="title">域名与协议嗅探器 →</span>
+              <span class="title" data-i18n="doc_proto.next_title">域名与协议嗅探器 →</span>
             </a>
           </div>
 

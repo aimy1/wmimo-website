@@ -147,17 +147,17 @@
       <section class="docs-content">
         <article class="docs-article">
           <div class="docs-article-header">
-            <h1>高级路由规则与进程级分流配置指南</h1>
-            <p>掌握 Mihomo 规则语法，实现针对游戏、通讯软件与域名的精准出站分流。</p>
+            <h1 data-i18n="doc_rules.title">高级路由规则与进程级分流配置指南</h1>
+            <p data-i18n="doc_rules.subtitle">掌握 Mihomo 规则语法，实现针对游戏、通讯软件与域名的精准出站分流。</p>
           </div>
 
-          <h2>🎯 规则匹配原则</h2>
+          <h2 data-i18n="doc_rules.h2_principles">🎯 规则匹配原则</h2>
           <ul>
-            <li><strong>自上而下匹配</strong>：一旦某一条规则命中，核心立即将流量分配到指定策略组并停止向下匹配；</li>
-            <li><strong>兜底策略 (MATCH)</strong>：写在规则列表最底部，捕获所有未被前方显式规则捕获的剩余流量。</li>
+            <li data-i18n-html="doc_rules.principle_topdown"><strong>自上而下匹配</strong>：一旦某一条规则命中，核心立即将流量分配到指定策略组并停止向下匹配；</li>
+            <li data-i18n-html="doc_rules.principle_match"><strong>兜底策略 (MATCH)</strong>：写在规则列表最底部，捕获所有未被前方显式规则捕获的剩余流量。</li>
           </ul>
 
-          <h2>🎮 实战：针对应用进程名称分流 (PROCESS-NAME)</h2>
+          <h2 data-i18n="doc_rules.h2_process">🎮 实战：针对应用进程名称分流 (PROCESS-NAME)</h2>
           <p>
             无需搜集应用复杂的 CDN 域名或 IP 段，直接按桌面可执行程序名称（<code>.exe</code> / Linux 进程名）精准分流：
           </p>
@@ -182,41 +182,41 @@
   - MATCH,Proxy</code></pre>
           </div>
 
-          <h2>🧩 常用规则类型速查</h2>
+          <h2 data-i18n="doc_rules.h2_table">🧩 常用规则类型速查</h2>
           <div class="docs-table-wrapper">
             <table class="docs-table">
               <thead>
                 <tr>
-                  <th>规则关键字</th>
-                  <th>语法示例</th>
-                  <th>说明</th>
+                  <th data-i18n="doc_rules.th_keyword">规则关键字</th>
+                  <th data-i18n="doc_rules.th_example">语法示例</th>
+                  <th data-i18n="doc_rules.th_desc">说明</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td><code>DOMAIN-SUFFIX</code></td>
                   <td><code>DOMAIN-SUFFIX,google.com,Proxy</code></td>
-                  <td>匹配主域名及其所有二级、三级子域名。</td>
+                  <td data-i18n="doc_rules.r_suffix_desc">匹配主域名及其所有二级、三级子域名。</td>
                 </tr>
                 <tr>
                   <td><code>DOMAIN-KEYWORD</code></td>
                   <td><code>DOMAIN-KEYWORD,github,Proxy</code></td>
-                  <td>只要域名包含该关键字即命中。</td>
+                  <td data-i18n="doc_rules.r_keyword_desc">只要域名包含该关键字即命中。</td>
                 </tr>
                 <tr>
                   <td><code>GEOSITE</code></td>
                   <td><code>GEOSITE,bilibili,DIRECT</code></td>
-                  <td>基于 GeoSite 预打包域名列表。</td>
+                  <td data-i18n="doc_rules.r_geosite_desc">基于 GeoSite 预打包域名列表。</td>
                 </tr>
                 <tr>
                   <td><code>GEOIP</code></td>
                   <td><code>GEOIP,CN,DIRECT</code></td>
-                  <td>根据目标 IP 地理归属分流。</td>
+                  <td data-i18n="doc_rules.r_geoip_desc">根据目标 IP 地理归属分流。</td>
                 </tr>
                 <tr>
                   <td><code>AND / OR / NOT</code></td>
                   <td><code>AND,((GEOIP,CN),(DST-PORT,443)),DIRECT</code></td>
-                  <td>多条件复合逻辑运算。</td>
+                  <td data-i18n="doc_rules.r_logic_desc">多条件复合逻辑运算。</td>
                 </tr>
               </tbody>
             </table>
@@ -225,11 +225,11 @@
           <div class="docs-pagination">
             <a href="dns.html" class="docs-pag-btn">
               <span class="sub" data-i18n="docs.pag_prev">上一篇</span>
-              <span class="title">← DNS 与 Fake-IP</span>
+              <span class="title" data-i18n="doc_rules.prev_title">← DNS 与 Fake-IP</span>
             </a>
             <a href="protocols.html" class="docs-pag-btn" style="text-align: right;">
               <span class="sub" data-i18n="docs.pag_next">下一篇</span>
-              <span class="title">新一代协议与 NAT →</span>
+              <span class="title" data-i18n="doc_rules.next_title">新一代协议与 NAT →</span>
             </a>
           </div>
         </article>

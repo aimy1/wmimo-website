@@ -147,51 +147,51 @@
       <section class="docs-content">
         <article class="docs-article">
           <div class="docs-article-header">
-            <h1>策略组实战：延迟优选、自动容灾与负载均衡</h1>
-            <p>掌握 Proxy Groups 调度逻辑，实现最低延迟节点自动选择与节点故障无感切换。</p>
+            <h1 data-i18n="doc_grp.title">策略组实战：延迟优选、自动容灾与负载均衡</h1>
+            <p data-i18n="doc_grp.subtitle">掌握 Proxy Groups 调度逻辑，实现最低延迟节点自动选择与节点故障无感切换。</p>
           </div>
 
-          <h2>🔀 常用策略组类型横向对比</h2>
+          <h2 data-i18n="doc_grp.h2_types">🔀 常用策略组类型横向对比</h2>
           <div class="docs-table-wrapper">
             <table class="docs-table">
               <thead>
                 <tr>
-                  <th>策略组类型</th>
-                  <th>调度算法</th>
-                  <th>核心机制</th>
-                  <th>最佳场景</th>
+                  <th data-i18n="doc_grp.th_type">策略组类型</th>
+                  <th data-i18n="doc_grp.th_algo">调度算法</th>
+                  <th data-i18n="doc_grp.th_mech">核心机制</th>
+                  <th data-i18n="doc_grp.th_scene">最佳场景</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td><strong>select</strong></td>
-                  <td>手动指定</td>
-                  <td>用户在界面手动点选出口节点</td>
-                  <td>日常主力地区选择</td>
+                  <td data-i18n="doc_grp.t_select_algo">手动指定</td>
+                  <td data-i18n="doc_grp.t_select_mech">用户在界面手动点选出口节点</td>
+                  <td data-i18n="doc_grp.t_select_scene">日常主力地区选择</td>
                 </tr>
                 <tr>
                   <td><strong>url-test</strong></td>
-                  <td>延迟优选</td>
-                  <td>后台定时发起真实测速，自动切到最低延迟节点</td>
-                  <td>网页高速冲浪</td>
+                  <td data-i18n="doc_grp.t_urltest_algo">延迟优选</td>
+                  <td data-i18n="doc_grp.t_urltest_mech">后台定时发起真实测速，自动切到最低延迟节点</td>
+                  <td data-i18n="doc_grp.t_urltest_scene">网页高速冲浪</td>
                 </tr>
                 <tr>
                   <td><strong>fallback</strong></td>
-                  <td>故障容灾</td>
-                  <td>始终使用第一可用节点，断连时顺位自动切换</td>
-                  <td>远程办公、挂机程序</td>
+                  <td data-i18n="doc_grp.t_fallback_algo">故障容灾</td>
+                  <td data-i18n="doc_grp.t_fallback_mech">始终使用第一可用节点，断连时顺位自动切换</td>
+                  <td data-i18n="doc_grp.t_fallback_scene">远程办公、挂机程序</td>
                 </tr>
                 <tr>
                   <td><strong>load-balance</strong></td>
-                  <td>负载均衡</td>
-                  <td>一致性哈希或轮询并发分流</td>
-                  <td>大文件多线程高速下载</td>
+                  <td data-i18n="doc_grp.t_lb_algo">负载均衡</td>
+                  <td data-i18n="doc_grp.t_lb_mech">一致性哈希或轮询并发分流</td>
+                  <td data-i18n="doc_grp.t_lb_scene">大文件多线程高速下载</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>🛠️ 标准策略组 YAML 配置示例</h2>
+          <h2 data-i18n="doc_grp.h2_yaml">🛠️ 标准策略组 YAML 配置示例</h2>
           <div class="code-block-wrapper">
             <button class="code-copy-btn">复制</button>
             <pre><code>proxy-groups:
@@ -220,11 +220,11 @@
           <div class="docs-pagination">
             <a href="sniffer.html" class="docs-pag-btn">
               <span class="sub" data-i18n="docs.pag_prev">上一篇</span>
-              <span class="title">← 域名与协议嗅探器</span>
+              <span class="title" data-i18n="doc_grp.prev_title">← 域名与协议嗅探器</span>
             </a>
             <a href="lan.html" class="docs-pag-btn" style="text-align: right;">
               <span class="sub" data-i18n="docs.pag_next">下一篇</span>
-              <span class="title">局域网共享与主机代理 →</span>
+              <span class="title" data-i18n="doc_grp.next_title">局域网共享与主机代理 →</span>
             </a>
           </div>
         </article>

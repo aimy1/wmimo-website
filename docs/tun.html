@@ -149,27 +149,27 @@
       <section class="docs-content">
         <article class="docs-article">
           <div class="docs-article-header">
-            <h1>TUN 虚拟网卡模式配置</h1>
-            <p>了解 TUN 虚拟网卡的工作原理以及在各操作系统下的权限配置要求。</p>
+            <h1 data-i18n="doc_tun.title">TUN 虚拟网卡模式配置</h1>
+            <p data-i18n="doc_tun.subtitle">了解 TUN 虚拟网卡的工作原理以及在各操作系统下的权限配置要求。</p>
           </div>
 
 
-          <h2>🛡️ TUN 模式概述</h2>
+          <h2 data-i18n="doc_tun.h2_overview">🛡️ TUN 模式概述</h2>
           <p>
             传统系统代理仅能接管支持 HTTP/Socks5 协议的浏览器应用，而 <strong>TUN 模式</strong> 在操作系统底层创建虚拟网络设备（L3 Virtual Network Device），接管全系统的 IP 层数据包。
           </p>
           <ul>
-            <li><strong>全应用支持</strong>：无缝支持命令行工具（git, curl, docker）、游戏客户端与系统级服务；</li>
-            <li><strong>智能防污染</strong>：内置 Fake-IP / Redir-Host DNS 引擎，彻底解决 DNS 污染；</li>
-            <li><strong>局域网直连</strong>：自动绕过局域网 IP 与国内白名单，不影响本地网络设备互访。</li>
+            <li data-i18n-html="doc_tun.bullet_apps"><strong>全应用支持</strong>：无缝支持命令行工具（git, curl, docker）、游戏客户端与系统级服务；</li>
+            <li data-i18n-html="doc_tun.bullet_dns"><strong>智能防污染</strong>：内置 Fake-IP / Redir-Host DNS 引擎，彻底解决 DNS 污染；</li>
+            <li data-i18n-html="doc_tun.bullet_lan"><strong>局域网直连</strong>：自动绕过局域网 IP 与国内白名单，不影响本地网络设备互访。</li>
           </ul>
 
-          <h2>🪟 Windows 配置</h2>
+          <h2 data-i18n="doc_tun.h2_win">🪟 Windows 配置</h2>
           <p>
             在 Wmimo 设置中直接开启 <strong>“TUN 虚拟网卡模式”</strong> 开关。当系统弹出 UAC 提权提示时，点击“是”允许加载 Wintun 驱动即可。
           </p>
 
-          <h2>🐧 Linux 权限设置</h2>
+          <h2 data-i18n="doc_tun.h2_linux">🐧 Linux 权限设置</h2>
           <p>
             在 Linux 下，TUN 虚拟网卡创建需要 <code>CAP_NET_ADMIN</code> 权限。您可以通过终端执行以下指令完成提权：
           </p>
@@ -181,7 +181,7 @@
             <pre class="code-content">sudo setcap cap_net_admin,cap_net_bind_service=+ep /path/to/wmimo-core</pre>
           </div>
 
-          <h2>📱 Android 移动端</h2>
+          <h2 data-i18n="doc_tun.h2_android">📱 Android 移动端</h2>
           <p>
             Android 系统由系统级 <strong>VpnService</strong> 原生驱动，首次连接时在弹出的系统 VPN 授权提示中点击“确定”即可。
           </p>
@@ -189,11 +189,11 @@
           <div class="docs-pagination">
             <a href="modes.html" class="docs-pag-btn">
               <span class="sub" data-i18n="docs.pag_prev">上一篇</span>
-              <span class="title">← 出站与分流模式</span>
+              <span class="title" data-i18n="doc_tun.prev_title">← 出站与分流模式</span>
             </a>
             <a href="dns.html" class="docs-pag-btn" style="text-align: right;">
               <span class="sub" data-i18n="docs.pag_next">下一篇</span>
-              <span class="title">DNS 与 Fake-IP →</span>
+              <span class="title" data-i18n="doc_tun.next_title">DNS 与 Fake-IP →</span>
             </a>
           </div>
 
