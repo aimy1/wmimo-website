@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initServerNoticeModal();
   initDocsSidebarFilter();
   initAssetsFilter();
-  initHomeInteractiveEngines();
 });
 
 
@@ -578,124 +577,6 @@ function initAssetsFilter() {
     });
   });
 }
-
-/* ==========================================================================
-   Home Interactive UI Engines: Mockup, Terminal Bar & Live Benchmark
-   ========================================================================== */
-function initHomeInteractiveEngines() {
-  // 1. Mockup Mode Switcher
-  const modeBtns = document.querySelectorAll('.mockup-mode-btn');
-  modeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      modeBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const mode = btn.getAttribute('data-mode') || 'Rule';
-      if (window.showToast) {
-        window.showToast(`已切换至 ${mode} 分流模式`, 'info');
-      }
-    });
-  });
-
-  // 2. Mockup Live Speed Fluctuations
-  const upVal = document.getElementById('mockupUploadVal');
-  const downVal = document.getElementById('mockupDownloadVal');
-  if (upVal && downVal) {
-    setInterval(() => {
-      const up = (Math.random() * 8 + 6).toFixed(1);
-      const down = (Math.random() * 45 + 50).toFixed(1);
-      upVal.textContent = `${up} MB/s`;
-      downVal.textContent = `${down} MB/s`;
-    }, 2800);
-  }
-
-  // 3. One-Liner Install Command Switcher
-  const installCommands = {
-    winget: 'winget install --id=Aimy.Wmimo -e',
-    scoop: 'scoop bucket add wmimo https://github.com/aimy1/scoop-bucket && scoop install wmimo',
-    yay: 'yay -S wmimo-bin',
-    deb: 'sudo dpkg -i Wmimo-Linux-v1.0.33.deb',
-    curl: 'curl -fsSL https://wmimo.org/install.sh | bash'
-  };
-
-  const installTabs = document.querySelectorAll('.install-tab-btn');
-  const cmdCodeEl = document.getElementById('installCommandCode');
-  const copyBtn = document.getElementById('installCopyBtn');
-
-  if (installTabs.length && cmdCodeEl) {
-    installTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        installTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const key = tab.getAttribute('data-cmd-key') || 'winget';
-        const cmd = installCommands[key] || installCommands.winget;
-        cmdCodeEl.innerHTML = `<span class="cmd-prefix">$</span>${cmd}`;
-        cmdCodeEl.setAttribute('data-raw-cmd', cmd);
-      });
-    });
-  }
-
-  if (copyBtn && cmdCodeEl) {
-    copyBtn.addEventListener('click', () => {
-      const rawCmd = cmdCodeEl.getAttribute('data-raw-cmd') || 'winget install --id=Aimy.Wmimo -e';
-      if (window.copyToClipboard) {
-        window.copyToClipboard(rawCmd, '安装命令已复制到剪贴板');
-      } else if (navigator.clipboard) {
-        navigator.clipboard.writeText(rawCmd);
-        if (window.showToast) window.showToast('安装命令已复制到剪贴板', 'success');
-      }
-    });
-  }
-
-  // 4. Live Benchmark / Latency Playground Simulator
-  const benchmarkBtn = document.getElementById('startSimBenchmarkBtn');
-  const pingBadges = document.querySelectorAll('.sim-node-ping-val');
-
-  if (benchmarkBtn && pingBadges.length) {
-    benchmarkBtn.addEventListener('click', () => {
-      benchmarkBtn.disabled = true;
-      const originalText = benchmarkBtn.innerHTML;
-      benchmarkBtn.innerHTML = `<span>⏳ 正在并发测速中...</span>`;
-
-      pingBadges.forEach(badge => {
-        badge.textContent = '...';
-        badge.style.opacity = '0.5';
-      });
-
-      setTimeout(() => {
-        const ranges = [
-          { min: 14, max: 28 }, // HK
-          { min: 30, max: 55 }, // JP
-          { min: 40, max: 68 }, // SG
-          { min: 110, max: 155 }, // US
-          { min: 140, max: 190 }  // DE
-        ];
-
-        pingBadges.forEach((badge, idx) => {
-          const r = ranges[idx % ranges.length];
-          const ms = Math.floor(Math.random() * (r.max - r.min + 1)) + r.min;
-          badge.textContent = `${ms} ms`;
-          badge.style.opacity = '1';
-
-          if (ms < 60) {
-            badge.style.color = 'var(--status-green)';
-            badge.style.background = 'rgba(16, 185, 129, 0.12)';
-          } else if (ms < 140) {
-            badge.style.color = 'var(--status-amber)';
-            badge.style.background = 'rgba(245, 158, 11, 0.12)';
-          } else {
-            badge.style.color = 'var(--status-red)';
-            badge.style.background = 'rgba(239, 68, 68, 0.12)';
-          }
-        });
-
-        benchmarkBtn.disabled = false;
-        benchmarkBtn.innerHTML = originalText;
-        if (window.showToast) window.showToast('全球节点延迟测速已完成', 'success');
-      }, 1200);
-    });
-  }
-}
-
 
 
 
