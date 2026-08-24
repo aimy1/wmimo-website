@@ -100,15 +100,16 @@
   </div>
 
   <main>
-    <!-- Ultra-Clean Hero Section (Side-by-Side Split) -->
+    <!-- 1. Ultra-Modern Hero Section -->
     <section class="hero-section">
       <div class="container">
         <div class="hero-split">
-          <!-- Left Column -->
+          <!-- Left Column: Copy & Actions -->
           <div class="hero-left">
-            <div class="hero-tag">
-              <span data-i18n="hero.tag">🚀 Wmimo v1.0.33 正式发布</span>
-            </div>
+            <a href="download.html" class="hero-tag" style="text-decoration: none;">
+              <span class="tag-dot"></span>
+              <span data-i18n="hero.tag">🚀 Wmimo v1.0.33 正式发布 · 全新 Meta 内核与 Bento 设计</span>
+            </a>
 
             <h1 class="hero-title">
               <span data-i18n="hero.title_pre">极速、优雅、强大的</span><br>
@@ -116,7 +117,7 @@
             </h1>
 
             <p class="hero-subtitle" data-i18n="hero.subtitle">
-              基于 Flutter 与 Mihomo 核心打造。提供全协议网络支持、TUN 虚拟网卡系统级接管、全功能系统托盘与 18px 微卡片设计美学。
+              基于 Flutter 与 Mihomo 核心打造。提供全协议网络支持、TUN 虚拟网卡底层接管、全功能系统托盘与现代化 Bento 设计美学。
             </p>
 
             <div class="hero-cta">
@@ -130,70 +131,326 @@
               </a>
             </div>
 
-            <div id="heroDownloadNote" class="hero-meta" style="display: flex; align-items: center; gap: 16px; margin-top: 18px; flex-wrap: wrap;">
-              <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary);">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="#00A4EF"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
-                Windows 10/11
+            <div class="hero-meta">
+              <span class="hero-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#00A4EF"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
+                Windows 10 / 11 (x64 / ARM64)
               </span>
-              <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary);">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="#FCC624"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.645 2.645 0 00-.402-.533 1.45 1.45 0 00-.275-.333c.182 0 .338-.03.465-.067a.615.615 0 00.314-.334c.108-.267 0-.697-.345-1.163-.345-.467-.931-.995-1.788-1.521-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.123 8.123 0 01.647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335.039.003.075.006.11.006.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01c.053 0 .105.005.157.014.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602-.369-.066-.61-.2-.723-.4-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336zm7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8.097 8.097 0 01-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065zm-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg>
-                Linux
+              <span class="hero-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#FCC624"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.645 2.645 0 00-.402-.533 1.45 1.45 0 00-.275-.333c.182 0 .338-.03.465-.067a.615.615 0 00.314-.334c.108-.267 0-.697-.345-1.163-.345-.467-.931-.995-1.788-1.521-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.123 8.123 0 01.647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335.039.003.075.006.11.006.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01c.053 0 .105.005.157.014.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602-.369-.066-.61-.2-.723-.4-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336zm7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8.097 8.097 0 01-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065zm-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg>
+                Linux (Deb / RPM / Arch)
               </span>
-              <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary);">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="#3DDC84"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1368 1.0989L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
-                Android
+              <span class="hero-meta-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#3DDC84"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1368 1.0989L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
+                Android (ARM64 / v7a)
               </span>
             </div>
-
           </div>
 
-          <!-- Right Column: Authentic Screenshot with Spotlight -->
+          <!-- Right Column: Interactive Authentic Client Window Mockup -->
           <div class="hero-right">
-            <div class="screenshot-frame spotlight-card">
-              <img src="assets/images/app_screenshot.png" alt="Wmimo 官方客户端真实运行界面" class="screenshot-img">
+            <div class="app-window-mockup spotlight-card">
+              <!-- Window Title Bar -->
+              <div class="mockup-titlebar">
+                <div class="mockup-controls">
+                  <span class="mockup-dot dot-red"></span>
+                  <span class="mockup-dot dot-yellow"></span>
+                  <span class="mockup-dot dot-green"></span>
+                </div>
+                <div class="mockup-title" data-i18n="mockup.title">
+                  <img src="assets/images/app_icon_128.png" width="16" height="16" alt="Icon">
+                  Wmimo 官方客户端 - 运行中
+                </div>
+                <div class="mockup-status-badge" data-i18n="mockup.status_connected">已连接 · 极速分流中</div>
+              </div>
+
+              <!-- Window Body Content -->
+              <div class="mockup-body">
+                <!-- 1. Live Speed Grid -->
+                <div class="mockup-speed-grid">
+                  <div class="mockup-speed-card">
+                    <span class="mockup-speed-label" data-i18n="mockup.upload_label">↑ 实时上行</span>
+                    <span class="mockup-speed-val upload" id="mockupUploadVal">12.4 MB/s</span>
+                  </div>
+                  <div class="mockup-speed-card">
+                    <span class="mockup-speed-label" data-i18n="mockup.download_label">↓ 实时下行</span>
+                    <span class="mockup-speed-val download" id="mockupDownloadVal">86.2 MB/s</span>
+                  </div>
+                </div>
+
+                <!-- 2. Mode Selector -->
+                <div class="mockup-mode-selector">
+                  <button class="mockup-mode-btn active" data-mode="Rule" data-i18n="mockup.mode_rule">规则分流</button>
+                  <button class="mockup-mode-btn" data-mode="Global" data-i18n="mockup.mode_global">全局代理</button>
+                  <button class="mockup-mode-btn" data-mode="Direct" data-i18n="mockup.mode_direct">直连模式</button>
+                </div>
+
+                <!-- 3. Active Node Card -->
+                <div class="mockup-node-item">
+                  <div class="mockup-node-left">
+                    <span class="mockup-node-flag">🇭🇰</span>
+                    <div>
+                      <div class="mockup-node-name" data-i18n="mockup.active_node_title">🇭🇰 香港 BGP 专线 01</div>
+                      <div class="mockup-node-proto" data-i18n="mockup.active_node_type">Hysteria 2 · 极速 UDP 握手</div>
+                    </div>
+                  </div>
+                  <span class="mockup-node-ping">16 ms</span>
+                </div>
+
+                <!-- 4. Bottom Controls -->
+                <div class="mockup-bottom-controls">
+                  <label class="mockup-tun-toggle">
+                    <span class="mockup-switch">
+                      <input type="checkbox" checked onchange="window.showToast ? window.showToast(this.checked ? 'TUN 虚拟网卡已接管全局流量' : 'TUN 模式已关闭', 'info') : null">
+                      <span class="mockup-slider"></span>
+                    </span>
+                    <span data-i18n="mockup.tun_label">TUN 虚拟网卡系统接管</span>
+                  </label>
+
+                  <button class="mockup-action-btn" onclick="window.showToast ? window.showToast('正在全并发执行节点延迟测速...', 'info') : null">
+                    <span data-i18n="mockup.speed_test_btn">⚡ 快速测速</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Core Features Section -->
-    <section class="features-section" style="padding-top: 20px;">
+    <!-- 2. One-Liner Install Strip Section -->
+    <section class="install-strip-section">
       <div class="container">
-        <div class="features-grid reveal-stagger">
-          <div class="card spotlight-card">
-            <h3 class="card-title" data-i18n="feat.core_title">⚡ 高性能 Mihomo 核心</h3>
-            <p class="card-text" data-i18n="feat.core_desc">
-              深度整合 Meta 协议栈，全面支持 Hysteria 2、TUIC、VLESS Reality 等新一代低延迟协议。多核并发高吞吐，超低内存开销。
-            </p>
+        <div class="install-strip-card">
+          <div class="install-strip-tabs">
+            <span style="font-size: 0.84rem; font-weight: 700; color: var(--text-primary); margin-right: 4px;" data-i18n="install.title">终端一行指令安装：</span>
+            <button class="install-tab-btn active" data-cmd-key="winget" data-i18n="install.tab_winget">Windows (Winget)</button>
+            <button class="install-tab-btn" data-cmd-key="scoop" data-i18n="install.tab_scoop">Windows (Scoop)</button>
+            <button class="install-tab-btn" data-cmd-key="yay" data-i18n="install.tab_yay">Arch Linux (AUR)</button>
+            <button class="install-tab-btn" data-cmd-key="deb" data-i18n="install.tab_deb">Debian / Ubuntu</button>
+            <button class="install-tab-btn" data-cmd-key="curl" data-i18n="install.tab_curl">一键脚本 (Linux)</button>
           </div>
-
-          <div class="card spotlight-card">
-            <h3 class="card-title" data-i18n="feat.tun_title">🛡️ TUN 虚拟网卡底层接管</h3>
-            <p class="card-text" data-i18n="feat.tun_desc">
-              在系统底层创建虚拟网卡驱动，接管全局流量。完美支持命令行、游戏客户端与各类原生应用，内置 Fake-IP 防 DNS 污染。
-            </p>
-          </div>
-
-          <div class="card spotlight-card">
-            <h3 class="card-title" data-i18n="feat.tray_title">🔀 全功能系统托盘</h3>
-            <p class="card-text" data-i18n="feat.tray_desc">
-              常驻系统托盘动态展示上下行实时网速，右键菜单一键切换分流模式（Rule/Global/Direct）、一键测速与复制终端代理指令。
-            </p>
-          </div>
-
-          <div class="card spotlight-card">
-            <h3 class="card-title" data-i18n="feat.ui_title">🎨 现代化 18px 微卡片设计</h3>
-            <p class="card-text" data-i18n="feat.ui_desc">
-              遵循统一的天青蓝品牌设计语言，18px 经典圆角微卡片体系。原生支持浅色与深空暗黑双主题无缝秒切，100% 覆盖 9 种语言。
-            </p>
+          <div class="install-command-box">
+            <code class="install-command-code" id="installCommandCode" data-raw-cmd="winget install --id=Aimy.Wmimo -e">
+              <span class="cmd-prefix">$</span>winget install --id=Aimy.Wmimo -e
+            </code>
+            <button class="install-copy-btn" id="installCopyBtn" title="复制安装命令" aria-label="复制安装命令">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Community & Contact Email Section -->
-    <section class="contact-section" style="padding: 20px 0 60px 0;">
+    <!-- 3. Modern Bento Grid 2.0 Feature Matrix -->
+    <section class="bento-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="bento.tag">ENGINEERED FOR PERFORMANCE</span>
+          <h2 class="section-title" data-i18n="bento.title">专为极客打造的高性能网络引擎</h2>
+          <p class="section-subtitle" data-i18n="bento.subtitle">深度融合 Flutter 现代渲染引擎与 Mihomo 底层协议栈，带来极致流畅与安心体验。</p>
+        </div>
+
+        <div class="bento-grid reveal-stagger">
+          <!-- Card 1: Next-Gen Protocol Matrix (8 Cols) -->
+          <div class="card spotlight-card bento-card-protocols">
+            <div>
+              <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 8px;" data-i18n="bento.proto_title">⚡ 新一代超低延迟全协议矩阵</h3>
+              <p style="font-size: 0.94rem; color: var(--text-secondary); line-height: 1.6;" data-i18n="bento.proto_desc">
+                深度原生支持 Hysteria 2、TUIC v5、VLESS Reality 等协议，多路复用暴力抗丢包，弱网环境下依然秒开。
+              </p>
+            </div>
+            <div class="protocol-chips-grid">
+              <div class="protocol-chip">
+                <div class="protocol-chip-header">
+                  <span class="protocol-name">Hysteria 2</span>
+                  <span class="protocol-tag">UDP 暴力加速</span>
+                </div>
+                <div class="protocol-desc" data-i18n="bento.proto_hy2_desc">基于 UDP 暴力抗丢包与动态拥塞控制</div>
+              </div>
+              <div class="protocol-chip">
+                <div class="protocol-chip-header">
+                  <span class="protocol-name">TUIC v5</span>
+                  <span class="protocol-tag">0-RTT 握手</span>
+                </div>
+                <div class="protocol-desc" data-i18n="bento.proto_tuic_desc">0-RTT 极速握手，QUIC 底层加速</div>
+              </div>
+              <div class="protocol-chip">
+                <div class="protocol-chip-header">
+                  <span class="protocol-name">VLESS Reality</span>
+                  <span class="protocol-tag">深度防封锁</span>
+                </div>
+                <div class="protocol-desc" data-i18n="bento.proto_reality_desc">消除 TLS 指纹特征，深度防审查</div>
+              </div>
+              <div class="protocol-chip">
+                <div class="protocol-chip-header">
+                  <span class="protocol-name">WireGuard</span>
+                  <span class="protocol-tag">安全隧道</span>
+                </div>
+                <div class="protocol-desc" data-i18n="bento.proto_wireguard_desc">内核级轻量化高速安全隧道</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: TUN Mode Flow (4 Cols) -->
+          <div class="card spotlight-card bento-card-tun">
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;" data-i18n="bento.tun_title">🛡️ TUN 虚拟网卡全局接管</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;" data-i18n="bento.tun_desc">
+                在系统底层创建高性能 Wintun 驱动，全面接管游戏客户端、终端命令行与 Docker 流量，内置 Fake-IP 防 DNS 污染。
+              </p>
+            </div>
+            <div class="tun-flow-visual">
+              <div class="tun-flow-step">
+                <span class="tun-flow-icon">💻</span>
+                <span data-i18n="bento.tun_step1">原生应用 / 游戏 / 终端请求</span>
+              </div>
+              <div class="tun-flow-arrow">↓</div>
+              <div class="tun-flow-step">
+                <span class="tun-flow-icon">🛡️</span>
+                <span data-i18n="bento.tun_step2">Wintun 驱动 L3 虚拟网卡接管</span>
+              </div>
+              <div class="tun-flow-arrow">↓</div>
+              <div class="tun-flow-step">
+                <span class="tun-flow-icon">⚡</span>
+                <span data-i18n="bento.tun_step3">智能 Fake-IP 防污染解析</span>
+              </div>
+              <div class="tun-flow-arrow">↓</div>
+              <div class="tun-flow-step">
+                <span class="tun-flow-icon">🌐</span>
+                <span data-i18n="bento.tun_step4">毫秒级低延迟出站出口</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Immersive Tray Console (5 Cols) -->
+          <div class="card spotlight-card bento-card-tray">
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;" data-i18n="bento.tray_title">🔀 沉浸式全功能系统托盘</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;" data-i18n="bento.tray_desc">
+                常驻托盘动态展示上下行实时网速，右键快速切换分流模式、测速与复制终端代理环境变量。
+              </p>
+            </div>
+            <div class="tray-menu-mockup">
+              <div class="tray-menu-item active" data-i18n="bento.tray_item1">⚡ 切换分流模式 (Rule / Global / Direct)</div>
+              <div class="tray-menu-item" data-i18n="bento.tray_item2">📊 打开实时流量与仪表盘监控</div>
+              <div class="tray-menu-divider"></div>
+              <div class="tray-menu-item" data-i18n="bento.tray_item3">📋 复制终端代理指令 (export http_proxy=...)</div>
+              <div class="tray-menu-item" data-i18n="bento.tray_item4">🔄 检查并静默拉取订阅更新</div>
+            </div>
+          </div>
+
+          <!-- Card 4: Lightweight & Stats Quad (7 Cols) -->
+          <div class="card spotlight-card bento-card-stats">
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;" data-i18n="bento.stats_title">🚀 极致轻量与原生性能</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;" data-i18n="bento.stats_desc">
+                告别臃肿的 Electron 架构，Flutter 原生编译实现极低内存占用与闪电启动。
+              </p>
+            </div>
+            <div class="stats-quad-grid">
+              <div class="stat-box">
+                <div class="stat-big-num accent">&lt; 28 MB</div>
+                <div class="stat-label" data-i18n="bento.stat1_label">空闲待机内存开销</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-big-num green">0.3 s</div>
+                <div class="stat-label" data-i18n="bento.stat2_label">冷启动极速就绪</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-big-num">100%</div>
+                <div class="stat-label" data-i18n="bento.stat3_label">自由开源 GPL-3.0</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-big-num accent">0</div>
+                <div class="stat-label" data-i18n="bento.stat4_label">商业广告与后台常驻遥测</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Interactive Live Latency / Speed Test Simulator Section -->
+    <section class="playground-section">
+      <div class="container">
+        <div class="playground-card spotlight-card">
+          <div class="playground-header">
+            <div>
+              <span class="section-tag" data-i18n="play.tag">LIVE BENCHMARK SIMULATOR</span>
+              <h3 style="font-size: 1.45rem; font-weight: 800; margin: 4px 0 6px 0;" data-i18n="play.title">体验全球节点毫秒级超快响应</h3>
+              <p style="font-size: 0.92rem; color: var(--text-secondary); margin: 0;" data-i18n="play.subtitle">
+                点击下方按钮即可模拟发起全球并发真实延迟探测，直观感受多节点智能调度策略。
+              </p>
+            </div>
+            <button class="btn btn-primary" id="startSimBenchmarkBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span data-i18n="play.btn_start">⚡ 开始并发测速探测</span>
+            </button>
+          </div>
+
+          <div class="playground-nodes-list">
+            <div class="sim-node-row">
+              <div class="sim-node-info">
+                <span class="sim-node-flag">🇭🇰</span>
+                <div>
+                  <div class="sim-node-title" data-i18n="play.node1_name">🇭🇰 香港 Premium BGP 01</div>
+                  <div class="sim-node-type" data-i18n="play.node1_desc">HKT 商业带宽 · 极致低延迟</div>
+                </div>
+              </div>
+              <span class="sim-node-ping-val">18 ms</span>
+            </div>
+
+            <div class="sim-node-row">
+              <div class="sim-node-info">
+                <span class="sim-node-flag">🇯🇵</span>
+                <div>
+                  <div class="sim-node-title" data-i18n="play.node2_name">🇯🇵 日本东京 CN2 GIA 02</div>
+                  <div class="sim-node-type" data-i18n="play.node2_desc">BGP 多线优化 · 4K 秒开</div>
+                </div>
+              </div>
+              <span class="sim-node-ping-val">36 ms</span>
+            </div>
+
+            <div class="sim-node-row">
+              <div class="sim-node-info">
+                <span class="sim-node-flag">🇸🇬</span>
+                <div>
+                  <div class="sim-node-title" data-i18n="play.node3_name">🇸🇬 新加坡 AWS Cloud 01</div>
+                  <div class="sim-node-type" data-i18n="play.node3_desc">东南亚节点 · 游戏竞技专线</div>
+                </div>
+              </div>
+              <span class="sim-node-ping-val">48 ms</span>
+            </div>
+
+            <div class="sim-node-row">
+              <div class="sim-node-info">
+                <span class="sim-node-flag">🇺🇸</span>
+                <div>
+                  <div class="sim-node-title" data-i18n="play.node4_name">🇺🇸 美国洛杉矶 Anycast 03</div>
+                  <div class="sim-node-type" data-i18n="play.node4_desc">跨洋骨干网 · 国际直达</div>
+                </div>
+              </div>
+              <span class="sim-node-ping-val">132 ms</span>
+            </div>
+
+            <div class="sim-node-row">
+              <div class="sim-node-info">
+                <span class="sim-node-flag">🇩🇪</span>
+                <div>
+                  <div class="sim-node-title" data-i18n="play.node5_name">🇩🇪 德国法兰克福 Europe 01</div>
+                  <div class="sim-node-type" data-i18n="play.node5_desc">欧洲核心中继枢纽</div>
+                </div>
+              </div>
+              <span class="sim-node-ping-val">168 ms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Community & Contact Section -->
+    <section class="contact-section" style="padding: 10px 0 60px 0;">
       <div class="container">
         <div class="card spotlight-card" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; padding: 32px 36px; background: var(--bg-card-elevated); border: 1px solid var(--border-color); border-radius: var(--radius-card); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           <div>
