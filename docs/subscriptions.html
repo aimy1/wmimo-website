@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('wmimo_theme');
+        if (t) {
+          document.documentElement.setAttribute('data-theme', t);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        var l = localStorage.getItem('wmimo_lang');
+        if (!l) {
+          l = (navigator.language && navigator.language.startsWith('zh')) ? 'zh' : 'en';
+        }
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-CN' : 'en');
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>订阅管理与远程规则集 - Wmimo 文档</title>
+  <meta name="description" content="Wmimo 与 Mihomo 核心订阅管理深度指南：Proxy Providers 节点集导入、Rule Providers 远程分流规则集订阅、定时自动更新与 GEOIP/GEOSITE 数据库维护。">
+  <link rel="icon" type="image/png" href="../assets/images/app_icon_128.png">
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body class="ambient-bg">
+  <div class="ambient-glow-top"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-logo">
+        <img src="../assets/images/app_icon_128.png" alt="Wmimo Logo">
+        <span>Wmimo</span>
+      </a>
+
+      <nav>
+        <ul class="nav-desktop">
+          <li><a href="../index.html" class="nav-link" data-i18n="nav.home">首页</a></li>
+          <li><a href="../download.html" class="nav-link" data-i18n="nav.download">下载</a></li>
+          <li><a href="index.html" class="nav-link active" data-i18n="nav.docs">使用文档</a></li>
+          <li><a href="../community.html" class="nav-link" data-i18n="nav.about">关于与赞助</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="lang-toggle-btn" id="langToggleBtn" aria-label="切换语言" title="切换语言 / Switch Language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="lang-code-label">EN</span>
+        </button>
+
+        <button class="theme-toggle-btn" aria-label="切换主题" data-i18n-aria="nav.theme_toggle">
+          <span class="theme-icon-slot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </span>
+        </button>
+
+        <a href="../download.html" class="btn btn-primary btn-sm" data-i18n="nav.download_app">下载客户端</a>
+
+        <button class="mobile-toggle-btn" aria-label="菜单" data-i18n-aria="nav.menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <a href="../index.html" class="nav-link" data-i18n="nav.home">首页</a>
+    <a href="../download.html" class="nav-link" data-i18n="nav.download_center">下载中心</a>
+    <a href="index.html" class="nav-link active" data-i18n="nav.docs">使用文档</a>
+    <a href="../community.html" class="nav-link" data-i18n="nav.about">关于与赞助</a>
+    <div class="mobile-drawer-footer">
+      <button class="btn btn-secondary mobile-lang-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span data-i18n="nav.mobile_lang">English / 简体中文</span>
+      </button>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="docs-layout">
+      <!-- Left Sidebar Navigation -->
+      <aside class="docs-sidebar">
+        <div class="docs-sidebar-search">
+          <div class="sidebar-search-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="sidebar-search-input" id="sidebarSearchInput" placeholder="搜索文档章节..." data-i18n-placeholder="docs.search_placeholder" autocomplete="off">
+            <button class="sidebar-search-clear" id="sidebarSearchClear" aria-label="清空搜索" style="display: none;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <div class="sidebar-search-empty" id="sidebarSearchEmpty" style="display: none;" data-i18n="docs.search_empty">无匹配文档章节</div>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title" data-i18n="docs.group_quickstart">快速起步</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="index.html" data-i18n="docs.item_quickstart">快速上手指南</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title" data-i18n="docs.group_core">核心功能与配置</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="modes.html" data-i18n="docs.item_modes">出站与分流模式</a></li>
+            <li class="docs-nav-item"><a href="tun.html" data-i18n="docs.item_tun">TUN 虚拟网卡</a></li>
+            <li class="docs-nav-item"><a href="dns.html" data-i18n="docs.item_dns">DNS 与 Fake-IP 防污染</a></li>
+            <li class="docs-nav-item"><a href="rules.html" data-i18n="docs.item_rules">高级规则与进程分流</a></li>
+            <li class="docs-nav-item"><a href="protocols.html" data-i18n="docs.item_protocols">新一代协议与 NAT</a></li>
+            <li class="docs-nav-item"><a href="sniffer.html" data-i18n="docs.item_sniffer">域名与协议嗅探器 (Sniffer)</a></li>
+            <li class="docs-nav-item"><a href="groups.html" data-i18n="docs.item_groups">策略组调度与自动容灾</a></li>
+            <li class="docs-nav-item"><a href="lan.html" data-i18n="docs.item_lan">局域网共享与游戏主机代理</a></li>
+            <li class="docs-nav-item"><a href="dashboard.html" data-i18n="docs.item_dashboard">外部控制器与 Web 仪表盘</a></li>
+            <li class="docs-nav-item active"><a href="subscriptions.html" data-i18n="docs.item_subscriptions">订阅管理与远程规则集</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-group">
+          <div class="docs-nav-title" data-i18n="docs.group_ecosystem">生态与常见问题</div>
+          <ul class="docs-nav-list">
+            <li class="docs-nav-item"><a href="clients.html" data-i18n="docs.item_clients">客户端生态导航</a></li>
+            <li class="docs-nav-item"><a href="faq.html" data-i18n="docs.item_faq">常见问题排查 (FAQ)</a></li>
+            <li class="docs-nav-item"><a href="build.html" data-i18n="docs.item_build">从源码本地编译</a></li>
+          </ul>
+        </div>
+
+      </aside>
+
+      <!-- Center Content -->
+      <section class="docs-content">
+        <article class="docs-article">
+          <div class="docs-article-header">
+            <h1 data-i18n="doc_sub.title">订阅管理与远程规则集 (Providers)</h1>
+            <p data-i18n="doc_sub.subtitle">深入掌握 Proxy Providers 节点集合并、Rule Providers 远程规则订阅、自动更新策略与 Geo 数据库维护。</p>
+          </div>
+
+          <div class="callout callout-info">
+            <div class="callout-body" data-i18n="doc_sub.intro_callout">
+              💡 <strong>什么是 Provider？</strong> Provider（提供者）是 Mihomo / Clash 核心中用于实现配置模块化与解耦的强大特性。通过 Provider，您可以将节点列表与分流规则托管在外部远程链接或独立本地文件中，实现多订阅动态合并与无人值守静默自动更新。
+            </div>
+          </div>
+
+          <h2 data-i18n="doc_sub.h2_proxy_providers">📦 1. 代理集合 (Proxy Providers)</h2>
+          <p data-i18n="doc_sub.proxy_providers_desc">
+            Proxy Providers 允许从一个或多个机场订阅链接动态拉取节点，并自动进行本地缓存与健康检查。策略组可以直接引用 Provider 包含的全部节点：
+          </p>
+
+          <div class="code-block-wrapper">
+            <div class="code-block-header">
+              <span>config.yaml</span>
+              <button class="code-copy-btn">复制</button>
+            </div>
+            <pre class="code-content">proxy-providers:
+  Airport-A:
+    type: http
+    url: "https://example.com/api/v1/client/subscribe?token=xxx"
+    path: ./profiles/proxies/airport-a.yaml
+    interval: 86400              # 自动更新间隔（秒），86400 为 24 小时
+    proxy: DIRECT                # 拉取订阅时使用的出站代理
+    filter: "(?i)香港|日本|新加坡" # 正则过滤：仅保留匹配国家/地区的节点
+    exclude-filter: "(?i)官网|剩余|流量"
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300              # 健康检查测速周期（秒）
+      timeout: 5000
+      lazy: true                 # 仅在策略组被使用时触发测速，节省流量与并发
+
+  Airport-B:
+    type: file
+    path: ./profiles/proxies/custom-nodes.yaml
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 600</pre>
+          </div>
+
+          <h2 data-i18n="doc_sub.h2_rule_providers">🛡️ 2. 远程分流规则集 (Rule Providers)</h2>
+          <p data-i18n="doc_sub.rule_providers_desc">
+            Rule Providers 让你无需在主配置文件中手写成千上万行规则，而是直接订阅由社区（如 Loyalsoldier、MetaCubeX 等）每日维护的高精度分流集：
+          </p>
+
+          <div class="code-block-wrapper">
+            <div class="code-block-header">
+              <span>config.yaml</span>
+              <button class="code-copy-btn">复制</button>
+            </div>
+            <pre class="code-content">rule-providers:
+  # 1. 规则集：OpenAI / ChatGPT / Claude (Domain 格式)
+  ai-services:
+    type: http
+    behavior: domain             # 支持 domain / ipcidr / classical
+    format: yaml                 # 支持 yaml / text / mrs (Mihomo 专属二进制加速格式)
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.yaml"
+    path: ./rules/openai.yaml
+    interval: 86400
+
+  # 2. 规则集：国内直连域名 (Classical 格式)
+  direct-domains:
+    type: http
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
+    path: ./rules/direct.txt
+    interval: 86400
+
+  # 3. 规则集：电报 Telegram IP 段 (IP-CIDR 格式)
+  telegram-cidr:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.yaml"
+    path: ./rules/telegram.yaml
+    interval: 86400</pre>
+          </div>
+
+          <h2 data-i18n="doc_sub.h2_rules_apply">🔗 3. 在 Rules 中引用 Provider 规则</h2>
+          <p data-i18n="doc_sub.rules_apply_desc">
+            在 <code>rules:</code> 段中使用 <code>RULE-SET</code> 指令引用已定义的 Rule Provider：
+          </p>
+
+          <div class="code-block-wrapper">
+            <div class="code-block-header">
+              <span>config.yaml</span>
+              <button class="code-copy-btn">复制</button>
+            </div>
+            <pre class="code-content">rules:
+  - RULE-SET,ai-services,🤖 AI服务策略组
+  - RULE-SET,direct-domains,DIRECT
+  - RULE-SET,telegram-cidr,✈️ Telegram策略组,no-resolve
+  - GEOIP,CN,DIRECT
+  - MATCH,🐟 兜底漏网之鱼</pre>
+          </div>
+
+          <h2 data-i18n="doc_sub.h2_geo_db">🌍 4. GeoIP 与 GeoSite 数据库自动更新</h2>
+          <p data-i18n="doc_sub.geo_db_desc">
+            Mihomo 内核支持直接通过配置开启 Geo 数据库的定时静默拉取与更新，确保国内外 IP 和顶级域识别始终处于最新状态：
+          </p>
+
+          <div class="code-block-wrapper">
+            <div class="code-block-header">
+              <span>config.yaml</span>
+              <button class="code-copy-btn">复制</button>
+            </div>
+            <pre class="code-content"># Geo 数据加载与更新配置
+geodata-mode: true               # 启用高性能内存 Geo 索引模式
+geo-auto-update: true            # 开启定时自动更新
+geo-update-interval: 48          # 更新周期（小时）
+
+geox-url:
+  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"</pre>
+          </div>
+
+          <div class="docs-pagination">
+            <a href="dashboard.html" class="docs-pag-btn">
+              <span class="sub" data-i18n="docs.pag_prev">上一篇</span>
+              <span class="title" data-i18n="doc_sub.prev_title">← 外部控制器与 Web 仪表盘</span>
+            </a>
+            <a href="clients.html" class="docs-pag-btn" style="text-align: right;">
+              <span class="sub" data-i18n="docs.pag_next">下一篇</span>
+              <span class="title" data-i18n="doc_sub.next_title">客户端生态导航 →</span>
+            </a>
+          </div>
+
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="site-logo">
+            <img src="../assets/images/app_icon_128.png" alt="Logo">
+            <span>Wmimo</span>
+          </a>
+          <p data-i18n="footer.brand_desc">基于 Flutter 与 Mihomo 核心打造的现代化跨平台全协议网络代理客户端。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer.nav_title">页面导航</h4>
+          <ul class="footer-links">
+            <li><a href="../download.html" data-i18n="nav.download_center">下载中心</a></li>
+            <li><a href="index.html" data-i18n="nav.docs">使用文档</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer.support_title">联系与支持</h4>
+          <ul class="footer-links">
+            <li><a href="../community.html" data-i18n="nav.about">关于与赞助</a></li>
+            <li><a href="mailto:aisaniya@proton.me" style="display: inline-flex; align-items: center; gap: 6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span>aisaniya@proton.me</span>
+            </a></li>
+            <li><a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" data-i18n="nav.github">GitHub 仓库</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div data-i18n="footer.copyright">© 2026 Wmimo Project. Open source under GPL-3.0 License.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/i18n.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
