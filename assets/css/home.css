@@ -1,20 +1,14 @@
-/* ==========================================================================
-   Wmimo Homepage - Modern 2026 Bento SaaS & Interactive Visual Design System
-   ========================================================================== */
+/* Minimalist Homepage Styles for Wmimo - Side-by-Side Split Layout */
 
-/* --------------------------------------------------------------------------
-   1. Hero Section & Typography
-   -------------------------------------------------------------------------- */
+/* Hero Section */
 .hero-section {
-  position: relative;
-  padding: 64px 0 52px 0;
-  overflow: hidden;
+  padding: 56px 0 48px 0;
 }
 
 .hero-split {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 52px;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 48px;
   align-items: center;
 }
 
@@ -22,812 +16,143 @@
   text-align: left;
 }
 
-/* Glowing Pill Tag */
 .hero-tag {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  background: rgba(var(--brand-primary-rgb), 0.12);
-  border: 1px solid rgba(var(--brand-primary-rgb), 0.35);
-  color: var(--brand-primary-light);
+  gap: 6px;
+  padding: 4px 12px;
+  background: var(--badge-bg);
+  color: var(--badge-text);
   border-radius: var(--radius-full);
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  margin-bottom: 22px;
-  box-shadow: 0 0 20px rgba(var(--brand-primary-rgb), 0.15);
-  transition: all var(--transition-fast);
-}
-
-.hero-tag:hover {
-  background: rgba(var(--brand-primary-rgb), 0.2);
-  border-color: var(--brand-primary);
-  transform: translateY(-1px);
-}
-
-.hero-tag .tag-dot {
-  width: 7px;
-  height: 7px;
-  background: var(--brand-primary-light);
-  border-radius: 50%;
-  box-shadow: 0 0 8px var(--brand-primary-light);
-  animation: pulse-glow 2s infinite ease-in-out;
-}
-
-@keyframes pulse-glow {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.6; }
+  margin-bottom: 18px;
 }
 
 .hero-title {
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
   font-weight: 800;
-  line-height: 1.16;
-  margin-bottom: 20px;
-  letter-spacing: -0.03em;
+  line-height: 1.18;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 30px;
-  max-width: 540px;
+  line-height: 1.65;
+  margin-bottom: 28px;
 }
 
 .hero-cta {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .hero-meta {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
-  font-size: 0.86rem;
-  color: var(--text-secondary);
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
-.hero-meta-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-/* --------------------------------------------------------------------------
-   2. High-Fidelity Interactive Client Window Mockup (Hero Right)
-   -------------------------------------------------------------------------- */
+/* Right Screenshot Frame */
 .hero-right {
   position: relative;
 }
 
-.app-window-mockup {
+.screenshot-frame {
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
-  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.45), 0 0 50px rgba(var(--brand-primary-rgb), 0.12);
-  overflow: hidden;
-  backdrop-filter: blur(20px);
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
-}
-
-.app-window-mockup:hover {
-  border-color: rgba(var(--brand-primary-rgb), 0.45);
-  box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.55), 0 0 60px rgba(var(--brand-primary-rgb), 0.2);
-  transform: translateY(-3px);
-}
-
-/* Mockup Title Bar */
-.mockup-titlebar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.025);
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.mockup-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.mockup-dot {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-}
-
-.mockup-dot.dot-red { background: #FF5F56; }
-.mockup-dot.dot-yellow { background: #FFBD2E; }
-.mockup-dot.dot-green { background: #27C93F; }
-
-.mockup-title {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.mockup-status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.74rem;
-  padding: 2px 8px;
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--status-green);
-  border-radius: var(--radius-full);
-  font-weight: 600;
-}
-
-.mockup-status-badge::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: var(--status-green);
-  border-radius: 50%;
-  box-shadow: 0 0 6px var(--status-green);
-}
-
-/* Mockup Body Content */
-.mockup-body {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* Mockup Speed Metrics Header */
-.mockup-speed-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.mockup-speed-card {
-  background: var(--bg-card-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 12px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.mockup-speed-label {
-  font-size: 0.76rem;
-  color: var(--text-muted);
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.mockup-speed-val {
-  font-family: var(--font-mono);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.mockup-speed-val.upload { color: #38BDF8; }
-.mockup-speed-val.download { color: #10B981; }
-
-/* Mockup Mode Selector Pills */
-.mockup-mode-selector {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px;
-  background: var(--bg-input);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-}
-
-.mockup-mode-btn {
-  flex: 1;
-  text-align: center;
-  padding: 6px 10px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: var(--radius-sm);
-  color: var(--text-secondary);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.mockup-mode-btn.active {
-  background: var(--brand-primary);
-  color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(var(--brand-primary-rgb), 0.35);
-}
-
-.mockup-mode-btn:hover:not(.active) {
-  color: var(--text-primary);
-  background: var(--bg-subtle);
-}
-
-/* Mockup Active Node Display */
-.mockup-node-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--bg-card-elevated);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 12px 14px;
-}
-
-.mockup-node-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.mockup-node-flag {
-  font-size: 1.2rem;
-}
-
-.mockup-node-name {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.mockup-node-proto {
-  font-size: 0.74rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-}
-
-.mockup-node-ping {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 8px;
-  background: rgba(16, 185, 129, 0.12);
-  color: var(--status-green);
-  border-radius: var(--radius-full);
-  font-size: 0.78rem;
-  font-weight: 700;
-  font-family: var(--font-mono);
-}
-
-.mockup-node-ping::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: var(--status-green);
-  border-radius: 50%;
-}
-
-/* Mockup Bottom Controls */
-.mockup-bottom-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding-top: 4px;
-}
-
-.mockup-tun-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.mockup-switch {
-  position: relative;
-  display: inline-block;
-  width: 38px;
-  height: 20px;
-}
-
-.mockup-switch input { opacity: 0; width: 0; height: 0; }
-
-.mockup-slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(255, 255, 255, 0.15);
-  transition: .3s;
-  border-radius: 20px;
-}
-
-.mockup-slider:before {
-  position: absolute;
-  content: "";
-  height: 14px;
-  width: 14px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: .3s;
-  border-radius: 50%;
-}
-
-.mockup-switch input:checked + .mockup-slider {
-  background-color: var(--brand-primary);
-}
-
-.mockup-switch input:checked + .mockup-slider:before {
-  transform: translateX(18px);
-}
-
-.mockup-action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.mockup-action-btn:hover {
-  background: var(--bg-card-elevated);
-  border-color: var(--border-color);
-  color: var(--text-primary);
-}
-
-/* --------------------------------------------------------------------------
-   3. One-Liner Install Strip Section
-   -------------------------------------------------------------------------- */
-.install-strip-section {
-  padding: 24px 0 40px 0;
-}
-
-.install-strip-card {
-  background: var(--bg-card-elevated);
-  border: 1px solid var(--border-color);
   border-radius: var(--radius-card);
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  box-shadow: var(--shadow-card);
-}
-
-.install-strip-tabs {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.install-tab-btn {
-  padding: 6px 12px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  border-radius: var(--radius-sm);
-  background: transparent;
-  border: 1px solid transparent;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.install-tab-btn.active {
-  background: var(--bg-subtle);
-  border-color: var(--border-subtle);
-  color: var(--brand-primary-light);
-}
-
-.install-tab-btn:hover:not(.active) {
-  color: var(--text-primary);
-}
-
-.install-command-box {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--bg-input);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 8px 14px;
-  flex: 1;
-  min-width: 280px;
-}
-
-.install-command-code {
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
-  color: var(--text-primary);
-  flex: 1;
-  white-space: nowrap;
+  padding: 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(var(--brand-primary-rgb), 0.08);
+  transition: all var(--transition-normal);
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.install-command-code .cmd-prefix {
-  color: var(--brand-primary);
-  margin-right: 6px;
-  user-select: none;
-}
-
-.install-copy-btn {
-  background: transparent;
-  border: none;
-  color: var(--text-muted);
-  cursor: pointer;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-  transition: all var(--transition-fast);
-}
-
-.install-copy-btn:hover {
-  color: var(--brand-primary);
-  background: var(--bg-subtle);
-}
-
-/* --------------------------------------------------------------------------
-   4. Bento Grid 2.0 Section
-   -------------------------------------------------------------------------- */
-.bento-section {
-  padding: 48px 0 64px 0;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-tag {
-  display: inline-block;
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--brand-primary);
-  margin-bottom: 10px;
-}
-
-.section-title {
-  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 12px;
-}
-
-.section-subtitle {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* The 4-Card Bento Grid Layout */
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 24px;
-}
-
-/* Card 1: Protocol Matrix (Spans 8 cols) */
-.bento-card-protocols {
-  grid-column: span 8;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.protocol-chips-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 12px;
-  margin-top: 24px;
-}
-
-.protocol-chip {
-  background: var(--bg-card-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 12px 14px;
-  transition: all var(--transition-fast);
-}
-
-.protocol-chip:hover {
+.screenshot-frame:hover {
   border-color: rgba(var(--brand-primary-rgb), 0.4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), 0 0 50px rgba(var(--brand-primary-rgb), 0.15);
   transform: translateY(-2px);
 }
 
-.protocol-chip-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 4px;
-}
-
-.protocol-name {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.protocol-tag {
-  font-size: 0.72rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: rgba(var(--brand-primary-rgb), 0.12);
-  color: var(--brand-primary-light);
-  font-weight: 600;
-}
-
-.protocol-desc {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-}
-
-/* Card 2: TUN Mode Flow (Spans 4 cols) */
-.bento-card-tun {
-  grid-column: span 4;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.tun-flow-visual {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.tun-flow-step {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--bg-card-elevated);
+.screenshot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 10px 14px;
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: var(--text-primary);
 }
 
-.tun-flow-icon {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  background: rgba(var(--brand-primary-rgb), 0.1);
-  color: var(--brand-primary);
-  font-size: 0.95rem;
+/* Feature Grid */
+.features-section {
+  padding: 48px 0 72px 0;
 }
 
-.tun-flow-arrow {
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  line-height: 1;
-}
-
-/* Card 3: Tray Mockup (Spans 5 cols) */
-.bento-card-tray {
-  grid-column: span 5;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.tray-menu-mockup {
-  margin-top: 20px;
-  background: var(--bg-card-elevated);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.tray-menu-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 12px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  border-radius: 6px;
-  transition: all var(--transition-fast);
-}
-
-.tray-menu-item.active {
-  background: rgba(var(--brand-primary-rgb), 0.12);
-  color: var(--brand-primary-light);
-  font-weight: 600;
-}
-
-.tray-menu-item:hover:not(.active) {
-  background: var(--bg-subtle);
-  color: var(--text-primary);
-}
-
-.tray-menu-divider {
-  height: 1px;
-  background: var(--border-subtle);
-  margin: 4px 0;
-}
-
-/* Card 4: Light Weight Stats (Spans 7 cols) */
-.bento-card-stats {
-  grid-column: span 7;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.stats-quad-grid {
+.features-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-top: 24px;
-}
-
-.stat-box {
-  background: var(--bg-card-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 16px 18px;
-}
-
-.stat-big-num {
-  font-size: 1.8rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
-  font-family: var(--font-mono);
-  margin-bottom: 4px;
-}
-
-.stat-big-num.accent { color: var(--brand-primary-light); }
-.stat-big-num.green { color: var(--status-green); }
-
-.stat-label {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-/* --------------------------------------------------------------------------
-   5. Interactive Live Latency / Speed Test Simulator Section
-   -------------------------------------------------------------------------- */
-.playground-section {
-  padding: 40px 0 60px 0;
-}
-
-.playground-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 24px;
-  padding: 36px;
-  box-shadow: var(--shadow-card);
-}
-
-.playground-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 28px;
 }
 
-.playground-nodes-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.sim-node-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 18px;
-  background: var(--bg-card-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  transition: all var(--transition-fast);
-}
-
-.sim-node-row:hover {
-  border-color: rgba(var(--brand-primary-rgb), 0.35);
-  background: var(--bg-subtle);
-}
-
-.sim-node-info {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.sim-node-flag { font-size: 1.3rem; }
-.sim-node-title { font-size: 0.92rem; font-weight: 600; color: var(--text-primary); }
-.sim-node-type { font-size: 0.76rem; color: var(--text-muted); font-family: var(--font-mono); }
-
-.sim-node-ping-val {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-  background: rgba(16, 185, 129, 0.12);
-  color: var(--status-green);
-}
-
-/* --------------------------------------------------------------------------
-   6. Responsive Breakpoints
-   -------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 36px 0 32px 0;
+  }
   .hero-split {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
   .hero-left {
     text-align: center;
   }
-  .hero-subtitle {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-cta, .hero-meta {
+  .hero-cta {
     justify-content: center;
   }
-  .bento-card-protocols,
-  .bento-card-tun,
-  .bento-card-tray,
-  .bento-card-stats {
-    grid-column: span 12;
+  .features-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 640px) {
-  .hero-section { padding: 36px 0 32px 0; }
-  .hero-title { font-size: 2rem; }
-  .hero-cta { flex-direction: column; width: 100%; }
-  .hero-cta .btn { width: 100%; justify-content: center; }
-  .app-window-mockup { border-radius: 16px; }
-  .mockup-body { padding: 14px; }
-  .install-strip-card { flex-direction: column; align-items: stretch; }
-  .install-command-box { min-width: 100%; }
-  .protocol-chips-grid { grid-template-columns: 1fr; }
-  .stats-quad-grid { grid-template-columns: 1fr; }
-  .playground-card { padding: 20px; }
+@media (max-width: 540px) {
+  .hero-section {
+    padding: 24px 0 28px 0;
+  }
+  .hero-tag {
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+  }
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .screenshot-frame {
+    padding: 6px;
+    border-radius: 14px;
+  }
+  .features-section {
+    padding: 32px 0 48px 0;
+  }
+  .card {
+    padding: 20px 18px;
+  }
 }
