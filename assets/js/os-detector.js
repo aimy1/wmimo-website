@@ -1,11 +1,11 @@
 /**
  * Smart OS Detection & Direct Release Asset URL Engine for Wmimo
- * Version: v1.0.33
+ * Version: v1.0.34
  * Supports dynamic i18n re-rendering
  */
 
 (function() {
-  const RELEASE_TAG = 'v1.0.33';
+  const RELEASE_TAG = 'v1.0.34';
   const BASE_URL = `https://github.com/aimy1/Wmimo/releases/download/${RELEASE_TAG}`;
 
   // Standard Official SVG Brand Logos
