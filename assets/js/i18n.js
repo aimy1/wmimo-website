@@ -24,7 +24,7 @@
       'nav.download_app': '下载客户端',
 
       // Hero Section (Home)
-      'hero.tag': '🚀 Wmimo v1.0.33 正式发布',
+      'hero.tag': '🚀 Wmimo v1.0.34 正式发布',
       'hero.title_pre': '极速、优雅、强大的',
       'hero.title_grad': '跨平台网络代理客户端',
       'hero.subtitle': '基于 Flutter 与 Mihomo 核心打造。提供全协议网络支持、TUN 虚拟网卡系统级接管、全功能系统托盘与 18px 微卡片设计美学。',
@@ -58,7 +58,7 @@
       // Download Page
       'dl.hero_title': '下载 Wmimo 客户端',
       'dl.hero_subtitle': '为 Windows、Linux 和 Android 平台量身打造的官方正式发行版本。轻巧稳定，原生适配。',
-      'dl.badge_latest': '最新正式版 v1.0.33',
+      'dl.badge_latest': '最新正式版 v1.0.34',
       'dl.smart_rec_title': '推荐下载：Wmimo for {os}',
       'dl.smart_rec_meta': '{pkg} · 架构: x64/arm64 · 官方构建产物',
       'dl.smart_rec_btn': '直接下载 {ext}',
@@ -363,7 +363,7 @@
       'modal.notice_title': '服务维护与更新提示',
       'modal.notice_greeting': '尊敬的用户：',
       'modal.notice_p1': '受近期主服务器维护影响，客户端内置的<strong>在线更新通道暂时无法提供服务</strong>。',
-      'modal.notice_highlight': '🚀 获取最新构建版本（v1.0.33）及各平台安装包，还请直接前往 <strong>GitHub Releases</strong> 官方页面下载。',
+      'modal.notice_highlight': '🚀 获取最新构建版本（v1.0.34）及各平台安装包，还请直接前往 <strong>GitHub Releases</strong> 官方页面下载。',
       'modal.notice_footer_note': '* 服务恢复后将第一时间恢复应用内静默升级通道，给您带来的不便敬请谅解。',
       'modal.dont_show_7d': '7天内不再提示',
       'modal.btn_ack': '我已知晓',
@@ -387,7 +387,7 @@
       'nav.download_app': 'Download App',
 
       // Hero Section (Home)
-      'hero.tag': '🚀 Wmimo v1.0.33 Released',
+      'hero.tag': '🚀 Wmimo v1.0.34 Released',
       'hero.title_pre': 'Fast, Elegant, Powerful',
       'hero.title_grad': 'Cross-Platform Proxy Client',
       'hero.subtitle': 'Crafted with Flutter & Mihomo Core. Features full-protocol networking, system-level TUN virtual NIC take-over, full-featured system tray, and clean 18px micro-card aesthetics.',
@@ -421,7 +421,7 @@
       // Download Page
       'dl.hero_title': 'Download Wmimo Client',
       'dl.hero_subtitle': 'Official production release binaries tailored for Windows, Linux, and Android. Lightweight, secure, and native.',
-      'dl.badge_latest': 'Latest Stable Release v1.0.33',
+      'dl.badge_latest': 'Latest Stable Release v1.0.34',
       'dl.smart_rec_title': 'Recommended Download: Wmimo for {os}',
       'dl.smart_rec_meta': '{pkg} · Architecture: x64/arm64 · Official Release',
       'dl.smart_rec_btn': 'Download {ext}',
@@ -726,7 +726,7 @@
       'modal.notice_title': 'Service Notice & Update Advisory',
       'modal.notice_greeting': 'Dear Users:',
       'modal.notice_p1': 'Due to recent server maintenance, the in-app <strong>online update channel is temporarily unavailable</strong>.',
-      'modal.notice_highlight': '🚀 To obtain the latest release (v1.0.33) and platform packages, please download directly from official <strong>GitHub Releases</strong>.',
+      'modal.notice_highlight': '🚀 To obtain the latest release (v1.0.34) and platform packages, please download directly from official <strong>GitHub Releases</strong>.',
       'modal.notice_footer_note': '* In-app silent updates will be restored immediately once server migration finishes.',
       'modal.dont_show_7d': "Don't show again for 7 days",
       'modal.btn_ack': 'Got It',
