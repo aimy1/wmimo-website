@@ -1299,29 +1299,40 @@
   font-weight: 700;
 }
 
-/* Real Speedometer Needle Pointer */
+/* High-Precision Speedometer Needle Pointer */
 .gauge-needle {
   transform-origin: 110px 110px;
-  transition: transform 0.08s linear;
   pointer-events: none;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+  will-change: transform;
 }
 
 .needle-blade {
   fill: #00E5FF;
 }
 
-.needle-tip-glow {
+.needle-tip {
   fill: #FFFFFF;
 }
 
+.needle-spine {
+  stroke: rgba(255, 255, 255, 0.7);
+  stroke-width: 0.8;
+  stroke-linecap: round;
+}
+
 .needle-pivot-outer {
-  fill: var(--bg-card);
+  fill: #1E293B;
   stroke: var(--brand-primary);
-  stroke-width: 2.5;
+  stroke-width: 2;
 }
 
 .needle-pivot-inner {
-  fill: var(--brand-primary);
+  fill: var(--bg-card);
+}
+
+.needle-pivot-pin {
+  fill: #00E5FF;
 }
 
 .gauge-center-content {
