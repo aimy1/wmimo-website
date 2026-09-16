@@ -102,7 +102,8 @@
     pingCount: 6,
     downDurationMs: 8500,
     upDurationMs: 6500,
-    maxGaugeSpeed: 1000 // Mbps
+    maxGaugeSpeed: 1000, // Mbps
+    arcLength: 328
   };
 
   // State
@@ -133,7 +134,7 @@
       gaugeSpeedVal: document.getElementById('gaugeSpeedVal'),
       gaugeSpeedUnit: document.getElementById('gaugeSpeedUnit'),
       gaugeProgressArc: document.getElementById('gaugeProgressArc'),
-      gaugePointer: document.getElementById('gaugePointer'),
+      gaugeNeedle: document.getElementById('gaugeNeedle'),
       pingVal: document.getElementById('pingVal'),
       jitterVal: document.getElementById('jitterVal'),
       downloadVal: document.getElementById('downloadVal'),
@@ -192,14 +193,14 @@
         dom.gaugeSpeedVal.innerText = val.toFixed(val >= 100 ? 0 : 1);
       }
 
-      // Update Arc offset
+      // Update Arc offset (stroke-dashoffset: 328 to 0)
       const offset = speedToOffset(val);
       if (dom.gaugeProgressArc) {
         dom.gaugeProgressArc.style.strokeDashoffset = offset;
       }
 
-      // Update Pointer Position along arc
-      updatePointerPos(val);
+      // Update Needle Pointer Rotation (-125deg to +125deg)
+      updateNeedlePos(val);
 
       // Light up dial ticks
       updateDialTicks(val);
@@ -217,40 +218,29 @@
   }
 
   /**
-   * Logarithmic mapping of Mbps (0 to 1000) to arc strokeDashoffset (440 to 0)
+   * Logarithmic mapping of Mbps (0 to 1000) to arc strokeDashoffset (328 to 0)
    */
   function speedToOffset(mbps) {
-    if (mbps <= 0) return 440;
+    if (mbps <= 0) return CONFIG.arcLength;
     const maxVal = CONFIG.maxGaugeSpeed;
     const clamped = Math.min(mbps, maxVal);
     const ratio = Math.min(1, Math.log10(1 + (clamped / maxVal) * 9));
-    const offset = 440 - (ratio * 440);
-    return Math.max(0, Math.min(440, offset));
+    const offset = CONFIG.arcLength - (ratio * CONFIG.arcLength);
+    return Math.max(0, Math.min(CONFIG.arcLength, offset));
   }
 
   /**
-   * Calculate needle / pointer coordinates on arc:
-   * Arc center: (110, 110), Radius: 75
-   * Start angle: 145 deg (2.53 rad) to 395 deg (6.89 rad)
+   * Calculate needle rotation angle (-125deg to +125deg)
    */
-  function updatePointerPos(mbps) {
-    if (!dom.gaugePointer) return;
+  function updateNeedlePos(mbps) {
+    if (!dom.gaugeNeedle) return;
     const maxVal = CONFIG.maxGaugeSpeed;
     const clamped = Math.min(mbps, maxVal);
     const ratio = Math.min(1, Math.log10(1 + (clamped / maxVal) * 9));
 
-    const startAngle = 145 * (Math.PI / 180);
-    const sweep = 250 * (Math.PI / 180);
-    const curAngle = startAngle + ratio * sweep;
-
-    const cx = 110;
-    const cy = 110;
-    const r = 75;
-    const px = cx + r * Math.cos(curAngle);
-    const py = cy + r * Math.sin(curAngle);
-
-    dom.gaugePointer.setAttribute('cx', px.toFixed(1));
-    dom.gaugePointer.setAttribute('cy', py.toFixed(1));
+    // -125 deg at 0 Mbps, +125 deg at 1000 Mbps
+    const angle = -125 + (ratio * 250);
+    dom.gaugeNeedle.style.transform = `rotate(${angle.toFixed(1)}deg)`;
   }
 
   function updateDialTicks(speedMbps) {
