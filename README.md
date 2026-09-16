@@ -32,7 +32,7 @@
 ### 1. 主站核心页面
 - **[首页 (`index.html`)](index.html)**：左右分栏首屏设计、精美客户端实机展示视窗、4 大核心特性卡片与联系通道。
 - **[下载中心 (`download.html`)](download.html)**：自动嗅探识别用户操作系统，提供 Windows（x64 / ARM64）、Linux 各大发行版（Deb / RPM / Arch / AppImage）以及 Android 安装包直达。
-- **[在线网络测速 (`speedtest.html`)](speedtest.html)**：实时多维网络基准测试，支持延迟 (Ping)、抖动 (Jitter)、多并发下行吞吐率与上行吞吐率，包含动态 SVG 仪表盘与 Canvas 实时测速波形。
+- **[在线网络测速 (`speedtest.html`)](speedtest.html)**：实时多维网络基准测试中心，支持多服务器节点切换（全球 Anycast 优选、亚太、北美、欧洲）与并行延迟预探测，提供平滑阻尼插值 SVG 发光仪表盘、高刷动态雷达波形图、抖动 (Jitter) 分析与访客节点精准诊断。
 - **[关于与赞助 (`community.html`)](community.html)**：项目开源协议说明、APTOS USDT 赞助通道、开发者联系方式与交流反馈。
 
 ### 2. 技术文档系统 (`docs/`)
