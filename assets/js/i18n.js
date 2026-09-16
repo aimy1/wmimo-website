@@ -14,6 +14,7 @@
       'nav.download': '下载',
       'nav.download_center': '下载中心',
       'nav.docs': '使用文档',
+      'nav.speedtest': '在线测速',
       'nav.about': '关于与赞助',
       'nav.github': 'GitHub 仓库',
       'nav.theme_toggle': '切换主题',
@@ -368,7 +369,29 @@
       'modal.dont_show_7d': '7天内不再提示',
       'modal.btn_ack': '我已知晓',
       'modal.btn_github': '前往 GitHub 下载',
-      'btn.back_to_top': '回到顶部'
+      'btn.back_to_top': '回到顶部',
+
+      // SpeedTest Page
+      'st.hero_title': '在线网络测速',
+      'st.hero_subtitle': '实时多维网络基准测试：延迟、抖动、下行吞吐率与上行吞吐率',
+      'st.badge_live': '⚡ 全球 Anycast 边缘测速节点',
+      'st.btn_start': '开始测速',
+      'st.btn_stop': '停止测速',
+      'st.phase_idle': '就绪待测',
+      'st.metric_ping': '延迟 (Ping)',
+      'st.metric_jitter': '网络抖动 (Jitter)',
+      'st.metric_down': '下载速率',
+      'st.metric_up': '上传速率',
+      'st.chart_title': '实时网络吞吐波形图',
+      'st.legend_down': '下行速率 (Mbps)',
+      'st.legend_up': '上行速率 (Mbps)',
+      'st.diag_ip': '访客公网 IP',
+      'st.diag_colo': '接入数据中心',
+      'st.diag_proto': '传输协议 / TLS',
+      'st.diag_route': '路由网络类型',
+      'st.tips_title': '💡 如何利用在线测速优化代理与节点？',
+      'st.tips_desc': '在开启 Wmimo 代理客户端后刷新本页测速，即可准确评估当前分流规则或节点的真实上下行吞吐与丢包稳定性。客户端 v1.1.0 现已内置桌面端原生测速模块，欢迎下载体验！',
+      'st.btn_download_client': '下载 Wmimo 客户端'
     },
 
     en: {
@@ -377,6 +400,7 @@
       'nav.download': 'Download',
       'nav.download_center': 'Downloads',
       'nav.docs': 'Documentation',
+      'nav.speedtest': 'Speed Test',
       'nav.about': 'About & Sponsor',
       'nav.github': 'GitHub Repo',
       'nav.theme_toggle': 'Toggle Theme',
@@ -731,7 +755,29 @@
       'modal.dont_show_7d': "Don't show again for 7 days",
       'modal.btn_ack': 'Got It',
       'modal.btn_github': 'Go to GitHub Releases',
-      'btn.back_to_top': 'Back to Top'
+      'btn.back_to_top': 'Back to Top',
+
+      // SpeedTest Page
+      'st.hero_title': 'Online Speed Test',
+      'st.hero_subtitle': 'Real-time multi-dimensional network benchmark: Latency, Jitter, Download & Upload Throughput',
+      'st.badge_live': '⚡ Global Anycast Edge Benchmark',
+      'st.btn_start': 'Start Test',
+      'st.btn_stop': 'Stop Test',
+      'st.phase_idle': 'STANDBY',
+      'st.metric_ping': 'Latency (Ping)',
+      'st.metric_jitter': 'Jitter',
+      'st.metric_down': 'Download Speed',
+      'st.metric_up': 'Upload Speed',
+      'st.chart_title': 'Real-time Throughput Waveform',
+      'st.legend_down': 'Download (Mbps)',
+      'st.legend_up': 'Upload (Mbps)',
+      'st.diag_ip': 'Client Public IP',
+      'st.diag_colo': 'Edge Data Center',
+      'st.diag_proto': 'Protocol / TLS',
+      'st.diag_route': 'Route / Network',
+      'st.tips_title': '💡 How to Optimize Proxies with Speed Test?',
+      'st.tips_desc': 'Run this benchmark with Wmimo client enabled to evaluate proxy throughput, latency, and connection stability. Wmimo v1.1.0 also includes a native in-app speed test engine!',
+      'st.btn_download_client': 'Download Wmimo Client'
     }
   };
 
