@@ -184,8 +184,8 @@
     function tick() {
       // Lerp smooth approach
       const diff = state.targetSpeed - state.displaySpeed;
-      if (Math.abs(diff) > 0.05) {
-        state.displaySpeed += diff * 0.18;
+      if (Math.abs(diff) > 0.02) {
+        state.displaySpeed += diff * 0.16;
       } else {
         state.displaySpeed = state.targetSpeed;
       }
@@ -195,7 +195,7 @@
         dom.gaugeSpeedVal.innerText = val.toFixed(val >= 100 ? 0 : 1);
       }
 
-      // Update Arc offset (stroke-dashoffset: 328 to 0)
+      // Update Arc offset (stroke-dashoffset: 279 to 0)
       const offset = speedToOffset(val);
       if (dom.gaugeProgressArc) {
         dom.gaugeProgressArc.style.strokeDashoffset = offset;
@@ -232,7 +232,7 @@
   }
 
   /**
-   * Calculate needle rotation angle (-125deg to +125deg)
+   * Calculate needle rotation angle (-125deg to +125deg) with high sub-pixel precision
    */
   function updateNeedlePos(mbps) {
     if (!dom.gaugeNeedle) return;
@@ -242,7 +242,7 @@
 
     // -125 deg at 0 Mbps, +125 deg at 1000 Mbps
     const angle = -125 + (ratio * 250);
-    dom.gaugeNeedle.style.transform = `rotate(${angle.toFixed(1)}deg)`;
+    dom.gaugeNeedle.style.transform = `rotate(${angle.toFixed(2)}deg)`;
   }
 
   function updateDialTicks(speedMbps) {
