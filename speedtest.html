@@ -88,10 +88,50 @@
 
     <div class="speedtest-container">
 
+      <!-- Server Selection Bar -->
+      <div class="speed-server-bar spotlight-card">
+        <div class="speed-server-current">
+          <div class="server-status-beacon">
+            <span class="beacon-pulse"></span>
+            <span class="beacon-dot"></span>
+          </div>
+          <div class="server-info-text">
+            <div class="server-title-row">
+              <span class="server-name" id="currentServerName">⚡ 全球 Anycast 边缘优选</span>
+              <span class="server-latency-badge" id="currentServerPing"><span class="latency-val">--</span> ms</span>
+            </div>
+            <span class="server-endpoint-desc" id="currentServerDesc" data-i18n="st.server_auto_desc">Cloudflare 300+ 城市全球网络 · 自动选路</span>
+          </div>
+        </div>
+        <div class="speed-server-actions">
+          <button class="btn btn-secondary btn-sm server-select-btn" id="serverSelectBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            <span data-i18n="st.btn_switch_server">切换节点</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <button class="btn btn-secondary btn-sm server-probe-btn" id="serverProbeBtn" title="探测服务器延迟" data-i18n-title="st.reprobe">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Server Selection Modal -->
+      <div class="server-drawer-modal" id="serverDrawerModal">
+        <div class="server-drawer-backdrop" id="serverDrawerBackdrop"></div>
+        <div class="server-drawer-content spotlight-card">
+          <div class="server-drawer-header">
+            <h4 data-i18n="st.select_server_title">选择测速服务器与节点</h4>
+            <button class="btn btn-secondary btn-sm" id="serverDrawerClose" style="padding: 4px 10px;">✕</button>
+          </div>
+          <div class="server-node-list" id="serverNodeList"></div>
+        </div>
+      </div>
+
       <!-- 1. Central Speedometer Gauge Card -->
       <div class="speedtest-dashboard spotlight-card">
+        <div class="gauge-halo-glow"></div>
         <div class="speed-gauge-wrap">
-          <svg class="speed-gauge-svg" viewBox="0 0 220 160">
+          <svg class="speed-gauge-svg" viewBox="0 0 220 180">
             <defs>
               <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="#00BCDF" />
@@ -99,10 +139,27 @@
                 <stop offset="100%" stop-color="#00E5FF" />
               </linearGradient>
             </defs>
-            <!-- Background Arc: radius 70, center (110, 110), 200 degrees -->
+            <!-- Background Arc -->
             <path class="gauge-bg-arc" d="M 40 125 A 75 75 0 1 1 180 125" />
             <!-- Progress Arc -->
             <path id="gaugeProgressArc" class="gauge-progress-arc" d="M 40 125 A 75 75 0 1 1 180 125" />
+            <!-- Dial Ticks & Scale -->
+            <line id="gaugeTickLine_0" class="gauge-tick-line" x1="39.6" y1="159.3" x2="33.8" y2="163.3" />
+            <text id="gaugeTickText_0" class="gauge-tick-text" x="24.8" y="169.7">0</text>
+            <line id="gaugeTickLine_1" class="gauge-tick-line" x1="32.5" y1="147.2" x2="26.2" y2="150.2" />
+            <text id="gaugeTickText_1" class="gauge-tick-text" x="16.2" y="155.0">10</text>
+            <line id="gaugeTickLine_2" class="gauge-tick-line" x1="24.4" y1="102.0" x2="17.4" y2="101.3" />
+            <text id="gaugeTickText_2" class="gauge-tick-text" x="6.5" y="100.3">50</text>
+            <line id="gaugeTickLine_3" class="gauge-tick-line" x1="39.3" y1="61.1" x2="33.5" y2="57.1" />
+            <text id="gaugeTickText_3" class="gauge-tick-text" x="24.5" y="50.8">100</text>
+            <line id="gaugeTickLine_4" class="gauge-tick-line" x1="114.5" y1="24.1" x2="114.8" y2="17.1" />
+            <text id="gaugeTickText_4" class="gauge-tick-text" x="115.4" y="6.1">250</text>
+            <line id="gaugeTickLine_5" class="gauge-tick-line" x1="184.5" y1="67.1" x2="190.6" y2="63.6" />
+            <text id="gaugeTickText_5" class="gauge-tick-text" x="200.1" y="58.1">500</text>
+            <line id="gaugeTickLine_6" class="gauge-tick-line" x1="180.4" y1="159.3" x2="186.2" y2="163.3" />
+            <text id="gaugeTickText_6" class="gauge-tick-text" x="195.2" y="169.7">1G</text>
+            <!-- Needle / Pointer Circle -->
+            <circle id="gaugePointer" class="gauge-pointer-dot" cx="40" cy="125" r="4.5" />
           </svg>
 
           <div class="gauge-center-content">
@@ -116,6 +173,7 @@
         </div>
 
         <div class="speedtest-action-wrap">
+          <span class="btn-speed-ripple"></span>
           <button id="speedStartBtn" class="btn btn-primary btn-speed-hero">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             <span id="speedBtnText" data-i18n="st.btn_start">开始测速</span>
@@ -202,6 +260,10 @@
             <span data-i18n="st.chart_title">实时网络吞吐波形图</span>
           </h3>
           <div class="speed-chart-legend">
+            <div class="speed-chart-peak">
+              <span data-i18n="st.chart_peak">最高峰值</span>:
+              <span id="chartPeakVal">-- Mbps</span>
+            </div>
             <div class="legend-item">
               <span class="legend-line download"></span>
               <span data-i18n="st.legend_down">下行速率 (Mbps)</span>
