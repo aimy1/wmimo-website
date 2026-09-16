@@ -97,13 +97,15 @@
     { val: 1000, label: '1G' }
   ];
 
+  const MINOR_TICKS = [5, 20, 30, 40, 75, 150, 200, 350, 750];
+
   // Engine Configuration
   const CONFIG = {
     pingCount: 6,
     downDurationMs: 8500,
     upDurationMs: 6500,
     maxGaugeSpeed: 1000, // Mbps
-    arcLength: 328
+    arcLength: 279
   };
 
   // State
@@ -218,13 +220,13 @@
   }
 
   /**
-   * Logarithmic mapping of Mbps (0 to 1000) to arc strokeDashoffset (328 to 0)
+   * Balanced scale mapping of Mbps (0 to 1000) to arc strokeDashoffset (279 to 0)
    */
   function speedToOffset(mbps) {
     if (mbps <= 0) return CONFIG.arcLength;
     const maxVal = CONFIG.maxGaugeSpeed;
     const clamped = Math.min(mbps, maxVal);
-    const ratio = Math.min(1, Math.log10(1 + (clamped / maxVal) * 9));
+    const ratio = Math.min(1, Math.pow(clamped / maxVal, 0.5));
     const offset = CONFIG.arcLength - (ratio * CONFIG.arcLength);
     return Math.max(0, Math.min(CONFIG.arcLength, offset));
   }
@@ -236,7 +238,7 @@
     if (!dom.gaugeNeedle) return;
     const maxVal = CONFIG.maxGaugeSpeed;
     const clamped = Math.min(mbps, maxVal);
-    const ratio = Math.min(1, Math.log10(1 + (clamped / maxVal) * 9));
+    const ratio = Math.min(1, Math.pow(clamped / maxVal, 0.5));
 
     // -125 deg at 0 Mbps, +125 deg at 1000 Mbps
     const angle = -125 + (ratio * 250);
@@ -255,6 +257,14 @@
       if (textEl) {
         if (isLit) textEl.classList.add('is-lit');
         else textEl.classList.remove('is-lit');
+      }
+    });
+
+    MINOR_TICKS.forEach((val, i) => {
+      const lineEl = document.getElementById('gaugeSubTick_' + i);
+      if (lineEl) {
+        if (speedMbps >= val && speedMbps > 0) lineEl.classList.add('is-lit');
+        else lineEl.classList.remove('is-lit');
       }
     });
   }
