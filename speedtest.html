@@ -159,12 +159,18 @@
             <text id="gaugeTickText_5" class="gauge-tick-text" x="179.1" y="55.6">500</text>
             <line id="gaugeTickLine_6" class="gauge-tick-line" x1="167.3" y1="150.2" x2="173.1" y2="154.2" />
             <text id="gaugeTickText_6" class="gauge-tick-text" x="182.1" y="160.5">1G</text>
-            <!-- Needle Pointer (Center pivot: 110, 110; Range: -125deg to +125deg) -->
+            <!-- Precision Speedometer Needle Pointer (Center pivot: 110, 110; Range: -125deg to +125deg) -->
             <g id="gaugeNeedle" class="gauge-needle" style="transform-origin: 110px 110px; transform: rotate(-125deg);">
-              <polygon points="108.8,110 110,50 111.2,110 110,120" class="needle-blade" />
-              <circle cx="110" cy="52" r="2.2" class="needle-tip-glow" />
+              <!-- Main Needle Blade & Counterweight Tail -->
+              <polygon points="108.2,110 109.1,50 110.9,50 111.8,110 111.2,123 108.8,123" class="needle-blade" />
+              <!-- Needle Sharp Arrow Tip -->
+              <polygon points="109.2,50 110,43 110.8,50" class="needle-tip" />
+              <!-- Center Spine Highlight Line -->
+              <line x1="110" y1="46" x2="110" y2="120" class="needle-spine" />
+              <!-- Precision Center Boss & Pivot Hub -->
               <circle cx="110" cy="110" r="8" class="needle-pivot-outer" />
-              <circle cx="110" cy="110" r="4" class="needle-pivot-inner" />
+              <circle cx="110" cy="110" r="4.5" class="needle-pivot-inner" />
+              <circle cx="110" cy="110" r="1.8" class="needle-pivot-pin" />
             </g>
           </svg>
 
