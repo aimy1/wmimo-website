@@ -460,6 +460,7 @@ function initDocsSidebarFilter() {
    First-visit Server Maintenance & GitHub Download Notice Modal
    ========================================================================== */
 function initServerNoticeModal() {
+  if (document.querySelector('.hero-section')) return;
   const hideUntil = localStorage.getItem('wmimo_notice_hide_until');
   if (hideUntil && Date.now() < parseInt(hideUntil, 10)) return;
 

@@ -273,27 +273,22 @@ body.ambient-bg {
 .hero-scene-frame {
   position: relative;
   width: 100%;
-  max-width: 580px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 
-    0 20px 50px -10px rgba(0, 0, 0, 0.6),
-    0 0 50px rgba(0, 218, 245, 0.15);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-
-.hero-scene-frame:hover {
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 
-    0 24px 60px -10px rgba(0, 0, 0, 0.7),
-    0 0 60px rgba(0, 218, 245, 0.25);
+  max-width: 650px;
+  overflow: visible;
 }
 
 .hero-scene-img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 20px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.7) 10%, black 20%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.7) 10%, black 20%, black 100%);
+  filter: drop-shadow(0 0 30px rgba(0, 218, 245, 0.2));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-scene-img:hover {
+  transform: scale(1.02);
 }
 
 /* ==========================================================================
@@ -324,6 +319,7 @@ body.ambient-bg {
   line-height: 1.25;
   color: #ffffff;
   margin-bottom: 14px;
+  white-space: nowrap;
 }
 
 .capabilities-desc {
@@ -379,6 +375,17 @@ body.ambient-bg {
   box-shadow: 0 0 24px rgba(0, 218, 245, 0.5), inset 0 0 16px rgba(0, 218, 245, 0.3);
 }
 
+.workflow-step.step-highlighted .step-circle {
+  background: #00daf5;
+  border-color: #00daf5;
+  color: #ffffff;
+  box-shadow: 0 0 24px rgba(0, 218, 245, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.workflow-step.step-highlighted .step-circle svg {
+  stroke: #ffffff;
+}
+
 /* Connector Line to Next Step */
 .step-connector {
   position: absolute;
@@ -395,7 +402,7 @@ body.ambient-bg {
 .connector-line {
   flex: 1;
   height: 1px;
-  border-top: 1.5px dashed rgba(0, 218, 245, 0.35);
+  border-top: 1.5px dashed rgba(0, 218, 245, 0.5);
 }
 
 .connector-arrow {
@@ -403,7 +410,7 @@ body.ambient-bg {
   height: 0;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  border-left: 6px solid rgba(0, 218, 245, 0.7);
+  border-left: 6px solid #00daf5;
   margin-left: 2px;
 }
 
@@ -431,15 +438,19 @@ body.ambient-bg {
    ========================================================================== */
 .showcase-section {
   position: relative;
-  padding: 60px 0 80px 0;
-  background: #070d18;
+  padding: 72px 0 90px 0;
+  background-color: #070c18;
+  background-image: url('../images/showcase_bg.jpg');
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
 }
 
 .showcase-container {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 48px;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 40px;
   align-items: center;
 }
 
@@ -451,7 +462,7 @@ body.ambient-bg {
   color: #00daf5;
   font-size: 0.88rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   margin-bottom: 12px;
 }
 
@@ -470,10 +481,16 @@ body.ambient-bg {
   margin-bottom: 26px;
 }
 
+.features-with-doodle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .feature-checklist {
   list-style: none;
   padding: 0;
-  margin: 0 0 28px 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -486,6 +503,7 @@ body.ambient-bg {
   font-size: 0.94rem;
   font-weight: 500;
   color: #e2e8f0;
+  white-space: nowrap;
 }
 
 .feature-checklist .check-icon {
@@ -507,19 +525,19 @@ body.ambient-bg {
 .doodle-wrap {
   position: relative;
   display: inline-block;
-  margin-top: 4px;
+  flex-shrink: 0;
+  margin-left: 4px;
+  animation: doodleHover 5s ease-in-out infinite alternate;
 }
 
-.doodle-img {
-  width: 130px;
-  height: auto;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 10px rgba(0, 218, 245, 0.3));
-  transition: transform 0.3s ease;
+@keyframes doodleHover {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-4px) rotate(-1deg); }
 }
 
-.doodle-img:hover {
-  transform: rotate(-3deg) scale(1.05);
+.doodle-svg {
+  display: block;
+  filter: drop-shadow(0 0 8px rgba(0, 218, 245, 0.45));
 }
 
 /* Right Showcase Display */
@@ -533,26 +551,25 @@ body.ambient-bg {
   position: relative;
   width: 100%;
   max-width: 580px;
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
   box-shadow: 
     0 24px 60px -10px rgba(0, 0, 0, 0.7),
-    0 0 50px rgba(0, 218, 245, 0.12);
+    0 0 50px rgba(0, 218, 245, 0.15);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
 .showcase-frame:hover {
-  transform: translateY(-3px) scale(1.01);
+  transform: translateY(-4px) scale(1.015);
   box-shadow: 
     0 28px 70px -10px rgba(0, 0, 0, 0.8),
-    0 0 65px rgba(0, 218, 245, 0.22);
+    0 0 65px rgba(0, 218, 245, 0.25);
 }
 
 .showcase-img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 20px;
 }
 
 /* ==========================================================================

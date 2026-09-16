@@ -169,7 +169,7 @@
           <h2 class="capabilities-title">
             <span data-i18n="cap.title_pre">Wmimo 的</span><span class="text-cyan" data-i18n="cap.title_highlight">核心能力</span>
           </h2>
-          <p class="capabilities-desc" data-i18n="cap.desc">
+          <p class="capabilities-desc" data-i18n-html="cap.desc">
             从连接到世界，只需几步。<br>
             Wmimo 将复杂的网络配置变得简单，<br>
             让你专注于更重要的事情。
@@ -193,7 +193,7 @@
             </div>
             <div class="step-info">
               <h3 class="step-title" data-i18n="cap.step1_title">连接</h3>
-              <p class="step-desc" data-i18n="cap.step1_desc">一键连接，自动接管<br>系统网络，轻松网络。</p>
+              <p class="step-desc" data-i18n-html="cap.step1_desc">一键连接，自动接管<br>系统网络，轻松网络。</p>
             </div>
           </div>
 
@@ -213,12 +213,12 @@
             </div>
             <div class="step-info">
               <h3 class="step-title" data-i18n="cap.step2_title">选择</h3>
-              <p class="step-desc" data-i18n="cap.step2_desc">Rule / Global / Direct<br>灵活切换网络模式。</p>
+              <p class="step-desc" data-i18n-html="cap.step2_desc">Rule / Global / Direct<br>灵活切换网络模式。</p>
             </div>
           </div>
 
           <!-- Step 3: 穿越 -->
-          <div class="workflow-step">
+          <div class="workflow-step step-highlighted">
             <div class="step-icon-wrap">
               <div class="step-circle">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -234,7 +234,7 @@
             </div>
             <div class="step-info">
               <h3 class="step-title" data-i18n="cap.step3_title">穿越</h3>
-              <p class="step-desc" data-i18n="cap.step3_desc">多协议、多节点<br>低延迟高速连接。</p>
+              <p class="step-desc" data-i18n-html="cap.step3_desc">多协议、多节点<br>低延迟高速连接。</p>
             </div>
           </div>
 
@@ -249,7 +249,7 @@
             </div>
             <div class="step-info">
               <h3 class="step-title" data-i18n="cap.step4_title">畅享</h3>
-              <p class="step-desc" data-i18n="cap.step4_desc">无论是工作、学习还是娱乐，<br>都能稳定畅快。</p>
+              <p class="step-desc" data-i18n-html="cap.step4_desc">无论是工作、学习还是娱乐，<br>都能稳定畅快。</p>
             </div>
           </div>
         </div>
@@ -263,48 +263,58 @@
         <div class="showcase-left">
           <div class="showcase-tag" data-i18n="showcase.tag">简洁 · 现代 · 高效</div>
           <h2 class="showcase-title" data-i18n="showcase.title">熟悉的界面，强大的功能</h2>
-          <p class="showcase-desc" data-i18n="showcase.desc">
+          <p class="showcase-desc" data-i18n-html="showcase.desc">
             Wmimo 采用现代化的 UI 设计，<br>
             提供清晰的状态展示与便捷的操作体验。
           </p>
 
-          <ul class="feature-checklist">
-            <li>
-              <span class="check-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-              <span data-i18n="showcase.feat1">实时流量监控</span>
-            </li>
-            <li>
-              <span class="check-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-              <span data-i18n="showcase.feat2">多种代理模式</span>
-            </li>
-            <li>
-              <span class="check-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-              <span data-i18n="showcase.feat3">系统托盘常驻</span>
-            </li>
-            <li>
-              <span class="check-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-              <span data-i18n="showcase.feat4">轻量化设计，18px 更舒适</span>
-            </li>
-          </ul>
+          <div class="features-with-doodle">
+            <ul class="feature-checklist">
+              <li>
+                <span class="check-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+                <span data-i18n="showcase.feat1">实时流量监控</span>
+              </li>
+              <li>
+                <span class="check-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+                <span data-i18n="showcase.feat2">多种代理模式</span>
+              </li>
+              <li>
+                <span class="check-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+                <span data-i18n="showcase.feat3">系统托盘常驻</span>
+              </li>
+              <li>
+                <span class="check-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+                <span data-i18n="showcase.feat4">轻量化设计，18px 更舒适</span>
+              </li>
+            </ul>
 
-          <div class="doodle-wrap">
-            <img src="assets/images/simple_not_simple.png" alt="Simple Not Simple" class="doodle-img">
+            <div class="doodle-wrap" aria-hidden="true">
+              <svg width="115" height="110" viewBox="0 0 115 110" fill="none" class="doodle-svg">
+                <path d="M 16 36 C 38 25, 68 21, 95 16" stroke="#00daf5" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <path d="M 86 12 L 97 16 L 90 25" stroke="#00daf5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <g transform="rotate(-15 48 65)">
+                  <text x="22" y="48" font-family="'Caveat', 'Comic Sans MS', 'Patrick Hand', 'Segoe Print', cursive, sans-serif" font-size="16" font-weight="700" fill="#00daf5" letter-spacing="0.5">Simple</text>
+                  <text x="28" y="70" font-family="'Caveat', 'Comic Sans MS', 'Patrick Hand', 'Segoe Print', cursive, sans-serif" font-size="16" font-weight="700" fill="#00daf5" letter-spacing="0.5">Not Simple</text>
+                  <text x="64" y="92" font-family="'Caveat', 'Comic Sans MS', 'Patrick Hand', 'Segoe Print', cursive, sans-serif" font-size="18" font-weight="700" fill="#00daf5">: )</text>
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
 
