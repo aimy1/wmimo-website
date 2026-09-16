@@ -492,7 +492,7 @@ function initServerNoticeModal() {
           受近期主服务器维护影响，客户端内置的<strong>在线更新通道暂时无法提供服务</strong>。
         </p>
         <div class="modal-notice-highlight" data-i18n-html="modal.notice_highlight">
-          🚀 获取最新构建版本（v1.0.34）及各平台安装包，还请直接前往 <strong>GitHub Releases</strong> 官方页面下载。
+          🚀 获取最新构建版本（v1.1.0）及各平台安装包，还请直接前往 <strong>GitHub Releases</strong> 官方页面下载。
         </div>
         <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;" data-i18n="modal.notice_footer_note">
           * 服务恢复后将第一时间恢复应用内静默升级通道，给您带来的不便敬请谅解。
@@ -506,7 +506,7 @@ function initServerNoticeModal() {
         </label>
         <div class="modal-footer-actions">
           <button class="btn btn-secondary" id="modalDismissBtn" data-i18n="modal.btn_ack" style="padding: 8px 16px;">我已知晓</button>
-          <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.0.34" target="_blank" rel="noopener" class="btn btn-primary" id="modalGithubBtn" style="padding: 8px 18px;">
+          <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.1.0" target="_blank" rel="noopener" class="btn btn-primary" id="modalGithubBtn" style="padding: 8px 18px;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             <span data-i18n="modal.btn_github">前往 GitHub 下载</span>
           </a>
