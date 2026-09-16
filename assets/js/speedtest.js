@@ -129,7 +129,7 @@
 
   function initDOM() {
     dom = {
-      dashboard: document.querySelector('.speedtest-cockpit, .speedtest-dashboard'),
+      dashboard: document.querySelector('.speedtest-dashboard'),
       startBtn: document.getElementById('speedStartBtn'),
       btnText: document.getElementById('speedBtnText'),
       gaugePhase: document.getElementById('gaugePhase'),
@@ -329,7 +329,6 @@
     if (!dom.canvas) return;
     const dpr = window.devicePixelRatio || 1;
     const rect = dom.canvas.getBoundingClientRect();
-    if (rect.width === 0 || rect.height === 0) return;
     dom.canvas.width = rect.width * dpr;
     dom.canvas.height = rect.height * dpr;
     canvasCtx = dom.canvas.getContext('2d');
@@ -856,13 +855,6 @@
     window.addEventListener('resize', () => {
       initCanvas();
     });
-
-    if (window.ResizeObserver && dom.canvas) {
-      const ro = new ResizeObserver(() => {
-        initCanvas();
-      });
-      ro.observe(dom.canvas.parentElement || dom.canvas);
-    }
 
     window.addEventListener('wmimo_lang_change', () => {
       updateButtonUI();
