@@ -1338,12 +1338,32 @@
   font-weight: 700;
 }
 
-/* Dial Pointer Dot */
-.gauge-pointer-dot {
+/* Real Speedometer Needle Pointer */
+.gauge-needle {
+  transform-origin: 110px 110px;
+  transition: transform 0.08s linear;
+  pointer-events: none;
+}
+
+.needle-blade {
+  fill: url(#needleGradient);
+  filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.7));
+}
+
+.needle-tip-glow {
   fill: #FFFFFF;
+  filter: drop-shadow(0 0 8px #00E5FF);
+}
+
+.needle-pivot-outer {
+  fill: var(--bg-card);
   stroke: var(--brand-primary);
-  stroke-width: 3;
-  filter: drop-shadow(0 0 8px #00BCDF);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 4px rgba(var(--brand-primary-rgb), 0.5));
+}
+
+.needle-pivot-inner {
+  fill: var(--brand-primary);
 }
 
 .gauge-center-content {
@@ -1645,86 +1665,43 @@
   display: block;
 }
 
-/* Client Diagnostics Bar */
-.speed-diag-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-bottom: 24px;
-}
 
-.speed-diag-item {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 14px;
-  padding: 14px 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.speed-diag-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  background: var(--bg-subtle);
+/* Sleek Single-Line Diagnostics Strip */
+.speed-diag-strip {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
-  flex-shrink: 0;
-}
-
-.speed-diag-meta {
-  min-width: 0;
-}
-
-.speed-diag-title {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 2px;
-}
-
-.speed-diag-val {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Tips & Comparison Card */
-.speed-tips-card {
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 12px 24px;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 24px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.speed-tips-left {
-  max-width: 620px;
-}
-
-.speed-tips-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 6px 0;
-}
-
-.speed-tips-desc {
-  font-size: 0.88rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin: 0;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 24px;
+}
+
+.diag-strip-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.diag-strip-label {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.diag-strip-val {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.diag-strip-divider {
+  color: var(--border-subtle);
 }
 
 @media (max-width: 860px) {
@@ -1740,13 +1717,6 @@
   .speed-metrics-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .speed-diag-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .speed-tips-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 
 @media (max-width: 480px) {
@@ -1754,8 +1724,8 @@
     padding: 24px 16px;
   }
   .speed-gauge-wrap {
-    width: 250px;
-    height: 190px;
+    width: 260px;
+    height: 195px;
   }
   .gauge-speed-val {
     font-size: 2.8rem;
@@ -1767,8 +1737,9 @@
   .metric-num {
     font-size: 1.6rem;
   }
-  .speed-diag-grid {
-    grid-template-columns: 1fr;
+  .speed-diag-strip {
+    border-radius: 16px;
+    padding: 12px 16px;
   }
 }
 
