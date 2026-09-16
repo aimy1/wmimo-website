@@ -32,6 +32,7 @@
 ### 1. 主站核心页面
 - **[首页 (`index.html`)](index.html)**：左右分栏首屏设计、精美客户端实机展示视窗、4 大核心特性卡片与联系通道。
 - **[下载中心 (`download.html`)](download.html)**：自动嗅探识别用户操作系统，提供 Windows（x64 / ARM64）、Linux 各大发行版（Deb / RPM / Arch / AppImage）以及 Android 安装包直达。
+- **[在线网络测速 (`speedtest.html`)](speedtest.html)**：实时多维网络基准测试，支持延迟 (Ping)、抖动 (Jitter)、多并发下行吞吐率与上行吞吐率，包含动态 SVG 仪表盘与 Canvas 实时测速波形。
 - **[关于与赞助 (`community.html`)](community.html)**：项目开源协议说明、APTOS USDT 赞助通道、开发者联系方式与交流反馈。
 
 ### 2. 技术文档系统 (`docs/`)
@@ -66,15 +67,18 @@ wmimo-website/
 │   │   ├── tokens.css          # 色彩、字体、间距、圆角与暗黑主题变量
 │   │   ├── components.css      # 按钮、卡片、导航栏、侧边栏通用组件
 │   │   ├── home.css            # 首页左右分栏与特性布局
+│   │   ├── pages.css           # 下载中心、赞助页与测速页响应式布局
 │   │   └── docs.css            # 文档中心专用排版与代码高亮块
 │   ├── js/
 │   │   ├── main.js             # 主题切换、回到顶部、代码复制、弹窗交互
 │   │   ├── i18n.js             # 纯前端无刷新中英双语词典与动态渲染引擎
+│   │   ├── speedtest.js        # 网络测速引擎、实时波形绘制与边缘节点诊断
 │   │   └── os-detector.js      # 智能操作系统嗅探与一键推荐下载
 │   └── images/                 # 图标、客户端界面预览与系统徽标
 ├── docs/                       # 14 篇完整技术文档 HTML 文件
 ├── index.html                  # 官方网站首页
 ├── download.html               # 官方客户端下载中心
+├── speedtest.html              # 在线网络测速页面
 ├── community.html              # 关于、开源赞助与反馈通道
 ├── server.js                   # 本地轻量级预览 HTTP 服务器
 └── README.md                   # 项目说明文档
