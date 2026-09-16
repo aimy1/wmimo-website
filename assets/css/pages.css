@@ -958,8 +958,17 @@
    SpeedTest Page Styles - Modern Minimalist & Cyberpunk Cyan System
    ========================================================================== */
 .speedtest-container {
-  max-width: 880px;
+  max-width: 960px;
   margin: 0 auto 60px auto;
+}
+
+.btn-xs {
+  font-size: 0.76rem;
+  padding: 4px 9px;
+  border-radius: var(--radius-sm, 6px);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 /* ==========================================================================
@@ -1209,28 +1218,88 @@
   background: #FFFFFF;
 }
 
-.speedtest-dashboard {
+/* ==========================================================================
+   SpeedTest Unified Dual-Pane Cockpit
+   ========================================================================== */
+.speedtest-cockpit {
+  display: grid;
+  grid-template-columns: 44% 56%;
+  gap: 24px;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 24px;
-  padding: 36px 32px 32px 32px;
-  margin-bottom: 24px;
+  padding: 26px;
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  text-align: center;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 24px;
 }
 
-.speedtest-dashboard.is-running {
+.speedtest-cockpit.is-running {
   border-color: rgba(var(--brand-primary-rgb), 0.5);
+  box-shadow: 0 8px 30px rgba(var(--brand-primary-rgb), 0.12);
 }
 
+/* --- Left Pane: Server Pill + Gauge + Action Button --- */
+.cockpit-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-width: 0;
+}
+
+.cockpit-server-pill {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 12px;
+  background: rgba(var(--brand-primary-rgb), 0.05);
+  border: 1px solid rgba(var(--brand-primary-rgb), 0.18);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.cockpit-server-pill:hover {
+  border-color: rgba(var(--brand-primary-rgb), 0.4);
+  background: rgba(var(--brand-primary-rgb), 0.08);
+}
+
+.server-pill-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.server-pill-info .server-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.server-pill-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* Speedometer Gauge */
 .speed-gauge-wrap {
   position: relative;
-  width: 310px;
-  height: 235px;
-  margin: 0 auto 12px auto;
+  width: 290px;
+  height: 220px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1337,7 +1406,7 @@
 
 .gauge-center-content {
   position: absolute;
-  bottom: 24px;
+  bottom: 20px;
   left: 0;
   right: 0;
   display: flex;
@@ -1349,14 +1418,14 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 600;
-  padding: 3px 12px;
+  padding: 2px 10px;
   border-radius: 999px;
   background: rgba(var(--brand-primary-rgb), 0.08);
   color: var(--brand-primary-light);
   border: 1px solid rgba(var(--brand-primary-rgb), 0.2);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -1375,7 +1444,7 @@
 
 .gauge-speed-val {
   font-family: var(--font-mono);
-  font-size: 3.4rem;
+  font-size: 3.2rem;
   font-weight: 800;
   letter-spacing: -0.04em;
   color: var(--text-primary);
@@ -1384,24 +1453,30 @@
 }
 
 .gauge-speed-unit {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 3px;
   letter-spacing: 0.02em;
 }
 
-.speedtest-action-wrap {
-  margin-top: 14px;
-  position: relative;
-  display: inline-block;
+/* Cockpit Action Hero Button */
+.cockpit-action-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cockpit-action-wrap .btn-speed-hero {
+  width: 75%;
+  max-width: 220px;
 }
 
 .btn-speed-hero {
   position: relative;
   min-width: 160px;
-  padding: 12px 28px;
-  font-size: 1rem;
+  padding: 11px 24px;
+  font-size: 0.95rem;
   font-weight: 600;
   border-radius: 999px;
   box-shadow: 0 4px 14px rgba(var(--brand-primary-rgb), 0.3);
@@ -1429,32 +1504,43 @@
   transform: translateY(-1px);
 }
 
-/* 4-Metric Grid */
-.speed-metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 24px;
+/* --- Right Pane: 2x2 Metrics Grid & Waveform --- */
+.cockpit-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  justify-content: space-between;
 }
 
-.speed-metric-card {
-  background: var(--bg-card);
+.cockpit-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.cockpit-metric-card {
+  background: rgba(255, 255, 255, 0.025);
   border: 1px solid var(--border-color);
-  border-radius: 18px;
-  padding: 20px 18px;
+  border-radius: 14px;
+  padding: 12px 14px;
   position: relative;
   transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
 }
 
-.speed-metric-card.is-active {
-  border-color: rgba(var(--brand-primary-rgb), 0.65);
-  box-shadow: 0 0 20px rgba(var(--brand-primary-rgb), 0.15);
-  transform: translateY(-2px);
+[data-theme="light"] .cockpit-metric-card {
+  background: rgba(0, 0, 0, 0.02);
 }
 
-.speed-metric-card.is-finished {
+.cockpit-metric-card.is-active {
+  border-color: rgba(var(--brand-primary-rgb), 0.65);
+  box-shadow: 0 0 16px rgba(var(--brand-primary-rgb), 0.15);
+  transform: translateY(-1px);
+}
+
+.cockpit-metric-card.is-finished {
   border-color: rgba(var(--brand-primary-rgb), 0.3);
 }
 
@@ -1462,19 +1548,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .metric-label-group {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .metric-icon-slot {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1482,38 +1568,43 @@
   color: var(--brand-primary-light);
 }
 
+.metric-icon-slot svg {
+  width: 14px;
+  height: 14px;
+}
+
 .metric-label {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-secondary);
 }
 
 .metric-status-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--border-subtle);
   transition: background 0.2s ease;
 }
 
-.speed-metric-card.is-active .metric-status-dot {
+.cockpit-metric-card.is-active .metric-status-dot {
   background: var(--brand-primary);
 }
 
-.speed-metric-card.is-finished .metric-status-dot {
+.cockpit-metric-card.is-finished .metric-status-dot {
   background: #10B981;
 }
 
 .metric-body {
   display: flex;
   align-items: baseline;
-  gap: 6px;
+  gap: 4px;
   margin-top: auto;
 }
 
 .metric-num {
   font-family: var(--font-mono);
-  font-size: 2rem;
+  font-size: 1.65rem;
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.03em;
@@ -1521,67 +1612,75 @@
 }
 
 .metric-unit {
-  font-size: 0.82rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-muted);
 }
 
-/* Waveform Chart Section */
-.speed-chart-card {
-  background: var(--bg-card);
+/* Integrated Waveform Canvas Block */
+.cockpit-chart-block {
+  background: rgba(255, 255, 255, 0.025);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 22px 24px;
-  margin-bottom: 24px;
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 135px;
+  justify-content: space-between;
 }
 
-.speed-chart-header {
+[data-theme="light"] .cockpit-chart-block {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.cockpit-chart-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
-.speed-chart-title {
-  font-size: 0.95rem;
+.cockpit-chart-title {
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-primary);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   margin: 0;
 }
 
 .speed-chart-legend {
   display: flex;
   align-items: center;
-  gap: 16px;
-  font-size: 0.78rem;
+  gap: 12px;
+  font-size: 0.74rem;
   color: var(--text-secondary);
 }
 
 .speed-chart-peak {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 700;
   color: var(--brand-primary-light);
   background: rgba(var(--brand-primary-rgb), 0.1);
-  padding: 3px 10px;
+  padding: 2px 8px;
   border-radius: 999px;
   border: 1px solid rgba(var(--brand-primary-rgb), 0.2);
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .legend-line {
-  width: 14px;
+  width: 12px;
   height: 3px;
   border-radius: 2px;
 }
@@ -1594,10 +1693,11 @@
   background: #A855F7;
 }
 
-.speed-chart-canvas-wrap {
+.cockpit-canvas-wrap {
   width: 100%;
-  height: 140px;
+  height: 110px;
   position: relative;
+  flex: 1;
 }
 
 #speedWaveCanvas {
@@ -1606,22 +1706,19 @@
   display: block;
 }
 
-
-/* Sleek Single-Line Diagnostics Strip */
-.speed-diag-strip {
+/* Cockpit Footer Diagnostics Strip */
+.cockpit-footer-strip {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+  margin-top: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   flex-wrap: wrap;
-  padding: 12px 24px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 999px;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
-  box-shadow: var(--shadow-card);
-  margin-bottom: 24px;
 }
 
 .diag-strip-item {
@@ -1645,24 +1742,75 @@
   color: var(--border-subtle);
 }
 
-@media (max-width: 860px) {
-  .speed-server-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+/* Backwards Compatibility Aliases */
+.speedtest-dashboard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 28px;
+  margin-bottom: 24px;
+}
+.speed-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.speed-metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 20px 18px;
+}
+.speed-chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+}
+.speed-chart-canvas-wrap {
+  width: 100%;
+  height: 140px;
+  position: relative;
+}
+.speed-diag-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 12px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  margin-bottom: 24px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 900px) {
+  .speedtest-cockpit {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
   }
-  .speed-server-actions {
+  .cockpit-left,
+  .cockpit-right {
     width: 100%;
-    justify-content: flex-end;
   }
-  .speed-metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .cockpit-action-wrap .btn-speed-hero {
+    width: 100%;
+    max-width: 280px;
+  }
+  .cockpit-canvas-wrap {
+    height: 120px;
   }
 }
 
 @media (max-width: 480px) {
-  .speedtest-dashboard {
-    padding: 24px 16px;
+  .speedtest-cockpit {
+    padding: 16px;
   }
   .speed-gauge-wrap {
     width: 260px;
@@ -1671,16 +1819,17 @@
   .gauge-speed-val {
     font-size: 2.8rem;
   }
-  .speed-metrics-grid {
+  .cockpit-metrics-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 8px;
   }
-  .metric-num {
-    font-size: 1.6rem;
+  .cockpit-metric-card .metric-num {
+    font-size: 1.4rem;
   }
-  .speed-diag-strip {
-    border-radius: 16px;
-    padding: 12px 16px;
+  .cockpit-footer-strip {
+    gap: 12px;
+    font-size: 0.74rem;
+    justify-content: space-around;
   }
 }
 
