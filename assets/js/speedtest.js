@@ -312,9 +312,8 @@
     }
   }
 
-  // --- Waveform Canvas Chart with Radar Scanline ---
+  // --- Waveform Canvas Chart ---
   let canvasCtx = null;
-  let scanlineX = 0;
 
   function initCanvas() {
     if (!dom.canvas) return;
@@ -335,8 +334,8 @@
 
     canvasCtx.clearRect(0, 0, w, h);
 
-    // 1. Subtle Cyber Grid
-    canvasCtx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+    // 1. Clean Subtle Grid
+    canvasCtx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
     canvasCtx.lineWidth = 1;
     for (let y = 0; y < h; y += 36) {
       canvasCtx.beginPath();
@@ -348,23 +347,6 @@
       canvasCtx.beginPath();
       canvasCtx.moveTo(x, 0);
       canvasCtx.lineTo(x, h);
-      canvasCtx.stroke();
-    }
-
-    // 2. Animated Radar Scanline during active testing
-    if (state.isRunning) {
-      scanlineX = (scanlineX + 3.2) % w;
-      const scanGrad = canvasCtx.createLinearGradient(scanlineX - 40, 0, scanlineX + 4, 0);
-      scanGrad.addColorStop(0, 'rgba(0, 188, 223, 0)');
-      scanGrad.addColorStop(1, 'rgba(0, 229, 255, 0.18)');
-      canvasCtx.fillStyle = scanGrad;
-      canvasCtx.fillRect(Math.max(0, scanlineX - 40), 0, 44, h);
-
-      canvasCtx.strokeStyle = 'rgba(0, 229, 255, 0.45)';
-      canvasCtx.lineWidth = 1.5;
-      canvasCtx.beginPath();
-      canvasCtx.moveTo(scanlineX, 0);
-      canvasCtx.lineTo(scanlineX, h);
       canvasCtx.stroke();
     }
 
@@ -400,11 +382,11 @@
     const gradColor2 = isUpload ? 'rgba(168, 85, 247, 0.0)' : 'rgba(0, 188, 223, 0.0)';
 
     canvasCtx.strokeStyle = strokeColor;
-    canvasCtx.lineWidth = 2.8;
+    canvasCtx.lineWidth = 2.4;
     canvasCtx.lineCap = 'round';
     canvasCtx.lineJoin = 'round';
     canvasCtx.shadowColor = strokeColor;
-    canvasCtx.shadowBlur = 12;
+    canvasCtx.shadowBlur = 4;
     canvasCtx.stroke();
     canvasCtx.shadowBlur = 0;
 
@@ -421,16 +403,13 @@
     canvasCtx.fillStyle = gradient;
     canvasCtx.fill();
 
-    // Trailing glow point
+    // Trailing endpoint
     const lastPoint = state.wavePoints[lastIdx];
     const lastY = h - (lastPoint.speed / maxSpeed) * (h - 20) - 10;
     canvasCtx.beginPath();
-    canvasCtx.arc(lastX, lastY, 5, 0, Math.PI * 2);
-    canvasCtx.fillStyle = '#FFFFFF';
-    canvasCtx.shadowColor = strokeColor;
-    canvasCtx.shadowBlur = 12;
+    canvasCtx.arc(lastX, lastY, 4, 0, Math.PI * 2);
+    canvasCtx.fillStyle = strokeColor;
     canvasCtx.fill();
-    canvasCtx.shadowBlur = 0;
   }
 
   // --- Network Diagnostics (IP & Colo with city mapping) ---
