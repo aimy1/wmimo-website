@@ -1245,24 +1245,24 @@
 .gauge-bg-arc {
   fill: none;
   stroke: var(--border-subtle);
-  stroke-width: 14;
+  stroke-width: 10;
   stroke-linecap: round;
 }
 
 .gauge-progress-arc {
   fill: none;
   stroke: url(#gaugeGradient);
-  stroke-width: 14;
+  stroke-width: 10;
   stroke-linecap: round;
-  stroke-dasharray: 328;
-  stroke-dashoffset: 328;
+  stroke-dasharray: 279;
+  stroke-dashoffset: 279;
   transition: stroke-dashoffset 0.1s cubic-bezier(0.1, 0.9, 0.2, 1);
 }
 
 /* Dial Tick Marks & Scale */
 .gauge-tick-line {
   stroke: var(--border-subtle);
-  stroke-width: 1.5;
+  stroke-width: 1.6;
   stroke-linecap: round;
   transition: stroke 0.2s ease;
 }
@@ -1271,13 +1271,26 @@
   stroke: var(--brand-primary);
 }
 
+.gauge-subtick-line {
+  stroke: var(--border-subtle);
+  stroke-width: 1;
+  stroke-linecap: round;
+  opacity: 0.55;
+  transition: stroke 0.2s ease, opacity 0.2s ease;
+}
+
+.gauge-subtick-line.is-lit {
+  stroke: var(--brand-primary);
+  opacity: 0.9;
+}
+
 .gauge-tick-text {
   fill: var(--text-muted);
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 8.5px;
   font-weight: 600;
   text-anchor: middle;
-  dominant-baseline: middle;
+  dominant-baseline: central;
   transition: fill 0.2s ease;
 }
 
