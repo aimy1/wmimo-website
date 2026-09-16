@@ -991,30 +991,16 @@
 }
 
 .server-status-beacon {
-  position: relative;
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
   flex-shrink: 0;
 }
 
-.beacon-dot {
-  position: absolute;
-  inset: 1px;
-  border-radius: 50%;
-  background: #10B981;
-}
-
+.beacon-dot,
 .beacon-pulse {
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  background: rgba(16, 185, 129, 0.4);
-  animation: beaconPulseAnim 2s infinite ease-out;
-}
-
-@keyframes beaconPulseAnim {
-  0% { transform: scale(0.8); opacity: 0.9; }
-  100% { transform: scale(2.2); opacity: 0; }
+  display: none;
 }
 
 .server-info-text {
@@ -1237,19 +1223,7 @@
 }
 
 .speedtest-dashboard.is-running {
-  border-color: rgba(var(--brand-primary-rgb), 0.45);
-  box-shadow: 0 0 35px rgba(var(--brand-primary-rgb), 0.12);
-}
-
-.speedtest-dashboard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 25%;
-  right: 25%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--brand-primary), transparent);
-  opacity: 0.8;
+  border-color: rgba(var(--brand-primary-rgb), 0.5);
 }
 
 .speed-gauge-wrap {
@@ -1260,31 +1234,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Animated Gauge Breathing Halo */
-.gauge-halo-glow {
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  width: 250px;
-  height: 250px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(var(--brand-primary-rgb), 0.16) 0%, rgba(var(--brand-primary-rgb), 0.04) 55%, transparent 72%);
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0.3;
-  transition: all 0.4s ease;
-}
-
-.speedtest-dashboard.is-running .gauge-halo-glow {
-  opacity: 1;
-  animation: gaugeHaloBreath 2.4s infinite ease-in-out;
-}
-
-@keyframes gaugeHaloBreath {
-  0%, 100% { transform: translate(-50%, -50%) scale(0.94); opacity: 0.5; filter: blur(14px); }
-  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.9; filter: blur(24px); }
 }
 
 .speed-gauge-svg {
@@ -1305,8 +1254,8 @@
   stroke: url(#gaugeGradient);
   stroke-width: 14;
   stroke-linecap: round;
-  stroke-dasharray: 440;
-  stroke-dashoffset: 440;
+  stroke-dasharray: 328;
+  stroke-dashoffset: 328;
   transition: stroke-dashoffset 0.1s cubic-bezier(0.1, 0.9, 0.2, 1);
 }
 
@@ -1315,12 +1264,11 @@
   stroke: var(--border-subtle);
   stroke-width: 1.5;
   stroke-linecap: round;
-  transition: stroke 0.3s ease, filter 0.3s ease;
+  transition: stroke 0.2s ease;
 }
 
 .gauge-tick-line.is-lit {
   stroke: var(--brand-primary);
-  filter: drop-shadow(0 0 3px var(--brand-primary));
 }
 
 .gauge-tick-text {
@@ -1330,11 +1278,11 @@
   font-weight: 600;
   text-anchor: middle;
   dominant-baseline: middle;
-  transition: fill 0.3s ease;
+  transition: fill 0.2s ease;
 }
 
 .gauge-tick-text.is-lit {
-  fill: var(--brand-primary-light);
+  fill: var(--text-primary);
   font-weight: 700;
 }
 
@@ -1346,20 +1294,17 @@
 }
 
 .needle-blade {
-  fill: url(#needleGradient);
-  filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.7));
+  fill: #00E5FF;
 }
 
 .needle-tip-glow {
   fill: #FFFFFF;
-  filter: drop-shadow(0 0 8px #00E5FF);
 }
 
 .needle-pivot-outer {
   fill: var(--bg-card);
   stroke: var(--brand-primary);
   stroke-width: 2.5;
-  filter: drop-shadow(0 0 4px rgba(var(--brand-primary-rgb), 0.5));
 }
 
 .needle-pivot-inner {
@@ -1384,30 +1329,24 @@
   font-weight: 600;
   padding: 3px 12px;
   border-radius: 999px;
-  background: rgba(var(--brand-primary-rgb), 0.1);
+  background: rgba(var(--brand-primary-rgb), 0.08);
   color: var(--brand-primary-light);
-  border: 1px solid rgba(var(--brand-primary-rgb), 0.24);
+  border: 1px solid rgba(var(--brand-primary-rgb), 0.2);
   margin-bottom: 6px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .gauge-phase-badge .badge-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: var(--brand-primary);
+  background: var(--text-muted);
   display: inline-block;
 }
 
 .gauge-phase-badge.is-running .badge-dot {
-  box-shadow: 0 0 10px var(--brand-primary);
-  animation: gaugePulse 1.2s infinite ease-in-out;
-}
-
-@keyframes gaugePulse {
-  0%, 100% { opacity: 0.4; transform: scale(0.9); }
-  50% { opacity: 1; transform: scale(1.3); }
+  background: var(--brand-primary);
 }
 
 .gauge-speed-val {
@@ -1434,39 +1373,19 @@
   display: inline-block;
 }
 
-.btn-speed-ripple {
-  position: absolute;
-  inset: -6px;
-  border-radius: 999px;
-  border: 2px solid rgba(var(--brand-primary-rgb), 0.5);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.speedtest-dashboard.is-running .btn-speed-ripple {
-  animation: btnRipplePulse 1.8s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-@keyframes btnRipplePulse {
-  0% { transform: scale(1); opacity: 0.8; }
-  100% { transform: scale(1.3, 1.55); opacity: 0; }
-}
-
 .btn-speed-hero {
   position: relative;
-  z-index: 2;
-  min-width: 170px;
-  padding: 13px 32px;
-  font-size: 1.05rem;
-  font-weight: 700;
+  min-width: 160px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
   border-radius: 999px;
-  box-shadow: 0 10px 28px -6px rgba(var(--brand-primary-rgb), 0.45);
-  transition: all var(--transition-normal);
+  box-shadow: 0 4px 14px rgba(var(--brand-primary-rgb), 0.3);
+  transition: all var(--transition-base);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .btn-speed-hero:hover {
@@ -1555,8 +1474,6 @@
 
 .speed-metric-card.is-active .metric-status-dot {
   background: var(--brand-primary);
-  box-shadow: 0 0 8px var(--brand-primary);
-  animation: gaugePulse 1.2s infinite ease-in-out;
 }
 
 .speed-metric-card.is-finished .metric-status-dot {
