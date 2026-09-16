@@ -17,6 +17,7 @@
       'nav.speedtest': '在线测速',
       'nav.about': '关于与赞助',
       'nav.github': 'GitHub 仓库',
+      'nav.guide': '使用指南',
       'nav.theme_toggle': '切换主题',
       'nav.lang_toggle': 'Switch to English',
       'nav.lang_code': 'EN',
@@ -24,7 +25,39 @@
       'nav.menu': '菜单',
       'nav.download_app': '下载客户端',
 
-      // Hero Section (Home)
+      // Hero Section (Home - New Design)
+      'hero.tagline': '让网络连接，更简单。',
+      'hero.title_line1': '一个让网络连接',
+      'hero.title_line2_pre': '变得',
+      'hero.title_line2_highlight': '简单',
+      'hero.title_line2_post': '的代理客户端',
+      'hero.description': '基于 Flutter 与 Mihomo 核心打造，支持多平台、多协议的现代化网络代理工具。',
+      'hero.btn_download': '立即下载',
+      'hero.btn_github': '查看 GitHub',
+
+      // Capabilities Section (Home - New Design)
+      'cap.title_pre': 'Wmimo 的',
+      'cap.title_highlight': '核心能力',
+      'cap.desc': '从连接到世界，只需几步。<br>Wmimo 将复杂的网络配置变得简单，<br>让你专注于更重要的事情。',
+      'cap.step1_title': '连接',
+      'cap.step1_desc': '一键连接，自动接管<br>系统网络，轻松网络。',
+      'cap.step2_title': '选择',
+      'cap.step2_desc': 'Rule / Global / Direct<br>灵活切换网络模式。',
+      'cap.step3_title': '穿越',
+      'cap.step3_desc': '多协议、多节点<br>低延迟高速连接。',
+      'cap.step4_title': '畅享',
+      'cap.step4_desc': '无论是工作、学习还是娱乐，<br>都能稳定畅快。',
+
+      // Showcase Section (Home - New Design)
+      'showcase.tag': '简洁 · 现代 · 高效',
+      'showcase.title': '熟悉的界面，强大的功能',
+      'showcase.desc': 'Wmimo 采用现代化的 UI 设计，<br>提供清晰的状态展示与便捷的操作体验。',
+      'showcase.feat1': '实时流量监控',
+      'showcase.feat2': '多种代理模式',
+      'showcase.feat3': '系统托盘常驻',
+      'showcase.feat4': '轻量化设计，18px 更舒适',
+
+      // Legacy Hero Section (Keep for fallback)
       'hero.tag': '🚀 Wmimo v1.1.0 正式发布',
       'hero.title_pre': '极速、优雅、强大的',
       'hero.title_grad': '跨平台网络代理客户端',
@@ -416,6 +449,7 @@
       'nav.speedtest': 'Speed Test',
       'nav.about': 'About & Sponsor',
       'nav.github': 'GitHub Repo',
+      'nav.guide': 'User Guide',
       'nav.theme_toggle': 'Toggle Theme',
       'nav.lang_toggle': '切换为中文',
       'nav.lang_code': '中',
@@ -423,13 +457,43 @@
       'nav.menu': 'Menu',
       'nav.download_app': 'Download App',
 
-      // Hero Section (Home)
+      // Hero Section (Home - New Design)
+      'hero.tagline': 'Make Network Connections Simpler.',
+      'hero.title_line1': 'A proxy client that makes',
+      'hero.title_line2_pre': 'network connections ',
+      'hero.title_line2_highlight': 'effortless',
+      'hero.title_line2_post': '',
+      'hero.description': 'Built on Flutter & Mihomo Core, a modern network proxy tool supporting cross-platform and multi-protocol networking.',
+      'hero.btn_download': 'Download Now',
+      'hero.btn_github': 'View GitHub',
+
+      // Capabilities Section (Home - New Design)
+      'cap.title_pre': 'Core Capabilities of ',
+      'cap.title_highlight': 'Wmimo',
+      'cap.desc': 'Just a few steps from connection to the world.<br>Wmimo turns complex proxy configurations into simplicity,<br>freeing you to focus on what matters.',
+      'cap.step1_title': 'Connect',
+      'cap.step1_desc': 'One-click connect, auto capture<br>system network effortlessly.',
+      'cap.step2_title': 'Select',
+      'cap.step2_desc': 'Rule / Global / Direct<br>switch routing modes flexibly.',
+      'cap.step3_title': 'Traverse',
+      'cap.step3_desc': 'Multi-protocol, multi-node<br>low latency high speed.',
+      'cap.step4_title': 'Enjoy',
+      'cap.step4_desc': 'Work, study, or gaming,<br>always fast and rock solid.',
+
+      // Showcase Section (Home - New Design)
+      'showcase.tag': 'Clean · Modern · Efficient',
+      'showcase.title': 'Familiar Interface, Powerful Features',
+      'showcase.desc': 'Wmimo adopts modern UI design, providing transparent status displays and effortless operation.',
+      'showcase.feat1': 'Real-time Traffic Monitoring',
+      'showcase.feat2': 'Multiple Routing Modes',
+      'showcase.feat3': 'System Tray Resident',
+      'showcase.feat4': 'Lightweight Design, 18px Comfort',
+
+      // Legacy Hero Section (Keep for fallback)
       'hero.tag': '🚀 Wmimo v1.1.0 Released',
       'hero.title_pre': 'Fast, Elegant, Powerful',
       'hero.title_grad': 'Cross-Platform Proxy Client',
       'hero.subtitle': 'Crafted with Flutter & Mihomo Core. Features full-protocol networking, system-level TUN virtual NIC take-over, full-featured system tray, and clean 18px micro-card aesthetics.',
-      'hero.btn_download': 'Download Client',
-      'hero.btn_docs': 'Quick Start',
       'hero.meta_auto_detect': '⚡ Auto-detected System: ',
       'hero.meta_fallback': 'Built for desktop and mobile operating systems',
 
@@ -910,6 +974,13 @@
         textSpan.textContent = lang === 'zh' ? 'English' : '简体中文';
       }
     });
+
+    // Update capsule language switcher (中 | EN)
+    const capsuleBtns = document.querySelectorAll('.lang-capsule-btn');
+    capsuleBtns.forEach(btn => {
+      const btnLang = btn.getAttribute('data-lang');
+      btn.classList.toggle('active', btnLang === lang);
+    });
   }
 
   /**
@@ -944,11 +1015,22 @@
     const currentLang = getCurrentLang();
     applyTranslations(currentLang);
 
-    // Header Language Toggle Buttons
+    // Header Language Toggle Buttons (Legacy)
     document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         toggleLanguage();
+      });
+    });
+
+    // Capsule Language Buttons (中 | EN)
+    document.querySelectorAll('.lang-capsule-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetLang = btn.getAttribute('data-lang');
+        if (targetLang && targetLang !== getCurrentLang()) {
+          setLanguage(targetLang, true);
+        }
       });
     });
 
