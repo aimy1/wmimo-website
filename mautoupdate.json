@@ -20,7 +20,7 @@
     "platform": "windows",
     "version": "1.1.1",
     "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.1/Wmimo-Windows-x64-Setup-v1.1.1.exe",
-    "sha256": "839f4792670729d00acd9a19087280ddf5d577e26943334524ee5c8e2ac58cb2",
+    "sha256": "5a21ba6583d3d00c0a25752ae0a335e0bc3af3976cdd0e071ad983106a1bf6fe",
     "abis": [
       "x86_64",
       "x64",
