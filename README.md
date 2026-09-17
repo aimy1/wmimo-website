@@ -1,4 +1,4 @@
-# Wmimo 官方网站与多页面文档中心
+﻿# Wmimo 官方网站与多页面文档中心
 
 <div align="center">
   <img src="assets/images/app_icon_256.png" width="96" height="96" alt="Wmimo Logo" />
@@ -6,7 +6,7 @@
   <p><strong>极速 · 优雅 · 强大的现代化跨平台 Clash / Mihomo 客户端官网</strong></p>
 
   <p>
-    <a href="https://github.com/aimy1/Wmimo/releases/latest"><img src="https://img.shields.io/badge/Release-v1.1.2-00BCDF?style=flat-square&logo=github" alt="Release Version" /></a>
+    <a href="https://github.com/aimy1/Wmimo/releases/latest"><img src="https://img.shields.io/badge/Release-v1.1.3-00BCDF?style=flat-square&logo=github" alt="Release Version" /></a>
     <a href="https://github.com/aimy1/wmimo-website/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square" alt="License" /></a>
     <img src="https://img.shields.io/badge/Tech-HTML5%20%7C%20CSS3%20%7C%20ES6-38BDF8?style=flat-square" alt="Tech Stack" />
     <img src="https://img.shields.io/badge/Design-18px%20Micro--Card-10B981?style=flat-square" alt="Design System" />
@@ -128,3 +128,4 @@ python -m http.server 8089
 ## 📄 开源许可证
 
 本项目基于 [GPL-3.0 License](LICENSE) 协议开源。
+
