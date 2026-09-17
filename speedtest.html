@@ -41,9 +41,9 @@
         <ul class="nav-desktop">
           <li><a href="index.html" class="nav-link" data-i18n="nav.home">首页</a></li>
           <li><a href="download.html" class="nav-link" data-i18n="nav.download">下载</a></li>
-          <li><a href="speedtest.html" class="nav-link active" data-i18n="nav.speedtest">在线测速</a></li>
-          <li><a href="docs/index.html" class="nav-link" data-i18n="nav.docs">使用文档</a></li>
-          <li><a href="community.html" class="nav-link" data-i18n="nav.about">关于与赞助</a></li>
+          <li><a href="speedtest.html" class="nav-link active" data-i18n="nav.speedtest">速度测试</a></li>
+          <li><a href="docs/index.html" class="nav-link" data-i18n="nav.docs">文档</a></li>
+          <li><a href="community.html" class="nav-link" data-i18n="nav.about">关于</a></li>
         </ul>
       </nav>
 
@@ -54,7 +54,10 @@
           <button type="button" class="lang-capsule-btn" data-lang="en">EN</button>
         </div>
 
-        <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.1.3" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub Releases</a>
+        <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 7px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          <span data-i18n="nav.github">GitHub</span>
+        </a>
 
         <button class="mobile-toggle-btn" aria-label="菜单" data-i18n-aria="nav.menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -161,7 +164,6 @@
             <div class="test-step-item is-completed" id="stepConn">
               <div class="step-indicator">
                 <span class="step-num">1</span>
-                <svg class="step-check-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <div class="step-content">
                 <span class="step-title" data-i18n="st.step_conn">连接服务器</span>
@@ -171,27 +173,25 @@
             <div class="step-line is-completed" id="stepLine1"></div>
 
             <!-- Step 2: Ping -->
-            <div class="test-step-item" id="stepPing">
+            <div class="test-step-item is-completed" id="stepPing">
               <div class="step-indicator">
                 <span class="step-num">2</span>
-                <svg class="step-check-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <div class="step-content">
                 <span class="step-title" data-i18n="st.step_ping">测试延迟</span>
-                <span class="step-status" id="stepPingStatus" data-i18n="st.status_waiting">等待中...</span>
+                <span class="step-status" id="stepPingStatus">12 ms ✓</span>
               </div>
             </div>
-            <div class="step-line" id="stepLine2"></div>
+            <div class="step-line is-completed" id="stepLine2"></div>
 
             <!-- Step 3: Download -->
-            <div class="test-step-item" id="stepDown">
+            <div class="test-step-item is-active" id="stepDown">
               <div class="step-indicator">
                 <span class="step-num">3</span>
-                <svg class="step-check-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <div class="step-content">
                 <span class="step-title" data-i18n="st.step_down">测试下载速度</span>
-                <span class="step-status" id="stepDownStatus" data-i18n="st.status_waiting">等待中...</span>
+                <span class="step-status" id="stepDownStatus" data-i18n="st.status_running">进行中...</span>
               </div>
             </div>
             <div class="step-line" id="stepLine3"></div>
@@ -200,7 +200,6 @@
             <div class="test-step-item" id="stepUp">
               <div class="step-indicator">
                 <span class="step-num">4</span>
-                <svg class="step-check-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <div class="step-content">
                 <span class="step-title" data-i18n="st.step_up">测试上传速度</span>
@@ -213,7 +212,6 @@
             <div class="test-step-item" id="stepQuality">
               <div class="step-indicator">
                 <span class="step-num">5</span>
-                <svg class="step-check-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <div class="step-content">
                 <span class="step-title" data-i18n="st.step_quality">分析网络质量</span>
@@ -239,28 +237,28 @@
                 </filter>
               </defs>
               <!-- Background Track Arc -->
-              <path class="gauge-bg-arc" d="M 45 180 A 90 90 0 1 1 215 180" />
+              <path class="gauge-bg-arc" d="M 56.3 181.6 A 90 90 0 1 1 203.7 181.6" />
               <!-- Glowing Progress Arc -->
-              <path id="gaugeProgressArc" class="gauge-progress-arc" d="M 45 180 A 90 90 0 1 1 215 180" stroke-dasharray="392" stroke-dashoffset="392" filter="url(#gaugeGlow)" />
+              <path id="gaugeProgressArc" class="gauge-progress-arc" d="M 56.3 181.6 A 90 90 0 1 1 203.7 181.6" stroke-dasharray="392" stroke-dashoffset="111" filter="url(#gaugeGlow)" />
               
               <!-- Minor Sub-ticks -->
-              <line id="gaugeSubTick_0" class="gauge-subtick-line" x1="40" y1="150" x2="47" y2="152" />
-              <line id="gaugeSubTick_1" class="gauge-subtick-line" x1="48" y1="78" x2="54" y2="82" />
-              <line id="gaugeSubTick_2" class="gauge-subtick-line" x1="120" y1="41" x2="122" y2="48" />
-              <line id="gaugeSubTick_3" class="gauge-subtick-line" x1="140" y1="41" x2="138" y2="48" />
-              <line id="gaugeSubTick_4" class="gauge-subtick-line" x1="212" y1="78" x2="206" y2="82" />
-              <line id="gaugeSubTick_5" class="gauge-subtick-line" x1="220" y1="150" x2="213" y2="152" />
+              <line class="gauge-subtick-line" x1="61.2" y1="178.2" x2="51.4" y2="185.1" />
+              <line class="gauge-subtick-line" x1="48.8" y1="108.2" x2="37.3" y2="105.1" />
+              <line class="gauge-subtick-line" x1="88.0" y1="57.3" x2="82.0" y2="46.9" />
+              <line class="gauge-subtick-line" x1="158.7" y1="51.1" x2="162.8" y2="39.8" />
+              <line class="gauge-subtick-line" x1="211.2" y1="108.2" x2="222.7" y2="105.1" />
+              <line class="gauge-subtick-line" x1="198.8" y1="178.2" x2="208.6" y2="185.1" />
 
               <!-- Dial Scale Labels -->
-              <text id="gaugeTickText_0" class="gauge-tick-label" x="38" y="196">0</text>
-              <text id="gaugeTickText_1" class="gauge-tick-label" x="34" y="102">50</text>
-              <text id="gaugeTickText_2" class="gauge-tick-label" x="84" y="40">100</text>
-              <text id="gaugeTickText_3" class="gauge-tick-label" x="174" y="38">200</text>
-              <text id="gaugeTickText_4" class="gauge-tick-label" x="226" y="102">500</text>
-              <text id="gaugeTickText_5" class="gauge-tick-label" x="222" y="196">1000</text>
+              <text class="gauge-tick-label" x="42" y="196">0</text>
+              <text class="gauge-tick-label" x="26" y="104">50</text>
+              <text class="gauge-tick-label" x="78" y="38">100</text>
+              <text class="gauge-tick-label" x="168" y="30">200</text>
+              <text class="gauge-tick-label" x="234" y="104">500</text>
+              <text class="gauge-tick-label" x="218" y="196">1000</text>
 
               <!-- Minimalist Precision Pointer Needle -->
-              <g id="gaugeNeedle" class="gauge-needle" style="transform-origin: 130px 130px; transform: rotate(-125deg);">
+              <g id="gaugeNeedle" class="gauge-needle" style="transform-origin: 130px 130px; transform: rotate(54.2deg);">
                 <line x1="130" y1="125" x2="130" y2="48" class="needle-line" />
                 <circle cx="130" cy="130" r="4" class="needle-pivot" />
                 <circle cx="130" cy="46" r="2.5" class="needle-tip-dot" />
@@ -268,24 +266,24 @@
             </svg>
 
             <div class="gauge-center-content">
-              <div id="gaugeSpeedVal" class="gauge-speed-val">0.00</div>
+              <div id="gaugeSpeedVal" class="gauge-speed-val">386.42</div>
               <div id="gaugeSpeedUnit" class="gauge-speed-unit">Mbps</div>
               <div id="gaugePhase" class="gauge-phase-badge">
                 <span class="phase-icon" id="phaseIcon">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="4" x2="12" y2="18"/><polyline points="18 12 12 18 6 12"/></svg>
                 </span>
-                <span class="phase-text" id="gaugePhaseText" data-i18n="st.phase_idle">就绪待测</span>
+                <span class="phase-text" id="gaugePhaseText" data-i18n="st.phase_down">下载速度</span>
               </div>
             </div>
           </div>
 
           <!-- Action Button -->
           <div class="speedtest-action-wrap">
-            <button id="speedStartBtn" class="btn-speed-radiant">
+            <button id="speedStartBtn" class="btn-speed-radiant is-testing">
               <span class="btn-icon" id="speedBtnIcon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="3"/></svg>
               </span>
-              <span id="speedBtnText" data-i18n="st.btn_start">开始测速</span>
+              <span id="speedBtnText" data-i18n="st.btn_testing">正在测试...</span>
             </button>
           </div>
         </div>
@@ -313,11 +311,11 @@
 
             <div class="speed-chart-footer">
               <div class="chart-footer-meta">
-                <span class="meta-tested"><span data-i18n="st.tested_data">已测试</span> <strong id="dataTransferredVal">0 MB</strong></span>
-                <span class="meta-percent" id="testProgressPercent">0%</span>
+                <span class="meta-tested"><span data-i18n="st.tested_data">已测试</span> <strong id="dataTransferredVal">2.8 GB</strong></span>
+                <span class="meta-percent" id="testProgressPercent">68%</span>
               </div>
               <div class="chart-progress-track">
-                <div class="chart-progress-fill" id="testProgressFill" style="width: 0%;"></div>
+                <div class="chart-progress-fill" id="testProgressFill" style="width: 68%;"></div>
               </div>
             </div>
           </div>
@@ -336,7 +334,7 @@
             <span class="metric-title" data-i18n="st.metric_ping">延迟 (Ping)</span>
           </div>
           <div class="metric-body">
-            <div id="pingVal" class="metric-num">--</div>
+            <div id="pingVal" class="metric-num">12</div>
             <span class="metric-unit">ms</span>
           </div>
           <div class="metric-subtitle" data-i18n="st.metric_ping_sub">网络响应时间</div>
@@ -352,7 +350,7 @@
             <span class="metric-title" data-i18n="st.metric_jitter">抖动 (Jitter)</span>
           </div>
           <div class="metric-body">
-            <div id="jitterVal" class="metric-num">--</div>
+            <div id="jitterVal" class="metric-num">2.1</div>
             <span class="metric-unit">ms</span>
           </div>
           <div class="metric-subtitle" data-i18n="st.metric_jitter_sub">延迟波动</div>
@@ -368,7 +366,7 @@
             <span class="metric-title" data-i18n="st.metric_down">下载速度</span>
           </div>
           <div class="metric-body">
-            <div id="downloadVal" class="metric-num">--</div>
+            <div id="downloadVal" class="metric-num">386.42</div>
             <span class="metric-unit">Mbps</span>
           </div>
           <div class="metric-subtitle" data-i18n="st.metric_down_sub">当前下载速率</div>
@@ -384,7 +382,7 @@
             <span class="metric-title" data-i18n="st.metric_up">上传速度</span>
           </div>
           <div class="metric-body">
-            <div id="uploadVal" class="metric-num">--</div>
+            <div id="uploadVal" class="metric-num">82.37</div>
             <span class="metric-unit">Mbps</span>
           </div>
           <div class="metric-subtitle" data-i18n="st.metric_up_sub">当前上传速率</div>
@@ -421,11 +419,11 @@
           <div class="netinfo-grid">
             <div class="netinfo-col">
               <div class="netinfo-label"><span class="info-icon">🌐</span> <span data-i18n="st.net_ip">公网 IP</span></div>
-              <div class="netinfo-val" id="clientIp">检测中...</div>
+              <div class="netinfo-val" id="clientIp">203.0.113.42</div>
             </div>
             <div class="netinfo-col">
               <div class="netinfo-label"><span class="info-icon">📍</span> <span data-i18n="st.net_node">测试节点</span></div>
-              <div class="netinfo-val" id="clientColo">连接中...</div>
+              <div class="netinfo-val" id="clientColo">Los Angeles (美国)</div>
             </div>
             <div class="netinfo-col">
               <div class="netinfo-label"><span class="info-icon">⚙️</span> <span data-i18n="st.net_proto">协议</span></div>

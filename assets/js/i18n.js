@@ -14,7 +14,7 @@
       'nav.download': '下载',
       'nav.download_center': '下载中心',
       'nav.docs': '文档',
-      'nav.speedtest': '在线测速',
+      'nav.speedtest': '速度测试',
       'nav.about': '关于',
       'nav.github': 'GitHub',
       'nav.guide': '使用指南',

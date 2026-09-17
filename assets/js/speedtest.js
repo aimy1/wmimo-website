@@ -105,23 +105,28 @@
     arcLength: 392
   };
 
+  // Showcase Preset Curves matching mockup
+  const SHOWCASE_DOWN_POINTS = [140, 260, 310, 275, 320, 375, 386.42, 335, 310, 345, 386.42, 350, 375, 386.42];
+  const SHOWCASE_UP_POINTS = [28, 48, 70, 82.37, 72, 58, 76, 82.37, 74, 68, 78, 80, 82.37];
+
   // State
   let state = {
     currentServer: SERVERS[0],
     isRunning: false,
-    phase: 'idle', // 'idle' | 'ping' | 'download' | 'upload' | 'finished' | 'error'
+    isShowcase: true,
+    phase: 'download', // Initial showcase phase matching mockup
     abortController: null,
-    ping: 0,
-    jitter: 0,
-    downloadMbps: 0,
-    uploadMbps: 0,
-    targetSpeed: 0,
-    displaySpeed: 0,
-    totalBytesLoaded: 0,
+    ping: 12,
+    jitter: 2.1,
+    downloadMbps: 386.42,
+    uploadMbps: 82.37,
+    targetSpeed: 386.42,
+    displaySpeed: 386.42,
+    totalBytesLoaded: 2.8 * 1024 * 1024 * 1024,
     totalBytesUploaded: 0,
-    testProgress: 0,
-    wavePointsDown: [],
-    wavePointsUp: []
+    testProgress: 68,
+    wavePointsDown: [...SHOWCASE_DOWN_POINTS],
+    wavePointsUp: [...SHOWCASE_UP_POINTS]
   };
 
   // Cached DOM elements
@@ -387,68 +392,85 @@
     // Subtle Grid
     canvasCtx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
     canvasCtx.lineWidth = 1;
-    for (let y = 0; y < h; y += 32) {
+    for (let y = 0; y < h; y += 30) {
       canvasCtx.beginPath();
       canvasCtx.moveTo(0, y);
       canvasCtx.lineTo(w, y);
       canvasCtx.stroke();
     }
-    for (let x = 0; x < w; x += 55) {
+    for (let x = 0; x < w; x += 50) {
       canvasCtx.beginPath();
       canvasCtx.moveTo(x, 0);
       canvasCtx.lineTo(x, h);
       canvasCtx.stroke();
     }
 
-    // Find global peak speed across down and up points
-    let maxSpeed = 20;
-    state.wavePointsDown.forEach(p => { if (p > maxSpeed) maxSpeed = p; });
-    state.wavePointsUp.forEach(p => { if (p > maxSpeed) maxSpeed = p; });
-    maxSpeed = Math.ceil(maxSpeed * 1.18);
+    // Determine max values for download and upload independently for optimal visual balance
+    let maxDown = 50;
+    state.wavePointsDown.forEach(p => { if (p > maxDown) maxDown = p; });
+    maxDown = Math.ceil(maxDown * 1.16);
+
+    let maxUp = 30;
+    state.wavePointsUp.forEach(p => { if (p > maxUp) maxUp = p; });
+    maxUp = Math.ceil(maxUp * 1.65);
+
+    // Draw Upload Curve (Purple) first so download curve is superimposed on top
+    if (state.wavePointsUp.length >= 2) {
+      drawSmoothWave(state.wavePointsUp, '#a855f7', 'rgba(168, 85, 247, 0.30)', 'rgba(168, 85, 247, 0.0)', w, h, maxUp);
+    }
 
     // Draw Download Curve (Cyan)
     if (state.wavePointsDown.length >= 2) {
-      drawCurve(state.wavePointsDown, '#00daf5', 'rgba(0, 218, 245, 0.28)', 'rgba(0, 218, 245, 0.0)', w, h, maxSpeed);
-    }
-
-    // Draw Upload Curve (Violet/Purple)
-    if (state.wavePointsUp.length >= 2) {
-      drawCurve(state.wavePointsUp, '#a855f7', 'rgba(168, 85, 247, 0.25)', 'rgba(168, 85, 247, 0.0)', w, h, maxSpeed);
+      drawSmoothWave(state.wavePointsDown, '#00daf5', 'rgba(0, 218, 245, 0.35)', 'rgba(0, 218, 245, 0.0)', w, h, maxDown);
     }
   }
 
-  function drawCurve(points, strokeColor, grad1, grad2, w, h, maxSpeed) {
-    const stepX = w / Math.max(points.length - 1, 30);
+  function drawSmoothWave(points, strokeColor, grad1, grad2, w, h, maxVal) {
+    if (!points || points.length < 2) return;
 
-    canvasCtx.beginPath();
-    points.forEach((speed, idx) => {
-      const x = idx * stepX;
-      const y = h - (speed / maxSpeed) * (h - 18) - 10;
-      if (idx === 0) {
-        canvasCtx.moveTo(x, y);
-      } else {
-        const prevSpeed = points[idx - 1];
-        const prevX = (idx - 1) * stepX;
-        const prevY = h - (prevSpeed / maxSpeed) * (h - 18) - 10;
-        const midX = (prevX + x) / 2;
-        canvasCtx.quadraticCurveTo(prevX, prevY, midX, (prevY + y) / 2);
-      }
+    const usableH = h - 22;
+    const paddingBottom = 8;
+    const totalPts = points.length;
+
+    // Convert points to (x, y) coordinates
+    const coords = points.map((val, idx) => {
+      const x = (idx / (totalPts - 1)) * w;
+      const ratio = Math.min(1, Math.max(0, val / maxVal));
+      const y = h - paddingBottom - ratio * usableH;
+      return { x, y };
     });
 
+    canvasCtx.beginPath();
+    canvasCtx.moveTo(coords[0].x, coords[0].y);
+
+    for (let i = 0; i < coords.length - 1; i++) {
+      const p0 = coords[i === 0 ? 0 : i - 1];
+      const p1 = coords[i];
+      const p2 = coords[i + 1];
+      const p3 = coords[i + 2 >= coords.length ? coords.length - 1 : i + 2];
+
+      const cp1x = p1.x + (p2.x - p0.x) / 6;
+      const cp1y = p1.y + (p2.y - p0.y) / 6;
+      const cp2x = p2.x - (p3.x - p1.x) / 6;
+      const cp2y = p2.y - (p3.y - p1.y) / 6;
+
+      canvasCtx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y);
+    }
+
+    // Stroke line with glow
     canvasCtx.strokeStyle = strokeColor;
-    canvasCtx.lineWidth = 2.2;
+    canvasCtx.lineWidth = 2.4;
     canvasCtx.lineCap = 'round';
     canvasCtx.lineJoin = 'round';
     canvasCtx.shadowColor = strokeColor;
-    canvasCtx.shadowBlur = 6;
+    canvasCtx.shadowBlur = 8;
     canvasCtx.stroke();
     canvasCtx.shadowBlur = 0;
 
-    // Fill gradient
-    const lastIdx = points.length - 1;
-    const lastX = lastIdx * stepX;
-    canvasCtx.lineTo(lastX, h);
-    canvasCtx.lineTo(0, h);
+    // Fill gradient underneath
+    const lastCoord = coords[coords.length - 1];
+    canvasCtx.lineTo(lastCoord.x, h);
+    canvasCtx.lineTo(coords[0].x, h);
     canvasCtx.closePath();
 
     const gradient = canvasCtx.createLinearGradient(0, 0, 0, h);
@@ -458,11 +480,13 @@
     canvasCtx.fill();
 
     // Endpoint dot
-    const lastY = h - (points[lastIdx] / maxSpeed) * (h - 18) - 10;
     canvasCtx.beginPath();
-    canvasCtx.arc(lastX, lastY, 3.5, 0, Math.PI * 2);
+    canvasCtx.arc(lastCoord.x, lastCoord.y, 3.5, 0, Math.PI * 2);
     canvasCtx.fillStyle = strokeColor;
+    canvasCtx.shadowColor = strokeColor;
+    canvasCtx.shadowBlur = 6;
     canvasCtx.fill();
+    canvasCtx.shadowBlur = 0;
   }
 
   // --- Network Diagnostics (IP, Colo, Protocol, TLS, ISP) ---
@@ -522,7 +546,7 @@
   }
 
   async function probeAllServers() {
-    if (dom.currentServerPing) {
+    if (dom.currentServerPing && !state.isShowcase) {
       dom.currentServerPing.innerHTML = '<span class="latency-val">...</span> ms';
     }
     const promises = SERVERS.map(async s => {
@@ -532,10 +556,11 @@
     renderServerNodeList();
     updateServerBarUI();
 
-    // Set Step 1 to completed with probed ping
-    const s = state.currentServer;
-    const initialPing = s.ping || 12;
-    updateStep(1, 'completed', initialPing + ' ms ✓');
+    if (!state.isShowcase) {
+      const s = state.currentServer;
+      const initialPing = s.ping || 12;
+      updateStep(1, 'completed', initialPing + ' ms ✓');
+    }
   }
 
   function updateServerBarUI() {
@@ -862,11 +887,11 @@
         state.abortController.abort();
       }
       resetState();
-      setPhase('idle');
       updateButtonUI();
       return;
     }
 
+    state.isShowcase = false;
     state.isRunning = true;
     state.abortController = new AbortController();
     const signal = state.abortController.signal;
@@ -888,7 +913,8 @@
     state.wavePointsUp = [];
     renderWaveform();
 
-    // Reset steps 2..5
+    // Reset steps 1..5
+    updateStep(1, 'active', t('st.step_conn', '连接服务器'));
     updateStep(2, 'waiting');
     updateStep(3, 'waiting');
     updateStep(4, 'waiting');
@@ -920,26 +946,42 @@
       }
     } finally {
       state.isRunning = false;
+      state.isShowcase = false;
       updateButtonUI();
     }
   }
 
   function resetState() {
     state.isRunning = false;
+    state.isShowcase = false;
     state.phase = 'idle';
     setGaugeTarget(0, getLang() === 'en' ? 'STANDBY' : '就绪待测');
     if (dom.consoleCard) dom.consoleCard.classList.remove('is-running');
+  }
+
+  function handleStartBtnClick() {
+    if (state.isRunning) {
+      if (state.abortController) {
+        state.abortController.abort();
+      }
+      resetState();
+      updateButtonUI();
+      return;
+    }
+
+    state.isShowcase = false;
+    startSpeedTest();
   }
 
   function updateButtonUI() {
     if (!dom.startBtn || !dom.btnText) return;
     const isEn = getLang() === 'en';
 
-    if (state.isRunning) {
+    if (state.isRunning || state.isShowcase) {
       dom.startBtn.classList.add('is-testing');
-      dom.btnText.innerText = isEn ? 'Stop Test' : '正在测试...';
+      dom.btnText.innerText = isEn ? 'Testing...' : '正在测试...';
       if (dom.btnIcon) {
-        dom.btnIcon.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>';
+        dom.btnIcon.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="3"/></svg>';
       }
     } else {
       dom.startBtn.classList.remove('is-testing');
@@ -958,7 +1000,7 @@
     updateServerBarUI();
 
     if (dom.startBtn) {
-      dom.startBtn.addEventListener('click', startSpeedTest);
+      dom.startBtn.addEventListener('click', handleStartBtnClick);
     }
 
     if (dom.serverSelectBtn) {

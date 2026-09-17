@@ -1050,31 +1050,27 @@
 }
 
 .server-status-label {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #38bdf8;
-  letter-spacing: 0.02em;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.01em;
 }
 
 .server-detail-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.94rem;
-  font-weight: 700;
-  color: var(--text-primary);
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #00daf5;
   flex-wrap: wrap;
 }
 
 .server-ping-tag {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding: 2px 9px;
-  border-radius: 999px;
-  background: rgba(16, 185, 129, 0.12);
-  color: #10B981;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #00daf5;
   display: inline-flex;
   align-items: center;
 }
@@ -1378,42 +1374,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.4);
   flex-shrink: 0;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.step-num {
+  display: block !important;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1;
+}
+
 .step-check-svg {
-  display: none;
+  display: none !important;
 }
 
 .test-step-item.is-active .step-indicator {
   border-color: #0077ff;
   background: #0077ff;
   color: #FFFFFF;
-  box-shadow: 0 0 16px rgba(0, 119, 255, 0.7);
-  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(0, 119, 255, 0.85);
+  transform: scale(1.06);
 }
 
 .test-step-item.is-completed .step-indicator {
-  border-color: rgba(16, 185, 129, 0.4);
-  background: rgba(16, 185, 129, 0.15);
-  color: #10B981;
-}
-
-.test-step-item.is-completed .step-indicator .step-num {
-  display: none;
-}
-
-.test-step-item.is-completed .step-indicator .step-check-svg {
-  display: block;
+  border-color: #00daf5;
+  background: rgba(0, 218, 245, 0.08);
+  color: #00daf5;
+  box-shadow: 0 0 10px rgba(0, 218, 245, 0.3);
 }
 
 .step-line {
   width: 2px;
-  height: 20px;
+  height: 22px;
   margin-left: 15px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 1px;
@@ -1421,7 +1417,8 @@
 }
 
 .step-line.is-completed {
-  background: #10B981;
+  background: #00daf5;
+  box-shadow: 0 0 6px rgba(0, 218, 245, 0.6);
 }
 
 .step-content {
@@ -1441,18 +1438,18 @@
 .step-status {
   font-size: 0.8rem;
   font-family: var(--font-mono);
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.35);
   transition: color 0.2s ease;
 }
 
 .test-step-item.is-active .step-status {
-  color: #38bdf8;
+  color: #00daf5;
   font-weight: 600;
 }
 
 .test-step-item.is-completed .step-status {
   color: #10b981;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* 2. Center Column: Speedometer Gauge */
@@ -1561,26 +1558,27 @@
   font-weight: 600;
   color: var(--text-muted);
   margin-top: 4px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   letter-spacing: 0.02em;
 }
 
 .gauge-phase-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.84rem;
+  justify-content: center;
+  gap: 5px;
+  font-size: 0.92rem;
   font-weight: 600;
-  color: #38bdf8;
-  padding: 3px 10px;
-  border-radius: 999px;
-  background: rgba(56, 189, 248, 0.08);
+  color: #00daf5;
+  background: transparent;
+  padding: 0;
 }
 
 .phase-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: #00daf5;
 }
 
 .speedtest-action-wrap {
@@ -1591,28 +1589,29 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  min-width: 165px;
-  padding: 12px 30px;
+  gap: 10px;
+  min-width: 175px;
+  padding: 13px 34px;
   border-radius: 999px;
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #0077ff 0%, #00aaff 100%);
+  background: #0077ff;
   color: #FFFFFF;
   border: none;
   cursor: pointer;
-  box-shadow: 0 0 24px rgba(0, 119, 255, 0.55), 0 4px 14px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 28px rgba(0, 119, 255, 0.75), 0 0 55px rgba(0, 119, 255, 0.35);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-speed-radiant:hover {
+  background: #006ce6;
   transform: translateY(-2px);
-  box-shadow: 0 0 32px rgba(0, 170, 255, 0.8), 0 6px 18px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 35px rgba(0, 119, 255, 0.9), 0 0 65px rgba(0, 119, 255, 0.45);
 }
 
 .btn-speed-radiant.is-testing {
-  background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
-  box-shadow: 0 0 22px rgba(239, 68, 68, 0.55);
+  background: #0077ff;
+  box-shadow: 0 0 30px rgba(0, 119, 255, 0.8), 0 0 60px rgba(0, 119, 255, 0.4);
 }
 
 /* 3. Right Column: Real-time Waveform Canvas & Progress Footer */
@@ -1623,8 +1622,8 @@
 }
 
 .speed-chart-card-inner {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #080e1b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   padding: 20px 22px;
   display: flex;
