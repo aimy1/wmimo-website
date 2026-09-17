@@ -90,8 +90,8 @@
   const DIAL_POINTS = [
     { speed: 0, frac: 0.00, angle: -125 },
     { speed: 50, frac: 0.20, angle: -75 },
-    { speed: 100, frac: 0.38, angle: -30 },
-    { speed: 200, frac: 0.58, angle: 20 },
+    { speed: 100, frac: 0.40, angle: -25 },
+    { speed: 200, frac: 0.60, angle: 25 },
     { speed: 500, frac: 0.80, angle: 75 },
     { speed: 1000, frac: 1.00, angle: 125 }
   ];
@@ -102,7 +102,7 @@
     downDurationMs: 8000,
     upDurationMs: 6000,
     maxGaugeSpeed: 1000,
-    arcLength: 392
+    arcLength: 401.4
   };
 
   // Showcase Preset Curves matching mockup
@@ -255,7 +255,7 @@
 
       const val = state.displaySpeed;
       if (dom.gaugeSpeedVal) {
-        dom.gaugeSpeedVal.innerText = val.toFixed(val >= 100 ? 1 : 2);
+        dom.gaugeSpeedVal.innerText = val.toFixed(2);
       }
 
       // Calculate fraction and angle
@@ -341,14 +341,23 @@
       dom.gaugePhaseText.innerText = phaseNames[phase] || phase;
     }
 
-    // Phase icon
+    // Phase icon & dynamic styling
     if (dom.phaseIcon) {
       if (phase === 'download') {
-        dom.phaseIcon.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>';
+        if (dom.gaugePhase) dom.gaugePhase.style.color = '#00daf5';
+        dom.phaseIcon.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00daf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M7 11l5 5 5-5M4 20h16"/></svg>';
       } else if (phase === 'upload') {
-        dom.phaseIcon.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>';
+        if (dom.gaugePhase) dom.gaugePhase.style.color = '#a855f7';
+        dom.phaseIcon.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17V4M7 9l5-5 5 5M4 20h16"/></svg>';
+      } else if (phase === 'ping') {
+        if (dom.gaugePhase) dom.gaugePhase.style.color = '#00daf5';
+        dom.phaseIcon.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00daf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>';
+      } else if (phase === 'finished') {
+        if (dom.gaugePhase) dom.gaugePhase.style.color = '#10b981';
+        dom.phaseIcon.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
       } else {
-        dom.phaseIcon.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="6" fill="currentColor"/></svg>';
+        if (dom.gaugePhase) dom.gaugePhase.style.color = '#60a5fa';
+        dom.phaseIcon.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>';
       }
     }
   }

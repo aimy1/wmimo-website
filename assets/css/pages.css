@@ -1463,8 +1463,8 @@
 
 .speed-gauge-wrap {
   position: relative;
-  width: 280px;
-  height: 235px;
+  width: 290px;
+  height: 245px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -1477,88 +1477,117 @@
   overflow: visible;
 }
 
-.gauge-bg-arc {
+.gauge-plate-disc {
+  fill: #070c18;
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 1;
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.7));
+}
+
+.gauge-plate-ring {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.08);
-  stroke-width: 12;
+  stroke: rgba(0, 218, 245, 0.12);
+  stroke-width: 1;
+  stroke-dasharray: 2 5;
+}
+
+.gauge-bg-groove {
+  fill: none;
+  stroke: rgba(14, 22, 38, 0.9);
+  stroke-width: 10;
   stroke-linecap: round;
+}
+
+.gauge-bg-spectrum {
+  fill: none;
+  stroke: url(#gaugeTrackGrad);
+  stroke-width: 7.5;
+  stroke-linecap: round;
+  opacity: 0.22;
 }
 
 .gauge-progress-arc {
   fill: none;
-  stroke: url(#gaugeGradient);
-  stroke-width: 12;
+  stroke: url(#gaugeTrackGrad);
+  stroke-width: 8;
   stroke-linecap: round;
-  stroke-dasharray: 392;
-  stroke-dashoffset: 392;
+  stroke-dasharray: 401.4;
+  stroke-dashoffset: 401.4;
   transition: stroke-dashoffset 0.08s cubic-bezier(0.1, 0.9, 0.2, 1);
+  filter: drop-shadow(0 0 8px rgba(0, 220, 255, 0.7));
 }
 
-.gauge-subtick-line {
-  stroke: rgba(255, 255, 255, 0.16);
-  stroke-width: 1.5;
+.gauge-tick-major {
+  stroke: rgba(0, 218, 245, 0.5);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.gauge-tick-minor {
+  stroke: rgba(0, 218, 245, 0.24);
+  stroke-width: 1.2;
   stroke-linecap: round;
 }
 
 .gauge-tick-label {
-  fill: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: 9px;
+  fill: #8ca2c4;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", sans-serif;
+  font-size: 11px;
   font-weight: 600;
+  letter-spacing: 0.02em;
   text-anchor: middle;
   dominant-baseline: central;
+  user-select: none;
 }
 
-/* Minimalist Precision Pointer Needle */
+/* Futuristic Laser Pointer Needle (No tip ball) */
 .gauge-needle {
-  transform-origin: 130px 130px;
+  transform-origin: 140px 120px;
   pointer-events: none;
   will-change: transform;
+  transition: transform 0.08s cubic-bezier(0.1, 0.9, 0.2, 1);
 }
 
-.needle-line {
+.needle-beam {
   stroke: #00daf5;
-  stroke-width: 2.2;
+  stroke-width: 2.4;
   stroke-linecap: round;
-  filter: drop-shadow(0 0 6px #00daf5);
+  filter: drop-shadow(0 0 6px #00daf5) drop-shadow(0 0 14px rgba(0, 218, 245, 0.8));
 }
 
-.needle-pivot {
+.needle-hub {
   fill: #00daf5;
-  filter: drop-shadow(0 0 5px #00daf5);
-}
-
-.needle-tip-dot {
-  fill: #FFFFFF;
+  filter: drop-shadow(0 0 8px #00daf5);
 }
 
 .gauge-center-content {
   position: absolute;
-  bottom: 22px;
+  top: 96px;
   left: 0;
   right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  pointer-events: none;
 }
 
 .gauge-speed-val {
-  font-family: var(--font-mono);
-  font-size: 3.4rem;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", sans-serif;
+  font-size: 2.85rem;
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.035em;
   color: #FFFFFF;
   line-height: 1;
   margin: 0;
-  text-shadow: 0 0 20px rgba(0, 218, 245, 0.35);
+  text-shadow: 0 0 24px rgba(0, 218, 245, 0.35), 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .gauge-speed-unit {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  color: var(--text-muted);
-  margin-top: 4px;
-  margin-bottom: 4px;
+  color: #8fa0bc;
+  margin-top: 5px;
+  margin-bottom: 7px;
   letter-spacing: 0.02em;
 }
 
@@ -1566,19 +1595,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  font-size: 0.92rem;
+  gap: 6px;
+  font-size: 0.88rem;
   font-weight: 600;
   color: #00daf5;
   background: transparent;
   padding: 0;
+  transition: color var(--transition-fast);
 }
 
 .phase-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #00daf5;
 }
 
 .speedtest-action-wrap {
@@ -1595,23 +1624,23 @@
   border-radius: 999px;
   font-size: 0.98rem;
   font-weight: 700;
-  background: #0077ff;
+  background: linear-gradient(135deg, #0084ff 0%, #0060ff 100%);
   color: #FFFFFF;
   border: none;
   cursor: pointer;
-  box-shadow: 0 0 28px rgba(0, 119, 255, 0.75), 0 0 55px rgba(0, 119, 255, 0.35);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 24px rgba(0, 110, 255, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.16) inset;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-speed-radiant:hover {
-  background: #006ce6;
+  background: linear-gradient(135deg, #0090ff 0%, #006cff 100%);
   transform: translateY(-2px);
-  box-shadow: 0 0 35px rgba(0, 119, 255, 0.9), 0 0 65px rgba(0, 119, 255, 0.45);
+  box-shadow: 0 6px 30px rgba(0, 110, 255, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.24) inset;
 }
 
 .btn-speed-radiant.is-testing {
-  background: #0077ff;
-  box-shadow: 0 0 30px rgba(0, 119, 255, 0.8), 0 0 60px rgba(0, 119, 255, 0.4);
+  background: linear-gradient(135deg, #007aff 0%, #0055ff 100%);
+  box-shadow: 0 4px 26px rgba(0, 110, 255, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
 }
 
 /* 3. Right Column: Real-time Waveform Canvas & Progress Footer */
