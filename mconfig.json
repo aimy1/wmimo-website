@@ -1,0 +1,29 @@
+{
+  "latest_check": "2026-09-17 00:00:00.000000",
+  "get_profile": [],
+  "channel": [
+    {
+      "platform": "windows",
+      "channel": "*",
+      "url": "https://wmimo-website.pages.dev/download.html"
+    },
+    {
+      "platform": "android",
+      "channel": "*",
+      "url": "https://wmimo-website.pages.dev/download.html"
+    },
+    {
+      "platform": "linux",
+      "channel": "*",
+      "url": "https://wmimo-website.pages.dev/download.html"
+    }
+  ],
+  "tutorial": "https://wmimo-website.pages.dev/docs/",
+  "faq": "https://wmimo-website.pages.dev/docs/faq.html",
+  "download": "https://wmimo-website.pages.dev/download.html",
+  "telegram": "https://t.me/WmimoApp",
+  "follow": "https://github.com/aimy1/Wmimo",
+  "donate_url": "https://wmimo-website.pages.dev/community.html",
+  "doc": "https://wmimo-website.pages.dev/docs/build.html",
+  "get_tranffic": "https://wmimo-website.pages.dev/community.html"
+}
