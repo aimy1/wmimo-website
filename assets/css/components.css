@@ -85,35 +85,7 @@
 }
 
 .theme-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-md);
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  cursor: pointer;
-  box-shadow: var(--shadow-card);
-  transition: all var(--transition-fast);
-  flex-shrink: 0;
-}
-
-.theme-toggle-btn:hover {
-  color: var(--brand-primary);
-  border-color: var(--brand-primary);
-  transform: translateY(-1px);
-}
-
-.theme-toggle-btn svg {
-  width: 18px;
-  height: 18px;
-  transition: transform var(--transition-normal);
-}
-
-.theme-toggle-btn:hover svg {
-  transform: rotate(15deg);
+  display: none !important;
 }
 
 .lang-toggle-btn {

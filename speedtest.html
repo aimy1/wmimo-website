@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-CN" data-theme="dark">
 <head>
+  <script>
+    (function() {
+      try {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.removeItem('wmimo_theme');
+        var l = localStorage.getItem('wmimo_lang');
+        if (!l) {
+          l = (navigator.language && navigator.language.startsWith('zh')) ? 'zh' : 'en';
+        }
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-CN' : 'en');
+      } catch (e) {}
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>在线网络测速 - Wmimo 官方网络基准测试</title>
@@ -41,12 +55,6 @@
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
           </svg>
           <span class="lang-code-label">EN</span>
-        </button>
-
-        <button class="theme-toggle-btn" aria-label="切换主题" data-i18n-aria="nav.theme_toggle">
-          <span class="theme-icon-slot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-          </span>
         </button>
 
         <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">

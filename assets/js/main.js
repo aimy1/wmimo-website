@@ -80,7 +80,7 @@ function initScrollReveal() {
    Magnetic Hover Micro-Interaction for Primary Buttons
    ========================================================================== */
 function initMagneticHover() {
-  const buttons = document.querySelectorAll('.btn-primary, .theme-toggle-btn');
+  const buttons = document.querySelectorAll('.btn-primary');
 
   buttons.forEach(btn => {
     btn.addEventListener('mousemove', (e) => {
@@ -176,54 +176,24 @@ function initBackToTop() {
 }
 
 /* ==========================================================================
-   Theme Switcher (Dark / Light) with Zero-FOUC Synchronization
+   Theme Management (Locked to Dark Mode)
    ========================================================================== */
 function initTheme() {
-  // Sync UI icons with the theme already applied synchronously in <head>
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-  syncThemeUI(currentTheme);
-
-  const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
-  themeToggleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-      const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
-      applyTheme(newTheme);
-      const darkMsg = window.WmimoI18n ? window.WmimoI18n.t('toast.theme_dark') : '已切换至深色主题';
-      const lightMsg = window.WmimoI18n ? window.WmimoI18n.t('toast.theme_light') : '已切换至浅色主题';
-      showToast(newTheme === 'dark' ? darkMsg : lightMsg);
-    });
-  });
+  document.documentElement.setAttribute('data-theme', 'dark');
+  try {
+    localStorage.removeItem('wmimo_theme');
+  } catch (e) {}
 }
 
 function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
+  document.documentElement.setAttribute('data-theme', 'dark');
   try {
-    localStorage.setItem('wmimo_theme', theme);
+    localStorage.removeItem('wmimo_theme');
   } catch (e) {}
-  syncThemeUI(theme);
 }
 
 function syncThemeUI(theme) {
-  // Update theme icons
-  const themeIcons = document.querySelectorAll('.theme-icon-slot');
-  themeIcons.forEach(slot => {
-    if (theme === 'dark') {
-      slot.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>`;
-      slot.setAttribute('title', '切换为浅色模式');
-    } else {
-      slot.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>`;
-      slot.setAttribute('title', '切换为深色模式');
-    }
-  });
-
-  // Update homepage screenshot theme dynamically
-  const screenshotImg = document.querySelector('.screenshot-img');
-  if (screenshotImg) {
-    screenshotImg.src = theme === 'dark' 
-      ? 'assets/images/app_screenshot_dark.png' 
-      : 'assets/images/app_screenshot_light.png';
-  }
+  // Theme is locked to dark
 }
 
 

@@ -75,7 +75,7 @@
       'feat.tray_title': '🔀 全功能系统托盘',
       'feat.tray_desc': '常驻系统托盘动态展示上下行实时网速，右键菜单一键切换分流模式（Rule/Global/Direct）、一键测速与复制终端代理指令。',
       'feat.ui_title': '🎨 现代化 18px 微卡片设计',
-      'feat.ui_desc': '遵循统一的天青蓝品牌设计语言，18px 经典圆角微卡片体系。原生支持浅色与深空暗黑双主题无缝秒切，100% 覆盖 9 种语言。',
+      'feat.ui_desc': '遵循统一的天青蓝品牌设计语言，18px 经典圆角微卡片体系与沉浸式黑曜石暗黑美学，100% 覆盖 9 种语言。',
 
       // Contact Section (Home)
       'contact.title': '📬 交流反馈与联系开发者',
@@ -505,7 +505,7 @@
       'feat.tray_title': '🔀 Full-Featured Tray',
       'feat.tray_desc': 'Real-time network speed display in taskbar tray. Instant right-click menu to switch routing modes (Rule/Global/Direct), benchmark latency, and copy proxy commands.',
       'feat.ui_title': '🎨 Modern 18px System',
-      'feat.ui_desc': 'Refined cyan brand design language with consistent 18px rounded micro-cards. Seamless switching between Light and Deep Obsidian Dark themes.',
+      'feat.ui_desc': 'Refined cyan brand design language with consistent 18px rounded micro-cards and immersive obsidian dark aesthetics.',
 
       // Contact Section (Home)
       'contact.title': '📬 Feedback & Developer Contact',

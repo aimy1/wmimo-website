@@ -31,9 +31,9 @@
   --transition-normal: 0.25s ease;
 }
 
-/* Dark Theme (Default) */
-[data-theme="dark"],
-:root:not([data-theme="light"]) {
+/* Deep Obsidian Dark Theme (Enforced site-wide) */
+:root,
+[data-theme="dark"] {
   --bg-app: #0A0E17;
   --bg-card: #121929;
   --bg-card-elevated: #182238;
@@ -70,42 +70,5 @@
   --grid-line: rgba(255, 255, 255, 0.035);
 }
 
-/* Light Theme */
-[data-theme="light"] {
-  --bg-app: #F8FAFC;
-  --bg-card: #FFFFFF;
-  --bg-card-elevated: #FFFFFF;
-  --bg-subtle: #F1F5F9;
-  --bg-input: #FFFFFF;
-  --header-bg: rgba(248, 250, 252, 0.85);
-
-  --border-color: #E2E8F0;
-  --border-subtle: rgba(15, 23, 42, 0.06);
-
-  --text-primary: #0F172A;
-  --text-secondary: #334155;
-  --text-muted: #64748B;
-
-  --code-bg: #0F172A;
-  --code-border: #1E293B;
-  --code-text: #F1F5F9;
-
-  --badge-bg: rgba(0, 188, 223, 0.12);
-  --badge-text: #0284C7;
-
-  --callout-tip-bg: rgba(16, 185, 129, 0.06);
-  --callout-tip-border: rgba(16, 185, 129, 0.35);
-  --callout-info-bg: rgba(0, 188, 223, 0.06);
-  --callout-info-border: rgba(0, 188, 223, 0.35);
-
-  --table-head-bg: #F1F5F9;
-  --table-hover-bg: #F8FAFC;
-
-  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
-  --shadow-hover: 0 12px 30px -4px rgba(15, 23, 42, 0.12);
-  --ambient-glow: rgba(0, 188, 223, 0.06);
-  --hero-glow-1: rgba(0, 188, 223, 0.08);
-  --grid-line: rgba(15, 23, 42, 0.035);
-}
 
 
