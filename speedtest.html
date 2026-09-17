@@ -268,34 +268,46 @@
               <path class="gauge-bg-spectrum" d="M 64.64 172.77 A 92 92 0 1 1 215.36 172.77" />
 
               <!-- Active Neon Progress Arc -->
-              <path id="gaugeProgressArc" class="gauge-progress-arc" d="M 64.64 172.77 A 92 92 0 1 1 215.36 172.77" stroke-dasharray="401.4" stroke-dashoffset="111" filter="url(#gaugeNeonBloom)" />
+              <path id="gaugeProgressArc" class="gauge-progress-arc" d="M 64.64 172.77 A 92 92 0 1 1 215.36 172.77" stroke-dasharray="401.4" stroke-dashoffset="98" filter="url(#gaugeNeonBloom)" />
 
-              <!-- Inward Radial Tick Marks (Never crossing the arc!) -->
-              <!-- Major Ticks -->
-              <line class="gauge-tick-major" x1="70.4" y1="170.8" x2="76.9" y2="166.2" />
-              <line class="gauge-tick-major" x1="57.9" y1="142.0" x2="65.6" y2="139.9" />
-              <line class="gauge-tick-major" x1="104.1" y1="43.0" x2="107.5" y2="50.2" />
-              <line class="gauge-tick-major" x1="175.9" y1="43.0" x2="172.5" y2="50.2" />
-              <line class="gauge-tick-major" x1="222.1" y1="142.0" x2="214.4" y2="139.9" />
-              <line class="gauge-tick-major" x1="209.6" y1="170.8" x2="203.1" y2="166.2" />
+              <!-- Inward Radial Tick Marks (100% Co-linear with Scale Labels) -->
+              <!-- Major Ticks (Luminous Spectrum Rods) -->
+              <line class="gauge-tick-major tick-cyan" x1="68.7" y1="169.9" x2="76.9" y2="164.2" />
+              <line class="gauge-tick-major tick-cyan" x1="54.3" y1="104.9" x2="64.2" y2="106.6" />
+              <line class="gauge-tick-major tick-cyan" x1="86.4" y1="51.4" x2="92.6" y2="59.3" />
+              <line class="gauge-tick-major tick-indigo" x1="193.6" y1="51.4" x2="187.4" y2="59.3" />
+              <line class="gauge-tick-major tick-violet" x1="225.7" y1="104.9" x2="215.8" y2="106.6" />
+              <line class="gauge-tick-major tick-violet" x1="211.3" y1="169.9" x2="203.1" y2="164.2" />
 
-              <!-- Intermediate Minor Ticks -->
-              <line class="gauge-tick-minor" x1="56.3" y1="134.8" x2="60.2" y2="134.1" />
-              <line class="gauge-tick-minor" x1="74.9" y1="65.4" x2="78.0" y2="67.9" />
-              <line class="gauge-tick-minor" x1="140.0" y1="35.0" x2="140.0" y2="39.5" />
-              <line class="gauge-tick-minor" x1="205.1" y1="65.4" x2="202.0" y2="67.9" />
-              <line class="gauge-tick-minor" x1="223.7" y1="134.8" x2="219.8" y2="134.1" />
+              <!-- Medium Sub-division Ticks -->
+              <line class="gauge-tick-med tick-cyan" x1="55.1" y1="138.8" x2="61.4" y2="137.4" />
+              <line class="gauge-tick-med tick-cyan" x1="65.4" y1="75.2" x2="71.0" y2="78.5" />
+              <line class="gauge-tick-med tick-blue" x1="140.0" y1="33.0" x2="140.0" y2="39.5" />
+              <line class="gauge-tick-med tick-indigo" x1="214.6" y1="75.2" x2="209.0" y2="78.5" />
+              <line class="gauge-tick-med tick-violet" x1="224.9" y1="138.8" x2="218.6" y2="137.4" />
 
-              <!-- Precision Scale Numbers (Equidistant radially outside the arc) -->
-              <text class="gauge-tick-label" x="52" y="186">0</text>
-              <text class="gauge-tick-label" x="34" y="134">50</text>
-              <text class="gauge-tick-label" x="88" y="30">100</text>
-              <text class="gauge-tick-label" x="192" y="30">200</text>
-              <text class="gauge-tick-label" x="246" y="134">500</text>
-              <text class="gauge-tick-label" x="228" y="186">1000</text>
+              <!-- Fine Micro Graduation Ticks -->
+              <line class="gauge-tick-minor" x1="60.4" y1="155.0" x2="64.0" y2="153.4" />
+              <line class="gauge-tick-minor" x1="53.0" y1="121.9" x2="57.0" y2="121.8" />
+              <line class="gauge-tick-minor" x1="58.2" y1="90.2" x2="62.0" y2="91.6" />
+              <line class="gauge-tick-minor" x1="74.8" y1="62.4" x2="77.8" y2="65.0" />
+              <line class="gauge-tick-minor" x1="111.7" y1="37.7" x2="113.0" y2="41.5" />
+              <line class="gauge-tick-minor" x1="168.3" y1="37.7" x2="167.0" y2="41.5" />
+              <line class="gauge-tick-minor" x1="205.2" y1="62.4" x2="202.2" y2="65.0" />
+              <line class="gauge-tick-minor" x1="221.8" y1="90.2" x2="218.0" y2="91.6" />
+              <line class="gauge-tick-minor" x1="227.0" y1="121.9" x2="223.0" y2="121.8" />
+              <line class="gauge-tick-minor" x1="219.6" y1="155.0" x2="216.0" y2="153.4" />
 
-              <!-- Futuristic Laser Pointer Needle (No ugly ball!) -->
-              <g id="gaugeNeedle" class="gauge-needle" style="transform-origin: 140px 120px; transform: rotate(56.1deg);">
+              <!-- Precision Scale Numbers (100% Co-linear with Major Ticks) -->
+              <text class="gauge-tick-label" x="53.2" y="180.8">0</text>
+              <text class="gauge-tick-label" x="36.6" y="101.8">50</text>
+              <text class="gauge-tick-label" x="75.4" y="37.3">100</text>
+              <text class="gauge-tick-label" x="204.6" y="37.3">200</text>
+              <text class="gauge-tick-label" x="243.4" y="101.8">500</text>
+              <text class="gauge-tick-label" x="226.8" y="180.8">1000</text>
+
+              <!-- Futuristic Laser Pointer Needle (Aligned to 64.1deg for 386.42 Mbps) -->
+              <g id="gaugeNeedle" class="gauge-needle" style="transform-origin: 140px 120px; transform: rotate(64.1deg);">
                 <line x1="140" y1="84" x2="140" y2="30" class="needle-beam" />
                 <circle cx="140" cy="84" r="3.2" class="needle-hub" />
               </g>

@@ -89,10 +89,10 @@
   // Dial scale points definition for non-linear gauge
   const DIAL_POINTS = [
     { speed: 0, frac: 0.00, angle: -125 },
-    { speed: 50, frac: 0.20, angle: -75 },
-    { speed: 100, frac: 0.40, angle: -25 },
-    { speed: 200, frac: 0.60, angle: 25 },
-    { speed: 500, frac: 0.80, angle: 75 },
+    { speed: 50, frac: 0.18, angle: -80 },
+    { speed: 100, frac: 0.35, angle: -38 },
+    { speed: 200, frac: 0.65, angle: 38 },
+    { speed: 500, frac: 0.82, angle: 80 },
     { speed: 1000, frac: 1.00, angle: 125 }
   ];
 
