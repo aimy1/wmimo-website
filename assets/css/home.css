@@ -300,22 +300,24 @@ body.ambient-bg {
 
 .capabilities-container {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 40px;
+  grid-template-columns: 320px 1fr;
+  gap: 44px;
   align-items: center;
 }
 
 .capabilities-intro {
   text-align: left;
+  min-width: 0;
 }
 
 .capabilities-title {
-  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  font-size: clamp(1.45rem, 2.2vw, 1.95rem);
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1.28;
   color: #ffffff;
   margin-bottom: 14px;
-  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .capabilities-desc {
@@ -369,17 +371,6 @@ body.ambient-bg {
   transform: translateY(-3px) scale(1.05);
   border-color: #38e1f9;
   box-shadow: 0 0 24px rgba(0, 218, 245, 0.5), inset 0 0 16px rgba(0, 218, 245, 0.3);
-}
-
-.workflow-step.step-highlighted .step-circle {
-  background: #00daf5;
-  border-color: #00daf5;
-  color: #ffffff;
-  box-shadow: 0 0 24px rgba(0, 218, 245, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.5);
-}
-
-.workflow-step.step-highlighted .step-circle svg {
-  stroke: #ffffff;
 }
 
 /* Connector Line to Next Step */
@@ -806,6 +797,10 @@ body.ambient-bg {
   .hero-description {
     font-size: 0.96rem;
     max-width: 410px;
+  }
+  .capabilities-container {
+    grid-template-columns: 290px 1fr;
+    gap: 32px;
   }
 }
 
