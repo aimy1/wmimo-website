@@ -65,16 +65,22 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <div class="mobile-drawer-inner">
-      <ul class="mobile-links">
-        <li><a href="index.html" class="mobile-link" data-i18n="nav.home">首页</a></li>
-        <li><a href="download.html" class="mobile-link" data-i18n="nav.download">下载</a></li>
-        <li><a href="speedtest.html" class="mobile-link active" data-i18n="nav.speedtest">在线测速</a></li>
-        <li><a href="docs/index.html" class="mobile-link" data-i18n="nav.docs">使用文档</a></li>
-        <li><a href="community.html" class="mobile-link" data-i18n="nav.about">关于与赞助</a></li>
-      </ul>
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <a href="index.html" class="nav-link" data-i18n="nav.home">首页</a>
+    <a href="download.html" class="nav-link" data-i18n="nav.download_center">下载中心</a>
+    <a href="speedtest.html" class="nav-link active" data-i18n="nav.speedtest">在线测速</a>
+    <a href="docs/index.html" class="nav-link" data-i18n="nav.docs">使用文档</a>
+    <a href="community.html" class="nav-link" data-i18n="nav.about">关于与赞助</a>
+    <div class="mobile-drawer-footer">
+      <button class="btn btn-secondary mobile-lang-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span data-i18n="nav.mobile_lang">English / 简体中文</span>
+      </button>
     </div>
   </div>
 
