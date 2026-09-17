@@ -388,20 +388,12 @@
       'doc_sub.prev_title': "← 外部控制器与 Web 仪表盘",
       'doc_sub.next_title': "客户端生态导航 →",
 
-      // Toast & Modals & Helpers
+      // Toast & Helpers
       'toast.copied': '已成功复制到剪贴板',
       'toast.code_copied': '代码已复制',
       'toast.theme_dark': '已切换至深色主题',
       'toast.theme_light': '已切换至浅色主题',
       'toast.lang_switched': '已切换为中文',
-      'modal.notice_title': '服务维护与更新提示',
-      'modal.notice_greeting': '尊敬的用户：',
-      'modal.notice_p1': '受近期主服务器维护影响，客户端内置的<strong>在线更新通道暂时无法提供服务</strong>。',
-      'modal.notice_highlight': '🚀 获取最新构建版本（v1.1.0）及各平台安装包，还请直接前往 <strong>GitHub Releases</strong> 官方页面下载。',
-      'modal.notice_footer_note': '* 服务恢复后将第一时间恢复应用内静默升级通道，给您带来的不便敬请谅解。',
-      'modal.dont_show_7d': '7天内不再提示',
-      'modal.btn_ack': '我已知晓',
-      'modal.btn_github': '前往 GitHub 下载',
       'btn.back_to_top': '回到顶部',
 
       // SpeedTest Page
@@ -858,20 +850,12 @@
       'doc_sub.prev_title': "← External Controller & Web Dashboard",
       'doc_sub.next_title': "Client Ecosystem Navigation →",
 
-      // Toast & Modals & Helpers
+      // Toast & Helpers
       'toast.copied': 'Copied to clipboard successfully',
       'toast.code_copied': 'Code copied to clipboard',
       'toast.theme_dark': 'Switched to Dark Theme',
       'toast.theme_light': 'Switched to Light Theme',
       'toast.lang_switched': 'Switched to English',
-      'modal.notice_title': 'Service Notice & Update Advisory',
-      'modal.notice_greeting': 'Dear Users:',
-      'modal.notice_p1': 'Due to recent server maintenance, the in-app <strong>online update channel is temporarily unavailable</strong>.',
-      'modal.notice_highlight': '🚀 To obtain the latest release (v1.1.0) and platform packages, please download directly from official <strong>GitHub Releases</strong>.',
-      'modal.notice_footer_note': '* In-app silent updates will be restored immediately once server migration finishes.',
-      'modal.dont_show_7d': "Don't show again for 7 days",
-      'modal.btn_ack': 'Got It',
-      'modal.btn_github': 'Go to GitHub Releases',
       'btn.back_to_top': 'Back to Top',
 
       // SpeedTest Page
