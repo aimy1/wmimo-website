@@ -436,10 +436,12 @@ body.ambient-bg {
   position: relative;
   padding: 72px 0 90px 0;
   background-color: #070c18;
-  background-image: url('../images/showcase_bg.jpg');
-  background-position: center right;
+  background-image: 
+    linear-gradient(to right, #070c18 0%, rgba(7, 12, 24, 0.88) 32%, rgba(7, 12, 24, 0.4) 48%, transparent 65%),
+    url('../images/showcase_bg.jpg');
+  background-position: left top, right center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%, cover;
   overflow: hidden;
 }
 
@@ -536,35 +538,254 @@ body.ambient-bg {
   filter: drop-shadow(0 0 8px rgba(0, 218, 245, 0.45));
 }
 
-/* Right Showcase Display */
+/* Right Showcase Display - Mockup Window on Desk */
 .showcase-right {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-.showcase-frame {
+.mockup-window-wrap {
   position: relative;
   width: 100%;
-  max-width: 580px;
+  max-width: 460px;
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+}
+
+/* Secondary Node List Window (Behind) */
+.app-mockup-nodes-window {
+  position: absolute;
+  top: 15px;
+  right: -10px;
+  width: 200px;
+  background: rgba(14, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 218, 245, 0.1);
+  padding: 10px 14px 14px 14px;
+  z-index: 1;
+  opacity: 0.85;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.app-mockup-nodes-window:hover {
+  opacity: 0.98;
+  transform: translateY(-2px);
+}
+
+.mini-node-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.mini-node-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.mini-node-list li .text-cyan {
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* Main Client Window (Foreground) */
+.app-mockup-window {
+  position: relative;
+  z-index: 2;
+  width: 295px;
+  background: rgba(10, 17, 32, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 18px;
-  overflow: hidden;
+  padding: 14px 18px 16px 18px;
   box-shadow: 
-    0 24px 60px -10px rgba(0, 0, 0, 0.7),
-    0 0 50px rgba(0, 218, 245, 0.15);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    0 24px 60px rgba(0, 0, 0, 0.75),
+    0 0 35px rgba(0, 218, 245, 0.2);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
 }
 
-.showcase-frame:hover {
-  transform: translateY(-4px) scale(1.015);
+.app-mockup-window:hover {
+  transform: translateY(-4px) scale(1.02);
   box-shadow: 
-    0 28px 70px -10px rgba(0, 0, 0, 0.8),
-    0 0 65px rgba(0, 218, 245, 0.25);
+    0 28px 70px rgba(0, 0, 0, 0.85),
+    0 0 50px rgba(0, 218, 245, 0.35);
 }
 
-.showcase-img {
+.mockup-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mockup-titlebar.mini {
+  margin-bottom: 4px;
+  padding-bottom: 6px;
+}
+
+.mockup-mini-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.mockup-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.mockup-logo {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.mockup-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-btn {
+  color: #64748b;
+  font-size: 0.75rem;
+  line-height: 1;
+  cursor: default;
+  transition: color 0.2s;
+}
+
+.control-btn:hover {
+  color: #ffffff;
+}
+
+.control-close:hover {
+  color: #ef4444;
+}
+
+.mockup-status-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.status-text {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #10b981;
+  letter-spacing: 0.04em;
+}
+
+.mockup-node-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.node-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.node-ping {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.mockup-mode-tabs {
+  display: flex;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 9999px;
+  padding: 3px;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+
+.mode-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 0;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.mode-tab.active {
+  background: rgba(0, 218, 245, 0.25);
+  color: #00daf5;
+  box-shadow: 0 0 10px rgba(0, 218, 245, 0.3);
+}
+
+.mockup-traffic-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.traffic-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mockup-waveform {
   width: 100%;
-  height: auto;
+  height: 44px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.wave-svg {
+  width: 100%;
+  height: 100%;
   display: block;
 }
 
@@ -652,8 +873,17 @@ body.ambient-bg {
   .feature-checklist {
     align-items: center;
   }
+  .features-with-doodle {
+    flex-direction: column;
+    align-items: center;
+  }
   .doodle-wrap {
-    margin: 10px auto;
+    margin: 8px auto 4px auto;
+  }
+  .mockup-window-wrap {
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 420px;
   }
 }
 
@@ -685,5 +915,16 @@ body.ambient-bg {
   .hero-actions .btn-github-view {
     width: 100%;
     justify-content: center;
+  }
+  .mockup-window-wrap {
+    max-width: 100%;
+    min-height: auto;
+  }
+  .app-mockup-nodes-window {
+    display: none;
+  }
+  .app-mockup-window {
+    width: 100%;
+    max-width: 320px;
   }
 }

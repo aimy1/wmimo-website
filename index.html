@@ -314,10 +314,93 @@
           </div>
         </div>
 
-        <!-- Right: Showcase Image -->
+        <!-- Right: Client Interface Mockup on Showcase Desk -->
         <div class="showcase-right">
-          <div class="showcase-frame">
-            <img src="assets/images/app_showcase_scene.png" alt="Wmimo 客户端界面展示" class="showcase-img">
+          <div class="mockup-window-wrap">
+            <!-- Secondary Node List Window (Behind) -->
+            <div class="app-mockup-nodes-window" aria-hidden="true">
+              <div class="mockup-titlebar mini">
+                <span class="mockup-mini-title">Nodes</span>
+                <div class="mockup-controls">
+                  <span class="control-btn">—</span>
+                  <span class="control-btn">□</span>
+                  <span class="control-btn">✕</span>
+                </div>
+              </div>
+              <ul class="mini-node-list">
+                <li><span>🇭🇰 Hong Kong</span><span class="text-cyan">34 ms</span></li>
+                <li><span>🇯🇵 Tokyo</span><span class="text-cyan">42 ms</span></li>
+                <li><span>🇺🇸 Los Angeles</span><span class="text-cyan">138 ms</span></li>
+                <li><span>🇩🇪 Frankfurt</span><span class="text-cyan">180 ms</span></li>
+                <li><span>🇸🇬 Singapore</span><span class="text-cyan">38 ms</span></li>
+              </ul>
+            </div>
+
+            <!-- Main Client Window (Foreground) -->
+            <div class="app-mockup-window">
+              <!-- Window Titlebar -->
+              <div class="mockup-titlebar">
+                <div class="mockup-brand">
+                  <img src="assets/images/app_icon_128.png" alt="Wmimo" class="mockup-logo">
+                  <span>Wmimo</span>
+                </div>
+                <div class="mockup-controls">
+                  <span class="control-btn">—</span>
+                  <span class="control-btn">□</span>
+                  <span class="control-btn control-close">✕</span>
+                </div>
+              </div>
+
+              <!-- Status Indicator -->
+              <div class="mockup-status-pill">
+                <span class="status-dot"></span>
+                <span class="status-text">Connected</span>
+                <span class="status-dot"></span>
+              </div>
+
+              <!-- Active Node Card -->
+              <div class="mockup-node-card">
+                <div class="node-meta">
+                  <span class="node-flag">🇸🇬</span>
+                  <span class="node-name">Singapore</span>
+                </div>
+                <span class="node-ping text-cyan">38 ms</span>
+              </div>
+
+              <!-- Proxy Modes Segmented Buttons -->
+              <div class="mockup-mode-tabs">
+                <button type="button" class="mode-tab active">Rule</button>
+                <button type="button" class="mode-tab">Global</button>
+                <button type="button" class="mode-tab">Direct</button>
+              </div>
+
+              <!-- Traffic Rate Stats -->
+              <div class="mockup-traffic-row">
+                <div class="traffic-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00daf5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+                  <span>12.4 MB/s</span>
+                </div>
+                <div class="traffic-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00daf5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                  <span>86.7 MB/s</span>
+                </div>
+              </div>
+
+              <!-- Glowing Speed Waveform SVG -->
+              <div class="mockup-waveform">
+                <svg viewBox="0 0 280 50" preserveAspectRatio="none" class="wave-svg">
+                  <defs>
+                    <linearGradient id="waveGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#00daf5" stop-opacity="0.35"/>
+                      <stop offset="100%" stop-color="#00daf5" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M 0 35 Q 35 10, 70 28 T 140 22 T 210 15 T 280 30 L 280 50 L 0 50 Z" fill="url(#waveGrad)"/>
+                  <path d="M 0 35 Q 35 10, 70 28 T 140 22 T 210 15 T 280 30" fill="none" stroke="#00daf5" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M 0 42 Q 40 20, 80 38 T 160 32 T 280 40" fill="none" stroke="#0284c7" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.6"/>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>
