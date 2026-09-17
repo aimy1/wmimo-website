@@ -49,14 +49,11 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="lang-toggle-btn" id="langToggleBtn" aria-label="切换语言" title="切换语言 / Switch Language">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="2" y1="12" x2="22" y2="12"/>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-          <span class="lang-code-label">EN</span>
-        </button>
+        <!-- Capsule Language Switcher: 中 | EN -->
+        <div class="lang-capsule" title="切换语言 / Switch Language">
+          <button type="button" class="lang-capsule-btn active" data-lang="zh">中</button>
+          <button type="button" class="lang-capsule-btn" data-lang="en">EN</button>
+        </div>
 
         <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.1.0" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub Releases</a>
 
