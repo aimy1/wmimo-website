@@ -17,7 +17,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>在线网络测速 - Wmimo 官方网络基准测试</title>
+  <title>在线速度测试 - Wmimo 官方网络基准测试</title>
   <meta name="description" content="Wmimo 官方在线网络测速工具，提供实时延迟 (Ping)、网络抖动 (Jitter)、多并发下行吞吐率与上行吞吐率基准测试与实时测速波形图。">
   <link rel="icon" type="image/png" href="assets/images/app_icon_128.png">
 
@@ -54,7 +54,7 @@
           <button type="button" class="lang-capsule-btn" data-lang="en">EN</button>
         </div>
 
-        <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.1.0" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub Releases</a>
+        <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.1.3" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub Releases</a>
 
         <button class="mobile-toggle-btn" aria-label="菜单" data-i18n-aria="nav.menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -85,33 +85,57 @@
   <main class="container">
     <!-- Hero Header -->
     <section class="page-hero">
-      <h1 data-i18n="st.hero_title">在线网络测速</h1>
-      <p data-i18n="st.hero_subtitle">实时多维网络基准测试：延迟、抖动、下行吞吐率与上行吞吐率</p>
+      <h1 data-i18n="st.hero_title">在线速度测试</h1>
+      <p data-i18n="st.hero_subtitle">一键测试您的网络连接质量 · 精准 · 可靠 · 全球节点</p>
     </section>
 
     <div class="speedtest-container">
 
       <!-- Server Selection Bar -->
       <div class="speed-server-bar spotlight-card">
-        <div class="speed-server-current">
-          <div class="server-status-beacon"></div>
-          <div class="server-info-text">
-            <div class="server-title-row">
-              <span class="server-name" id="currentServerName">⚡ 全球 Anycast 边缘优选</span>
-              <span class="server-latency-badge" id="currentServerPing"><span class="latency-val">--</span> ms</span>
+        <div class="speed-server-left">
+          <div class="server-beacon-badge">
+            <div class="beacon-outer-ring"></div>
+            <div class="beacon-inner-dot">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
-            <span class="server-endpoint-desc" id="currentServerDesc" data-i18n="st.server_auto_desc">Cloudflare 300+ 城市全球网络 · 自动选路</span>
+          </div>
+          <div class="server-info-text">
+            <div class="server-status-label" data-i18n="st.server_connected">已连接最佳节点</div>
+            <div class="server-detail-row">
+              <span id="currentServerName">Cloudflare · Los Angeles (洛杉矶)</span>
+              <span class="server-ping-tag" id="currentServerPing"><span class="latency-val">12</span> ms</span>
+            </div>
           </div>
         </div>
-        <div class="speed-server-actions">
-          <button class="btn btn-secondary btn-sm server-select-btn" id="serverSelectBtn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-            <span data-i18n="st.btn_switch_server">切换节点</span>
+
+        <div class="speed-server-center">
+          <button class="btn btn-secondary server-switch-pill" id="serverSelectBtn">
+            <span data-i18n="st.btn_switch_server">更换服务器</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <button class="btn btn-secondary btn-sm server-probe-btn" id="serverProbeBtn" title="探测服务器延迟" data-i18n-title="st.reprobe">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-          </button>
+        </div>
+
+        <div class="speed-server-right">
+          <div class="server-world-map">
+            <svg class="map-silhouette" viewBox="0 0 160 70" fill="none">
+              <path d="M15 25c2-4 8-6 12-2 3 3 7 1 9-2 2-2 5-1 7 2 3 5 8 4 10 1 2-2 5-1 7 2 3 4 8 2 11-1 3-3 8-1 10 3 2 4 6 2 8-1 3-4 8-2 10 2s5 5 8 3c4-3 7 1 9 4M20 45c3-1 6 2 8 5 2 3 5 2 7-1 3-3 6-2 8 2 2 4 6 4 9 1 3-3 7-2 9 2 2 3 6 3 8 0 3-3 7-1 9 3 2 4 5 3 7 0M110 20c2-3 6-2 8 1 3 3 7 2 9-1 2-3 6-2 8 2 2 3 5 4 8 1 3-2 6-1 8 2M115 48c3-2 7-1 9 2 2 3 5 3 7 0 3-3 7-2 9 2" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="35" cy="28" r="2" fill="#00daf5" opacity="0.8"/>
+              <circle cx="82" cy="24" r="2" fill="#00daf5" opacity="0.8"/>
+              <circle cx="125" cy="32" r="2" fill="#00daf5" opacity="0.8"/>
+              <circle cx="55" cy="46" r="2" fill="#38bdf8" opacity="0.6"/>
+              <circle cx="138" cy="45" r="2" fill="#38bdf8" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="global-nodes-badge">
+            <div class="flight-icon-circle">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg>
+            </div>
+            <div class="nodes-badge-text">
+              <span class="nodes-badge-title" data-i18n="st.global_nodes">全球 300+ 节点</span>
+              <span class="nodes-badge-desc" data-i18n="st.global_nodes_sub">自动选择最优边缘</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -127,70 +151,176 @@
         </div>
       </div>
 
-      <!-- 1. Central Speedometer Gauge Card -->
-      <div class="speedtest-dashboard spotlight-card">
-        <div class="speed-gauge-wrap">
-          <svg class="speed-gauge-svg" viewBox="0 0 220 180">
-            <defs>
-              <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#00BCDF" />
-                <stop offset="60%" stop-color="#38BDF8" />
-                <stop offset="100%" stop-color="#00E5FF" />
-              </linearGradient>
-            </defs>
-            <!-- Background Arc (Radius: 64, Center: 110,110, Sweep: 250deg) -->
-            <path class="gauge-bg-arc" d="M 57.6 146.7 A 64 64 0 1 1 162.4 146.7" />
-            <!-- Progress Arc (Arc length: ~279) -->
-            <path id="gaugeProgressArc" class="gauge-progress-arc" d="M 57.6 146.7 A 64 64 0 1 1 162.4 146.7" stroke-dasharray="279" stroke-dashoffset="279" />
-            <!-- Minor / Sub-ticks -->
-            <line id="gaugeSubTick_0" class="gauge-subtick-line" x1="42.2" y1="131.1" x2="38.4" y2="132.3" />
-            <line id="gaugeSubTick_1" class="gauge-subtick-line" x1="39.0" y1="109.6" x2="35.0" y2="109.5" />
-            <line id="gaugeSubTick_2" class="gauge-subtick-line" x1="39.7" y1="99.7" x2="35.8" y2="99.2" />
-            <line id="gaugeSubTick_3" class="gauge-subtick-line" x1="41.4" y1="91.6" x2="37.6" y2="90.6" />
-            <line id="gaugeSubTick_4" class="gauge-subtick-line" x1="50.8" y1="70.8" x2="47.4" y2="68.6" />
-            <line id="gaugeSubTick_5" class="gauge-subtick-line" x1="76.5" y1="47.4" x2="74.6" y2="43.9" />
-            <line id="gaugeSubTick_6" class="gauge-subtick-line" x1="93.8" y1="40.9" x2="92.9" y2="37.0" />
-            <line id="gaugeSubTick_7" class="gauge-subtick-line" x1="137.6" y1="44.6" x2="139.2" y2="40.9" />
-            <line id="gaugeSubTick_8" class="gauge-subtick-line" x1="181.0" y1="111.9" x2="185.0" y2="112.0" />
-            <!-- Major Dial Ticks & Scale -->
-            <line id="gaugeTickLine_0" class="gauge-tick-line" x1="52.7" y1="150.2" x2="46.9" y2="154.2" />
-            <text id="gaugeTickText_0" class="gauge-tick-text" x="37.9" y="160.5">0</text>
-            <line id="gaugeTickLine_1" class="gauge-tick-line" x1="41.1" y1="122.2" x2="34.2" y2="123.4" />
-            <text id="gaugeTickText_1" class="gauge-tick-text" x="23.3" y="125.3">10</text>
-            <line id="gaugeTickLine_2" class="gauge-tick-line" x1="44.6" y1="85.0" x2="38.1" y2="82.5" />
-            <text id="gaugeTickText_2" class="gauge-tick-text" x="27.8" y="78.6">50</text>
-            <line id="gaugeTickLine_3" class="gauge-tick-line" x1="59.7" y1="61.3" x2="54.7" y2="56.5" />
-            <text id="gaugeTickText_3" class="gauge-tick-text" x="46.8" y="48.8">100</text>
-            <line id="gaugeTickLine_4" class="gauge-tick-line" x1="110.0" y1="40.0" x2="110.0" y2="33.0" />
-            <text id="gaugeTickText_4" class="gauge-tick-text" x="110.0" y="22.0">250</text>
-            <line id="gaugeTickLine_5" class="gauge-tick-line" x1="165.0" y1="66.7" x2="170.5" y2="62.4" />
-            <text id="gaugeTickText_5" class="gauge-tick-text" x="179.1" y="55.6">500</text>
-            <line id="gaugeTickLine_6" class="gauge-tick-line" x1="167.3" y1="150.2" x2="173.1" y2="154.2" />
-            <text id="gaugeTickText_6" class="gauge-tick-text" x="182.1" y="160.5">1G</text>
-            <!-- Minimalist Precision Needle Pointer (Center pivot: 110, 110; Range: -125deg to +125deg) -->
-            <g id="gaugeNeedle" class="gauge-needle" style="transform-origin: 110px 110px; transform: rotate(-125deg);">
-              <!-- Lightweight Semi-Transparent Fine Line Pointer -->
-              <line x1="110" y1="100" x2="110" y2="44" class="needle-line" />
-              <!-- Delicate Needle Tip Dot Accent -->
-              <circle cx="110" cy="45" r="1.5" class="needle-tip-dot" />
-            </g>
-          </svg>
-
-          <div class="gauge-center-content">
-            <div id="gaugePhase" class="gauge-phase-badge">
-              <span class="badge-dot"></span>
-              <span class="phase-text" data-i18n="st.phase_idle">就绪待测</span>
+      <!-- 1. Central 3-Column Testing Console -->
+      <div class="speedtest-console spotlight-card" id="speedtestConsole">
+        
+        <!-- Left Column: 5-Step Progress Checklist -->
+        <div class="test-steps-col">
+          <div class="test-steps-list">
+            <!-- Step 1: Connect -->
+            <div class="test-step-item is-completed" id="stepConn">
+              <div class="step-indicator">
+                <span class="step-num">1</span>
+                <svg class="step-check-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-content">
+                <span class="step-title" data-i18n="st.step_conn">连接服务器</span>
+                <span class="step-status" id="stepConnStatus">12 ms ✓</span>
+              </div>
             </div>
-            <div id="gaugeSpeedVal" class="gauge-speed-val">0.0</div>
-            <div id="gaugeSpeedUnit" class="gauge-speed-unit">Mbps</div>
+            <div class="step-line is-completed" id="stepLine1"></div>
+
+            <!-- Step 2: Ping -->
+            <div class="test-step-item" id="stepPing">
+              <div class="step-indicator">
+                <span class="step-num">2</span>
+                <svg class="step-check-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-content">
+                <span class="step-title" data-i18n="st.step_ping">测试延迟</span>
+                <span class="step-status" id="stepPingStatus" data-i18n="st.status_waiting">等待中...</span>
+              </div>
+            </div>
+            <div class="step-line" id="stepLine2"></div>
+
+            <!-- Step 3: Download -->
+            <div class="test-step-item" id="stepDown">
+              <div class="step-indicator">
+                <span class="step-num">3</span>
+                <svg class="step-check-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-content">
+                <span class="step-title" data-i18n="st.step_down">测试下载速度</span>
+                <span class="step-status" id="stepDownStatus" data-i18n="st.status_waiting">等待中...</span>
+              </div>
+            </div>
+            <div class="step-line" id="stepLine3"></div>
+
+            <!-- Step 4: Upload -->
+            <div class="test-step-item" id="stepUp">
+              <div class="step-indicator">
+                <span class="step-num">4</span>
+                <svg class="step-check-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-content">
+                <span class="step-title" data-i18n="st.step_up">测试上传速度</span>
+                <span class="step-status" id="stepUpStatus" data-i18n="st.status_waiting">等待中...</span>
+              </div>
+            </div>
+            <div class="step-line" id="stepLine4"></div>
+
+            <!-- Step 5: Quality -->
+            <div class="test-step-item" id="stepQuality">
+              <div class="step-indicator">
+                <span class="step-num">5</span>
+                <svg class="step-check-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-content">
+                <span class="step-title" data-i18n="st.step_quality">分析网络质量</span>
+                <span class="step-status" id="stepQualityStatus" data-i18n="st.status_waiting">等待中...</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="speedtest-action-wrap">
-          <button id="speedStartBtn" class="btn btn-primary btn-speed-hero">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            <span id="speedBtnText" data-i18n="st.btn_start">开始测速</span>
-          </button>
+        <!-- Center Column: Speedometer Gauge -->
+        <div class="speed-gauge-col">
+          <div class="speed-gauge-wrap">
+            <svg class="speed-gauge-svg" viewBox="0 0 260 220">
+              <defs>
+                <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#00daf5" />
+                  <stop offset="50%" stop-color="#0088ff" />
+                  <stop offset="100%" stop-color="#a855f7" />
+                </linearGradient>
+                <filter id="gaugeGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+              <!-- Background Track Arc -->
+              <path class="gauge-bg-arc" d="M 45 180 A 90 90 0 1 1 215 180" />
+              <!-- Glowing Progress Arc -->
+              <path id="gaugeProgressArc" class="gauge-progress-arc" d="M 45 180 A 90 90 0 1 1 215 180" stroke-dasharray="392" stroke-dashoffset="392" filter="url(#gaugeGlow)" />
+              
+              <!-- Minor Sub-ticks -->
+              <line id="gaugeSubTick_0" class="gauge-subtick-line" x1="40" y1="150" x2="47" y2="152" />
+              <line id="gaugeSubTick_1" class="gauge-subtick-line" x1="48" y1="78" x2="54" y2="82" />
+              <line id="gaugeSubTick_2" class="gauge-subtick-line" x1="120" y1="41" x2="122" y2="48" />
+              <line id="gaugeSubTick_3" class="gauge-subtick-line" x1="140" y1="41" x2="138" y2="48" />
+              <line id="gaugeSubTick_4" class="gauge-subtick-line" x1="212" y1="78" x2="206" y2="82" />
+              <line id="gaugeSubTick_5" class="gauge-subtick-line" x1="220" y1="150" x2="213" y2="152" />
+
+              <!-- Dial Scale Labels -->
+              <text id="gaugeTickText_0" class="gauge-tick-label" x="38" y="196">0</text>
+              <text id="gaugeTickText_1" class="gauge-tick-label" x="34" y="102">50</text>
+              <text id="gaugeTickText_2" class="gauge-tick-label" x="84" y="40">100</text>
+              <text id="gaugeTickText_3" class="gauge-tick-label" x="174" y="38">200</text>
+              <text id="gaugeTickText_4" class="gauge-tick-label" x="226" y="102">500</text>
+              <text id="gaugeTickText_5" class="gauge-tick-label" x="222" y="196">1000</text>
+
+              <!-- Minimalist Precision Pointer Needle -->
+              <g id="gaugeNeedle" class="gauge-needle" style="transform-origin: 130px 130px; transform: rotate(-125deg);">
+                <line x1="130" y1="125" x2="130" y2="48" class="needle-line" />
+                <circle cx="130" cy="130" r="4" class="needle-pivot" />
+                <circle cx="130" cy="46" r="2.5" class="needle-tip-dot" />
+              </g>
+            </svg>
+
+            <div class="gauge-center-content">
+              <div id="gaugeSpeedVal" class="gauge-speed-val">0.00</div>
+              <div id="gaugeSpeedUnit" class="gauge-speed-unit">Mbps</div>
+              <div id="gaugePhase" class="gauge-phase-badge">
+                <span class="phase-icon" id="phaseIcon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                </span>
+                <span class="phase-text" id="gaugePhaseText" data-i18n="st.phase_idle">就绪待测</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Button -->
+          <div class="speedtest-action-wrap">
+            <button id="speedStartBtn" class="btn-speed-radiant">
+              <span class="btn-icon" id="speedBtnIcon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </span>
+              <span id="speedBtnText" data-i18n="st.btn_start">开始测速</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Real-time Waveform Canvas & Progress Footer -->
+        <div class="speed-chart-col">
+          <div class="speed-chart-card-inner">
+            <div class="speed-chart-top">
+              <h3 class="speed-chart-title" data-i18n="st.chart_title">实时速度</h3>
+              <div class="speed-chart-legend">
+                <div class="legend-item">
+                  <span class="legend-dot dot-down"></span>
+                  <span data-i18n="st.legend_download">下载</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot dot-up"></span>
+                  <span data-i18n="st.legend_upload">上传</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="speed-chart-canvas-wrap">
+              <canvas id="speedWaveCanvas"></canvas>
+            </div>
+
+            <div class="speed-chart-footer">
+              <div class="chart-footer-meta">
+                <span class="meta-tested"><span data-i18n="st.tested_data">已测试</span> <strong id="dataTransferredVal">0 MB</strong></span>
+                <span class="meta-percent" id="testProgressPercent">0%</span>
+              </div>
+              <div class="chart-progress-track">
+                <div class="chart-progress-fill" id="testProgressFill" style="width: 0%;"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -198,115 +328,118 @@
       <div class="speed-metrics-grid">
         <!-- Metric: Ping -->
         <div id="cardPing" class="speed-metric-card spotlight-card">
+          <div class="metric-accent-bar accent-cyan"></div>
           <div class="metric-header">
-            <div class="metric-label-group">
-              <div class="metric-icon-slot">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <span class="metric-label" data-i18n="st.metric_ping">延迟 (Ping)</span>
+            <div class="metric-icon-circle icon-cyan">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
-            <span class="metric-status-dot"></span>
+            <span class="metric-title" data-i18n="st.metric_ping">延迟 (Ping)</span>
           </div>
           <div class="metric-body">
             <div id="pingVal" class="metric-num">--</div>
             <span class="metric-unit">ms</span>
           </div>
+          <div class="metric-subtitle" data-i18n="st.metric_ping_sub">网络响应时间</div>
         </div>
 
         <!-- Metric: Jitter -->
         <div id="cardJitter" class="speed-metric-card spotlight-card">
+          <div class="metric-accent-bar accent-blue"></div>
           <div class="metric-header">
-            <div class="metric-label-group">
-              <div class="metric-icon-slot">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              </div>
-              <span class="metric-label" data-i18n="st.metric_jitter">网络抖动 (Jitter)</span>
+            <div class="metric-icon-circle icon-blue">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
-            <span class="metric-status-dot"></span>
+            <span class="metric-title" data-i18n="st.metric_jitter">抖动 (Jitter)</span>
           </div>
           <div class="metric-body">
             <div id="jitterVal" class="metric-num">--</div>
             <span class="metric-unit">ms</span>
           </div>
+          <div class="metric-subtitle" data-i18n="st.metric_jitter_sub">延迟波动</div>
         </div>
 
         <!-- Metric: Download -->
         <div id="cardDown" class="speed-metric-card spotlight-card">
+          <div class="metric-accent-bar accent-cyan"></div>
           <div class="metric-header">
-            <div class="metric-label-group">
-              <div class="metric-icon-slot">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-              </div>
-              <span class="metric-label" data-i18n="st.metric_down">下载速率</span>
+            <div class="metric-icon-circle icon-cyan">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
             </div>
-            <span class="metric-status-dot"></span>
+            <span class="metric-title" data-i18n="st.metric_down">下载速度</span>
           </div>
           <div class="metric-body">
             <div id="downloadVal" class="metric-num">--</div>
             <span class="metric-unit">Mbps</span>
           </div>
+          <div class="metric-subtitle" data-i18n="st.metric_down_sub">当前下载速率</div>
         </div>
 
         <!-- Metric: Upload -->
         <div id="cardUp" class="speed-metric-card spotlight-card">
+          <div class="metric-accent-bar accent-purple"></div>
           <div class="metric-header">
-            <div class="metric-label-group">
-              <div class="metric-icon-slot" style="background: rgba(168, 85, 247, 0.12); color: #C084FC;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
-              </div>
-              <span class="metric-label" data-i18n="st.metric_up">上传速率</span>
+            <div class="metric-icon-circle icon-purple">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
             </div>
-            <span class="metric-status-dot"></span>
+            <span class="metric-title" data-i18n="st.metric_up">上传速度</span>
           </div>
           <div class="metric-body">
             <div id="uploadVal" class="metric-num">--</div>
             <span class="metric-unit">Mbps</span>
           </div>
+          <div class="metric-subtitle" data-i18n="st.metric_up_sub">当前上传速率</div>
         </div>
       </div>
 
-      <!-- 3. Real-time Waveform Canvas Chart -->
-      <div class="speed-chart-card spotlight-card">
-        <div class="speed-chart-header">
-          <h3 class="speed-chart-title">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-            <span data-i18n="st.chart_title">实时网络吞吐波形图</span>
-          </h3>
-          <div class="speed-chart-legend">
-            <div class="speed-chart-peak">
-              <span data-i18n="st.chart_peak">最高峰值</span>:
-              <span id="chartPeakVal">-- Mbps</span>
+      <!-- 3. Bottom 2-Card Row: Quality Evaluation & Network Info -->
+      <div class="speed-bottom-grid">
+        <!-- Left Card: Network Quality Evaluation -->
+        <div id="cardQuality" class="speed-quality-card spotlight-card">
+          <div class="quality-badge-wrap">
+            <div class="quality-double-ring">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <div class="legend-item">
-              <span class="legend-line download"></span>
-              <span data-i18n="st.legend_down">下行速率 (Mbps)</span>
+          </div>
+          <div class="quality-content">
+            <div class="quality-header-row">
+              <span class="quality-title" data-i18n="st.quality_title">网络质量：</span>
+              <span id="qualityRatingVal" class="quality-rating-text" data-i18n="st.quality_good">良好</span>
             </div>
-            <div class="legend-item">
-              <span class="legend-line upload"></span>
-              <span data-i18n="st.legend_up">上行速率 (Mbps)</span>
+            <p id="qualityDesc" class="quality-desc" data-i18n="st.quality_desc_good">您的网络连接非常稳定，满足日常使用需求。</p>
+            <div class="quality-tags-row">
+              <span class="quality-tag is-pass" id="tag4k"><span class="tag-check">✓</span> <span data-i18n="st.tag_4k">4K 视频</span></span>
+              <span class="quality-tag is-pass" id="tagConf"><span class="tag-check">✓</span> <span data-i18n="st.tag_conf">视频会议</span></span>
+              <span class="quality-tag is-pass" id="tagGaming"><span class="tag-check">✓</span> <span data-i18n="st.tag_gaming">在线游戏</span></span>
+              <span class="quality-tag is-pass" id="tagDownload"><span class="tag-check">✓</span> <span data-i18n="st.tag_download">大文件下载</span></span>
             </div>
           </div>
         </div>
-        <div class="speed-chart-canvas-wrap">
-          <canvas id="speedWaveCanvas"></canvas>
-        </div>
-      </div>
 
-      <!-- 4. Client & Network Diagnostics Strip -->
-      <div class="speed-diag-strip spotlight-card">
-        <div class="diag-strip-item">
-          <span class="diag-strip-label" data-i18n="st.diag_ip">IP</span>
-          <span id="clientIp" class="diag-strip-val">检测中...</span>
-        </div>
-        <div class="diag-strip-divider"></div>
-        <div class="diag-strip-item">
-          <span class="diag-strip-label" data-i18n="st.diag_colo">节点</span>
-          <span id="clientColo" class="diag-strip-val">连接中...</span>
-        </div>
-        <div class="diag-strip-divider"></div>
-        <div class="diag-strip-item">
-          <span class="diag-strip-label" data-i18n="st.diag_proto">协议</span>
-          <span id="clientProto" class="diag-strip-val">HTTP/2 · TLS 1.3</span>
+        <!-- Right Card: Network Diagnostics Information -->
+        <div id="cardNetInfo" class="speed-netinfo-card spotlight-card">
+          <h4 class="netinfo-card-title" data-i18n="st.net_info_title">网络信息</h4>
+          <div class="netinfo-grid">
+            <div class="netinfo-col">
+              <div class="netinfo-label"><span class="info-icon">🌐</span> <span data-i18n="st.net_ip">公网 IP</span></div>
+              <div class="netinfo-val" id="clientIp">检测中...</div>
+            </div>
+            <div class="netinfo-col">
+              <div class="netinfo-label"><span class="info-icon">📍</span> <span data-i18n="st.net_node">测试节点</span></div>
+              <div class="netinfo-val" id="clientColo">连接中...</div>
+            </div>
+            <div class="netinfo-col">
+              <div class="netinfo-label"><span class="info-icon">⚙️</span> <span data-i18n="st.net_proto">协议</span></div>
+              <div class="netinfo-val" id="clientProto">WireGuard</div>
+            </div>
+            <div class="netinfo-col">
+              <div class="netinfo-label"><span class="info-icon">🔒</span> <span data-i18n="st.net_tls">TLS 版本</span></div>
+              <div class="netinfo-val" id="clientTls">TLS 1.3</div>
+            </div>
+            <div class="netinfo-col">
+              <div class="netinfo-label"><span class="info-icon">📶</span> <span data-i18n="st.net_isp">ISP</span></div>
+              <div class="netinfo-val" id="clientIsp">Cloudflare</div>
+            </div>
+          </div>
         </div>
       </div>
 
