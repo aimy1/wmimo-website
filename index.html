@@ -18,19 +18,20 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wmimo - 一个让网络连接变得简单的代理客户端</title>
-  <meta name="description" content="基于 Flutter 与 Mihomo 核心打造，支持多平台、多协议的现代化网络代理工具。">
+  <title>Wmimo - Proxy Reimagined | 让网络连接更简单</title>
+  <meta name="description" content="基于 Flutter 与 Mihomo 核心打造的跨平台现代化网络代理客户端，提供沉浸式极速分流、TUN 虚拟网卡系统级接管与无界极客美学。">
   <link rel="icon" type="image/png" href="assets/images/app_icon_128.png">
 
+  <!-- Core Styles -->
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/home.css">
 </head>
-<body class="ambient-bg">
+<body class="ambient-bg folia-body">
   <div class="ambient-glow-top"></div>
 
-  <!-- Header Navigation matching Mockup -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="site-logo">
@@ -50,18 +51,12 @@
 
       <div class="nav-actions">
         <!-- Capsule Language Switcher: 中 | EN -->
-        <div class="lang-capsule" id="langCapsule" title="切换语言 / Switch Language">
+        <div class="lang-capsule" title="切换语言 / Switch Language">
           <button type="button" class="lang-capsule-btn active" data-lang="zh">中</button>
           <button type="button" class="lang-capsule-btn" data-lang="en">EN</button>
         </div>
 
-        <!-- GitHub Pill Button -->
-        <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" class="btn-github-pill">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
-          <span data-i18n="nav.github">GitHub</span>
-        </a>
+        <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.1.6" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub Releases</a>
 
         <button class="mobile-toggle-btn" aria-label="菜单" data-i18n-aria="nav.menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -89,312 +84,311 @@
     </div>
   </div>
 
-  <main>
-    <!-- Section 1: Hero Section -->
-    <section class="hero-section">
-      <div class="container hero-container">
-        <!-- Left Column: Content -->
-        <div class="hero-content">
-          <div class="hero-tagline" data-i18n="hero.tagline">让网络连接，更简单。</div>
+  <!-- Folia Atmospheric Fixed Background (Glow Orbs, Geometric Cluster, Twinkling Stars) -->
+  <div id="fumeBackground" class="fume-background">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+    <div class="glow glow-4"></div>
+  </div>
 
-          <h1 class="hero-title">
-            <span class="hero-brand">Wmimo</span>
-            <span class="hero-title-line" data-i18n="hero.title_line1">一个让网络连接</span>
-            <span class="hero-title-line">
-              <span data-i18n="hero.title_line2_pre">变得</span><span class="text-cyan" data-i18n="hero.title_line2_highlight">简单</span><span data-i18n="hero.title_line2_post">的代理客户端</span>
-            </span>
-          </h1>
+  <!-- Giant Kinetic Typography Background Layer -->
+  <div class="typography-layer">
+    <div class="typo typo-1">LIGHTNING IN THE WIRES</div>
+    <div class="typo typo-2" data-i18n="typo.line2">虚空贯通 · 极速分流</div>
+    <div class="typo typo-3">BEYOND BOUNDARIES, UNBOUND</div>
+    <div class="typo typo-4" data-i18n="typo.line4">穿越迷雾与重构链路</div>
+    <div class="typo typo-5">EVERY PACKET, PURE CLARITY</div>
+    <div class="typo typo-6" data-i18n="typo.line6">无界漫游 · 自由而行</div>
+    <div class="typo typo-7">CONNECT THE WORLD IN SILENCE</div>
+    <div class="typo typo-8">MIHOMO KERNEL EMPOWERED</div>
+  </div>
 
-          <p class="hero-description" data-i18n="hero.description">
-            基于 Flutter 与 Mihomo 核心打造，支持多平台、多协议的现代化网络代理工具。
-          </p>
+  <!-- Main Scrollable Storyline Content -->
+  <main class="scroll-content">
 
-          <div class="hero-actions">
-            <a id="heroDownloadBtn" href="download.html" class="btn-primary-cyan">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
-              <span data-i18n="hero.btn_download">立即下载</span>
-            </a>
-            <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" class="btn-github-view">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-              <span data-i18n="hero.btn_github">查看 GitHub</span>
-            </a>
-          </div>
+    <!-- 1. Hero Section -->
+    <section class="section hero-section">
+      <div class="hero-content">
+        <h1 class="title">Wmimo</h1>
+        <p class="subtitle" data-i18n="folia.hero_subtitle">Proxy Reimagined.</p>
 
-          <div class="hero-platforms">
-            <span class="platform-badge">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
-              Windows
-            </span>
-            <span class="platform-badge">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2z"/></svg>
-              Linux
-            </span>
-            <span class="platform-badge">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1368 1.0989L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
-              Android
-            </span>
-          </div>
+        <div class="cta-actions hero-actions">
+          <a id="heroDownloadBtn" href="download.html" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span data-i18n="folia.btn_download">立即下载</span>
+          </a>
+          <a href="docs/index.html" class="btn btn-secondary glass" data-i18n="folia.btn_docs">查看文档</a>
+          <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" class="btn btn-secondary glass" data-i18n="folia.btn_github">GitHub 仓库</a>
         </div>
 
-        <!-- Right Column Spacer: allows hero_bg wallpaper (cat, nodes, skyline) to show through -->
-        <div class="hero-visual" aria-hidden="true"></div>
+        <div class="scroll-indicator">
+          <span class="mouse"><span class="wheel"></span></span>
+          <span data-i18n="folia.scroll_explore">向下滑动探索</span>
+        </div>
       </div>
     </section>
 
-    <!-- Section 2: Core Capabilities ("Wmimo 的核心能力") -->
-    <section class="core-capabilities-section">
-      <div class="container capabilities-container">
-        <!-- Left: Capabilities Intro -->
-        <div class="capabilities-intro">
-          <h2 class="capabilities-title">
-            <span data-i18n="cap.title_pre">Wmimo 的</span><span class="text-cyan" data-i18n="cap.title_highlight">核心能力</span>
-          </h2>
-          <p class="capabilities-desc" data-i18n-html="cap.desc">
-            从连接到世界，只需几步。<br>
-            Wmimo 将复杂的网络配置变得简单，<br>
-            让你专注于更重要的事情。
+    <!-- 2. Section: Core & Smart Routing -->
+    <section id="section-core" class="section feature-section">
+      <div class="feature-container">
+        <div class="text-content">
+          <div class="feature-deco">✦</div>
+          <h2 class="feature-title" data-i18n="folia.s1_title">沉浸式内核与极速分流</h2>
+          <p class="feature-desc" data-i18n="folia.s1_desc">
+            打破传统网络代理工具的枯燥与繁杂，Wmimo 将连接速度与稳定性作为视觉交互的核心。深度集成轻量高效的 Mihomo 核心，提供微秒级规则分流与全协议透传，让每一次网络漫游都如行云流水。
           </p>
         </div>
-
-        <!-- Right: 4-Step Workflow -->
-        <div class="workflow-steps">
-          <!-- Step 1: 连接 -->
-          <div class="workflow-step">
-            <div class="step-icon-wrap">
-              <div class="step-circle">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 4.5c-2.4 0-4.5 1-5.6 2.2L3.5 4a.8.8 0 0 0-1.3.8l1.4 5.3C3.2 11.5 3 13 3 14.5c0 4.2 4 7 9 7s9-2.8 9-7c0-1.5-.2-3-.6-4.4l1.4-5.3a.8.8 0 0 0-1.3-.8l-2.9 2.7c-1.1-1.2-3.2-2.2-5.6-2.2zm-3.5 8a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-3.5 3c.6 0 1.2.3 1.5.7a.5.5 0 0 1-.8.6c-.2-.2-.5-.3-.7-.3s-.5.1-.7.3a.5.5 0 0 1-.8-.6c.3-.4.9-.7 1.5-.7z"/>
-                </svg>
-              </div>
-              <div class="step-connector">
-                <span class="connector-line"></span>
-                <span class="connector-arrow"></span>
+        <div class="visual-content">
+          <div class="glass-card image-card preview-rotator">
+            <div class="preview-slide active">
+              <div class="mockup-inner">
+                <div class="mockup-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                </div>
+                <div class="mockup-title" data-i18n="folia.s1_mock1_title">智能规则与微秒级分流</div>
+                <span class="mockup-badge" data-i18n="folia.s1_mock1_badge">Mihomo Meta 内核驱动</span>
               </div>
             </div>
-            <div class="step-info">
-              <h3 class="step-title" data-i18n="cap.step1_title">连接</h3>
-              <p class="step-desc" data-i18n-html="cap.step1_desc">一键连接，自动接管<br>系统网络，轻松网络。</p>
+            <div class="preview-slide">
+              <div class="mockup-inner">
+                <div class="mockup-icon" style="color: #10b981; border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <div class="mockup-title" data-i18n="folia.s1_mock2_title">低延迟多路复用 Multiplex</div>
+                <span class="mockup-badge" style="color: #34d399; border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.15);" data-i18n="folia.s1_mock2_badge">极低资源占用 · 零抖动</span>
+              </div>
+            </div>
+            <div class="preview-slide">
+              <div class="mockup-inner">
+                <div class="mockup-icon" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.1);">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div class="mockup-title" data-i18n="folia.s1_mock3_title">现代化跨平台交互体验</div>
+                <span class="mockup-badge" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.15);" data-i18n="folia.s1_mock3_badge">原生 Flutter 桌面与移动端</span>
+              </div>
+            </div>
+            <div class="card-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Section: Clean & Focused Experience (Reverse Layout) -->
+    <section id="section-clean" class="section feature-section reverse">
+      <div class="feature-container">
+        <div class="text-content">
+          <div class="feature-deco">●</div>
+          <h2 class="feature-title" data-i18n="folia.s2_title">简洁专注，远离臃肿</h2>
+          <p class="feature-desc" data-i18n="folia.s2_desc">
+            没有打扰注意力的弹窗、繁杂的参数堆砌或任何无用冗余，Wmimo 的视线始终聚焦于连接与效率。全功能系统托盘常驻后台，轻点右键即可秒级切换模式、测速与复制代理命令，让强大隐藏于极简之中。
+          </p>
+        </div>
+        <div class="visual-content stacked-cards">
+          <!-- Card 1 -->
+          <div class="glass-card src-card card-1">
+            <div class="card-header-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <span class="card-tag" data-i18n="folia.s2_c1_tag">ZERO BLOATWARE</span>
+              <h3 class="card-title" data-i18n="folia.s2_c1_title">零广告 · 秒速冷启</h3>
             </div>
           </div>
-
-          <!-- Step 2: 选择 -->
-          <div class="workflow-step">
-            <div class="step-icon-wrap">
-              <div class="step-circle">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="6" width="20" height="12" rx="6" fill="rgba(0, 218, 245, 0.2)"/>
-                  <circle cx="16" cy="12" r="4.5" fill="#00daf5" stroke="#00daf5"/>
-                </svg>
-              </div>
-              <div class="step-connector">
-                <span class="connector-line"></span>
-                <span class="connector-arrow"></span>
-              </div>
+          <!-- Card 2 -->
+          <div class="glass-card src-card card-2">
+            <div class="card-header-icon" style="color: #a855f7;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
             </div>
-            <div class="step-info">
-              <h3 class="step-title" data-i18n="cap.step2_title">选择</h3>
-              <p class="step-desc" data-i18n-html="cap.step2_desc">Rule / Global / Direct<br>灵活切换网络模式。</p>
+            <div>
+              <span class="card-tag" data-i18n="folia.s2_c2_tag">DESIGN SYSTEM</span>
+              <h3 class="card-title" data-i18n="folia.s2_c2_title">18px 微卡片设计美学</h3>
             </div>
           </div>
-
-          <!-- Step 3: 穿越 -->
-          <div class="workflow-step">
-            <div class="step-icon-wrap">
-              <div class="step-circle">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="2" y1="12" x2="22" y2="12"/>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </div>
-              <div class="step-connector">
-                <span class="connector-line"></span>
-                <span class="connector-arrow"></span>
-              </div>
+          <!-- Card 3 -->
+          <div class="glass-card src-card card-3">
+            <div class="card-header-icon" style="color: #38bdf8;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
             </div>
-            <div class="step-info">
-              <h3 class="step-title" data-i18n="cap.step3_title">穿越</h3>
-              <p class="step-desc" data-i18n-html="cap.step3_desc">多协议、多节点<br>低延迟高速连接。</p>
-            </div>
-          </div>
-
-          <!-- Step 4: 畅享 -->
-          <div class="workflow-step">
-            <div class="step-icon-wrap">
-              <div class="step-circle">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="#00daf5" stroke="#00daf5" stroke-width="1">
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                </svg>
-              </div>
-            </div>
-            <div class="step-info">
-              <h3 class="step-title" data-i18n="cap.step4_title">畅享</h3>
-              <p class="step-desc" data-i18n-html="cap.step4_desc">无论是工作、学习还是娱乐，<br>都能稳定畅快。</p>
+            <div>
+              <span class="card-tag" data-i18n="folia.s2_c3_tag">SYSTEM TRAY</span>
+              <h3 class="card-title" data-i18n="folia.s2_c3_title">原生托盘与实时网速</h3>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 3: Familiar Interface ("熟悉的界面，强大的功能") -->
-    <section class="showcase-section">
-      <div class="container showcase-container">
-        <!-- Left: Feature Checklist -->
-        <div class="showcase-left">
-          <div class="showcase-tag" data-i18n="showcase.tag">简洁 · 现代 · 高效</div>
-          <h2 class="showcase-title" data-i18n="showcase.title">熟悉的界面，强大的功能</h2>
-          <p class="showcase-desc" data-i18n-html="showcase.desc">
-            Wmimo 采用现代化的 UI 设计，<br>
-            提供清晰的状态展示与便捷的操作体验。
+    <!-- 4. Section: Universal Native Deployment (Platform Stacks) -->
+    <section id="section-platform" class="section feature-section">
+      <div class="feature-container">
+        <div class="text-content">
+          <div class="feature-deco">◆</div>
+          <h2 class="feature-title" data-i18n="folia.s3_title">跨平台原生覆盖</h2>
+          <p class="feature-desc" data-i18n="folia.s3_desc">
+            全端一致的高品质使用体验。无论是 Windows 10/11 的桌面生产力环境，Linux 各大主流发行版（Debian / Ubuntu / Arch / Fedora），还是搭载不同架构处理器的 Android 手机与电视盒子，均提供高度优化的原生构建版本。
           </p>
-
-          <div class="features-with-doodle">
-            <ul class="feature-checklist">
-              <li>
-                <span class="check-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </span>
-                <span data-i18n="showcase.feat1">实时流量监控</span>
-              </li>
-              <li>
-                <span class="check-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </span>
-                <span data-i18n="showcase.feat2">多种代理模式</span>
-              </li>
-              <li>
-                <span class="check-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </span>
-                <span data-i18n="showcase.feat3">系统托盘常驻</span>
-              </li>
-              <li>
-                <span class="check-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </span>
-                <span data-i18n="showcase.feat4">轻量化设计，18px 更舒适</span>
-              </li>
-            </ul>
-
-            <div class="doodle-wrap" aria-hidden="true">
-              <svg width="115" height="110" viewBox="0 0 115 110" fill="none" class="doodle-svg">
-                <path d="M 16 36 C 38 25, 68 21, 95 16" stroke="#00daf5" stroke-width="2" stroke-linecap="round" fill="none"/>
-                <path d="M 86 12 L 97 16 L 90 25" stroke="#00daf5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <g transform="rotate(-15 48 65)">
-                  <text x="22" y="48" font-family="'Caveat', 'Comic Sans MS', 'Patrick Hand', 'Segoe Print', cursive, sans-serif" font-size="16" font-weight="700" fill="#00daf5" letter-spacing="0.5">Simple</text>
-                  <text x="28" y="70" font-family="'Caveat', 'Comic Sans MS', 'Patrick Hand', 'Segoe Print', cursive, sans-serif" font-size="16" font-weight="700" fill="#00daf5" letter-spacing="0.5">Not Simple</text>
-                  <text x="64" y="92" font-family="'Caveat', 'Comic Sans MS', 'Patrick Hand', 'Segoe Print', cursive, sans-serif" font-size="18" font-weight="700" fill="#00daf5">: )</text>
-                </g>
-              </svg>
+        </div>
+        <div class="visual-content stacked-cards">
+          <!-- Card 1: Windows -->
+          <div class="glass-card src-card card-1">
+            <div class="card-header-icon" style="color: #00A4EF;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
+            </div>
+            <div>
+              <span class="card-tag">WINDOWS PLATFORM</span>
+              <h3 class="card-title">Windows x64 / ARM64</h3>
             </div>
           </div>
-        </div>
-
-        <!-- Right: Client Interface Mockup on Showcase Desk -->
-        <div class="showcase-right">
-          <div class="mockup-window-wrap">
-            <!-- Secondary Node List Window (Behind) -->
-            <div class="app-mockup-nodes-window" aria-hidden="true">
-              <div class="mockup-titlebar mini">
-                <span class="mockup-mini-title">Nodes</span>
-                <div class="mockup-controls">
-                  <span class="control-btn">—</span>
-                  <span class="control-btn">□</span>
-                  <span class="control-btn">✕</span>
-                </div>
-              </div>
-              <ul class="mini-node-list">
-                <li><span>🇭🇰 Hong Kong</span><span class="text-cyan">34 ms</span></li>
-                <li><span>🇯🇵 Tokyo</span><span class="text-cyan">42 ms</span></li>
-                <li><span>🇺🇸 Los Angeles</span><span class="text-cyan">138 ms</span></li>
-                <li><span>🇩🇪 Frankfurt</span><span class="text-cyan">180 ms</span></li>
-                <li><span>🇸🇬 Singapore</span><span class="text-cyan">38 ms</span></li>
-              </ul>
+          <!-- Card 2: Linux -->
+          <div class="glass-card src-card card-2">
+            <div class="card-header-icon" style="color: #FCC624;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2z"/></svg>
             </div>
-
-            <!-- Main Client Window (Foreground) -->
-            <div class="app-mockup-window">
-              <!-- Window Titlebar -->
-              <div class="mockup-titlebar">
-                <div class="mockup-brand">
-                  <img src="assets/images/app_icon_128.png" alt="Wmimo" class="mockup-logo">
-                  <span>Wmimo</span>
-                </div>
-                <div class="mockup-controls">
-                  <span class="control-btn">—</span>
-                  <span class="control-btn">□</span>
-                  <span class="control-btn control-close">✕</span>
-                </div>
-              </div>
-
-              <!-- Status Indicator -->
-              <div class="mockup-status-pill">
-                <span class="status-dot"></span>
-                <span class="status-text">Connected</span>
-                <span class="status-dot"></span>
-              </div>
-
-              <!-- Active Node Card -->
-              <div class="mockup-node-card">
-                <div class="node-meta">
-                  <span class="node-flag">🇸🇬</span>
-                  <span class="node-name">Singapore</span>
-                </div>
-                <span class="node-ping text-cyan">38 ms</span>
-              </div>
-
-              <!-- Proxy Modes Segmented Buttons -->
-              <div class="mockup-mode-tabs">
-                <button type="button" class="mode-tab active">Rule</button>
-                <button type="button" class="mode-tab">Global</button>
-                <button type="button" class="mode-tab">Direct</button>
-              </div>
-
-              <!-- Traffic Rate Stats -->
-              <div class="mockup-traffic-row">
-                <div class="traffic-item">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00daf5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
-                  <span>12.4 MB/s</span>
-                </div>
-                <div class="traffic-item">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00daf5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-                  <span>86.7 MB/s</span>
-                </div>
-              </div>
-
-              <!-- Glowing Speed Waveform SVG -->
-              <div class="mockup-waveform">
-                <svg viewBox="0 0 280 50" preserveAspectRatio="none" class="wave-svg">
-                  <defs>
-                    <linearGradient id="waveGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#00daf5" stop-opacity="0.35"/>
-                      <stop offset="100%" stop-color="#00daf5" stop-opacity="0"/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M 0 35 Q 35 10, 70 28 T 140 22 T 210 15 T 280 30 L 280 50 L 0 50 Z" fill="url(#waveGrad)"/>
-                  <path d="M 0 35 Q 35 10, 70 28 T 140 22 T 210 15 T 280 30" fill="none" stroke="#00daf5" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M 0 42 Q 40 20, 80 38 T 160 32 T 280 40" fill="none" stroke="#0284c7" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.6"/>
-                </svg>
-              </div>
+            <div>
+              <span class="card-tag">LINUX DISTRIBUTIONS</span>
+              <h3 class="card-title">Deb / RPM / Arch / Tar</h3>
+            </div>
+          </div>
+          <!-- Card 3: Android -->
+          <div class="glass-card src-card card-3">
+            <div class="card-header-icon" style="color: #3DDC84;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1368 1.0989L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
+            </div>
+            <div>
+              <span class="card-tag">MOBILE ECOSYSTEM</span>
+              <h3 class="card-title">Android 全架构 APK</h3>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- 5. Section: Interactive Comparison Slider (Center Layout) -->
+    <section id="section-tun" class="section feature-section center-align">
+      <div class="feature-container-center">
+        <h2 class="feature-title" data-i18n="folia.s4_title">TUN 虚拟网卡系统级接管</h2>
+        <p class="feature-desc" style="max-width: 720px;" data-i18n="folia.s4_desc">
+          在操作系统底层建立虚拟网络适配器，实现全局透明捕获。无需繁复配置每个软件的代理端口，终端命令行、大型网络游戏、后台 Docker 服务与所有原生应用皆能即刻享受极速加速。左右拖拽查看两端对比：
+        </p>
+
+        <!-- Interactive Drag-to-Compare Slider -->
+        <div class="theme-compare" title="按住并左右拖拽对比 / Drag to Compare">
+          <div class="theme-compare-card">
+            <!-- Right / Base Layer: 普通直连 -->
+            <div class="theme-compare-base">
+              <div class="compare-stat-group" style="align-items: flex-end;">
+                <span class="compare-stat-badge bad">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  280ms 高延迟 · 丢包频繁
+                </span>
+                <h3 class="compare-heading gray" data-i18n="folia.s4_base_heading">普通直连 / 基础代理</h3>
+                <ul class="compare-list" style="align-items: flex-end; text-align: right;">
+                  <li><span>仅限浏览器 HTTP 代理生效</span> <span style="color: #ef4444;">✕</span></li>
+                  <li><span>终端 Git / cURL 无法直接穿透</span> <span style="color: #ef4444;">✕</span></li>
+                  <li><span>DNS 容易遭受污染与泄漏</span> <span style="color: #ef4444;">✕</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Left / Overlay Layer: Wmimo TUN 智能接管 -->
+            <div class="theme-compare-overlay">
+              <div class="compare-stat-group">
+                <span class="compare-stat-badge good">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  18ms 极速响应 · 零丢包
+                </span>
+                <h3 class="compare-heading cyan" data-i18n="folia.s4_over_heading">Wmimo TUN 虚拟网卡</h3>
+                <ul class="compare-list">
+                  <li><span style="color: #10b981;">✓</span> <span>操作系统底层全局透明接管</span></li>
+                  <li><span style="color: #10b981;">✓</span> <span>游戏联机、CLI 终端与守护进程全自动路由</span></li>
+                  <li><span style="color: #10b981;">✓</span> <span>Fake-IP 亚毫秒高速解析与 DNS 防泄漏</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Draggable Divider Line & Handle -->
+            <div class="compare-divider theme-compare-divider">
+              <div class="theme-compare-handle">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <!-- Corner Labels -->
+            <div class="theme-compare-label theme-compare-label-left" data-i18n="folia.s4_label_left">Wmimo TUN 模式</div>
+            <div class="theme-compare-label theme-compare-label-right" data-i18n="folia.s4_label_right">常规普通直连</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Section: Multi-Protocol Matrix (Reverse Layout) -->
+    <section id="section-protocols" class="section feature-section reverse">
+      <div class="feature-container">
+        <div class="text-content">
+          <div class="feature-deco">✦</div>
+          <h2 class="feature-title" data-i18n="folia.s5_title">现代多协议矩阵</h2>
+          <p class="feature-desc" data-i18n="folia.s5_desc">
+            全协议栈深度支持。针对复杂异构网络环境，Wmimo 集成了基于 UDP 的下一代抗拥塞协议与伪装穿透方案。无论是低延时视讯通话、高通量 4K 串流，还是大文件并发传输，皆能从容应对。
+          </p>
+        </div>
+        <div class="visual-content stacked-cards">
+          <!-- Card 1 -->
+          <div class="glass-card src-card card-1">
+            <div class="card-header-icon" style="color: #38bdf8;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <span class="card-tag">NEXT-GEN UDP</span>
+              <h3 class="card-title">Hysteria 2 / TUIC v5</h3>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="glass-card src-card card-2">
+            <div class="card-header-icon" style="color: #00daf5;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <span class="card-tag">SECURITY & CAMOUFLAGE</span>
+              <h3 class="card-title">VLESS Reality / Shadowsocks</h3>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="glass-card src-card card-3">
+            <div class="card-header-icon" style="color: #10b981;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <div>
+              <span class="card-tag">ENTERPRISE TUNNEL</span>
+              <h3 class="card-title">WireGuard / Trojan</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Bottom Call to Action Section -->
+    <section id="section-cta" class="section cta-section">
+      <div class="feature-container-center">
+        <div class="cta-box">
+          <h2 class="feature-title" style="margin-bottom: 1rem;" data-i18n="folia.cta_title">开启无界漫游之旅</h2>
+          <p class="feature-desc" style="max-width: 600px; margin-bottom: 2.5rem;" data-i18n="folia.cta_desc">
+            立即免费下载 Wmimo，体验极致速度、优雅界面与强大的系统级网络掌控力。
+          </p>
+          <div class="cta-actions" style="flex-wrap: wrap; justify-content: center;">
+            <a href="download.html" class="btn btn-primary" data-i18n="folia.btn_download_now">下载客户端</a>
+            <a href="docs/index.html" class="btn btn-secondary glass" data-i18n="folia.btn_docs_quick">查看使用文档</a>
+            <a href="speedtest.html" class="btn btn-secondary glass" data-i18n="folia.btn_speedtest">在线网络测速</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Site Footer -->
@@ -437,8 +431,10 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/os-detector.js"></script>
+  <script src="assets/js/folia-home.js"></script>
 </body>
 </html>
