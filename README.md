@@ -4,7 +4,7 @@
   <p><strong>Proxy Reimagined · 极速 · 优雅 · 强大的现代化跨平台网络代理客户端官网</strong></p>
 
   <p>
-    <a href="https://github.com/aimy1/Wmimo/releases/latest"><img src="https://img.shields.io/badge/Release-v1.1.6-00BCDF?style=for-the-badge&logo=github&logoColor=white" alt="Release Version" /></a>
+    <a href="https://github.com/aimy1/Wmimo/releases/latest"><img src="https://img.shields.io/badge/Release-v1.1.7-00BCDF?style=for-the-badge&logo=github&logoColor=white" alt="Release Version" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-0284C7?style=for-the-badge" alt="License" /></a>
     <img src="https://img.shields.io/badge/Tech-HTML5%20%7C%20CSS3%20%7C%20ES6-00DAF5?style=for-the-badge" alt="Tech Stack" />
     <img src="https://img.shields.io/badge/Design-18px%20Micro--Card-10B981?style=for-the-badge" alt="Design System" />
@@ -139,7 +139,7 @@ wmimo-website/
 ├── download.html               # 官方全平台安装包下载中心
 ├── speedtest.html              # 在线实时网络性能测速平台
 ├── community.html              # 开源社群、赞助通道与交流反馈
-├── mautoupdate.json            # 官方客户端自动检查更新元数据 (v1.1.6)
+├── mautoupdate.json            # 官方客户端自动检查更新元数据 (v1.1.7)
 ├── server.js                   # 零依赖本地轻量调试服务器
 ├── LICENSE                     # GPL-3.0 开源授权协议
 └── README.md                   # 本说明文件
