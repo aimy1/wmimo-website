@@ -18,8 +18,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>赞助与支持 - Wmimo</title>
-  <meta name="description" content="Wmimo 赞助支持通道与开发者联系方式。">
+  <title>关于与赞助 - Wmimo</title>
+  <meta name="description" content="了解 Wmimo 的核心理念、开源架构基石、支持方式与赞助通道。">
   <link rel="icon" type="image/png" href="assets/images/app_icon_128.png">
 
   <link rel="stylesheet" href="assets/css/tokens.css">
@@ -87,168 +87,238 @@
   </div>
 
   <main class="container">
-    <!-- Playful & Clean Hero Header -->
+    <!-- Hero Header -->
     <section class="page-hero" style="text-align: center;">
-      <div class="dev-station-badge" data-i18n="community.hero_badge">☕ 独立开发者的咖啡能量站</div>
-      <h1 data-i18n="community.hero_title">用一杯咖啡，为开源创新注入无限动力</h1>
-      <p data-i18n="community.hero_subtitle" style="max-width: 680px; margin: 0 auto;">Wmimo 始终坚持 100% 自由开源、零商业广告与全平台免费。赞助纯属自愿心意，金额完全不设限；您的每一份鼓励，都将直接化为项目持续维护与优化的动力。</p>
+      <div class="about-badge" data-i18n="community.hero_badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <span>关于 Wmimo 与开源支持</span>
+      </div>
+      <h1 data-i18n="community.hero_title">关于 Wmimo · 纯粹、现代、自由开源</h1>
+      <p data-i18n="community.hero_subtitle" style="max-width: 680px; margin: 0 auto;">基于 Flutter 与 Mihomo 核心深度构建，秉承 100% 自由开源、零商业广告与全功能永久免费。追求工程极致与极简视觉，为每一位用户带来纯净流畅的下一代跨平台网络体验。</p>
     </section>
 
-    <!-- 1. Interactive Developer Dialogue Card -->
-    <div class="dev-dialogue-wrap spotlight-card" id="devDialogueBox">
-      <div class="dev-avatar-box" id="devAvatar" title="点击互动">
-        <span>☕</span>
+    <!-- 1. Core Pillars -->
+    <section class="about-section">
+      <div class="about-section-header">
+        <span class="about-section-eyebrow" data-i18n="community.pillars_eyebrow">Core Principles</span>
+        <h2 class="about-section-title" data-i18n="community.pillars_title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>初心与核心支柱</span>
+        </h2>
+        <p class="about-section-subtitle" data-i18n="community.pillars_subtitle">坚持不妥协的工程品味，守候开源世界的纯粹与温度</p>
       </div>
-      <div class="dev-bubble-content">
-        <div class="dev-bubble-header">
-          <span class="dev-name">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            <span data-i18n="community.dialogue_name">开发者心声 · 点击互动</span>
-          </span>
-          <button class="dev-refresh-btn" id="refreshQuoteBtn" onclick="refreshDevQuote(event)">
-            <span data-i18n="community.btn_poke">💡 换一句</span>
-          </button>
-        </div>
-        <div class="dev-text" id="devQuoteText">
-          “开源不仅是一行行代码，更是对自由、开放互联网的共同追求。”
-        </div>
-      </div>
-    </div>
-
-    <!-- Voluntary Notice Callout -->
-    <div class="callout callout-info" style="max-width: 860px; margin: 0 auto 28px auto;">
-      <div class="callout-body" data-i18n="community.voluntary_notice">
-        💡 温馨提示：赞助金额全凭个人心意，完全不设任何门槛与限制。无论是 0.1 USDT 还是单纯的一句鼓励，都对开源维护有着巨大的意义！
-      </div>
-    </div>
-
-    <!-- 2. Sponsorship Tiers & Impact Grid -->
-    <section class="dev-tiers-section">
-      <h3 class="dev-section-title" data-i18n="community.tiers_title">☕ 随心支持 · 赞助方向参考（金额不设限）</h3>
-      <div class="dev-tiers-grid">
-        <!-- Tier 1 -->
-        <div class="dev-tier-card spotlight-card" onclick="spawnFloatingParticle(event, '☕')">
-          <div>
-            <div class="dev-tier-icon">☕</div>
-            <div class="dev-tier-name" data-i18n="community.tier1_name">单份浓缩 (Espresso)</div>
-            <div class="dev-tier-price" data-i18n="community.tier1_price">金额随意 · 随心支持</div>
-            <ul class="dev-tier-buffs">
-              <li data-i18n="community.tier1_buff1">⚡ 助力 1 次紧急 Bug 修复与代码重构</li>
-              <li data-i18n="community.tier1_buff2">🛠️ 维持日常工单响应与社区维护</li>
-            </ul>
+      <div class="about-pillars-grid">
+        <div class="about-pillar-card spotlight-card">
+          <div class="about-pillar-icon">🛡️</div>
+          <div class="about-pillar-body">
+            <h3 class="about-pillar-title" data-i18n="community.pillar1_title">100% 自由开源 · GPL-3.0</h3>
+            <p class="about-pillar-desc" data-i18n="community.pillar1_desc">所有客户端源码、协议对接与构建脚本完全公开透明。在 GNU GPL-3.0 协议保障下，杜绝任何闭源私货、后门与恶意篡改，永久保障用户的软件自由。</p>
           </div>
-          <div class="dev-tier-quote" data-i18n="community.tier1_quote">“一滴浓缩咖啡因，点亮深夜的代码灵感。”</div>
         </div>
 
-        <!-- Tier 2 (Featured) -->
-        <div class="dev-tier-card featured spotlight-card" onclick="spawnFloatingParticle(event, '🧋')">
-          <div>
-            <div class="dev-tier-icon">🧋</div>
-            <div class="dev-tier-name" data-i18n="community.tier2_name">特调拿铁 (Craft Latte)</div>
-            <div class="dev-tier-price" data-i18n="community.tier2_price">金额随意 · 随心支持</div>
-            <ul class="dev-tier-buffs">
-              <li data-i18n="community.tier2_buff1">🚀 覆盖多平台 CI/CD 自动化构建开销</li>
-              <li data-i18n="community.tier2_buff2">✨ 加速新功能与协议特性研发排期</li>
-            </ul>
+        <div class="about-pillar-card spotlight-card">
+          <div class="about-pillar-icon">🍃</div>
+          <div class="about-pillar-body">
+            <h3 class="about-pillar-title" data-i18n="community.pillar2_title">零商业广告 · 尊重隐私</h3>
+            <p class="about-pillar-desc" data-i18n="community.pillar2_desc">不内嵌任何广告推送、不搜集追踪设备隐私、不记录用户访问日志。没有弹窗打扰，没有付费锁区与套路，还原网络工具本该有的纯粹克制。</p>
           </div>
-          <div class="dev-tier-quote" data-i18n="community.tier2_quote">“充足的热量与动力，为全平台稳定打包护航。”</div>
         </div>
 
-        <!-- Tier 3 -->
-        <div class="dev-tier-card spotlight-card" onclick="spawnFloatingParticle(event, '🍰')">
-          <div>
-            <div class="dev-tier-icon">🍰</div>
-            <div class="dev-tier-name" data-i18n="community.tier3_name">烘焙能量包 (Pastry Pack)</div>
-            <div class="dev-tier-price" data-i18n="community.tier3_price">金额随意 · 随心支持</div>
-            <ul class="dev-tier-buffs">
-              <li data-i18n="community.tier3_buff1">💖 支持核心底层优化与测试真机购置</li>
-              <li data-i18n="community.tier3_buff2">🌟 赞助者长期感谢与心愿功能优先评估</li>
-            </ul>
+        <div class="about-pillar-card spotlight-card">
+          <div class="about-pillar-icon">⚡</div>
+          <div class="about-pillar-body">
+            <h3 class="about-pillar-title" data-i18n="community.pillar3_title">现代化工程美学</h3>
+            <p class="about-pillar-desc" data-i18n="community.pillar3_desc">摆脱传统代理客户端陈旧厚重的刻板印象。采用 Flutter 原生丝滑渲染与响应式卡片体系，结合轻量系统托盘与全局快捷键，带来行云流水的使用感受。</p>
           </div>
-          <div class="dev-tier-quote" data-i18n="community.tier3_quote">“感谢每一位同行者，让优质开源工具走得更远。”</div>
+        </div>
+
+        <div class="about-pillar-card spotlight-card">
+          <div class="about-pillar-icon">🌍</div>
+          <div class="about-pillar-body">
+            <h3 class="about-pillar-title" data-i18n="community.pillar4_title">全平台一致互通</h3>
+            <p class="about-pillar-desc" data-i18n="community.pillar4_desc">深度适配 Windows、Linux 与 Android。统一的内核调度、一致的配置语法与分流表现，无论在桌面工作站还是移动设备，体验无缝衔接。</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. Clean Focused Crypto Donation Card -->
-    <div class="sponsor-clean-container">
-      <div class="sponsor-clean-card spotlight-card">
-        <!-- QR Code -->
-        <div class="sponsor-clean-qr">
-          <div class="sponsor-clean-qr-img-box">
+    <!-- 2. Tech Architecture & Foundations -->
+    <section class="about-section">
+      <div class="about-section-header">
+        <span class="about-section-eyebrow" data-i18n="community.tech_eyebrow">Architecture & Foundations</span>
+        <h2 class="about-section-title" data-i18n="community.tech_title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>开源基石与致敬</span>
+        </h2>
+        <p class="about-section-subtitle" data-i18n="community.tech_subtitle">Wmimo 站在巨人的肩膀上前行，向所有推动开放网络技术的先驱致敬</p>
+      </div>
+      <div class="about-tech-grid">
+        <div class="about-tech-card spotlight-card">
+          <span class="about-tech-badge">CORE KERNEL</span>
+          <h3 class="about-tech-title">🚀 MetaCubeX (Mihomo)</h3>
+          <p class="about-tech-desc" data-i18n="community.tech_mihomo_desc">行业领先的下一代通用代理核心。提供原生 TUN 虚拟网卡、Fake-IP 防污染、进程分流嗅探以及新一代高速传输协议（Hysteria 2、TUIC v5、VLESS Reality）。</p>
+        </div>
+
+        <div class="about-tech-card spotlight-card">
+          <span class="about-tech-badge">UI FRAMEWORK</span>
+          <h3 class="about-tech-title">💙 Flutter & Dart</h3>
+          <p class="about-tech-desc" data-i18n="community.tech_flutter_desc">Google 开源的现代化多平台 UI 开发套件。赋予 Wmimo 60/120 FPS 丝滑动画响应、原生桌面嵌入能力以及高效易维护的声明式界面逻辑。</p>
+        </div>
+
+        <div class="about-tech-card spotlight-card">
+          <span class="about-tech-badge">OPEN SOURCE SPIRIT</span>
+          <h3 class="about-tech-title">🌟 GooRingX & 社区贡献</h3>
+          <p class="about-tech-desc" data-i18n="community.tech_community_desc">由衷感谢 GooRingX (vowe) 杰出的开源探索与宝贵灵感。Wmimo 严格遵循 GPL-3.0 协议规范，并将持续回馈开源社区与文档生态。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Non-Financial Support Ways -->
+    <section class="about-section">
+      <div class="about-section-header">
+        <span class="about-section-eyebrow" data-i18n="community.ways_eyebrow">How to Support</span>
+        <h2 class="about-section-title" data-i18n="community.ways_title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>支持项目的多种方式</span>
+        </h2>
+        <p class="about-section-subtitle" data-i18n="community.ways_subtitle">支持开源不仅限于资金，您的每一次关注与互动，都是推动项目向前的巨大动力</p>
+      </div>
+      <div class="about-ways-grid">
+        <div class="about-way-card spotlight-card">
+          <div>
+            <div class="about-way-icon">⭐</div>
+            <h3 class="about-way-title" data-i18n="community.way_star_title">GitHub 点亮 Star</h3>
+            <p class="about-way-desc" data-i18n="community.way_star_desc">在 GitHub 上为 Wmimo 点亮一颗 Star，不仅能提升项目的关注度与开源信誉，也是对开发者最直接的精神激励。</p>
+          </div>
+          <div class="about-way-action">
+            <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" data-i18n="community.btn_star_repo">前往加星 ⭐</a>
+          </div>
+        </div>
+
+        <div class="about-way-card spotlight-card">
+          <div>
+            <div class="about-way-icon">🐛</div>
+            <h3 class="about-way-title" data-i18n="community.way_issue_title">反馈问题与贡献代码</h3>
+            <p class="about-way-desc" data-i18n="community.way_issue_desc">在使用中发现 Bug 或有好的交互构想？欢迎在 Issues 提交工单，或直接提交 Pull Request 参与代码与多语言翻译共建。</p>
+          </div>
+          <div class="about-way-action">
+            <a href="https://github.com/aimy1/Wmimo/issues" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" data-i18n="community.btn_submit_issue">提交 Issue / PR</a>
+          </div>
+        </div>
+
+        <div class="about-way-card spotlight-card">
+          <div>
+            <div class="about-way-icon">📢</div>
+            <h3 class="about-way-title" data-i18n="community.way_share_title">分享推荐给同行好友</h3>
+            <p class="about-way-desc" data-i18n="community.way_share_desc">把 Wmimo 分享给身边需要高效、稳定且高颜值网络代理客户端的朋友或技术社群，让更多人享受无障碍互联体验。</p>
+          </div>
+          <div class="about-way-action">
+            <a href="download.html" class="btn btn-secondary btn-sm" data-i18n="community.btn_share_download">获取下载链接</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Crypto Sponsorship Section -->
+    <section class="about-section">
+      <div class="about-section-header">
+        <span class="about-section-eyebrow" data-i18n="community.sponsor_eyebrow">Voluntary Sponsorship</span>
+        <h2 class="about-section-title" data-i18n="community.sponsor_sec_title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M8 10h8M8 14h6"/></svg>
+          <span>随心赞助与支持通道</span>
+        </h2>
+        <p class="about-section-subtitle" data-i18n="community.sponsor_sec_subtitle">金额随意不设门槛，全凭自愿心意；全部赞助将专款用于多架构云构建与测试机开销</p>
+      </div>
+
+      <div class="about-sponsor-card spotlight-card">
+        <div class="sponsor-qr-pane">
+          <div class="sponsor-qr-img-box">
             <img src="assets/images/donate_qr.png" alt="Aptos USDT 捐赠二维码">
           </div>
-          <span class="sponsor-clean-qr-tag">APTOS · USDT</span>
+          <span class="sponsor-network-tag">APTOS · USDT</span>
         </div>
 
-        <!-- Info & Address -->
-        <div class="sponsor-clean-info">
+        <div class="sponsor-info-pane">
           <div>
-            <h2 class="sponsor-clean-title" data-i18n="community.sponsor_title">💖 加密货币赞助通道</h2>
-            <p class="sponsor-clean-desc" style="margin-top: 6px;" data-i18n="community.sponsor_desc">
-              赞助完全自愿且不设任何金额门槛，无论数额多少都是对开源作者莫大的认可。如果 Wmimo 提升了您的网络与工作效率，欢迎随心请作者喝杯咖啡。
+            <h3 class="sponsor-title" data-i18n="community.sponsor_title">
+              <span>💖</span>
+              <span>加密货币随心赞助通道 (Aptos USDT)</span>
+            </h3>
+            <p class="sponsor-desc" data-i18n="community.sponsor_desc">
+              Wmimo 由个人独立长期维护与迭代。赞助纯凭自愿心意，金额完全不设门槛（无论是 0.1 还是 1 USDT 均是对开源的极大肯定）。Wmimo 坚持所有核心特性终身免费开放，绝无任何付费锁区与特权壁垒。
             </p>
           </div>
 
-          <div class="sponsor-clean-meta" data-i18n-html="community.crypto_currency">
-            <span>币种：<code>USDT</code></span>
+          <div class="sponsor-meta-row" data-i18n-html="community.crypto_currency">
+            <span class="sponsor-meta-item">币种：<code>USDT</code></span>
             <span>·</span>
-            <span>网络：<code>APTOS</code> (极低手续费)</span>
+            <span class="sponsor-meta-item">公链网络：<code>APTOS</code> (极低转账手续费 &lt; $0.0001)</span>
           </div>
 
-          <!-- Address Box with One-Click Copy -->
-          <div class="sponsor-clean-addr-box">
-            <div class="sponsor-clean-addr-text" title="0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345">
+          <!-- Address Row with Copy -->
+          <div class="sponsor-addr-row">
+            <div class="sponsor-addr-val" id="sponsorAddrText" title="0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345">
               0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345
             </div>
-            <button onclick="handleCopyAddress(event)" class="btn btn-primary btn-sm" data-i18n="community.btn_copy_addr">
-              复制地址
+            <button type="button" onclick="handleCopyAddress(event)" class="btn btn-primary btn-sm" id="copyAddrBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              <span data-i18n="community.btn_copy_addr">复制地址</span>
             </button>
           </div>
 
-          <!-- Footer Contact -->
-          <div class="sponsor-clean-footer">
-            <span><span data-i18n="community.dev_email_label">📬 开发者联系邮箱：</span><strong>aisaniya@proton.me</strong></span>
+          <!-- Contact Footer -->
+          <div class="sponsor-contact-row">
+            <span>
+              <span data-i18n="community.dev_email_label">📬 开发者联系邮箱：</span>
+              <strong>aisaniya@proton.me</strong>
+            </span>
             <a href="mailto:aisaniya@proton.me" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              <span data-i18n="community.btn_send_email">发送邮件</span>
+              <span data-i18n="community.btn_send_email">发送邮件联系</span>
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- 4. Open-Source Commitment & FAQ -->
-    <section class="dev-qa-section">
-      <h3 class="dev-section-title" data-i18n="community.qa_title">💡 赞助说明与开源承诺</h3>
-      <div class="dev-qa-grid">
-        <div class="dev-qa-card spotlight-card">
-          <div class="dev-qa-q">
+    <!-- 5. Open-Source Commitment & FAQ -->
+    <section class="about-section" style="margin-bottom: 72px;">
+      <div class="about-section-header">
+        <span class="about-section-eyebrow" data-i18n="community.faq_eyebrow">Transparency & FAQ</span>
+        <h2 class="about-section-title" data-i18n="community.faq_title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>开源承诺与赞助说明</span>
+        </h2>
+        <p class="about-section-subtitle" data-i18n="community.faq_subtitle">我们珍视每一份开源善意，确保透明纯粹与长久信任</p>
+      </div>
+      <div class="about-faq-grid">
+        <div class="about-faq-card spotlight-card">
+          <div class="about-faq-q">
             <span>🛡️</span>
             <span data-i18n="community.q1_title">赞助是否有金额要求或特权限制？</span>
           </div>
-          <div class="dev-qa-a" data-i18n="community.q1_ans">
-            完全没有金额要求！赞助纯属心意与自愿，金额大小随意不设限。同时 Wmimo 坚持 100% 自由开源，所有功能对全球用户完全开放，绝无 VIP 锁区或区别对待。
+          <div class="about-faq-a" data-i18n="community.q1_ans">
+            完全没有金额要求！赞助纯属心意与自愿，金额大小随意不设限。Wmimo 坚持 100% 自由开源，所有功能对全球用户完全开放，绝无任何 VIP 锁区或功能阉割。
           </div>
         </div>
 
-        <div class="dev-qa-card spotlight-card">
-          <div class="dev-qa-q">
+        <div class="about-faq-card spotlight-card">
+          <div class="about-faq-q">
             <span>⚡</span>
             <span data-i18n="community.q2_title">为什么优先采用 Aptos 网络 USDT？</span>
           </div>
-          <div class="dev-qa-a" data-i18n="community.q2_ans">
-            Aptos 链上单笔转账手续费低至 $0.0001，几近于零损耗，能让您的赞助资金 100% 真正到达开发者手中。
+          <div class="about-faq-a" data-i18n="community.q2_ans">
+            Aptos 链上单笔转账手续费低至 $0.0001，几近于零磨损，能让您的赞助资金 100% 真正到达开发者手中，避免高昂的传统主网 Gas 费损耗。
           </div>
         </div>
 
-        <div class="dev-qa-card spotlight-card">
-          <div class="dev-qa-q">
-            <span>🌟</span>
-            <span data-i18n="community.q3_title">不进行赞助同样可以正常使用吗？</span>
+        <div class="about-faq-card spotlight-card">
+          <div class="about-faq-q">
+            <span>🛠️</span>
+            <span data-i18n="community.q3_title">收到的赞助资金将如何使用？</span>
           </div>
-          <div class="dev-qa-a" data-i18n="community.q3_ans">
-            当然可以！开源的初衷就是分享与互助。在 GitHub 为项目点亮一颗 🌟 Star 或向朋友推荐，同样是对我们极大的支持！
+          <div class="about-faq-a" data-i18n="community.q3_ans">
+            赞助资金将全部用于 GitHub Actions 多架构 CI/CD 云编译资源、跨操作系统测试真机购置、网站服务器域名以及持续优化的基础开销。
           </div>
         </div>
       </div>
@@ -299,71 +369,10 @@
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    // Developer Dialogue & Particle Engine
-    const devQuotesZh = [
-      "“开源不仅是一行行代码，更是对自由、开放互联网的共同追求。”",
-      "“用严谨的工程与优雅的设计，打造属于每个人的跨平台网络工具。”",
-      "“代码没有捷径，每一处内存优化与分流调优都是对用户体验的尊重。”",
-      "“感谢社区中的每一位贡献者与支持者，让开源生态充满温度与力量。”",
-      "“保持纯粹，坚守 100% 自由开源，永远不做侵扰用户的商业化妥协。”",
-      "“一杯咖啡的热量，伴随每一次 commit 与跨架构自动化构建。”"
-    ];
-
-    const devQuotesEn = [
-      "“Open source is not just code—it is a shared pursuit of a free and open internet.”",
-      "“Crafting high-performance cross-platform network tools with rigorous engineering.”",
-      "“No shortcuts in coding: every memory tuning honors the user experience.”",
-      "“Warm thanks to every contributor and supporter empowering this open-source journey.”",
-      "“Staying pure: committed to 100% free open-source without commercial compromises.”",
-      "“Fueling late-night commits and multi-arch builds with coffee energy.”"
-    ];
-
-    const devAvatars = ["☕", "💡", "⚡", "🚀", "🛠️", "🌟"];
-    let currentDevQuoteIdx = 0;
-
-    function refreshDevQuote(e) {
-      if (e) e.stopPropagation();
-      const lang = (window.WmimoI18n ? window.WmimoI18n.getCurrentLang() : 'zh');
-      const quotes = (lang === 'en' ? devQuotesEn : devQuotesZh);
-      currentDevQuoteIdx = (currentDevQuoteIdx + 1) % quotes.length;
-
-      const quoteEl = document.getElementById('devQuoteText');
-      const avatarEl = document.getElementById('devAvatar');
-
-      if (quoteEl) {
-        quoteEl.style.opacity = '0';
-        setTimeout(() => {
-          quoteEl.textContent = quotes[currentDevQuoteIdx];
-          quoteEl.style.opacity = '1';
-        }, 150);
-      }
-
-      if (avatarEl) {
-        const nextAvatar = devAvatars[Math.floor(Math.random() * devAvatars.length)];
-        avatarEl.querySelector('span').textContent = nextAvatar;
-      }
-
-      spawnFloatingParticle(e, ['☕', '✨', '💡', '🚀', '💖'][Math.floor(Math.random() * 5)]);
-    }
-
-    function spawnFloatingParticle(e, emoji = '☕') {
-      const x = e ? (e.clientX || (e.touches && e.touches[0].clientX) || window.innerWidth / 2) : window.innerWidth / 2;
-      const y = e ? (e.clientY || (e.touches && e.touches[0].clientY) || window.innerHeight / 2) : window.innerHeight / 2;
-
-      const particle = document.createElement('div');
-      particle.className = 'floating-particle';
-      particle.textContent = emoji;
-      particle.style.left = `${x + (Math.random() * 40 - 20)}px`;
-      particle.style.top = `${y + (Math.random() * 20 - 10)}px`;
-      document.body.appendChild(particle);
-
-      setTimeout(() => particle.remove(), 1200);
-    }
-
     function handleCopyAddress(e) {
       if (e) e.stopPropagation();
       const addr = '0xce0c3a1d7d8547eb7effd887095da438b89e3edd70e7c7e7927c244c2dd7f345';
-      const toastMsg = (window.WmimoI18n ? window.WmimoI18n.t('community.addr_copied') : '收款地址已复制到剪贴板，非常感谢您的支持！');
+      const toastMsg = (window.WmimoI18n ? window.WmimoI18n.t('community.addr_copied') : '收款地址已复制到剪贴板，非常感谢您的心意与支持！');
       
       if (window.copyToClipboard) {
         window.copyToClipboard(addr, toastMsg);
@@ -372,28 +381,15 @@
         if (window.showToast) window.showToast(toastMsg);
       }
 
-      // Gentle celebratory particles
-      for (let i = 0; i < 4; i++) {
+      const btn = document.getElementById('copyAddrBtn');
+      if (btn) {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span>' + (window.WmimoI18n && window.WmimoI18n.getCurrentLang() === 'en' ? 'Copied!' : '已复制') + '</span>';
         setTimeout(() => {
-          spawnFloatingParticle(e, ['☕', '💖', '✨', '🌟'][i % 4]);
-        }, i * 90);
+          btn.innerHTML = originalText;
+        }, 2000);
       }
     }
-
-    // Avatar click event & language change listener
-    document.addEventListener('DOMContentLoaded', () => {
-      const avatar = document.getElementById('devAvatar');
-      if (avatar) {
-        avatar.addEventListener('click', (e) => refreshDevQuote(e));
-      }
-      window.addEventListener('wmimo_lang_change', (e) => {
-        const lang = e.detail ? e.detail.lang : 'zh';
-        const quoteEl = document.getElementById('devQuoteText');
-        if (quoteEl) {
-          quoteEl.textContent = (lang === 'en' ? devQuotesEn[0] : devQuotesZh[0]);
-        }
-      });
-    });
   </script>
 </body>
 </html>
