@@ -58,13 +58,13 @@
 | [`download.html`](download.html) | **下载中心** | 访客操作系统智能识别、推荐安装包首屏直达、全架构安装包筛选矩阵与 SHA-256 校验说明 |
 | [`speedtest.html`](speedtest.html) | **在线测速** | 极简高精度轻量细线测速表盘、实时延迟与抖动监测、下行速率曲线图与多节点测速 |
 | [`community.html`](community.html) | **关于与赞助** | 项目初心与四大支柱、开源基石致敬、多样化非资金支持方式、Aptos USDT 随心赞助通道与开源 FAQ |
-| [`docs/index.html`](docs/index.html) | **知识库中心** | 14 篇体系化技术专栏、实时侧边栏搜索过滤、流畅锚点导航、一键代码复制与双语阅读 |
+| [`docs/index.html`](docs/index.html) | **知识库中心** | 15 篇体系化技术专栏、实时侧边栏搜索过滤、流畅锚点导航、一键代码复制与双语阅读 |
 
 ---
 
 ## 📚 技术文档知识库矩阵 (`docs/`)
 
-知识库包含 14 篇深度图文教程，由浅入深覆盖从快速入门到内核级调优：
+知识库包含 15 篇深度图文教程，由浅入深覆盖从快速入门到内核级调优：
 
 ```
 docs/
@@ -81,7 +81,8 @@ docs/
 ├── subscriptions.html  # [11] 订阅自动更新与 Rule Providers 远程规则集
 ├── clients.html        # [12] 跨平台客户端生态全景导航
 ├── faq.html            # [13] 常见问题排查与网络回环修复 (FAQ)
-└── build.html          # [14] 从源码本地编译 (Flutter + Mihomo 构建指南)
+├── build.html          # [14] 从源码本地编译 (Flutter + Mihomo 构建指南)
+└── dev-guide.html      # [15] 跨平台代理客户端开发实战指南 (内核、TUN/VPN、防回环、Platform Adapter)
 ```
 
 ---
@@ -143,13 +144,14 @@ wmimo-website/
 │       ├── app_icon_512.png    # 客户端高清图标 (512x512)
 │       ├── donate_qr.png       # Aptos USDT 赞助收款二维码
 │       └── tray.png            # 客户端托盘菜单示意图
-├── docs/                       # 14 篇体系化实战技术文档
+├── docs/                       # 15 篇体系化实战技术文档
 ├── index.html                  # 现代化官方首页
 ├── download.html               # 官方全平台安装包下载中心
 ├── speedtest.html              # 极简在线实时网络测速台
 ├── community.html              # 关于 Wmimo 与开源随心赞助中枢
 ├── mautoupdate.json            # 官方客户端自动检查更新元数据 (v1.1.7)
 ├── mconfig.json                # 客户端配置预设模板
+├── 跨平台代理客户端开发实战指南.md   # 50章跨平台客户端实战开发专著源文
 ├── server.js                   # 零依赖本地轻量调试服务器
 └── README.md                   # 本说明文件
 ```
