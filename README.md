@@ -151,7 +151,6 @@ wmimo-website/
 ├── community.html              # 关于 Wmimo 与开源随心赞助中枢
 ├── mautoupdate.json            # 官方客户端自动检查更新元数据 (v1.1.7)
 ├── mconfig.json                # 客户端配置预设模板
-├── 跨平台代理客户端开发实战指南.md   # 50章跨平台客户端实战开发专著源文
 ├── server.js                   # 零依赖本地轻量调试服务器
 └── README.md                   # 本说明文件
 ```
