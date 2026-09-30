@@ -444,6 +444,8 @@
       'doc_sub.geo_db_desc': "Mihomo 内核支持直接通过配置开启 Geo 数据库的定时静默拉取与更新，确保国内外 IP 和顶级域识别始终处于最新状态：",
       'doc_sub.prev_title': "← 外部控制器与 Web 仪表盘",
       'doc_sub.next_title': "客户端生态导航 →",
+      'doc_dev.title': "跨平台代理客户端开发实战指南",
+      'doc_dev.subtitle': "从系统代理、TUN/VPN、DNS、路由回环，到 Rust Platform Adapter 与移动端嵌入全流程架构指南。",
 
       // Toast & Helpers
       'toast.copied': '已成功复制到剪贴板',
@@ -963,6 +965,8 @@
       'doc_sub.geo_db_desc': "Mihomo supports automated background updating of GeoIP and GeoSite databases to keep IP and domain resolution rules up to date:",
       'doc_sub.prev_title': "← External Controller & Web Dashboard",
       'doc_sub.next_title': "Client Ecosystem Navigation →",
+      'doc_dev.title': "Cross-Platform Proxy Client Development Practical Guide",
+      'doc_dev.subtitle': "Comprehensive guide covering system proxy, TUN/VPN, DNS Fake-IP, loop prevention, Platform Adapter and mobile embedding.",
 
       // Toast & Helpers
       'toast.copied': 'Copied to clipboard successfully',
