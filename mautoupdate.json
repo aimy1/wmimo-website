@@ -1,9 +1,9 @@
 [
   {
     "platform": "windows",
-    "version": "1.1.9",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.9/Wmimo-Windows-x64-Setup-v1.1.9.exe",
-    "sha256": "4690fbf94da07011ea71a55567b4a814de9350ea04388794f86c4ad80dc1f10b",
+    "version": "1.1.10",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.10/Wmimo-Windows-x64-Setup-v1.1.10.exe",
+    "sha256": "1dcedfcfa3427e62a2e5241a1e5d776f559a5b0384b824636ad184e970c84e3b",
     "abis": [
       "x86_64",
       "x64",
@@ -19,9 +19,9 @@
   },
   {
     "platform": "windows",
-    "version": "1.1.9",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.9/Wmimo-Windows-arm64-Setup-v1.1.9.exe",
-    "sha256": "ec4f2c60a09780f5a7476ce90558c1daee646526cc2d086a8f269f61d680679e",
+    "version": "1.1.10",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.10/Wmimo-Windows-arm64-Setup-v1.1.10.exe",
+    "sha256": "9ead610cb589d4ebfcfa8cf910a46e14d145cb5b538fb4987a4ccc85f72836cf",
     "abis": [
       "arm64",
       "aarch64"
@@ -36,9 +36,9 @@
   },
   {
     "platform": "android",
-    "version": "1.1.9",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.9/Wmimo-Android-arm64-v8a-v1.1.9.apk",
-    "sha256": "20195514ec4655c03f515e7bfc28b3dcb785d43c205143970bd6fdb61f2d18fc",
+    "version": "1.1.10",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.10/Wmimo-Android-arm64-v8a-v1.1.10.apk",
+    "sha256": "5a40212d4a37f5b69a9f427f24a711947f82960d8dffede1aecb62751fb63d1b",
     "abis": [
       "arm64-v8a"
     ],
@@ -52,9 +52,9 @@
   },
   {
     "platform": "android",
-    "version": "1.1.9",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.9/Wmimo-Android-armeabi-v7a-v1.1.9.apk",
-    "sha256": "8adf5c1f2f6f992eb8a7968c4dafa18939423a2e87da1cf1ac4179eca12d3aed",
+    "version": "1.1.10",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.10/Wmimo-Android-armeabi-v7a-v1.1.10.apk",
+    "sha256": "3347994fe180a3a828263d306f33da7280d5f847cbe93324c67ff6a882d73fcf",
     "abis": [
       "armeabi-v7a"
     ],
@@ -68,9 +68,9 @@
   },
   {
     "platform": "android",
-    "version": "1.1.9",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.9/Wmimo-Android-x86_64-v1.1.9.apk",
-    "sha256": "2a4f288fca50087e5526aad8dc2a3176913a4d79846226ae7d23cba9b52bc051",
+    "version": "1.1.10",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.10/Wmimo-Android-x86_64-v1.1.10.apk",
+    "sha256": "800e9dec22edacf81eb7b3fd631495b23c0d8db9473b3ab9391f8214e75fd529",
     "abis": [
       "x86_64"
     ],
@@ -84,9 +84,9 @@
   },
   {
     "platform": "android",
-    "version": "1.1.9",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.9/Wmimo-Android-universal-v1.1.9.apk",
-    "sha256": "346b44cc852bb7f491ac6694d557da9f9037a4f24364e8247594ac59964016d2",
+    "version": "1.1.10",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.10/Wmimo-Android-universal-v1.1.10.apk",
+    "sha256": "e3c875ffaedf6654081447cd0e01903bead850747536a24c82cf83724bfd8af9",
     "abis": [
       "*"
     ],
@@ -100,9 +100,9 @@
   },
   {
     "platform": "linux",
-    "version": "1.1.9",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.9/Wmimo-Linux-x64-v1.1.9.deb",
-    "sha256": "f5bac56feb44e90d71dede5712989488bfbb7beb0974f54b2a473ea8a048ad0b",
+    "version": "1.1.10",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.10/Wmimo-Linux-x64-v1.1.10.deb",
+    "sha256": "798db94f98fbf8a3caf1626e41c5b7c1189b11d9ca1d2a8d7ee0be2b7fcb204b",
     "abis": [
       "*"
     ],
@@ -116,9 +116,9 @@
   },
   {
     "platform": "linux",
-    "version": "1.1.9",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.9/Wmimo-Linux-x64-v1.1.9.rpm",
-    "sha256": "8c901a1bcea0a611eba9619013cad9e8526a0c42c4cc0cb3c240eaad8b47ca29",
+    "version": "1.1.10",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.10/Wmimo-Linux-x64-v1.1.10.rpm",
+    "sha256": "b9b8c79bdcbfde8fc3f1354433792ed66bb70a71f90066b9860940d2ae9211d6",
     "abis": [
       "*"
     ],
@@ -132,9 +132,9 @@
   },
   {
     "platform": "linux",
-    "version": "1.1.9",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.9/Wmimo-Linux-x64-v1.1.9.deb",
-    "sha256": "f5bac56feb44e90d71dede5712989488bfbb7beb0974f54b2a473ea8a048ad0b",
+    "version": "1.1.10",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.1.10/Wmimo-Linux-x64-v1.1.10.deb",
+    "sha256": "798db94f98fbf8a3caf1626e41c5b7c1189b11d9ca1d2a8d7ee0be2b7fcb204b",
     "abis": [
       "*"
     ],
