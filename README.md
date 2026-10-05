@@ -4,7 +4,7 @@
   <p><strong>Proxy Reimagined · 极速 · 纯粹 · 优雅的现代化跨平台网络代理客户端官方门户</strong></p>
 
   <p>
-    <a href="https://github.com/aimy1/Wmimo/releases/latest"><img src="https://img.shields.io/badge/Release-v1.1.10-00BCDF?style=flat-square&logo=github&logoColor=white" alt="Release Version" /></a>
+    <a href="https://github.com/aimy1/Wmimo/releases/latest"><img src="https://img.shields.io/badge/Release-v1.1.11-00BCDF?style=flat-square&logo=github&logoColor=white" alt="Release Version" /></a>
     <a href="https://www.gnu.org/licenses/gpl-3.0.html"><img src="https://img.shields.io/badge/License-GPL--3.0-0284C7?style=flat-square" alt="License" /></a>
     <img src="https://img.shields.io/badge/Tech-HTML5%20%7C%20CSS3%20%7C%20ES6-00DAF5?style=flat-square" alt="Tech Stack" />
     <img src="https://img.shields.io/badge/Design-Geometric%20Micro--Card-10B981?style=flat-square" alt="Design System" />
@@ -149,7 +149,7 @@ wmimo-website/
 ├── download.html               # 官方全平台安装包下载中心
 ├── speedtest.html              # 极简在线实时网络测速台
 ├── community.html              # 关于 Wmimo 与开源随心赞助中枢
-├── mautoupdate.json            # 官方客户端自动检查更新元数据 (v1.1.10)
+├── mautoupdate.json            # 官方客户端自动检查更新元数据 (v1.1.11)
 ├── mconfig.json                # 客户端配置预设模板
 ├── server.js                   # 零依赖本地轻量调试服务器
 └── README.md                   # 本说明文件
