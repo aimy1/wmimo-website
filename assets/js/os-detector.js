@@ -1,11 +1,11 @@
 /**
  * Smart OS Detection & Direct Release Asset URL Engine for Wmimo
- * Version: v1.1.14.1501
+ * Version: v1.2.0.1501
  * Supports dynamic i18n re-rendering
  */
 
 (function() {
-  const RELEASE_TAG = 'v1.1.14.1501';
+  const RELEASE_TAG = 'v1.2.0.1501';
   const BASE_URL = `https://github.com/aimy1/Wmimo/releases/download/${RELEASE_TAG}`;
 
   // Standard Official SVG Brand Logos
@@ -36,10 +36,10 @@
       return {
         os: 'iOS',
         svg: SVG_ICONS.macOS,
-        pkgZh: 'TestFlight / App Store (适配中)',
-        pkgEn: 'TestFlight / App Store (In progress)',
-        file: 'wmimo-ios.ipa',
-        url: 'https://github.com/aimy1/Wmimo/releases/tag/v1.0.33',
+        pkgZh: 'Universal IPA (TrollStore / 巨魔 / 自签)',
+        pkgEn: 'Universal IPA (TrollStore / Sideload)',
+        file: `Wmimo-iOS-universal-${RELEASE_TAG}.ipa`,
+        url: `${BASE_URL}/Wmimo-iOS-universal-${RELEASE_TAG}.ipa`,
         ext: '.ipa'
       };
     }
@@ -48,10 +48,10 @@
       return {
         os: 'macOS',
         svg: SVG_ICONS.macOS,
-        pkgZh: 'DMG (适配中)',
-        pkgEn: 'DMG Package (In progress)',
-        file: 'wmimo-macos.dmg',
-        url: 'https://github.com/aimy1/Wmimo/releases/tag/v1.0.33',
+        pkgZh: 'Universal DMG (Apple Silicon & Intel)',
+        pkgEn: 'Universal DMG (Apple Silicon & Intel)',
+        file: `Wmimo-macOS-universal-${RELEASE_TAG}.dmg`,
+        url: `${BASE_URL}/Wmimo-macOS-universal-${RELEASE_TAG}.dmg`,
         ext: '.dmg'
       };
     }
