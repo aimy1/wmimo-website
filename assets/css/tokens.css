@@ -81,10 +81,10 @@
   --header-bg: rgba(248, 250, 252, 0.85);
 
   --border-color: #E2E8F0;
-  --border-subtle: rgba(15, 23, 42, 0.06);
+  --border-subtle: rgba(15, 23, 42, 0.08);
 
   --text-primary: #0F172A;
-  --text-secondary: #334155;
+  --text-secondary: #475569;
   --text-muted: #64748B;
 
   --code-bg: #0F172A;

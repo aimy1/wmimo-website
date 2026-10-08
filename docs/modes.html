@@ -4,7 +4,8 @@
   <script>
     (function() {
       try {
-        var t = localStorage.getItem('wmimo_theme');
+        var urlTheme = new URLSearchParams(window.location.search).get('theme');
+        var t = (urlTheme === 'light' || urlTheme === 'dark') ? urlTheme : localStorage.getItem('wmimo_theme');
         if (t) {
           document.documentElement.setAttribute('data-theme', t);
         } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {

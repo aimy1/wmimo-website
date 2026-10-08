@@ -1044,7 +1044,7 @@
 .server-status-label {
   font-size: 0.88rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text-primary);
   letter-spacing: 0.01em;
 }
 
@@ -1888,7 +1888,7 @@
   font-family: var(--font-mono);
   font-size: 2.2rem;
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--text-primary);
   letter-spacing: -0.03em;
   line-height: 1;
 }
@@ -1965,7 +1965,7 @@
 .quality-header-row {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text-primary);
   margin-bottom: 6px;
   display: flex;
   align-items: center;
@@ -2029,7 +2029,7 @@
 .netinfo-card-title {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text-primary);
   margin-bottom: 20px;
 }
 
@@ -2132,4 +2132,119 @@
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   Light Mode Theme Optimizations for Pages
+   ========================================================================== */
+[data-theme="light"] .download-featured-card {
+  background: linear-gradient(145deg, #FFFFFF 0%, rgba(0, 188, 223, 0.06) 100%);
+  border: 1px solid rgba(0, 188, 223, 0.45);
+  box-shadow: 0 10px 30px -5px rgba(0, 188, 223, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+[data-theme="light"] .gh-asset-link {
+  color: #0284C7;
+}
+
+[data-theme="light"] .gh-asset-link:hover {
+  color: #0369A1;
+}
+
+[data-theme="light"] .gh-asset-row:hover {
+  background: rgba(0, 188, 223, 0.04);
+}
+
+[data-theme="light"] .about-badge {
+  color: #0284C7;
+  background: rgba(0, 188, 223, 0.1);
+  border-color: rgba(0, 188, 223, 0.28);
+}
+
+[data-theme="light"] .about-tech-badge {
+  color: #0284C7;
+  background: rgba(0, 188, 223, 0.08);
+  border-color: rgba(0, 188, 223, 0.22);
+}
+
+[data-theme="light"] .sponsor-meta-item code {
+  color: #0284C7;
+  background: rgba(0, 188, 223, 0.08);
+}
+
+[data-theme="light"] .sponsor-addr-row {
+  background: #F8FAFC;
+  border-color: #E2E8F0;
+}
+
+/* Speedtest Light Optimizations */
+[data-theme="light"] .server-switch-pill {
+  background: #F1F5F9;
+  border-color: #E2E8F0;
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .server-switch-pill:hover {
+  background: rgba(0, 188, 223, 0.1);
+  border-color: var(--brand-primary);
+  color: var(--brand-primary-dark);
+}
+
+[data-theme="light"] .speed-chart-card-inner {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .gauge-plate-disc {
+  fill: #FFFFFF;
+  stroke: var(--border-color);
+  filter: drop-shadow(0 6px 20px rgba(15, 23, 42, 0.08));
+}
+
+[data-theme="light"] .gauge-plate-ring {
+  stroke: rgba(0, 188, 223, 0.22);
+}
+
+[data-theme="light"] .gauge-bg-groove {
+  stroke: #E2E8F0;
+}
+
+[data-theme="light"] .gauge-speed-val {
+  color: #0F172A;
+  text-shadow: none;
+}
+
+[data-theme="light"] .gauge-speed-unit {
+  color: #64748B;
+}
+
+[data-theme="light"] .gauge-tick-label {
+  fill: #475569;
+  filter: none;
+}
+
+[data-theme="light"] .step-indicator {
+  border-color: #CBD5E1;
+  background: #F8FAFC;
+  color: #64748B;
+}
+
+[data-theme="light"] .step-line {
+  background: #E2E8F0;
+}
+
+[data-theme="light"] .step-status {
+  color: #94A3B8;
+}
+
+[data-theme="light"] .chart-progress-track {
+  background: #E2E8F0;
+}
+
+[data-theme="light"] .quality-tag {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: #E2E8F0;
+  color: var(--text-secondary);
+}
+
 

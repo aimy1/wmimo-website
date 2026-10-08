@@ -267,7 +267,7 @@
   border-bottom: 1px solid var(--code-border);
   font-size: 0.74rem;
   font-family: var(--font-mono);
-  color: var(--text-muted);
+  color: #94A3B8;
 }
 
 .code-copy-btn {

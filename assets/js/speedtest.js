@@ -399,7 +399,8 @@
     canvasCtx.clearRect(0, 0, w, h);
 
     // Subtle Grid
-    canvasCtx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    canvasCtx.strokeStyle = isLight ? 'rgba(15, 23, 42, 0.06)' : 'rgba(255, 255, 255, 0.04)';
     canvasCtx.lineWidth = 1;
     for (let y = 0; y < h; y += 30) {
       canvasCtx.beginPath();
@@ -1035,6 +1036,12 @@
         setPhase(state.phase);
       }
     });
+
+    // Observe theme changes to dynamically re-render canvas grid
+    const themeObserver = new MutationObserver(() => {
+      renderWaveform();
+    });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
     // Initial server latency probe
     setTimeout(probeAllServers, 500);

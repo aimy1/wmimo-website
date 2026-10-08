@@ -937,3 +937,39 @@ body.folia-body {
   box-shadow: var(--shadow-card);
 }
 
+[data-theme="light"] .compare-heading.cyan {
+  color: #0284C7;
+  text-shadow: none;
+}
+
+[data-theme="light"] .compare-heading.gray {
+  color: #64748B;
+}
+
+[data-theme="light"] .compare-stat-badge.good {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #059669;
+}
+
+[data-theme="light"] .compare-stat-badge.bad {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #DC2626;
+}
+
+[data-theme="light"] .feature-deco {
+  color: #0284C7;
+  opacity: 0.12;
+}
+
+[data-theme="light"] .mockup-badge {
+  background: rgba(0, 188, 223, 0.1);
+  border-color: rgba(0, 188, 223, 0.3);
+  color: #0284C7;
+}
+
+[data-theme="light"] .geo-cat {
+  filter: drop-shadow(0 2px 8px rgba(0, 188, 223, 0.25));
+}
+
