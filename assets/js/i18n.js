@@ -133,7 +133,7 @@
       // Download Page
       'dl.hero_title': '下载 Wmimo 客户端',
       'dl.hero_subtitle': '为 Windows、macOS、Linux、Android 与 iOS 平台量身打造的官方正式发行版本。轻巧稳定，原生适配。',
-      'dl.badge_latest': '最新正式版 v1.2.0.1502',
+      'dl.badge_latest': '最新正式版 v1.2.1.1503',
       'dl.smart_rec_title': '推荐下载：Wmimo for {os}',
       'dl.smart_rec_meta': '{pkg} · 架构: x64/arm64 · 官方构建产物',
       'dl.smart_rec_btn': '直接下载 {ext}',
@@ -1106,7 +1106,7 @@
       // Download Page
       'dl.hero_title': 'Download Wmimo Client',
       'dl.hero_subtitle': 'Official production release binaries tailored for Windows, macOS, Linux, Android, and iOS. Lightweight, secure, and native.',
-      'dl.badge_latest': 'Latest Stable Release v1.2.0.1502',
+      'dl.badge_latest': 'Latest Stable Release v1.2.1.1503',
       'dl.smart_rec_title': 'Recommended Download: Wmimo for {os}',
       'dl.smart_rec_meta': '{pkg} · Architecture: x64/arm64 · Official Release',
       'dl.smart_rec_btn': 'Download {ext}',
