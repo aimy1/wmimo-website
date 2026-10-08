@@ -371,7 +371,7 @@ body.folia-body {
   margin: 0 0 1.5rem 0;
   line-height: 1.15;
   letter-spacing: -0.025em;
-  color: #ffffff;
+  color: var(--fh-title-color);
 }
 
 .feature-desc {
@@ -824,3 +824,116 @@ body.folia-body {
     font-size: 1.5rem;
   }
 }
+
+/* ==========================================================================
+   Light Mode Adaptations for Folia Home
+   ========================================================================== */
+[data-theme="light"] {
+  --fh-bg: var(--bg-app);
+  --fh-text: var(--text-primary);
+  --fh-glow-1: rgba(0, 188, 223, 0.08);
+  --fh-glow-2: rgba(2, 132, 199, 0.06);
+  --fh-glow-3: rgba(0, 218, 245, 0.07);
+  --fh-glow-4: rgba(56, 189, 248, 0.04);
+  --fh-geo-border: rgba(15, 23, 42, 0.08);
+  --fh-geo-dots: radial-gradient(rgba(0, 188, 223, 0.25) 2px, transparent 2px);
+  --fh-star-bg: #0284c7;
+  --fh-star-shadow: rgba(0, 188, 223, 0.35);
+  --fh-typo-color: #0F172A;
+  --fh-typo-opacity: 0.03;
+  --fh-title-color: #0F172A;
+  --fh-title-3d: #CBD5E1;
+  --fh-title-shadow: rgba(15, 23, 42, 0.08);
+  --fh-subtitle-color: #475569;
+  --fh-glass-bg: rgba(255, 255, 255, 0.88);
+  --fh-glass-border: var(--border-color);
+  --fh-btn-secondary-hover: rgba(15, 23, 42, 0.04);
+  --fh-card-glow: radial-gradient(circle at center, rgba(0, 188, 223, 0.1) 0%, transparent 65%);
+  --fh-scroll-border: rgba(15, 23, 42, 0.25);
+  --fh-scroll-wheel: var(--brand-primary);
+}
+
+[data-theme="light"] .hero-actions .btn-secondary.glass,
+[data-theme="light"] .cta-actions .btn-secondary.glass {
+  background: rgba(255, 255, 255, 0.88) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .hero-actions .btn-secondary.glass:hover,
+[data-theme="light"] .cta-actions .btn-secondary.glass:hover {
+  background: #FFFFFF !important;
+  border-color: var(--brand-primary) !important;
+  color: var(--brand-primary-dark) !important;
+}
+
+[data-theme="light"] .preview-rotator {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .card-1 {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 188, 223, 0.35);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08), 0 0 20px rgba(0, 188, 223, 0.08);
+}
+
+[data-theme="light"] .card-2 {
+  background: #F8FAFC;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .card-3 {
+  background: #F1F5F9;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .card-header-icon {
+  background: rgba(0, 188, 223, 0.1);
+}
+
+[data-theme="light"] .theme-compare-card {
+  background: #F8FAFC;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .theme-compare-base {
+  background: radial-gradient(circle at 80% 50%, rgba(239, 68, 68, 0.05) 0%, #F8FAFC 70%);
+}
+
+[data-theme="light"] .theme-compare-overlay {
+  background: radial-gradient(circle at 20% 50%, rgba(0, 188, 223, 0.08) 0%, #FFFFFF 70%);
+}
+
+[data-theme="light"] .compare-list {
+  color: #475569;
+}
+
+[data-theme="light"] .compare-divider {
+  border-left: 2px solid #00BCDF;
+  box-shadow: 0 0 12px rgba(0, 188, 223, 0.5);
+}
+
+[data-theme="light"] .theme-compare-label {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0F172A;
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .theme-compare-label-left {
+  color: #0284C7;
+}
+
+[data-theme="light"] .theme-compare-label-right {
+  color: #64748B;
+}
+
+[data-theme="light"] .cta-box {
+  background: radial-gradient(circle at 50% 0%, rgba(0, 188, 223, 0.08) 0%, #FFFFFF 80%);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+}
+

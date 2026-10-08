@@ -8,7 +8,7 @@
     <a href="https://www.gnu.org/licenses/gpl-3.0.html"><img src="https://img.shields.io/badge/License-GPL--3.0-0284C7?style=flat-square" alt="License" /></a>
     <img src="https://img.shields.io/badge/Tech-HTML5%20%7C%20CSS3%20%7C%20ES6-00DAF5?style=flat-square" alt="Tech Stack" />
     <img src="https://img.shields.io/badge/Design-Geometric%20Micro--Card-10B981?style=flat-square" alt="Design System" />
-    <img src="https://img.shields.io/badge/Theme-Obsidian%20Dark-0F172A?style=flat-square" alt="Theme" />
+    <img src="https://img.shields.io/badge/Theme-Dark%20%7C%20Light-00BCDF?style=flat-square" alt="Theme" />
   </p>
 
   <p>
@@ -25,9 +25,9 @@
 
 ## 📖 项目简介
 
-本仓库是 **Wmimo** 官方官方门户与知识库系统的完整源码。涵盖产品展示主页、多架构全平台客户端下载中心、轻量高精度在线网络测速台以及全协议技术实战知识库。
+本仓库是 **Wmimo** 官方门户与知识库系统的完整源码。涵盖产品展示主页、多架构全平台客户端下载中心、轻量高精度在线网络测速台以及全协议技术实战知识库。
 
-全站基于纯原生现代化 Web 标准打造，遵循 **零构建依赖（Zero-Build Architecture）** 原则，开箱即用，无需 Node/Webpack/Vite 繁复编译打包。全站严格贯彻**极简曜黑科技美学（Deep Obsidian `#0A0E17`）** 与 **Wmimo 天青主色（Celestial Cyan `#00BCDF`）**，统一采用现代几何微圆角体系（杜绝胶囊化设计），呈现纯粹、专业、丝滑的视觉与操作体验。
+全站基于纯原生现代化 Web 标准打造，遵循 **零构建依赖（Zero-Build Architecture）** 原则，开箱即用，无需 Node/Webpack/Vite 繁复编译打包。全站原生支持**深空曜黑（Deep Obsidian `#0A0E17`）** 与 **纯净浅色（Clean Light `#F8FAFC`）** 双主题无缝切换与自动记忆，配合 **Wmimo 天青主色（Celestial Cyan `#00BCDF`）**，统一采用现代几何微圆角体系，呈现纯粹、专业、丝滑的视觉与操作体验。
 
 ---
 

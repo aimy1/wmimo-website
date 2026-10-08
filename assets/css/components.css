@@ -98,7 +98,35 @@
 }
 
 .theme-toggle-btn {
-  display: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  transform: translateY(-1px);
+}
+
+.theme-toggle-btn svg {
+  width: 17px;
+  height: 17px;
+  transition: transform var(--transition-normal);
+}
+
+.theme-toggle-btn:hover svg {
+  transform: rotate(15deg);
 }
 
 /* Language Capsule Switcher [ 中 | EN ] */
@@ -111,6 +139,11 @@
   padding: 3px;
   gap: 2px;
   flex-shrink: 0;
+}
+
+[data-theme="light"] .lang-capsule {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.1);
 }
 
 .lang-capsule-btn {
@@ -131,10 +164,20 @@
   color: #ffffff;
 }
 
+[data-theme="light"] .lang-capsule-btn:hover {
+  color: #0F172A;
+}
+
 .lang-capsule-btn.active {
   background: rgba(0, 218, 245, 0.22);
   color: #00daf5;
   box-shadow: 0 0 10px rgba(0, 218, 245, 0.3);
+}
+
+[data-theme="light"] .lang-capsule-btn.active {
+  background: rgba(0, 188, 223, 0.15);
+  color: #0284C7;
+  box-shadow: 0 0 10px rgba(0, 188, 223, 0.2);
 }
 
 .lang-toggle-btn {
