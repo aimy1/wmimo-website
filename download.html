@@ -25,8 +25,8 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>下载 Wmimo 客户端 - 官方安装包直链</title>
-  <meta name="description" content="下载 Wmimo 官方最新 v1.2.11.1513 软件包，完整支持 Windows、macOS (Universal)、iOS (TrollStore/自签)、Linux 及 Android 全平台。">
+  <title>下载 Wmimo 客户端 - 全平台官方安装包直链 (v1.2.11.1513)</title>
+  <meta name="description" content="下载 Wmimo 官方最新 v1.2.11.1513 软件包，完整支持 Windows (x64/ARM64)、macOS (Universal)、Linux (x64/ARM64 Deb/RPM/AppImage/Arch)、Android 及 iOS 全平台，附带 SHA-256 校验。">
   <link rel="icon" type="image/png" href="assets/images/app_icon_128.png">
 
   <link rel="stylesheet" href="assets/css/tokens.css">
@@ -96,378 +96,817 @@
     </div>
   </div>
 
-  <main class="container">
-    <!-- Hero Header -->
-    <section class="page-hero">
-      <h1 data-i18n="dl.hero_title">下载 Wmimo 客户端</h1>
-      <p data-i18n="dl.hero_subtitle">官方最新构建版本直链下载，已适配各平台与架构</p>
+  <main class="container dl-page-main">
+
+    <!-- =====================================================================
+         1. DOWNLOAD HERO & SMART OS AUTO-DETECTION CONSOLE
+         ===================================================================== -->
+    <section class="dl-hero-section">
+      <div class="dl-hero-top">
+        <div class="dl-release-Status-bar">
+          <span class="dl-status-dot"></span>
+          <span class="dl-status-ver">v1.2.11.1513</span>
+          <span class="dl-status-divider">·</span>
+          <span data-i18n="dl.hero_meta_tag">最新稳定版 · Mihomo Meta 内核 · 21 个全架构构建产物</span>
+          <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.2.11.1513" target="_blank" rel="noopener" class="dl-status-link" data-i18n="dl.hero_changelog_link">查看发行说明 ↗</a>
+        </div>
+
+        <h1 class="dl-hero-title" data-i18n="dl.hero_title">下载 Wmimo 客户端</h1>
+        <p class="dl-hero-subtitle" data-i18n="dl.hero_subtitle">
+          为 Windows、macOS、Linux、Android 与 iOS 量身打造的原生正式版软件包。全部产物均由 GitHub Actions 自动化透明构建，并提供完整 SHA-256 校验指纹。
+        </p>
+      </div>
+
+      <!-- Smart Featured OS Detection Console -->
+      <div id="smartOsCard" class="dl-smart-console">
+        <div class="dl-smart-glow"></div>
+
+        <div class="dl-smart-left">
+          <div class="dl-smart-icon-box smart-os-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="#00A4EF"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
+          </div>
+          <div class="dl-smart-info">
+            <div class="dl-smart-eyebrow">
+              <span class="dl-smart-eyebrow-badge" data-i18n="dl.smart_eyebrow">⚡ 智能匹配当前系统</span>
+              <span class="dl-smart-ver-pill">v1.2.11.1513 · GPL-3.0</span>
+            </div>
+            <h2 class="dl-smart-title smart-os-title">推荐下载：Wmimo for Windows (x64)</h2>
+            <p class="dl-smart-desc smart-os-meta">Windows 10 / 11 (64-bit) · 标准安装程序 (.exe) · 内置 Wintun 驱动与静默更新</p>
+            <div class="dl-smart-sha-row">
+              <span class="dl-sha-label">SHA-256:</span>
+              <code class="dl-sha-code" id="smartOsShaCode">1b906f8259f4de7b...87b618c9bf2ca36</code>
+              <button type="button" class="dl-sha-copy-inline copy-sha-btn" id="smartOsShaBtn" data-sha="1b906f8259f4de7b884d15f5092db89c64aa88a524c917b4687b618c9bf2ca36">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span data-i18n="dl.btn_copy_sha">复制校验值</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dl-smart-actions">
+          <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-x64-Setup-v1.2.11.1513.exe" class="btn btn-primary btn-lg smart-os-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="dl.smart_rec_btn">直接下载 .exe (36.6 MB)</span>
+          </a>
+          <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-x64-v1.2.11.1513.zip" class="btn btn-secondary smart-os-alt-btn" id="smartOsAltBtn">
+            <span data-i18n="dl.smart_alt_btn">获取便携免安装版 (.zip)</span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- Smart Featured OS Download Card -->
-    <div id="smartOsCard" class="download-featured-card spotlight-card">
-      <div class="featured-left">
-        <div class="featured-icon smart-os-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="#00A4EF"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
+    <!-- =====================================================================
+         2. INTERACTIVE PLATFORM & ARCHITECTURE FILTER BAR
+         ===================================================================== -->
+    <section class="dl-filter-bar-wrap" aria-label="Platform and Architecture Filter">
+      <div class="dl-filter-bar">
+        <div class="dl-plat-tabs" role="tablist" aria-label="Filter by Operating System">
+          <button type="button" class="dl-plat-tab is-active" data-plat-target="all">
+            <span data-i18n="dl.tab_all">全部平台</span>
+            <span class="dl-tab-count">21</span>
+          </button>
+          <button type="button" class="dl-plat-tab" data-plat-target="windows">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
+            <span>Windows</span>
+            <span class="dl-tab-count">4</span>
+          </button>
+          <button type="button" class="dl-plat-tab" data-plat-target="macos">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.37c.61-.75 1.04-1.8 0.92-2.87-.93.04-2.02.63-2.66 1.39-.56.65-.99 1.72-.88 2.76 1.02.08 2.05-.53 2.62-1.28z"/></svg>
+            <span>macOS</span>
+            <span class="dl-tab-count">2</span>
+          </button>
+          <button type="button" class="dl-plat-tab" data-plat-target="linux">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139z"/></svg>
+            <span>Linux</span>
+            <span class="dl-tab-count">10</span>
+          </button>
+          <button type="button" class="dl-plat-tab" data-plat-target="android">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1368 1.0989L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
+            <span>Android</span>
+            <span class="dl-tab-count">4</span>
+          </button>
+          <button type="button" class="dl-plat-tab" data-plat-target="ios">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.37c.61-.75 1.04-1.8 0.92-2.87-.93.04-2.02.63-2.66 1.39-.56.65-.99 1.72-.88 2.76 1.02.08 2.05-.53 2.62-1.28z"/></svg>
+            <span>iOS</span>
+            <span class="dl-tab-count">1</span>
+          </button>
         </div>
-        <div>
-          <div class="featured-title smart-os-title">推荐下载：Wmimo for Windows (x64)</div>
-          <div class="featured-desc smart-os-meta">Windows 10 / 11 (64-bit) · 标准安装程序 (.exe) · 包含静默更新支持</div>
+
+        <div class="dl-arch-filter" role="group" aria-label="Filter by CPU Architecture">
+          <span class="dl-arch-label" data-i18n="dl.arch_filter_label">CPU 架构:</span>
+          <button type="button" class="dl-arch-btn is-active" data-arch-filter="all" data-i18n="dl.arch_all">全部</button>
+          <button type="button" class="dl-arch-btn" data-arch-filter="x64">x64 / AMD64</button>
+          <button type="button" class="dl-arch-btn" data-arch-filter="arm64">ARM64</button>
+          <button type="button" class="dl-arch-btn" data-arch-filter="universal">Universal</button>
         </div>
       </div>
-      <div class="featured-actions">
-        <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-x64-Setup-v1.2.11.1513.exe" class="btn btn-primary btn-lg smart-os-btn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span data-i18n="dl.smart_rec_btn">直接下载 .exe (v1.2.11.1513)</span>
-        </a>
-      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. STRUCTURED 5-PLATFORM PACKAGE BENTO MATRIX
+         ===================================================================== -->
+    <div class="dl-platforms-stack" id="dlPlatformsStack">
+
+      <!-- ==================== 1. WINDOWS (4 PACKAGES) ==================== -->
+      <section id="platform-windows" class="dl-plat-section" data-plat="windows">
+        <div class="dl-plat-header">
+          <div class="dl-plat-brand">
+            <div class="dl-plat-logo win">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
+            </div>
+            <div>
+              <div class="dl-plat-title-row">
+                <h2 class="dl-plat-title" data-i18n="dl.win_title">Windows 平台</h2>
+                <span class="dl-sys-req">Windows 10 / 11</span>
+              </div>
+              <p class="dl-plat-sub" data-i18n="dl.win_sub">内置高性能 Wintun 驱动与 10 层全 DPI 高清图标，支持桌面 x64 与高通骁龙 ARM64 架构</p>
+            </div>
+          </div>
+          <span class="dl-plat-count-badge" data-i18n="dl.win_badge">4 个软件包 · x64 / ARM64</span>
+        </div>
+
+        <div class="dl-pkg-grid">
+          <!-- 1. Windows x64 Setup -->
+          <article class="dl-pkg-card is-recommended" data-arch="x64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-rec" data-i18n="dl.tag_recommended">★ 首选推荐</span>
+                <span class="dl-tag-arch">x64 (AMD64)</span>
+                <span class="dl-tag-fmt">.exe Setup</span>
+              </div>
+              <span class="dl-pkg-size">36.58 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_win_x64_exe_title">Windows x64 标准安装程序</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_win_x64_exe_desc">适合 99% 主流 Intel / AMD 台式机与笔记本，自动配置快捷方式、Wintun 网卡驱动与后台静默更新。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Windows-x64-Setup-v1.2.11.1513.exe">Wmimo-Windows-x64-Setup-v1.2.11.1513.exe</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="1b906f8259f4de7b884d15f5092db89c64aa88a524c917b4687b618c9bf2ca36" title="点击复制完整 SHA-256">
+                <span>SHA256: 1b906f82...9bf2ca36</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-x64-Setup-v1.2.11.1513.exe" class="btn btn-primary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 2. Windows x64 Portable ZIP -->
+          <article class="dl-pkg-card" data-arch="x64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-type" data-i18n="dl.tag_portable">免安装绿色版</span>
+                <span class="dl-tag-arch">x64 (AMD64)</span>
+                <span class="dl-tag-fmt">.zip Portable</span>
+              </div>
+              <span class="dl-pkg-size">50.98 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_win_x64_zip_title">Windows x64 便携绿色压缩包</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_win_x64_zip_desc">解压即用，不写入系统注册表，适合存放于移动硬盘随身携带或在受限办公环境使用。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Windows-x64-v1.2.11.1513.zip">Wmimo-Windows-x64-v1.2.11.1513.zip</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="aa042d62e141cfd4d1e0bd678ffb77b5c167a0fdf89886503157d1e585f03c85" title="点击复制完整 SHA-256">
+                <span>SHA256: aa042d62...585f03c85</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-x64-v1.2.11.1513.zip" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 3. Windows ARM64 Setup -->
+          <article class="dl-pkg-card" data-arch="arm64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-arch">ARM64</span>
+                <span class="dl-tag-fmt">.exe Setup</span>
+              </div>
+              <span class="dl-pkg-size">34.91 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_win_arm_exe_title">Windows ARM64 标准安装程序</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_win_arm_exe_desc">专为 Surface Pro X / 11、骁龙 X Elite 笔记本及 Apple Silicon Parallels 虚拟机原生编译。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Windows-arm64-Setup-v1.2.11.1513.exe">Wmimo-Windows-arm64-Setup-v1.2.11.1513.exe</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="4e025f48ab2151559a1985e232fe4ad13b1be3cd6e72da8090484765160884b3" title="点击复制完整 SHA-256">
+                <span>SHA256: 4e025f48...160884b3</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-arm64-Setup-v1.2.11.1513.exe" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 4. Windows ARM64 Portable ZIP -->
+          <article class="dl-pkg-card" data-arch="arm64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-type" data-i18n="dl.tag_portable">免安装绿色版</span>
+                <span class="dl-tag-arch">ARM64</span>
+                <span class="dl-tag-fmt">.zip Portable</span>
+              </div>
+              <span class="dl-pkg-size">48.73 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_win_arm_zip_title">Windows ARM64 便携绿色压缩包</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_win_arm_zip_desc">ARM64 架构免安装解压即用版，包含完整 ARM64 原生 Mihomo 核心与 Wintun 组件。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Windows-arm64-v1.2.11.1513.zip">Wmimo-Windows-arm64-v1.2.11.1513.zip</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="15a38d422055e2cf21e257a2286dcb1e0598e5c2bf0f8995752435664c49c5d8" title="点击复制完整 SHA-256">
+                <span>SHA256: 15a38d42...c49c5d8</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-arm64-v1.2.11.1513.zip" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==================== 2. macOS (2 PACKAGES) ==================== -->
+      <section id="platform-macos" class="dl-plat-section" data-plat="macos">
+        <div class="dl-plat-header">
+          <div class="dl-plat-brand">
+            <div class="dl-plat-logo mac">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.37c.61-.75 1.04-1.8 0.92-2.87-.93.04-2.02.63-2.66 1.39-.56.65-.99 1.72-.88 2.76 1.02.08 2.05-.53 2.62-1.28z"/></svg>
+            </div>
+            <div>
+              <div class="dl-plat-title-row">
+                <h2 class="dl-plat-title" data-i18n="dl.macos_title">macOS 苹果电脑</h2>
+                <span class="dl-sys-req">macOS 12.0+ · Universal</span>
+              </div>
+              <p class="dl-plat-sub" data-i18n="dl.macos_sub">Universal 通用二进制架构，单包原生适配 Apple Silicon (M1 / M2 / M3 / M4) 与 Intel 处理器</p>
+            </div>
+          </div>
+          <span class="dl-plat-count-badge" data-i18n="dl.macos_badge">2 个软件包 · Universal 双架构</span>
+        </div>
+
+        <div class="dl-pkg-grid">
+          <!-- 1. macOS Universal DMG -->
+          <article class="dl-pkg-card is-recommended" data-arch="universal">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-rec" data-i18n="dl.tag_recommended">★ 首选推荐</span>
+                <span class="dl-tag-arch">Universal (M1–M4 &amp; Intel)</span>
+                <span class="dl-tag-fmt">.dmg 镜像</span>
+              </div>
+              <span class="dl-pkg-size">88.53 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_mac_dmg_title">macOS Universal 标准磁盘镜像 (.dmg)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_mac_dmg_desc">双击挂载并拖拽至 Applications 即可完成安装，原生支持状态栏速率显示与 utun 虚拟网卡接管。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-macOS-universal-v1.2.11.1513.dmg">Wmimo-macOS-universal-v1.2.11.1513.dmg</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="ae4edda971084697d29179e5b2d1b380bea627e0bff68d3a75ff320414acd1a0" title="点击复制完整 SHA-256">
+                <span>SHA256: ae4edda9...414acd1a0</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-macOS-universal-v1.2.11.1513.dmg" class="btn btn-primary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 2. macOS Universal ZIP -->
+          <article class="dl-pkg-card" data-arch="universal">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-type" data-i18n="dl.tag_portable">App 归档包</span>
+                <span class="dl-tag-arch">Universal (M1–M4 &amp; Intel)</span>
+                <span class="dl-tag-fmt">.zip Archive</span>
+              </div>
+              <span class="dl-pkg-size">80.12 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_mac_zip_title">macOS Universal 应用归档包 (.zip)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_mac_zip_desc">无需挂载 DMG 磁盘镜像，直接解压即可获取 Wmimo.app 应用包，适合快速部署或版本升级替换。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-macOS-universal-v1.2.11.1513.zip">Wmimo-macOS-universal-v1.2.11.1513.zip</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="be02b865d36f22160347efd35909924fc4bae14e388a9a56e9f791cccada02a6" title="点击复制完整 SHA-256">
+                <span>SHA256: be02b865...ccada02a6</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-macOS-universal-v1.2.11.1513.zip" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==================== 3. LINUX (10 PACKAGES: x64 & ARM64) ==================== -->
+      <section id="platform-linux" class="dl-plat-section" data-plat="linux">
+        <div class="dl-plat-header">
+          <div class="dl-plat-brand">
+            <div class="dl-plat-logo linux">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139z"/></svg>
+            </div>
+            <div>
+              <div class="dl-plat-title-row">
+                <h2 class="dl-plat-title" data-i18n="dl.linux_title">Linux 各大发行版</h2>
+                <span class="dl-sys-req">x64 &amp; ARM64 · 5 种打包格式</span>
+              </div>
+              <p class="dl-plat-sub" data-i18n="dl.linux_sub">已为 Debian、Ubuntu、Fedora、RHEL、openSUSE、Arch Linux 及通用发行版提供双架构打包</p>
+            </div>
+          </div>
+
+          <div class="dl-linux-header-right">
+            <div class="dl-linux-arch-pills" role="group" aria-label="Linux Architecture Switcher">
+              <button type="button" class="dl-linux-arch-btn is-active" data-linux-arch="all" data-i18n="dl.linux_arch_all">全部 (10)</button>
+              <button type="button" class="dl-linux-arch-btn" data-linux-arch="x64">x64 (5)</button>
+              <button type="button" class="dl-linux-arch-btn" data-linux-arch="arm64">ARM64 (5)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dl-pkg-grid" id="linuxPkgGrid">
+          <!-- 1. Linux x64 deb -->
+          <article class="dl-pkg-card is-recommended" data-arch="x64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-rec" data-i18n="dl.tag_recommended">★ 首选推荐</span>
+                <span class="dl-tag-arch">x64 (AMD64)</span>
+                <span class="dl-tag-fmt">.deb</span>
+              </div>
+              <span class="dl-pkg-size">37.45 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_linux_x64_deb_title">Ubuntu / Debian / Mint 安装包 (x64)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_linux_x64_deb_desc">适用于 Ubuntu、Debian、Linux Mint、Deepin 等 Debian 系发行版，支持 apt 自动处理依赖。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Linux-x64-v1.2.11.1513.deb">Wmimo-Linux-x64-v1.2.11.1513.deb</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="a96f5d3288b640d20a59cb1385be071caf5519b4a5b2c5adb80a44e05fef6b5e" title="点击复制完整 SHA-256">
+                <span>SHA256: a96f5d32...05fef6b5e</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.deb" class="btn btn-primary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 2. Linux x64 AppImage -->
+          <article class="dl-pkg-card is-recommended" data-arch="x64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-type" data-i18n="dl.tag_portable">单文件便携</span>
+                <span class="dl-tag-arch">x64 (AMD64)</span>
+                <span class="dl-tag-fmt">.AppImage</span>
+              </div>
+              <span class="dl-pkg-size">42.86 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_linux_x64_appimage_title">Linux AppImage 通用单文件版 (x64)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_linux_x64_appimage_desc">跨发行版零依赖单文件容器，赋予执行权限 (chmod +x) 即可在任意 x64 桌面环境直接运行。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Linux-x64-v1.2.11.1513.AppImage">Wmimo-Linux-x64-v1.2.11.1513.AppImage</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="de91eb1ef09e072cee6ece0c5c5face3cb5087b11ed37e059a8e19cb6e34b7f6" title="点击复制完整 SHA-256">
+                <span>SHA256: de91eb1e...cb6e34b7f6</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.AppImage" class="btn btn-primary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 3. Linux x64 pkg.tar.zst -->
+          <article class="dl-pkg-card" data-arch="x64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-arch">x64 (AMD64)</span>
+                <span class="dl-tag-fmt">.pkg.tar.zst</span>
+              </div>
+              <span class="dl-pkg-size">45.09 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_linux_x64_arch_title">Arch Linux / Manjaro 软件包 (x64)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_linux_x64_arch_desc">专为 Arch Linux、Manjaro、EndeavourOS 构建的 Pacman 原生安装包 (sudo pacman -U)。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Linux-x64-v1.2.11.1513.pkg.tar.zst">Wmimo-Linux-x64-v1.2.11.1513.pkg.tar.zst</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="6577b14da573649fca370a2b673e0f3cf1e16e5c3fbef9df00bf1b037a53ed10" title="点击复制完整 SHA-256">
+                <span>SHA256: 6577b14d...37a53ed10</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.pkg.tar.zst" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 4. Linux x64 rpm -->
+          <article class="dl-pkg-card" data-arch="x64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-arch">x64 (AMD64)</span>
+                <span class="dl-tag-fmt">.rpm</span>
+              </div>
+              <span class="dl-pkg-size">45.62 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_linux_x64_rpm_title">Fedora / RHEL / openSUSE 安装包 (x64)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_linux_x64_rpm_desc">适用于 Fedora Workstation、RHEL、CentOS Stream、Rocky Linux 与 openSUSE 系列发行版。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Linux-x64-v1.2.11.1513.rpm">Wmimo-Linux-x64-v1.2.11.1513.rpm</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="87ed2af467b1463c5d96933047cb6b2716c80ba99dba5ed0c5530a5830da5d09" title="点击复制完整 SHA-256">
+                <span>SHA256: 87ed2af4...830da5d09</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.rpm" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 5. Linux x64 tar.gz -->
+          <article class="dl-pkg-card" data-arch="x64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-type" data-i18n="dl.tag_portable">通用便携包</span>
+                <span class="dl-tag-arch">x64 (AMD64)</span>
+                <span class="dl-tag-fmt">.tar.gz</span>
+              </div>
+              <span class="dl-pkg-size">46.04 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_linux_x64_tar_title">Linux 通用便携归档包 (x64)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_linux_x64_tar_desc">包含完整二进制目录结构的 .tar.gz 压缩包，适合 Gentoo、NixOS 或自定义目录部署。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Linux-x64-v1.2.11.1513.tar.gz">Wmimo-Linux-x64-v1.2.11.1513.tar.gz</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="10d08b99017128c8fd2f50c627831a150ee4d1e382d0b8087b485caa87d91a6f" title="点击复制完整 SHA-256">
+                <span>SHA256: 10d08b99...a87d91a6f</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.tar.gz" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 6. Linux ARM64 deb -->
+          <article class="dl-pkg-card" data-arch="arm64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-arch">ARM64 (aarch64)</span>
+                <span class="dl-tag-fmt">.deb</span>
+              </div>
+              <span class="dl-pkg-size">35.47 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_linux_arm_deb_title">Ubuntu / Debian 安装包 (ARM64)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_linux_arm_deb_desc">适用于树莓派、ARM64 开发板及 Apple Silicon 虚拟机中的 Debian / Ubuntu ARM64 桌面系统。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Linux-arm64-v1.2.11.1513.deb">Wmimo-Linux-arm64-v1.2.11.1513.deb</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="929e7557546d765a5965fb3c16cbb24cf0182cf468997b80695d0910ba11783e" title="点击复制完整 SHA-256">
+                <span>SHA256: 929e7557...0ba11783e</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.deb" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 7. Linux ARM64 AppImage -->
+          <article class="dl-pkg-card" data-arch="arm64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-type" data-i18n="dl.tag_portable">单文件便携</span>
+                <span class="dl-tag-arch">ARM64 (aarch64)</span>
+                <span class="dl-tag-fmt">.AppImage</span>
+              </div>
+              <span class="dl-pkg-size">40.63 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_linux_arm_appimage_title">Linux AppImage 通用单文件版 (ARM64)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_linux_arm_appimage_desc">ARM64 架构免安装单文件包，在任意 aarch64 Linux 桌面环境赋予执行权限即可即刻运行。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Linux-arm64-v1.2.11.1513.AppImage">Wmimo-Linux-arm64-v1.2.11.1513.AppImage</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="68736a15b45624be8f0fa8e313f4063c6a776040b70a660067076a83b236625e" title="点击复制完整 SHA-256">
+                <span>SHA256: 68736a15...3b236625e</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.AppImage" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 8. Linux ARM64 pkg.tar.zst -->
+          <article class="dl-pkg-card" data-arch="arm64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-arch">ARM64 (aarch64)</span>
+                <span class="dl-tag-fmt">.pkg.tar.zst</span>
+              </div>
+              <span class="dl-pkg-size">42.78 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_linux_arm_arch_title">Arch Linux ARM 软件包 (ARM64)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_linux_arm_arch_desc">专为 Arch Linux ARM 与 Asahi Linux (Apple Silicon) 桌面环境构建的 Pacman 安装包。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Linux-arm64-v1.2.11.1513.pkg.tar.zst">Wmimo-Linux-arm64-v1.2.11.1513.pkg.tar.zst</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="2d4475868c7ec52f1e18626593cb87eb6fc9c4d09132b351e49c80d069afd63b" title="点击复制完整 SHA-256">
+                <span>SHA256: 2d447586...069afd63b</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.pkg.tar.zst" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 9. Linux ARM64 rpm -->
+          <article class="dl-pkg-card" data-arch="arm64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-arch">ARM64 (aarch64)</span>
+                <span class="dl-tag-fmt">.rpm</span>
+              </div>
+              <span class="dl-pkg-size">43.37 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_linux_arm_rpm_title">Fedora / RHEL / openSUSE 安装包 (ARM64)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_linux_arm_rpm_desc">适用于 Fedora ARM64、Fedora Asahi Remix、RHEL aarch64 与 openSUSE ARM64 系统。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Linux-arm64-v1.2.11.1513.rpm">Wmimo-Linux-arm64-v1.2.11.1513.rpm</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="e4472aed0536b67121cf4ec34be258c85cd08f5c5ba5a5069638577dba294053" title="点击复制完整 SHA-256">
+                <span>SHA256: e4472aed...ba294053</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.rpm" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 10. Linux ARM64 tar.gz -->
+          <article class="dl-pkg-card" data-arch="arm64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-type" data-i18n="dl.tag_portable">通用便携包</span>
+                <span class="dl-tag-arch">ARM64 (aarch64)</span>
+                <span class="dl-tag-fmt">.tar.gz</span>
+              </div>
+              <span class="dl-pkg-size">43.69 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_linux_arm_tar_title">Linux 通用便携归档包 (ARM64)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_linux_arm_tar_desc">ARM64 架构免安装 .tar.gz 归档包，解压即可直接运行，适配任意 aarch64 发行版。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Linux-arm64-v1.2.11.1513.tar.gz">Wmimo-Linux-arm64-v1.2.11.1513.tar.gz</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="5e994a1f48d52493cb1de5b1813af163307c042b02b8d4c96c5674fec7cd0924" title="点击复制完整 SHA-256">
+                <span>SHA256: 5e994a1f...ec7cd0924</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.tar.gz" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==================== 4. ANDROID (4 PACKAGES) ==================== -->
+      <section id="platform-android" class="dl-plat-section" data-plat="android">
+        <div class="dl-plat-header">
+          <div class="dl-plat-brand">
+            <div class="dl-plat-logo android">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1368 1.0989L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
+            </div>
+            <div>
+              <div class="dl-plat-title-row">
+                <h2 class="dl-plat-title" data-i18n="dl.android_title">Android 移动端</h2>
+                <span class="dl-sys-req">Android 8.0+ · VpnService</span>
+              </div>
+              <p class="dl-plat-sub" data-i18n="dl.android_sub">支持分应用代理 (Per-App Proxy) 与快速通知栏磁贴，为手机、电视盒子与模拟器提供独立架构包</p>
+            </div>
+          </div>
+          <span class="dl-plat-count-badge" data-i18n="dl.android_badge">4 个安装包 · 全 CPU 架构</span>
+        </div>
+
+        <div class="dl-pkg-grid">
+          <!-- 1. Android arm64-v8a -->
+          <article class="dl-pkg-card is-recommended" data-arch="arm64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-rec" data-i18n="dl.tag_recommended">★ 首选推荐</span>
+                <span class="dl-tag-arch">arm64-v8a (64-bit)</span>
+                <span class="dl-tag-fmt">.apk</span>
+              </div>
+              <span class="dl-pkg-size">44.87 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_and_arm64_title">Android ARM64 主流手机专享版</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_and_arm64_desc">适用于 99% 近五年出厂的 Android 智能手机与平板，包体积精简、运行效能最优。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Android-arm64-v8a-v1.2.11.1513.apk">Wmimo-Android-arm64-v8a-v1.2.11.1513.apk</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="c703bc90d4b0b4cc3928e592a172d96e1d539b9756d17d9955a201eca75a3b8f" title="点击复制完整 SHA-256">
+                <span>SHA256: c703bc90...ca75a3b8f</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Android-arm64-v8a-v1.2.11.1513.apk" class="btn btn-primary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 2. Android Universal -->
+          <article class="dl-pkg-card" data-arch="universal">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-type" data-i18n="dl.tag_universal">全架构兼容</span>
+                <span class="dl-tag-arch">Universal</span>
+                <span class="dl-tag-fmt">.apk</span>
+              </div>
+              <span class="dl-pkg-size">109.88 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_and_uni_title">Android Universal 全架构通用安装包</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_and_uni_desc">内含全部 CPU 架构原生库，若不确定设备处理器型号，下载此包即可保证 100% 兼容安装。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Android-universal-v1.2.11.1513.apk">Wmimo-Android-universal-v1.2.11.1513.apk</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="f95aa8837bf6f81bd81c54e3b5b428e77f12fc715f1be025b74a5985bc3a8d10" title="点击复制完整 SHA-256">
+                <span>SHA256: f95aa883...bc3a8d10</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Android-universal-v1.2.11.1513.apk" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 3. Android armeabi-v7a -->
+          <article class="dl-pkg-card" data-arch="arm64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-arch">armeabi-v7a (32-bit)</span>
+                <span class="dl-tag-fmt">.apk</span>
+              </div>
+              <span class="dl-pkg-size">45.08 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_and_v7a_title">Android ARMv7a 电视盒子 / 旧设备版</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_and_v7a_desc">专为 32 位 Android TV 电视盒子、智能投影仪、车载主机及老款手机打造。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Android-armeabi-v7a-v1.2.11.1513.apk">Wmimo-Android-armeabi-v7a-v1.2.11.1513.apk</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="405bcc5fbfa4e5537e3d3f07ce925690455529debd0c5d977c5c6fff873f4eab" title="点击复制完整 SHA-256">
+                <span>SHA256: 405bcc5f...873f4eab</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Android-armeabi-v7a-v1.2.11.1513.apk" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+
+          <!-- 4. Android x86_64 -->
+          <article class="dl-pkg-card" data-arch="x64">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-arch">x86_64 (64-bit)</span>
+                <span class="dl-tag-fmt">.apk</span>
+              </div>
+              <span class="dl-pkg-size">46.62 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_and_x64_title">Android x86_64 桌面模拟器 / WSA 专版</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_and_x64_desc">适用于 PC 安卓模拟器（MuMu / 雷电 / BlueStacks）、Windows Subsystem for Android 及 x86 平板。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-Android-x86_64-v1.2.11.1513.apk">Wmimo-Android-x86_64-v1.2.11.1513.apk</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="58f22fb79305580abc03a4bcb314e5f575c20d786aecb8a608e7375bcf6de47b" title="点击复制完整 SHA-256">
+                <span>SHA256: 58f22fb7...bcf6de47b</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Android-x86_64-v1.2.11.1513.apk" class="btn btn-secondary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==================== 5. iOS / iPadOS (1 PACKAGE) ==================== -->
+      <section id="platform-ios" class="dl-plat-section" data-plat="ios">
+        <div class="dl-plat-header">
+          <div class="dl-plat-brand">
+            <div class="dl-plat-logo ios">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.37c.61-.75 1.04-1.8 0.92-2.87-.93.04-2.02.63-2.66 1.39-.56.65-.99 1.72-.88 2.76 1.02.08 2.05-.53 2.62-1.28z"/></svg>
+            </div>
+            <div>
+              <div class="dl-plat-title-row">
+                <h2 class="dl-plat-title" data-i18n="dl.ios_title">iOS / iPadOS 移动端</h2>
+                <span class="dl-sys-req">iOS 15.0+ · NetworkExtension</span>
+              </div>
+              <p class="dl-plat-sub" data-i18n="dl.ios_sub">基于 PacketTunnelProvider 扩展构建，严控后台 &lt;15MB 内存占用，适配 TrollStore 巨魔与自签名安装</p>
+            </div>
+          </div>
+          <span class="dl-plat-count-badge" data-i18n="dl.ios_badge">1 个通用安装包 · 免越狱 / 自签</span>
+        </div>
+
+        <div class="dl-pkg-grid dl-pkg-grid-single">
+          <!-- 1. iOS Universal IPA -->
+          <article class="dl-pkg-card is-recommended" data-arch="universal">
+            <div class="dl-pkg-top">
+              <div class="dl-pkg-badges">
+                <span class="dl-tag-rec" data-i18n="dl.tag_recommended">★ 官方通用包</span>
+                <span class="dl-tag-arch">ARM64 (iPhone &amp; iPad)</span>
+                <span class="dl-tag-fmt">.ipa</span>
+              </div>
+              <span class="dl-pkg-size">19.30 MB</span>
+            </div>
+            <h3 class="dl-pkg-name" data-i18n="dl.pkg_ios_ipa_title">iOS / iPadOS Universal 通用安装包 (.ipa)</h3>
+            <p class="dl-pkg-desc" data-i18n="dl.pkg_ios_ipa_desc">完美适配 TrollStore（巨魔商店永久免签）、AltStore、SideStore 与爱思助手/Sideloadly 个人证书自签安装。</p>
+            <div class="dl-pkg-meta-box">
+              <div class="dl-pkg-filename" title="Wmimo-iOS-universal-v1.2.11.1513.ipa">Wmimo-iOS-universal-v1.2.11.1513.ipa</div>
+              <button type="button" class="dl-pkg-sha copy-sha-btn" data-sha="d06c5e96b93557f6f359b05b0eaea8c4a2f93810c8ba14f38618f7d9f4b70d54" title="点击复制完整 SHA-256">
+                <span>SHA256: d06c5e96...9f4b70d54</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-iOS-universal-v1.2.11.1513.ipa" class="btn btn-primary dl-pkg-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="dl.direct_download">直链下载</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
     </div>
 
-    <!-- Separated Platform Sections Container -->
-    <div class="platform-sections-wrap reveal-stagger">
-
-      <!-- 1. Windows Platform Assets (4 Items) -->
-      <div class="gh-assets-container spotlight-card">
-        <div class="gh-assets-header">
-          <div class="gh-assets-title-group">
-            <div class="platform-icon-box" style="width: 32px; height: 32px; border-radius: 8px; background: rgba(0, 164, 239, 0.1); display: flex; align-items: center; justify-content: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#00A4EF"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
-            </div>
-            <div>
-              <h3 class="gh-assets-title" data-i18n="dl.win_title">Windows 平台</h3>
-              <p class="gh-assets-sub" data-i18n="dl.win_sub">原生支持 Windows 10 / 11 系统的 x64 架构与高通骁龙 ARM64 架构</p>
-            </div>
-          </div>
-          <span class="badge badge-green" data-i18n="dl.win_badge">4 个软件包 · x64 / ARM64</span>
+    <!-- =====================================================================
+         4. RELEASE HIGHLIGHTS, INSTALLATION TIPS & SHA-256 VERIFICATION BENTO
+         ===================================================================== -->
+    <section class="dl-bottom-bento">
+      <!-- Card 1: What's New in v1.2.11.1513 -->
+      <div class="dl-info-card">
+        <div class="dl-info-head">
+          <span class="dl-info-tag cyan">RELEASE NOTES · v1.2.11.1513</span>
+          <h3 class="dl-info-title" data-i18n="dl.notes_title">✨ 本次版本更新重点</h3>
         </div>
+        <ul class="dl-notes-list">
+          <li data-i18n-html="dl.notes_1"><strong>原生黑色暗黑模式</strong>：全面重构 Dark 模式为纯正原生桌面中性黑灰体系（<code>#121212</code> / <code>#1C1C1E</code>），消除蓝色偏色。</li>
+          <li data-i18n-html="dl.notes_2"><strong>沉浸式无边框标题栏</strong>：移除桌面端原生标题栏，左右分栏一通到底，右上角内置主题自适应窗口控制按钮。</li>
+          <li data-i18n-html="dl.notes_3"><strong>IP 信息与赞助界面重构</strong>：升级为现代内嵌圆角卡片与 2×2 参数网格布局，修复时区偏移显示。</li>
+          <li data-i18n-html="dl.notes_4"><strong>全 DPI 图标与多架构支持</strong>：重制 10 层全 DPI 矢量抗锯齿 Windows 图标，补齐 Linux <code>.AppImage</code> 与 <code>ARM64</code> 架构安装包。</li>
+        </ul>
+      </div>
 
-        <div class="gh-assets-list">
-          <!-- Windows x64 Setup -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-x64-Setup-v1.2.11.1513.exe" class="gh-asset-link">Wmimo-Windows-x64-Setup-v1.2.11.1513.exe</a>
-            </div>
-            <div class="gh-asset-size-col">37 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-x64-Setup-v1.2.11.1513.exe" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
+      <!-- Card 2: Platform Installation & Troubleshooting Commands -->
+      <div class="dl-info-card">
+        <div class="dl-info-head">
+          <span class="dl-info-tag green">INSTALLATION &amp; PERMISSIONS</span>
+          <h3 class="dl-info-title" data-i18n="dl.cmd_guide_title">🛠️ 安装与权限快速命令</h3>
+        </div>
+        <div class="dl-cmd-stack">
+          <div class="dl-cmd-item">
+            <div class="dl-cmd-label" data-i18n="dl.cmd_mac_label">macOS 首次运行如遇 Gatekeeper 拦截（移除隔离属性）：</div>
+            <div class="dl-cmd-box">
+              <code>sudo xattr -rd com.apple.quarantine /Applications/Wmimo.app</code>
+              <button type="button" class="dl-cmd-copy copy-cmd-btn" data-cmd="sudo xattr -rd com.apple.quarantine /Applications/Wmimo.app" data-i18n="dl.btn_copy">复制</button>
             </div>
           </div>
-
-          <!-- Windows x64 zip -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-x64-v1.2.11.1513.zip" class="gh-asset-link">Wmimo-Windows-x64-v1.2.11.1513.zip</a>
-            </div>
-            <div class="gh-asset-size-col">51 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-x64-v1.2.11.1513.zip" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Windows arm64 Setup -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-arm64-Setup-v1.2.11.1513.exe" class="gh-asset-link">Wmimo-Windows-arm64-Setup-v1.2.11.1513.exe</a>
-            </div>
-            <div class="gh-asset-size-col">35 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-arm64-Setup-v1.2.11.1513.exe" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Windows arm64 zip -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-arm64-v1.2.11.1513.zip" class="gh-asset-link">Wmimo-Windows-arm64-v1.2.11.1513.zip</a>
-            </div>
-            <div class="gh-asset-size-col">49 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Windows-arm64-v1.2.11.1513.zip" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
+          <div class="dl-cmd-item">
+            <div class="dl-cmd-label" data-i18n="dl.cmd_linux_label">Linux 赋予 AppImage 执行权限并直接启动：</div>
+            <div class="dl-cmd-box">
+              <code>chmod +x Wmimo-Linux-*.AppImage &amp;&amp; ./Wmimo-Linux-*.AppImage</code>
+              <button type="button" class="dl-cmd-copy copy-cmd-btn" data-cmd="chmod +x Wmimo-Linux-*.AppImage && ./Wmimo-Linux-*.AppImage" data-i18n="dl.btn_copy">复制</button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 2. Linux Platform Assets (10 Items: x64 & ARM64) -->
-      <div class="gh-assets-container spotlight-card">
-        <div class="gh-assets-header">
-          <div class="gh-assets-title-group">
-            <div class="platform-icon-box" style="width: 32px; height: 32px; border-radius: 8px; background: rgba(252, 198, 36, 0.1); display: flex; align-items: center; justify-content: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#FCC624"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.645 2.645 0 00-.402-.533 1.45 1.45 0 00-.275-.333c.182 0 .338-.03.465-.067a.615.615 0 00.314-.334c.108-.267 0-.697-.345-1.163-.345-.467-.931-.995-1.788-1.521-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.123 8.123 0 01.647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335.039.003.075.006.11.006.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01c.053 0 .105.005.157.014.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602-.369-.066-.61-.2-.723-.4-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336zm7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8.097 8.097 0 01-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065zm-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg>
-            </div>
-            <div>
-              <h3 class="gh-assets-title" data-i18n="dl.linux_title">Linux 各大发行版</h3>
-              <p class="gh-assets-sub" data-i18n="dl.linux_sub">已为 Debian、Ubuntu、Fedora、RHEL、openSUSE、Arch Linux 及通用发行版打包</p>
-            </div>
-          </div>
-          <span class="badge badge-green" data-i18n="dl.linux_badge">10 个软件包 · x64 / ARM64</span>
+      <!-- Card 3: SHA-256 Checksum Verification Guide -->
+      <div class="dl-info-card">
+        <div class="dl-info-head">
+          <span class="dl-info-tag purple">SECURITY &amp; INTEGRITY</span>
+          <h3 class="dl-info-title" data-i18n="dl.sha_title">🔒 软件包 SHA-256 校验说明</h3>
         </div>
-
-        <div class="gh-assets-list">
-          <!-- Linux x64 deb -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.deb" class="gh-asset-link">Wmimo-Linux-x64-v1.2.11.1513.deb</a>
-            </div>
-            <div class="gh-asset-size-col">37 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.deb" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
+        <p class="dl-info-p" data-i18n="dl.sha_desc">
+          每个安装包卡片均提供官方 SHA-256 哈希值一键复制。您可在终端执行以下指令核对本地文件指纹：
+        </p>
+        <div class="dl-cmd-stack">
+          <div class="dl-cmd-item">
+            <div class="dl-cmd-label">Windows PowerShell:</div>
+            <div class="dl-cmd-box">
+              <code>Get-FileHash .\Wmimo-* -Algorithm SHA256</code>
+              <button type="button" class="dl-cmd-copy copy-cmd-btn" data-cmd="Get-FileHash .\Wmimo-* -Algorithm SHA256" data-i18n="dl.btn_copy">复制</button>
             </div>
           </div>
-
-          <!-- Linux x64 AppImage -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.AppImage" class="gh-asset-link">Wmimo-Linux-x64-v1.2.11.1513.AppImage</a>
-            </div>
-            <div class="gh-asset-size-col">43 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.AppImage" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Linux x64 pkg.tar.zst -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.pkg.tar.zst" class="gh-asset-link">Wmimo-Linux-x64-v1.2.11.1513.pkg.tar.zst</a>
-            </div>
-            <div class="gh-asset-size-col">45 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.pkg.tar.zst" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Linux x64 rpm -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.rpm" class="gh-asset-link">Wmimo-Linux-x64-v1.2.11.1513.rpm</a>
-            </div>
-            <div class="gh-asset-size-col">46 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.rpm" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Linux x64 tar.gz -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.tar.gz" class="gh-asset-link">Wmimo-Linux-x64-v1.2.11.1513.tar.gz</a>
-            </div>
-            <div class="gh-asset-size-col">46 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-x64-v1.2.11.1513.tar.gz" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Linux arm64 deb -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.deb" class="gh-asset-link">Wmimo-Linux-arm64-v1.2.11.1513.deb</a>
-            </div>
-            <div class="gh-asset-size-col">35 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.deb" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Linux arm64 AppImage -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.AppImage" class="gh-asset-link">Wmimo-Linux-arm64-v1.2.11.1513.AppImage</a>
-            </div>
-            <div class="gh-asset-size-col">41 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.AppImage" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Linux arm64 pkg.tar.zst -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.pkg.tar.zst" class="gh-asset-link">Wmimo-Linux-arm64-v1.2.11.1513.pkg.tar.zst</a>
-            </div>
-            <div class="gh-asset-size-col">43 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.pkg.tar.zst" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Linux arm64 rpm -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.rpm" class="gh-asset-link">Wmimo-Linux-arm64-v1.2.11.1513.rpm</a>
-            </div>
-            <div class="gh-asset-size-col">43 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.rpm" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Linux arm64 tar.gz -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.tar.gz" class="gh-asset-link">Wmimo-Linux-arm64-v1.2.11.1513.tar.gz</a>
-            </div>
-            <div class="gh-asset-size-col">44 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Linux-arm64-v1.2.11.1513.tar.gz" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
+          <div class="dl-cmd-item">
+            <div class="dl-cmd-label">macOS / Linux Terminal:</div>
+            <div class="dl-cmd-box">
+              <code>shasum -a 256 Wmimo-*</code>
+              <button type="button" class="dl-cmd-copy copy-cmd-btn" data-cmd="shasum -a 256 Wmimo-*" data-i18n="dl.btn_copy">复制</button>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- 3. Android Platform Assets (4 Items) -->
-      <div class="gh-assets-container spotlight-card">
-        <div class="gh-assets-header">
-          <div class="gh-assets-title-group">
-            <div class="platform-icon-box" style="width: 32px; height: 32px; border-radius: 8px; background: rgba(61, 220, 132, 0.1); display: flex; align-items: center; justify-content: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#3DDC84"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1368 1.0989L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
-            </div>
-            <div>
-              <h3 class="gh-assets-title" data-i18n="dl.android_title">Android 移动端</h3>
-              <p class="gh-assets-sub" data-i18n="dl.android_sub">为 64 位旗舰手机、32 位老旧电视盒子、模拟器平板提供量身定制的独立 APK</p>
-            </div>
-          </div>
-          <span class="badge badge-green" data-i18n="dl.android_badge">4 个安装包 · 全 CPU 架构</span>
-        </div>
-
-        <div class="gh-assets-list">
-          <!-- Android arm64-v8a -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Android-arm64-v8a-v1.2.11.1513.apk" class="gh-asset-link">Wmimo-Android-arm64-v8a-v1.2.11.1513.apk</a>
-            </div>
-            <div class="gh-asset-size-col">45 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Android-arm64-v8a-v1.2.11.1513.apk" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Android universal -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Android-universal-v1.2.11.1513.apk" class="gh-asset-link">Wmimo-Android-universal-v1.2.11.1513.apk</a>
-            </div>
-            <div class="gh-asset-size-col">110 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Android-universal-v1.2.11.1513.apk" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Android armeabi-v7a -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Android-armeabi-v7a-v1.2.11.1513.apk" class="gh-asset-link">Wmimo-Android-armeabi-v7a-v1.2.11.1513.apk</a>
-            </div>
-            <div class="gh-asset-size-col">45 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Android-armeabi-v7a-v1.2.11.1513.apk" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- Android x86_64 -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Android-x86_64-v1.2.11.1513.apk" class="gh-asset-link">Wmimo-Android-x86_64-v1.2.11.1513.apk</a>
-            </div>
-            <div class="gh-asset-size-col">47 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-Android-x86_64-v1.2.11.1513.apk" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. macOS Platform Assets (2 Items) -->
-      <div class="gh-assets-container spotlight-card">
-        <div class="gh-assets-header">
-          <div class="gh-assets-title-group">
-            <div class="platform-icon-box" style="width: 32px; height: 32px; border-radius: 8px; background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.37c.61-.75 1.04-1.8 0.92-2.87-.93.04-2.02.63-2.66 1.39-.56.65-.99 1.72-.88 2.76 1.02.08 2.05-.53 2.62-1.28z"/></svg>
-            </div>
-            <div>
-              <h3 class="gh-assets-title" data-i18n="dl.macos_title">macOS 苹果电脑</h3>
-              <p class="gh-assets-sub" data-i18n="dl.macos_sub">Universal 通用架构，原生支持 Apple Silicon (M1/M2/M3/M4) 与 Intel x86_64 处理器</p>
-            </div>
-          </div>
-          <span class="badge badge-green" data-i18n="dl.macos_badge">2 个软件包 · Universal 双架构</span>
-        </div>
-
-        <div class="gh-assets-list">
-          <!-- macOS dmg -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-macOS-universal-v1.2.11.1513.dmg" class="gh-asset-link">Wmimo-macOS-universal-v1.2.11.1513.dmg</a>
-            </div>
-            <div class="gh-asset-size-col">89 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-macOS-universal-v1.2.11.1513.dmg" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-
-          <!-- macOS zip -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-macOS-universal-v1.2.11.1513.zip" class="gh-asset-link">Wmimo-macOS-universal-v1.2.11.1513.zip</a>
-            </div>
-            <div class="gh-asset-size-col">80 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-macOS-universal-v1.2.11.1513.zip" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. iOS Platform Assets (1 Item) -->
-      <div class="gh-assets-container spotlight-card">
-        <div class="gh-assets-header">
-          <div class="gh-assets-title-group">
-            <div class="platform-icon-box" style="width: 32px; height: 32px; border-radius: 8px; background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.37c.61-.75 1.04-1.8 0.92-2.87-.93.04-2.02.63-2.66 1.39-.56.65-.99 1.72-.88 2.76 1.02.08 2.05-.53 2.62-1.28z"/></svg>
-            </div>
-            <div>
-              <h3 class="gh-assets-title" data-i18n="dl.ios_title">iOS 移动端 (iPhone / iPad)</h3>
-              <p class="gh-assets-sub" data-i18n="dl.ios_sub">首发通用 IPA 安装包，深度适配 TrollStore（巨魔商店）与各大第三方自签名工具</p>
-            </div>
-          </div>
-          <span class="badge badge-green" data-i18n="dl.ios_badge">1 个通用安装包 · 免越狱 / 自签</span>
-        </div>
-
-        <div class="gh-assets-list">
-          <!-- iOS ipa -->
-          <div class="gh-asset-row">
-            <div class="gh-asset-name-col">
-              <svg class="gh-asset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-iOS-universal-v1.2.11.1513.ipa" class="gh-asset-link">Wmimo-iOS-universal-v1.2.11.1513.ipa</a>
-            </div>
-            <div class="gh-asset-size-col">19 MB</div>
-            <div class="gh-asset-action-col">
-              <a href="https://github.com/aimy1/Wmimo/releases/download/v1.2.11.1513/Wmimo-iOS-universal-v1.2.11.1513.ipa" class="btn btn-primary btn-sm" style="padding: 6px 14px; font-size: 0.8rem;" data-i18n="dl.direct_download">直链下载</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    </section>
 
   </main>
 
@@ -516,4 +955,3 @@
   <script src="assets/js/os-detector.js"></script>
 </body>
 </html>
-
