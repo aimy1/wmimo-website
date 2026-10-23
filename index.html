@@ -108,45 +108,163 @@
   <main class="home-main">
 
     <!-- =====================================================================
-         1. HERO SECTION + INTERACTIVE CLIENT WORKBENCH PREVIEW
+         1. HERO SECTION — SPLIT PRODUCT PITCH & REAL CLIENT UI SHOWCASE
          ===================================================================== -->
     <section class="home-hero-section">
       <div class="container">
-        <div class="hero-header-stack">
-          <a href="download.html" class="hero-release-pill">
-            <span class="release-pill-dot"></span>
-            <span class="release-pill-tag">v1.2.10.1512</span>
-            <span class="release-pill-text" data-i18n="home.hero_badge">正式版发布 · Mihomo Meta 内核 · 5 大平台全覆盖</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
+        <div class="hero-split-layout">
 
-          <h1 class="home-hero-title">
-            <span data-i18n="home.hero_title_1">重新定义跨平台</span>
-            <span class="hero-title-accent" data-i18n="home.hero_title_2">全协议网络代理体验</span>
-          </h1>
+          <!-- Left Column: Product Headline, CTAs & Core Highlights -->
+          <div class="hero-copy-col">
+            <a href="download.html" class="hero-release-pill">
+              <span class="release-pill-dot"></span>
+              <span class="release-pill-tag">v1.2.10.1512</span>
+              <span class="release-pill-text" data-i18n="home.hero_badge">正式版发布 · Mihomo Meta 内核 · 5 大平台全覆盖</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
 
-          <p class="home-hero-subtitle" data-i18n="home.hero_subtitle">
-            基于 Flutter 原生渲染与 Mihomo Meta 高性能核心深度构建。提供 L3 级 TUN 虚拟网卡透明接管、微秒级 Fake-IP 防污染分流与新一代抗拥塞协议栈，纯粹无广告，100% 自由开源。
+            <h1 class="home-hero-title">
+              <span data-i18n="home.hero_title_1">重新定义跨平台</span>
+              <span class="hero-title-accent" data-i18n="home.hero_title_2">全协议网络代理体验</span>
+            </h1>
+
+            <p class="home-hero-subtitle" data-i18n="home.hero_subtitle">
+              基于 Flutter 原生渲染与 Mihomo Meta 高性能核心深度构建。提供 L3 级 TUN 虚拟网卡透明接管、微秒级 Fake-IP 防污染分流与新一代抗拥塞协议栈，纯粹无广告，100% 自由开源。
+            </p>
+
+            <div class="home-hero-actions">
+              <a id="heroDownloadBtn" href="https://github.com/aimy1/Wmimo/releases/download/v1.2.10.1512/Wmimo-Windows-x64-Setup-v1.2.10.1512.exe" class="btn btn-primary btn-lg hero-primary-cta">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span data-i18n="home.btn_download_smart">立即下载客户端</span>
+              </a>
+              <a href="download.html" class="btn btn-secondary btn-lg">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <span data-i18n="home.btn_all_platforms">全部平台安装包</span>
+              </a>
+              <a href="docs/quickstart.html" class="btn btn-secondary btn-lg">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                <span data-i18n="home.btn_quickstart">快速上手指南</span>
+              </a>
+            </div>
+
+            <div id="heroDownloadNote" class="hero-os-detect-note">
+              <span data-i18n="home.os_detect_default">⚡ 自动适配当前系统：Windows / macOS / Linux / Android / iOS</span>
+            </div>
+
+            <!-- 4 Real Client Feature Highlights -->
+            <div class="hero-client-highlights">
+              <div class="hero-hl-item">
+                <span class="hero-hl-icon cyan">⚡</span>
+                <div>
+                  <strong data-i18n="home.hl_1_title">Rule / Global / Direct</strong>
+                  <span data-i18n="home.hl_1_desc">三大出站模式一键秒切</span>
+                </div>
+              </div>
+              <div class="hero-hl-item">
+                <span class="hero-hl-icon green">🛡️</span>
+                <div>
+                  <strong data-i18n="home.hl_2_title">System Proxy & TUN</strong>
+                  <span data-i18n="home.hl_2_desc">系统代理与虚拟网卡独立双控</span>
+                </div>
+              </div>
+              <div class="hero-hl-item">
+                <span class="hero-hl-icon amber">📊</span>
+                <div>
+                  <strong data-i18n="home.hl_3_title">Traffic Statistics</strong>
+                  <span data-i18n="home.hl_3_desc">10 分钟实时上下行速率监控</span>
+                </div>
+              </div>
+              <div class="hero-hl-item">
+                <span class="hero-hl-icon blue">🌐</span>
+                <div>
+                  <strong data-i18n="home.hl_4_title">IP & ASN Inspector</strong>
+                  <span data-i18n="home.hl_4_desc">内置出口 IP、归属地与时区检测</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Authentic Wmimo Client Dual-Theme Showcase Stage -->
+          <div class="hero-showcase-col">
+            <div class="app-showcase-toolbar">
+              <span class="showcase-toolbar-label" data-i18n="home.sc_toolbar_label">真实客户端界面预览</span>
+              <div class="showcase-mode-pills" role="tablist" aria-label="Client Preview Mode">
+                <button type="button" class="sc-mode-btn is-active" data-sc-mode="dual" data-i18n="home.sc_mode_dual">🌓 双主题同屏</button>
+                <button type="button" class="sc-mode-btn" data-sc-mode="split" data-i18n="home.sc_mode_split">↔️ 拖拽对比</button>
+                <button type="button" class="sc-mode-btn" data-sc-mode="dark" data-i18n="home.sc_mode_dark">🌙 深色</button>
+                <button type="button" class="sc-mode-btn" data-sc-mode="light" data-i18n="home.sc_mode_light">☀️ 浅色</button>
+              </div>
+            </div>
+
+            <!-- Stage Container (Supports 'dual', 'split', 'dark', 'light' modes) -->
+            <div class="app-showcase-stage mode-dual" id="appShowcaseStage">
+              <div class="showcase-ambient-halo"></div>
+
+              <!-- 1. Dual / Single Display Deck -->
+              <div class="showcase-dual-deck" id="showcaseDualDeck">
+                <!-- Secondary Card (Light in dark mode / Dark in light mode, clickable to bring to front) -->
+                <div class="app-shot-card shot-light" id="shotCardLight" title="点击将浅色主题置顶 / Click to focus Light Theme">
+                  <div class="shot-theme-badge light-badge" data-i18n="home.sc_badge_light">☀️ 浅色主题 (Light)</div>
+                  <img src="assets/images/showcase_light.png" alt="Wmimo Client Light Mode Interface" width="384" height="735" loading="eager">
+                </div>
+
+                <!-- Primary Card (Dark Theme) -->
+                <div class="app-shot-card shot-dark is-front" id="shotCardDark" title="点击将深色主题置顶 / Click to focus Dark Theme">
+                  <div class="shot-theme-badge dark-badge" data-i18n="home.sc_badge_dark">🌙 深色主题 (Dark)</div>
+                  <img src="assets/images/showcase_dark.png" alt="Wmimo Client Dark Mode Interface" width="384" height="735" loading="eager">
+                </div>
+              </div>
+
+              <!-- 2. Pixel-Aligned Split Slider Deck (384x735 Dark vs Light) -->
+              <div class="showcase-split-deck" id="showcaseSplitDeck" aria-hidden="true">
+                <div class="shot-split-container" id="shotSplitContainer">
+                  <!-- Base: Light Screenshot -->
+                  <img src="assets/images/showcase_light.png" alt="Wmimo Light Mode" class="shot-split-img base-img" width="384" height="735" draggable="false">
+                  <!-- Overlay: Dark Screenshot -->
+                  <div class="shot-split-overlay" id="shotSplitOverlay">
+                    <img src="assets/images/showcase_dark.png" alt="Wmimo Dark Mode" class="shot-split-img over-img" width="384" height="735" draggable="false">
+                  </div>
+                  <!-- Drag Handle -->
+                  <div class="shot-split-divider" id="shotSplitDivider" role="slider" aria-label="Drag to compare Dark and Light client themes" aria-valuemin="5" aria-valuemax="95" aria-valuenow="50" tabindex="0">
+                    <div class="shot-split-handle">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Callout Pills -->
+              <div class="shot-callout callout-top">
+                <span class="callout-dot green"></span>
+                <span data-i18n="home.sc_callout_1">一键连接 · System Proxy & TUN 双控</span>
+              </div>
+              <div class="shot-callout callout-mid">
+                <span class="callout-dot amber"></span>
+                <span data-i18n="home.sc_callout_2">10min 实时上下行流量波形</span>
+              </div>
+              <div class="shot-callout callout-bottom">
+                <span class="callout-dot cyan"></span>
+                <span data-i18n="home.sc_callout_3">出口 IP / ASN / 地理位置隐私检测</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         2. INTERACTIVE KERNEL & ROUTING WORKBENCH SECTION
+         ===================================================================== -->
+    <section id="section-workbench" class="home-section">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-eyebrow" data-i18n="home.wb_eyebrow">INTERACTIVE KERNEL TELEMETRY · 交互式内核工作台</span>
+          <h2 class="section-heading" data-i18n="home.wb_title">直观掌控每一次分流与多路复用</h2>
+          <p class="section-desc" data-i18n="home.wb_subtitle">
+            在下方交互式控制台内直接点击切换代理节点、模拟请求分流或查看 Fake-IP 防污染机制，在线感受 Mihomo Meta 内核的调度响应。
           </p>
-
-          <div class="home-hero-actions">
-            <a id="heroDownloadBtn" href="https://github.com/aimy1/Wmimo/releases/download/v1.2.10.1512/Wmimo-Windows-x64-Setup-v1.2.10.1512.exe" class="btn btn-primary btn-lg hero-primary-cta">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              <span data-i18n="home.btn_download_smart">立即下载客户端</span>
-            </a>
-            <a href="download.html" class="btn btn-secondary btn-lg">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              <span data-i18n="home.btn_all_platforms">全部平台安装包</span>
-            </a>
-            <a href="docs/quickstart.html" class="btn btn-secondary btn-lg">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-              <span data-i18n="home.btn_quickstart">快速上手指南</span>
-            </a>
-          </div>
-
-          <div id="heroDownloadNote" class="hero-os-detect-note">
-            <span data-i18n="home.os_detect_default">⚡ 自动适配当前系统：Windows / macOS / Linux / Android / iOS</span>
-          </div>
         </div>
 
         <!-- Interactive Wmimo Client Desktop Workbench Preview -->
@@ -163,8 +281,8 @@
 
               <div class="window-title-center">
                 <img src="assets/images/app_icon_128.png" alt="" width="16" height="16">
-                <span>Wmimo Desktop</span>
-                <span class="window-core-tag">Mihomo Meta Core · v1.2.10</span>
+                <span>Wmimo Core Telemetry</span>
+                <span class="window-core-tag">Mihomo Meta · v1.2.10.1512</span>
               </div>
 
               <div class="window-status-pills">
@@ -404,7 +522,7 @@
     </section>
 
     <!-- =====================================================================
-         2. PRODUCT BENTO MATRIX SECTION
+         3. PRODUCT BENTO MATRIX SECTION
          ===================================================================== -->
     <section id="section-bento" class="home-section">
       <div class="container">
@@ -572,7 +690,7 @@
     </section>
 
     <!-- =====================================================================
-         3. INTERACTIVE TUN VIRTUAL NIC COMPARISON SECTION
+         4. INTERACTIVE TUN VIRTUAL NIC COMPARISON SECTION
          ===================================================================== -->
     <section id="section-tun" class="home-section">
       <div class="container">
@@ -634,7 +752,7 @@
     </section>
 
     <!-- =====================================================================
-         4. COMPLETE 5-PLATFORM NATIVE ECOSYSTEM SECTION
+         5. COMPLETE 5-PLATFORM NATIVE ECOSYSTEM SECTION
          ===================================================================== -->
     <section id="section-platforms" class="home-section">
       <div class="container">
@@ -752,7 +870,7 @@
     </section>
 
     <!-- =====================================================================
-         5. BOTTOM CALL TO ACTION SECTION
+         6. BOTTOM CALL TO ACTION SECTION
          ===================================================================== -->
     <section id="section-cta" class="home-section cta-bottom-section">
       <div class="container">

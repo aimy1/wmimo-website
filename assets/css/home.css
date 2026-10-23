@@ -98,20 +98,24 @@ body.home-body {
 }
 
 /* ==========================================================================
-   1. HERO SECTION
+   1. HERO SECTION — SPLIT PRODUCT PITCH & REAL CLIENT UI SHOWCASE
    ========================================================================== */
 .home-hero-section {
-  padding-block: 56px 64px;
+  padding-block: 44px 64px;
 }
 
-.hero-header-stack {
+.hero-split-layout {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  align-items: center;
+  gap: 44px;
+}
+
+.hero-copy-col {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 860px;
-  margin-inline: auto;
-  margin-bottom: 44px;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .hero-release-pill {
@@ -126,7 +130,7 @@ body.home-body {
   font-size: 0.82rem;
   font-weight: 600;
   text-decoration: none;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow-card);
   transition: all 0.2s ease;
@@ -157,12 +161,12 @@ body.home-body {
 }
 
 .home-hero-title {
-  font-size: clamp(2.35rem, 5.2vw, 4.1rem);
+  font-size: clamp(2.25rem, 4.4vw, 3.65rem);
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.13;
   letter-spacing: -0.03em;
   color: var(--text-primary);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -183,25 +187,25 @@ body.home-body {
 }
 
 .home-hero-subtitle {
-  font-size: clamp(1rem, 1.6vw, 1.14rem);
+  font-size: clamp(0.96rem, 1.4vw, 1.08rem);
   line-height: 1.72;
   color: var(--text-secondary);
-  max-width: 720px;
-  margin-bottom: 30px;
+  max-width: 600px;
+  margin-bottom: 26px;
 }
 
 .home-hero-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 16px;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 .hero-os-detect-note {
-  font-size: 0.84rem;
+  font-size: 0.83rem;
   color: var(--text-muted);
+  margin-bottom: 28px;
 }
 
 .hero-os-detect-note strong {
@@ -209,8 +213,375 @@ body.home-body {
   font-weight: 700;
 }
 
+/* 4 Real Client Feature Highlights in Left Hero Column */
+.hero-client-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 580px;
+}
+
+.hero-hl-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--home-surface);
+  border: 1px solid var(--home-border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-hl-item:hover {
+  border-color: var(--home-border-hover);
+  transform: translateY(-2px);
+}
+
+.hero-hl-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+.hero-hl-icon.cyan { background: rgba(0, 218, 245, 0.12); }
+.hero-hl-icon.green { background: rgba(16, 185, 129, 0.12); }
+.hero-hl-icon.amber { background: rgba(245, 158, 11, 0.12); }
+.hero-hl-icon.blue { background: rgba(59, 130, 246, 0.12); }
+
+.hero-hl-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.hero-hl-item strong {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.hero-hl-item span {
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+}
+
 /* ==========================================================================
-   Interactive Client Workbench Window Preview
+   Right Column: Real Wmimo Client Dual-Theme Showcase Stage
+   ========================================================================== */
+.hero-showcase-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.app-showcase-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--home-surface);
+  border: 1px solid var(--home-border);
+  border-radius: 999px;
+  padding: 5px 8px 5px 16px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+  flex-wrap: wrap;
+}
+
+.showcase-toolbar-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.showcase-mode-pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sc-mode-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 5px 11px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.sc-mode-btn:hover {
+  color: var(--text-primary);
+  background: rgba(148, 163, 184, 0.1);
+}
+
+.sc-mode-btn.is-active {
+  background: linear-gradient(135deg, #00BCDF 0%, #0284C7 100%);
+  color: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(0, 188, 223, 0.35);
+}
+
+.app-showcase-stage {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase-ambient-halo {
+  position: absolute;
+  inset: 10px;
+  border-radius: 36px;
+  background: radial-gradient(circle at 50% 45%, rgba(0, 218, 245, 0.24) 0%, rgba(59, 130, 246, 0.12) 45%, transparent 72%);
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 1. Dual / Single Display Deck */
+.showcase-dual-deck {
+  position: relative;
+  width: 100%;
+  height: 575px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.app-shot-card {
+  position: absolute;
+  width: 288px;
+  border-radius: 18px;
+  padding: 6px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.52);
+  cursor: pointer;
+  transition: all 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.app-shot-card.shot-light {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.18);
+}
+
+.app-shot-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 384 / 735;
+  display: block;
+  border-radius: 13px;
+}
+
+.shot-theme-badge {
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.shot-theme-badge.dark-badge {
+  background: #0F172A;
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.shot-theme-badge.light-badge {
+  background: #FFFFFF;
+  color: #0284C7;
+  border: 1px solid rgba(2, 132, 199, 0.3);
+}
+
+/* Mode: Dual (Both Dark & Light visible, front vs back) */
+.app-showcase-stage.mode-dual .app-shot-card.is-front {
+  z-index: 4;
+  transform: translate(-44px, 8px) scale(1);
+  border-color: rgba(0, 218, 245, 0.48);
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.55), 0 0 28px rgba(0, 218, 245, 0.18);
+}
+
+.app-showcase-stage.mode-dual .app-shot-card:not(.is-front) {
+  z-index: 2;
+  transform: translate(68px, -14px) scale(0.91);
+  opacity: 0.88;
+}
+
+.app-showcase-stage.mode-dual .app-shot-card:not(.is-front):hover {
+  opacity: 0.98;
+  transform: translate(72px, -18px) scale(0.93);
+}
+
+/* Mode: Single Dark */
+.app-showcase-stage.mode-dark .shot-dark {
+  z-index: 4;
+  transform: translate(0, 0) scale(1.02);
+  opacity: 1;
+}
+.app-showcase-stage.mode-dark .shot-light {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.85);
+}
+
+/* Mode: Single Light */
+.app-showcase-stage.mode-light .shot-light {
+  z-index: 4;
+  transform: translate(0, 0) scale(1.02);
+  opacity: 1;
+}
+.app-showcase-stage.mode-light .shot-dark {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.85);
+}
+
+/* Mode: Split Compare (384x735 Pixel-Aligned Slider) */
+.showcase-split-deck {
+  display: none;
+  z-index: 5;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-showcase-stage.mode-split .showcase-dual-deck {
+  display: none;
+}
+
+.app-showcase-stage.mode-split .showcase-split-deck {
+  display: flex;
+}
+
+.shot-split-container {
+  position: relative;
+  width: 300px;
+  aspect-ratio: 384 / 735;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid rgba(0, 218, 245, 0.45);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+
+.shot-split-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.shot-split-overlay {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 50% 0 0);
+}
+
+.shot-split-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 36px;
+  transform: translateX(-50%);
+  cursor: ew-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+}
+
+.shot-split-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #00DAF5;
+  box-shadow: 0 0 10px #00DAF5;
+}
+
+.shot-split-handle {
+  position: relative;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #0F172A;
+  border: 2px solid #00DAF5;
+  color: #00DAF5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 14px rgba(0, 218, 245, 0.55);
+}
+
+/* Floating Callout Badges around Stage */
+.shot-callout {
+  position: absolute;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--home-surface-elevated);
+  border: 1px solid var(--home-border);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  backdrop-filter: blur(12px);
+  pointer-events: none;
+}
+
+.callout-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.callout-dot.green { background: #10B981; box-shadow: 0 0 8px #10B981; }
+.callout-dot.amber { background: #F59E0B; box-shadow: 0 0 8px #F59E0B; }
+.callout-dot.cyan { background: #00DAF5; box-shadow: 0 0 8px #00DAF5; }
+
+.shot-callout.callout-top {
+  top: 48px;
+  left: -10px;
+}
+
+.shot-callout.callout-mid {
+  top: 48%;
+  right: -8px;
+}
+
+.shot-callout.callout-bottom {
+  bottom: 42px;
+  left: 0;
+}
+
+/* ==========================================================================
+   2. Interactive Client Workbench Window Preview
    ========================================================================== */
 .client-workbench-wrap {
   position: relative;
@@ -1516,6 +1887,20 @@ body.home-body {
    Responsive Design
    ========================================================================== */
 @media (max-width: 1120px) {
+  .hero-split-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-copy-col {
+    align-items: center;
+    text-align: center;
+  }
+  .home-hero-actions {
+    justify-content: center;
+  }
+  .hero-client-highlights {
+    text-align: left;
+  }
   .platforms-5-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1587,6 +1972,12 @@ body.home-body {
   .theme-compare-overlay {
     padding: 1.5rem;
   }
+  .shot-callout {
+    display: none;
+  }
+  .hero-client-highlights {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 520px) {
@@ -1598,5 +1989,8 @@ body.home-body {
   }
   .home-hero-actions .btn {
     width: 100%;
+  }
+  .app-shot-card {
+    width: 245px;
   }
 }

@@ -376,9 +376,93 @@
   }
 
   // =========================================================================
+  // 5. REAL CLIENT DUAL-THEME SHOWCASE STAGE (Dual / Split / Dark / Light)
+  // =========================================================================
+  function initAppShowcaseStage() {
+    const stage = document.getElementById('appShowcaseStage');
+    const modeBtns = document.querySelectorAll('.sc-mode-btn');
+    const cardDark = document.getElementById('shotCardDark');
+    const cardLight = document.getElementById('shotCardLight');
+    const splitContainer = document.getElementById('shotSplitContainer');
+    const splitOverlay = document.getElementById('shotSplitOverlay');
+    const splitDivider = document.getElementById('shotSplitDivider');
+
+    if (!stage) return;
+
+    function syncFrontCardWithSiteTheme() {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      if (cardDark && cardLight) {
+        cardDark.classList.toggle('is-front', !isLight);
+        cardLight.classList.toggle('is-front', isLight);
+      }
+    }
+
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.getAttribute('data-sc-mode') || 'dual';
+        modeBtns.forEach(b => b.classList.toggle('is-active', b === btn));
+        stage.className = `app-showcase-stage mode-${mode}`;
+      });
+    });
+
+    if (cardDark && cardLight) {
+      cardDark.addEventListener('click', () => {
+        cardDark.classList.add('is-front');
+        cardLight.classList.remove('is-front');
+      });
+      cardLight.addEventListener('click', () => {
+        cardLight.classList.add('is-front');
+        cardDark.classList.remove('is-front');
+      });
+    }
+
+    // Pixel-aligned 384x735 Split Slider
+    if (splitContainer && splitOverlay && splitDivider) {
+      let dragging = false;
+      let splitPct = 50;
+
+      const setSplit = (pct) => {
+        splitPct = Math.max(5, Math.min(95, pct));
+        splitOverlay.style.clipPath = `inset(0 ${(100 - splitPct).toFixed(2)}% 0 0)`;
+        splitDivider.style.left = `${splitPct.toFixed(2)}%`;
+        splitDivider.setAttribute('aria-valuenow', String(Math.round(splitPct)));
+      };
+
+      const updateSplitFromX = (clientX) => {
+        const rect = splitContainer.getBoundingClientRect();
+        if (!rect.width) return;
+        setSplit(((clientX - rect.left) / rect.width) * 100);
+      };
+
+      splitContainer.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        updateSplitFromX(e.clientX);
+      });
+      window.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        updateSplitFromX(e.clientX);
+      });
+      window.addEventListener('pointerup', () => {
+        dragging = false;
+      });
+      splitDivider.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); setSplit(splitPct - 5); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); setSplit(splitPct + 5); }
+      });
+
+      setSplit(50);
+    }
+
+    syncFrontCardWithSiteTheme();
+    const themeObserver = new MutationObserver(syncFrontCardWithSiteTheme);
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  }
+
+  // =========================================================================
   // INITIALIZE ALL
   // =========================================================================
   function init() {
+    initAppShowcaseStage();
     initClientWorkbench();
     initTrafficCanvas();
     initTrayCopyButton();
