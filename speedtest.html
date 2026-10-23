@@ -13,6 +13,7 @@
         } else {
           document.documentElement.setAttribute('data-theme', 'dark');
         }
+
         var l = localStorage.getItem('wmimo_lang');
         if (!l) {
           l = (navigator.language && navigator.language.startsWith('zh')) ? 'zh' : 'en';
@@ -24,10 +25,12 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>在线速度测试 - Wmimo 官方网络基准测试</title>
-  <meta name="description" content="Wmimo 官方在线网络测速工具，提供实时延迟 (Ping)、网络抖动 (Jitter)、多并发下行吞吐率与上行吞吐率基准测试与实时测速波形图。">
+  <meta name="color-scheme" content="dark light">
+  <title>网络遥测与速度测试 - Wmimo 官方网站</title>
+  <meta name="description" content="Wmimo 专业级在线网络遥测仪表盘。提供真实上下行带宽压测、延迟与抖动采样分布、全球站点连通性探测矩阵及本机出口 IP/ASN 诊断。">
   <link rel="icon" type="image/png" href="assets/images/app_icon_128.png">
 
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -62,16 +65,9 @@
         </div>
 
         <button class="theme-toggle-btn" aria-label="切换主题" data-i18n-aria="nav.theme_toggle">
-          <span class="theme-icon-slot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-          </span>
+          <span class="theme-icon-slot"></span>
         </button>
-
-        <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 7px;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span data-i18n="nav.github">GitHub</span>
-        </a>
-
+        <a href="download.html" class="btn btn-primary btn-sm" data-i18n="nav.download_app">下载客户端</a>
         <button class="mobile-toggle-btn" aria-label="菜单" data-i18n-aria="nav.menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
@@ -83,9 +79,9 @@
   <div class="mobile-drawer">
     <a href="index.html" class="nav-link" data-i18n="nav.home">首页</a>
     <a href="download.html" class="nav-link" data-i18n="nav.download_center">下载中心</a>
-    <a href="speedtest.html" class="nav-link active" data-i18n="nav.speedtest">在线测速</a>
-    <a href="docs/index.html" class="nav-link" data-i18n="nav.docs">使用文档</a>
-    <a href="community.html" class="nav-link" data-i18n="nav.about">关于与赞助</a>
+    <a href="speedtest.html" class="nav-link active" data-i18n="nav.speedtest">速度测试</a>
+    <a href="docs/index.html" class="nav-link" data-i18n="nav.docs">文档</a>
+    <a href="community.html" class="nav-link" data-i18n="nav.about">关于</a>
     <div class="mobile-drawer-footer">
       <button class="btn btn-secondary mobile-lang-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
@@ -98,373 +94,536 @@
     </div>
   </div>
 
+  <!-- Main Content -->
   <main class="container">
-    <!-- Hero Header -->
-    <section class="page-hero">
-      <h1 data-i18n="st.hero_title">在线速度测试</h1>
-      <p data-i18n="st.hero_subtitle">一键测试您的网络连接质量 · 精准 · 可靠 · 全球节点</p>
+    <!-- Hero Section -->
+    <section class="page-hero st-hero-compact">
+      <div class="st-hero-eyebrow">
+        <span class="st-live-dot"></span>
+        <span data-i18n="st.badge_live">⚡ 全球 Anycast 边缘网络遥测工作台</span>
+      </div>
+      <h1 data-i18n="st.hero_title">在线网络遥测与速度测试</h1>
+      <p data-i18n="st.hero_subtitle">实时评估当前网络或代理节点的上下行吞吐带宽、延迟抖动分布与全球主流站点连通性</p>
     </section>
 
-    <div class="speedtest-container">
+    <!-- SpeedTest Dashboard Container -->
+    <section class="speedtest-container">
 
-      <!-- Server Selection Bar -->
-      <div class="speed-server-bar spotlight-card">
+      <!-- 1. Top Server & 5-Stage Telemetry Pipeline Bar -->
+      <div class="speed-server-bar telemetry-top-bar">
         <div class="speed-server-left">
           <div class="server-beacon-badge">
-            <div class="beacon-outer-ring"></div>
+            <span class="beacon-outer-ring"></span>
             <div class="beacon-inner-dot">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
             </div>
           </div>
           <div class="server-info-text">
-            <div class="server-status-label" data-i18n="st.server_connected">已连接最佳节点</div>
+            <div class="server-status-label" data-i18n="st.server_connected">当前测速边缘节点</div>
             <div class="server-detail-row">
-              <span id="currentServerName">Cloudflare · Los Angeles (洛杉矶)</span>
-              <span class="server-ping-tag" id="currentServerPing"><span class="latency-val">12</span> ms</span>
+              <span id="currentServerName">Cloudflare Edge</span>
+              <span>·</span>
+              <span id="currentServerLocation" data-i18n="st.node_loc_auto">全球 Anycast 自动优选</span>
+              <span class="server-ping-tag" id="currentServerPing">-- ms</span>
             </div>
           </div>
-        </div>
-
-        <div class="speed-server-center">
-          <button class="btn btn-secondary server-switch-pill" id="serverSelectBtn">
+          <button type="button" class="server-switch-pill" id="serverSelectBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/>
+            </svg>
             <span data-i18n="st.btn_switch_server">更换服务器</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
         </div>
 
-        <div class="speed-server-right">
-          <div class="server-world-map">
-            <svg class="map-silhouette" viewBox="0 0 160 70" fill="none">
-              <path d="M15 25c2-4 8-6 12-2 3 3 7 1 9-2 2-2 5-1 7 2 3 5 8 4 10 1 2-2 5-1 7 2 3 4 8 2 11-1 3-3 8-1 10 3 2 4 6 2 8-1 3-4 8-2 10 2s5 5 8 3c4-3 7 1 9 4M20 45c3-1 6 2 8 5 2 3 5 2 7-1 3-3 6-2 8 2 2 4 6 4 9 1 3-3 7-2 9 2 2 3 6 3 8 0 3-3 7-1 9 3 2 4 5 3 7 0M110 20c2-3 6-2 8 1 3 3 7 2 9-1 2-3 6-2 8 2 2 3 5 4 8 1 3-2 6-1 8 2M115 48c3-2 7-1 9 2 2 3 5 3 7 0 3-3 7-2 9 2" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.8" stroke-linecap="round"/>
-              <circle cx="35" cy="28" r="2" fill="#00daf5" opacity="0.8"/>
-              <circle cx="82" cy="24" r="2" fill="#00daf5" opacity="0.8"/>
-              <circle cx="125" cy="32" r="2" fill="#00daf5" opacity="0.8"/>
-              <circle cx="55" cy="46" r="2" fill="#38bdf8" opacity="0.6"/>
-              <circle cx="138" cy="45" r="2" fill="#38bdf8" opacity="0.6"/>
-            </svg>
-          </div>
-          <div class="global-nodes-badge">
-            <div class="flight-icon-circle">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg>
+        <!-- Horizontal 5-Step Pipeline Strip -->
+        <div class="telemetry-pipeline-strip" role="list" aria-label="Test Pipeline Stages">
+          <div class="test-step-item is-completed" id="stepItem1" role="listitem">
+            <div class="step-indicator"><span class="step-num">1</span></div>
+            <div class="step-content">
+              <span class="step-title" data-i18n="st.step_conn">连接节点</span>
+              <span class="step-status" id="stepStatus1" data-i18n="st.status_ready">已就绪</span>
             </div>
-            <div class="nodes-badge-text">
-              <span class="nodes-badge-title" data-i18n="st.global_nodes">全球 300+ 节点</span>
-              <span class="nodes-badge-desc" data-i18n="st.global_nodes_sub">自动选择最优边缘</span>
+          </div>
+          <div class="step-line" id="stepLine1"></div>
+
+          <div class="test-step-item" id="stepItem2" role="listitem">
+            <div class="step-indicator"><span class="step-num">2</span></div>
+            <div class="step-content">
+              <span class="step-title" data-i18n="st.step_ping">延迟抖动</span>
+              <span class="step-status" id="stepStatus2" data-i18n="st.status_waiting">待测试</span>
+            </div>
+          </div>
+          <div class="step-line" id="stepLine2"></div>
+
+          <div class="test-step-item" id="stepItem3" role="listitem">
+            <div class="step-indicator"><span class="step-num">3</span></div>
+            <div class="step-content">
+              <span class="step-title" data-i18n="st.step_down">下行吞吐</span>
+              <span class="step-status" id="stepStatus3" data-i18n="st.status_waiting">待测试</span>
+            </div>
+          </div>
+          <div class="step-line" id="stepLine3"></div>
+
+          <div class="test-step-item" id="stepItem4" role="listitem">
+            <div class="step-indicator"><span class="step-num">4</span></div>
+            <div class="step-content">
+              <span class="step-title" data-i18n="st.step_up">上行吞吐</span>
+              <span class="step-status" id="stepStatus4" data-i18n="st.status_waiting">待测试</span>
+            </div>
+          </div>
+          <div class="step-line" id="stepLine4"></div>
+
+          <div class="test-step-item" id="stepItem5" role="listitem">
+            <div class="step-indicator"><span class="step-num">5</span></div>
+            <div class="step-content">
+              <span class="step-title" data-i18n="st.step_quality">质量评级</span>
+              <span class="step-status" id="stepStatus5" data-i18n="st.status_waiting">待评估</span>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Server Selection Modal -->
-      <div class="server-drawer-modal" id="serverDrawerModal">
+      <div class="server-drawer-modal" id="serverDrawerModal" aria-hidden="true">
         <div class="server-drawer-backdrop" id="serverDrawerBackdrop"></div>
-        <div class="server-drawer-content spotlight-card">
+        <div class="server-drawer-content">
           <div class="server-drawer-header">
-            <h4 data-i18n="st.select_server_title">选择测速服务器与节点</h4>
-            <button class="btn btn-secondary btn-sm" id="serverDrawerClose" style="padding: 4px 10px;">✕</button>
+            <h4 data-i18n="st.select_server_title">选择测速服务器与边缘节点</h4>
+            <button type="button" class="btn btn-ghost btn-sm" id="serverDrawerClose">✕</button>
           </div>
-          <div class="server-node-list" id="serverNodeList"></div>
+          <div class="server-node-list" id="serverNodeList">
+            <div class="server-node-item is-selected" data-server-id="cf-auto">
+              <div class="node-left">
+                <span class="node-flag-icon">🌐</span>
+                <div class="node-text">
+                  <div class="node-name" data-i18n="st.server_auto_title">全球 Anycast 边缘优选</div>
+                  <div class="node-location" data-i18n="st.server_auto_desc">Cloudflare 300+ 城市全球网络 · 自动选路</div>
+                </div>
+              </div>
+              <div class="node-right">
+                <span class="node-ping-pill" data-ping-target="cf-auto">-- ms</span>
+                <span class="node-radio"></span>
+              </div>
+            </div>
+
+            <div class="server-node-item" data-server-id="cf-apac">
+              <div class="node-left">
+                <span class="node-flag-icon">🇭🇰</span>
+                <div class="node-text">
+                  <div class="node-name" data-i18n="st.server_apac_title">亚太边缘节点群 (香港 / 东京 / 新加坡)</div>
+                  <div class="node-location" data-i18n="st.server_apac_desc">亚太骨干直连 · 低延迟优质边缘路由</div>
+                </div>
+              </div>
+              <div class="node-right">
+                <span class="node-ping-pill" data-ping-target="cf-apac">-- ms</span>
+                <span class="node-radio"></span>
+              </div>
+            </div>
+
+            <div class="server-node-item" data-server-id="cf-na">
+              <div class="node-left">
+                <span class="node-flag-icon">🇺🇸</span>
+                <div class="node-text">
+                  <div class="node-name" data-i18n="st.server_na_title">北美核心节点群 (圣何塞 / 洛杉矶)</div>
+                  <div class="node-location" data-i18n="st.server_na_desc">硅谷与美西大型数据中心 · 高带宽吞吐</div>
+                </div>
+              </div>
+              <div class="node-right">
+                <span class="node-ping-pill" data-ping-target="cf-na">-- ms</span>
+                <span class="node-radio"></span>
+              </div>
+            </div>
+
+            <div class="server-node-item" data-server-id="cf-eu">
+              <div class="node-left">
+                <span class="node-flag-icon">🇩🇪</span>
+                <div class="node-text">
+                  <div class="node-name" data-i18n="st.server_eu_title">欧洲核心节点群 (法兰克福 / 伦敦)</div>
+                  <div class="node-location" data-i18n="st.server_eu_desc">欧洲核心交换中心 DE-CIX 骨干节点</div>
+                </div>
+              </div>
+              <div class="node-right">
+                <span class="node-ping-pill" data-ping-target="cf-eu">-- ms</span>
+                <span class="node-radio"></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- 1. Central 3-Column Testing Console -->
-      <div class="speedtest-console spotlight-card" id="speedtestConsole">
-        
-        <!-- Left Column: 5-Step Progress Checklist -->
-        <div class="test-steps-col">
-          <div class="test-steps-list">
-            <!-- Step 1: Connect -->
-            <div class="test-step-item is-completed" id="stepConn">
-              <div class="step-indicator">
-                <span class="step-num">1</span>
-              </div>
-              <div class="step-content">
-                <span class="step-title" data-i18n="st.step_conn">连接服务器</span>
-                <span class="step-status" id="stepConnStatus">12 ms ✓</span>
-              </div>
-            </div>
-            <div class="step-line is-completed" id="stepLine1"></div>
+      <!-- 2. Main 2-Column Telemetry Workbench -->
+      <div class="speedtest-console telemetry-workbench" id="speedtestConsoleCard">
 
-            <!-- Step 2: Ping -->
-            <div class="test-step-item is-completed" id="stepPing">
-              <div class="step-indicator">
-                <span class="step-num">2</span>
-              </div>
-              <div class="step-content">
-                <span class="step-title" data-i18n="st.step_ping">测试延迟</span>
-                <span class="step-status" id="stepPingStatus">12 ms ✓</span>
-              </div>
-            </div>
-            <div class="step-line is-completed" id="stepLine2"></div>
-
-            <!-- Step 3: Download -->
-            <div class="test-step-item is-active" id="stepDown">
-              <div class="step-indicator">
-                <span class="step-num">3</span>
-              </div>
-              <div class="step-content">
-                <span class="step-title" data-i18n="st.step_down">测试下载速度</span>
-                <span class="step-status" id="stepDownStatus" data-i18n="st.status_running">进行中...</span>
-              </div>
-            </div>
-            <div class="step-line" id="stepLine3"></div>
-
-            <!-- Step 4: Upload -->
-            <div class="test-step-item" id="stepUp">
-              <div class="step-indicator">
-                <span class="step-num">4</span>
-              </div>
-              <div class="step-content">
-                <span class="step-title" data-i18n="st.step_up">测试上传速度</span>
-                <span class="step-status" id="stepUpStatus" data-i18n="st.status_waiting">等待中...</span>
-              </div>
-            </div>
-            <div class="step-line" id="stepLine4"></div>
-
-            <!-- Step 5: Quality -->
-            <div class="test-step-item" id="stepQuality">
-              <div class="step-indicator">
-                <span class="step-num">5</span>
-              </div>
-              <div class="step-content">
-                <span class="step-title" data-i18n="st.step_quality">分析网络质量</span>
-                <span class="step-status" id="stepQualityStatus" data-i18n="st.status_waiting">等待中...</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Center Column: Speedometer Gauge -->
-        <div class="speed-gauge-col">
+        <!-- Left Column: Precision Speedometer & Control Deck -->
+        <div class="speed-gauge-col telemetry-gauge-deck">
           <div class="speed-gauge-wrap">
             <svg class="speed-gauge-svg" viewBox="0 0 280 230">
               <defs>
-                <!-- Cosmic Spectrum Gradient (Electric Cyan -> Blue -> Violet) -->
-                <linearGradient id="gaugeTrackGrad" x1="0%" y1="100%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#00F0FF" />
-                  <stop offset="25%" stop-color="#00C4FF" />
-                  <stop offset="50%" stop-color="#007BFF" />
-                  <stop offset="78%" stop-color="#7C3AED" />
-                  <stop offset="100%" stop-color="#9333EA" />
+                <linearGradient id="gaugeTrackGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#00daf5"/>
+                  <stop offset="50%" stop-color="#3b82f6"/>
+                  <stop offset="100%" stop-color="#a855f7"/>
                 </linearGradient>
-
-                <!-- High Intensity Neon Bloom Filter -->
-                <filter id="gaugeNeonBloom" x="-25%" y="-25%" width="150%" height="150%">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="glow" />
-                  <feMerge>
-                    <feMergeNode in="glow" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-
-                <!-- Ambient Radial Glow Backdrop -->
-                <radialGradient id="dialAmbientGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#0066ff" stop-opacity="0.18" />
-                  <stop offset="50%" stop-color="#00daf5" stop-opacity="0.05" />
-                  <stop offset="100%" stop-color="#000000" stop-opacity="0" />
-                </radialGradient>
               </defs>
 
-              <!-- Ambient Glow Backdrop -->
-              <circle cx="140" cy="120" r="114" fill="url(#dialAmbientGlow)" />
+              <!-- Outer Dark Circular Instrument Plate -->
+              <circle cx="140" cy="120" r="108" class="gauge-plate-disc" />
+              <circle cx="140" cy="120" r="101" class="gauge-plate-ring" />
 
-              <!-- Recessed Aerospace Instrument Disc Plate -->
-              <circle cx="140" cy="120" r="70" class="gauge-plate-disc" />
+              <!-- Recessed Dark Groove Track -->
+              <path class="gauge-bg-groove" d="M 62.9 184.7 A 100 100 0 1 1 217.1 184.7" fill="none" stroke-linecap="round"/>
 
-              <!-- Precision Concentric Dashed Gauge Ring -->
-              <circle cx="140" cy="120" r="77" class="gauge-plate-ring" />
+              <!-- Subtle Unlit Spectrum Track -->
+              <path class="gauge-bg-spectrum" d="M 62.9 184.7 A 100 100 0 1 1 217.1 184.7" fill="none" stroke-linecap="round"/>
 
-              <!-- Dark Groove Track -->
-              <path class="gauge-bg-groove" d="M 64.64 172.77 A 92 92 0 1 1 215.36 172.77" />
+              <!-- Active Illuminated Progress Arc (Total length = 401.4) -->
+              <path class="gauge-progress-arc" id="gaugeProgressArc" d="M 62.9 184.7 A 100 100 0 1 1 217.1 184.7" fill="none" stroke-linecap="round"/>
 
-              <!-- Full Spectrum Track (Subtle Glow Spectrum from Mockup) -->
-              <path class="gauge-bg-spectrum" d="M 64.64 172.77 A 92 92 0 1 1 215.36 172.77" />
+              <!-- Precision Radial Tick Marks -->
+              <g class="gauge-ticks-group">
+                <!-- 0 -->
+                <line x1="72.5" y1="176.6" x2="81.0" y2="169.5" class="gauge-tick-major tick-cyan"/>
+                <line x1="65.7" y1="167.2" x2="72.4" y2="162.9" class="gauge-tick-minor"/>
+                <line x1="60.1" y1="156.7" x2="67.4" y2="153.4" class="gauge-tick-minor"/>
+                <line x1="55.9" y1="145.3" x2="64.5" y2="142.7" class="gauge-tick-med tick-cyan"/>
+                <line x1="53.1" y1="133.4" x2="61.0" y2="132.2" class="gauge-tick-minor"/>
+                <line x1="52.0" y1="121.3" x2="60.0" y2="121.2" class="gauge-tick-minor"/>
+                <!-- 10 -->
+                <line x1="52.5" y1="109.2" x2="63.4" y2="110.5" class="gauge-tick-major tick-cyan"/>
+                <line x1="54.5" y1="97.1" x2="62.2" y2="99.2" class="gauge-tick-minor"/>
+                <line x1="58.0" y1="85.5" x2="65.4" y2="88.6" class="gauge-tick-minor"/>
+                <line x1="63.1" y1="74.6" x2="70.9" y2="79.2" class="gauge-tick-med tick-cyan"/>
+                <line x1="69.5" y1="64.4" x2="75.8" y2="69.4" class="gauge-tick-minor"/>
+                <line x1="77.2" y1="55.3" x2="82.9" y2="61.0" class="gauge-tick-minor"/>
+                <!-- 50 -->
+                <line x1="86.1" y1="47.5" x2="92.8" y2="56.3" class="gauge-tick-major tick-cyan"/>
+                <line x1="96.0" y1="41.2" x2="100.0" y2="48.1" class="gauge-tick-minor"/>
+                <line x1="106.7" y1="36.3" x2="109.7" y2="43.8" class="gauge-tick-minor"/>
+                <line x1="118.0" y1="33.1" x2="120.2" y2="41.8" class="gauge-tick-med tick-cyan"/>
+                <line x1="129.7" y1="31.5" x2="130.6" y2="39.4" class="gauge-tick-minor"/>
+                <!-- 100 -->
+                <line x1="140.0" y1="32.0" x2="140.0" y2="43.0" class="gauge-tick-major tick-cyan"/>
+                <line x1="150.3" y1="31.5" x2="149.4" y2="39.4" class="gauge-tick-minor"/>
+                <line x1="162.0" y1="33.1" x2="159.8" y2="41.8" class="gauge-tick-med tick-blue"/>
+                <line x1="173.3" y1="36.3" x2="170.3" y2="43.8" class="gauge-tick-minor"/>
+                <line x1="184.0" y1="41.2" x2="180.0" y2="48.1" class="gauge-tick-minor"/>
+                <!-- 200 -->
+                <line x1="193.9" y1="47.5" x2="187.2" y2="56.3" class="gauge-tick-major tick-indigo"/>
+                <line x1="202.8" y1="55.3" x2="197.1" y2="61.0" class="gauge-tick-minor"/>
+                <line x1="210.5" y1="64.4" x2="204.2" y2="69.4" class="gauge-tick-minor"/>
+                <line x1="216.9" y1="74.6" x2="209.1" y2="79.2" class="gauge-tick-med tick-indigo"/>
+                <line x1="222.0" y1="85.5" x2="214.6" y2="88.6" class="gauge-tick-minor"/>
+                <line x1="225.5" y1="97.1" x2="217.8" y2="99.2" class="gauge-tick-minor"/>
+                <!-- 500 -->
+                <line x1="227.5" y1="109.2" x2="216.6" y2="110.5" class="gauge-tick-major tick-violet"/>
+                <line x1="228.0" y1="121.3" x2="220.0" y2="121.2" class="gauge-tick-minor"/>
+                <line x1="226.9" y1="133.4" x2="219.0" y2="132.2" class="gauge-tick-minor"/>
+                <line x1="224.1" y1="145.3" x2="215.5" y2="142.7" class="gauge-tick-med tick-violet"/>
+                <line x1="219.9" y1="156.7" x2="212.6" y2="153.4" class="gauge-tick-minor"/>
+                <line x1="214.3" y1="167.2" x2="207.6" y2="162.9" class="gauge-tick-minor"/>
+                <!-- 1000 -->
+                <line x1="207.5" y1="176.6" x2="199.0" y2="169.5" class="gauge-tick-major tick-violet"/>
+              </g>
 
-              <!-- Active Neon Progress Arc -->
-              <path id="gaugeProgressArc" class="gauge-progress-arc" d="M 64.64 172.77 A 92 92 0 1 1 215.36 172.77" stroke-dasharray="401.4" stroke-dashoffset="98" filter="url(#gaugeNeonBloom)" />
+              <!-- Scale Labels -->
+              <g class="gauge-labels-group">
+                <text x="90" y="164" class="gauge-tick-label">0</text>
+                <text x="75" y="114" class="gauge-tick-label">10</text>
+                <text x="98" y="68" class="gauge-tick-label">50</text>
+                <text x="140" y="55" class="gauge-tick-label">100</text>
+                <text x="182" y="68" class="gauge-tick-label">200</text>
+                <text x="202" y="114" class="gauge-tick-label">500</text>
+                <text x="186" y="164" class="gauge-tick-label">1000</text>
+              </g>
 
-              <!-- Inward Radial Tick Marks (100% Co-linear with Scale Labels) -->
-              <!-- Major Ticks (Luminous Spectrum Rods) -->
-              <line class="gauge-tick-major tick-cyan" x1="68.7" y1="169.9" x2="76.9" y2="164.2" />
-              <line class="gauge-tick-major tick-cyan" x1="54.3" y1="104.9" x2="64.2" y2="106.6" />
-              <line class="gauge-tick-major tick-cyan" x1="86.4" y1="51.4" x2="92.6" y2="59.3" />
-              <line class="gauge-tick-major tick-indigo" x1="193.6" y1="51.4" x2="187.4" y2="59.3" />
-              <line class="gauge-tick-major tick-violet" x1="225.7" y1="104.9" x2="215.8" y2="106.6" />
-              <line class="gauge-tick-major tick-violet" x1="211.3" y1="169.9" x2="203.1" y2="164.2" />
-
-              <!-- Medium Sub-division Ticks -->
-              <line class="gauge-tick-med tick-cyan" x1="55.1" y1="138.8" x2="61.4" y2="137.4" />
-              <line class="gauge-tick-med tick-cyan" x1="65.4" y1="75.2" x2="71.0" y2="78.5" />
-              <line class="gauge-tick-med tick-blue" x1="140.0" y1="33.0" x2="140.0" y2="39.5" />
-              <line class="gauge-tick-med tick-indigo" x1="214.6" y1="75.2" x2="209.0" y2="78.5" />
-              <line class="gauge-tick-med tick-violet" x1="224.9" y1="138.8" x2="218.6" y2="137.4" />
-
-              <!-- Fine Micro Graduation Ticks -->
-              <line class="gauge-tick-minor" x1="60.4" y1="155.0" x2="64.0" y2="153.4" />
-              <line class="gauge-tick-minor" x1="53.0" y1="121.9" x2="57.0" y2="121.8" />
-              <line class="gauge-tick-minor" x1="58.2" y1="90.2" x2="62.0" y2="91.6" />
-              <line class="gauge-tick-minor" x1="74.8" y1="62.4" x2="77.8" y2="65.0" />
-              <line class="gauge-tick-minor" x1="111.7" y1="37.7" x2="113.0" y2="41.5" />
-              <line class="gauge-tick-minor" x1="168.3" y1="37.7" x2="167.0" y2="41.5" />
-              <line class="gauge-tick-minor" x1="205.2" y1="62.4" x2="202.2" y2="65.0" />
-              <line class="gauge-tick-minor" x1="221.8" y1="90.2" x2="218.0" y2="91.6" />
-              <line class="gauge-tick-minor" x1="227.0" y1="121.9" x2="223.0" y2="121.8" />
-              <line class="gauge-tick-minor" x1="219.6" y1="155.0" x2="216.0" y2="153.4" />
-
-              <!-- Precision Scale Numbers (100% Co-linear with Major Ticks) -->
-              <text class="gauge-tick-label" x="53.2" y="180.8">0</text>
-              <text class="gauge-tick-label" x="36.6" y="101.8">50</text>
-              <text class="gauge-tick-label" x="75.4" y="37.3">100</text>
-              <text class="gauge-tick-label" x="204.6" y="37.3">200</text>
-              <text class="gauge-tick-label" x="243.4" y="101.8">500</text>
-              <text class="gauge-tick-label" x="226.8" y="180.8">1000</text>
-
-              <!-- Futuristic Laser Pointer Needle (Aligned to 64.1deg for 386.42 Mbps) -->
-              <g id="gaugeNeedle" class="gauge-needle" style="transform-origin: 140px 120px; transform: rotate(64.1deg);">
-                <line x1="140" y1="84" x2="140" y2="30" class="needle-beam" />
-                <circle cx="140" cy="84" r="3.2" class="needle-hub" />
+              <!-- Laser Pointer Needle (Starts at -130deg = 0 Mbps) -->
+              <g class="gauge-needle" id="gaugeNeedle" style="transform: rotate(-130deg);">
+                <line x1="140" y1="120" x2="140" y2="34" class="needle-beam" />
+                <circle cx="140" cy="120" r="4.5" class="needle-hub" />
               </g>
             </svg>
 
+            <!-- Center Digital Readout -->
             <div class="gauge-center-content">
-              <div id="gaugeSpeedVal" class="gauge-speed-val">386.42</div>
-              <div id="gaugeSpeedUnit" class="gauge-speed-unit">Mbps</div>
-              <div id="gaugePhase" class="gauge-phase-badge">
-                <span class="phase-icon" id="phaseIcon">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00daf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M7 11l5 5 5-5M4 20h16"/></svg>
+              <div class="gauge-speed-val" id="gaugeSpeedVal">0.00</div>
+              <div class="gauge-speed-unit" id="gaugeSpeedUnit">Mbps</div>
+              <div class="gauge-phase-badge" id="gaugePhaseBadge">
+                <span class="phase-icon" id="gaugePhaseIcon">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </span>
-                <span class="phase-text" id="gaugePhaseText" data-i18n="st.phase_down">下载速度</span>
+                <span id="gaugePhaseText" data-i18n="st.phase_idle">就绪待测</span>
               </div>
             </div>
           </div>
 
-          <!-- Action Button -->
+          <div class="gauge-peak-pill" id="gaugePeakLabel">
+            <span data-i18n="st.chart_peak">最高峰值</span>: <strong id="gaugePeakVal">-- Mbps</strong>
+          </div>
+
+          <!-- Action Buttons -->
           <div class="speedtest-action-wrap">
-            <button id="speedStartBtn" class="btn-speed-radiant is-testing">
-              <span class="btn-icon" id="speedBtnIcon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="3"/></svg>
+            <button type="button" class="btn-speed-radiant" id="startSpeedTestBtn">
+              <span class="btn-speed-icon" id="btnIcon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </span>
-              <span id="speedBtnText" data-i18n="st.btn_testing">正在测试...</span>
+              <span id="btnText" data-i18n="st.btn_start">开始测速</span>
             </button>
           </div>
         </div>
 
-        <!-- Right Column: Real-time Waveform Canvas & Progress Footer -->
-        <div class="speed-chart-col">
+        <!-- Right Column: Real-Time Throughput Area Graph & Ping Distribution Strip -->
+        <div class="speed-chart-col telemetry-charts-deck">
+          <!-- Panel A: Dual-Series Throughput Area Graph -->
           <div class="speed-chart-card-inner">
             <div class="speed-chart-top">
-              <h3 class="speed-chart-title" data-i18n="st.chart_title">实时速度</h3>
+              <div class="chart-title-group">
+                <h3 class="speed-chart-title" data-i18n="st.chart_title">实时吞吐量曲线</h3>
+                <span class="chart-sub-badge" id="livePhaseStreamTag">Multi-Stream HTTP/2 · TLS 1.3</span>
+              </div>
               <div class="speed-chart-legend">
-                <div class="legend-item">
-                  <span class="legend-dot dot-down"></span>
-                  <span data-i18n="st.legend_download">下载</span>
-                </div>
-                <div class="legend-item">
-                  <span class="legend-dot dot-up"></span>
-                  <span data-i18n="st.legend_upload">上传</span>
-                </div>
+                <span class="legend-item"><i class="legend-dot dot-down"></i> <span data-i18n="st.legend_download">下载</span></span>
+                <span class="legend-item"><i class="legend-dot dot-up"></i> <span data-i18n="st.legend_upload">上传</span></span>
               </div>
             </div>
 
             <div class="speed-chart-canvas-wrap">
-              <canvas id="speedWaveCanvas"></canvas>
+              <canvas id="speedWaveCanvas" width="520" height="150"></canvas>
             </div>
 
             <div class="speed-chart-footer">
               <div class="chart-footer-meta">
-                <span class="meta-tested"><span data-i18n="st.tested_data">已测试</span> <strong id="dataTransferredVal">2.8 GB</strong></span>
-                <span class="meta-percent" id="testProgressPercent">68%</span>
+                <span class="meta-tested"><span data-i18n="st.tested_data">已传输测速数据</span>: <strong id="testedBytesVal">0.0 MB</strong></span>
+                <span class="meta-percent" id="testProgressPct">0%</span>
               </div>
               <div class="chart-progress-track">
-                <div class="chart-progress-fill" id="testProgressFill" style="width: 68%;"></div>
+                <div class="chart-progress-fill" id="testProgressFill" style="width: 0%;"></div>
               </div>
+            </div>
+          </div>
+
+          <!-- Panel B: Real-time Ping & Jitter Sample Strip -->
+          <div class="ping-telemetry-card">
+            <div class="ping-telemetry-header">
+              <span class="ping-telemetry-title" data-i18n="st.ping_strip_title">延迟采样序列 (RTT Samples)</span>
+              <div class="ping-telemetry-stats">
+                <span>Min: <strong id="pingMinVal">--</strong></span>
+                <span>Max: <strong id="pingMaxVal">--</strong></span>
+                <span>Loss: <strong id="pingLossVal">0.0%</strong></span>
+              </div>
+            </div>
+            <div class="ping-samples-bars" id="pingSamplesStrip" aria-label="Ping RTT sample bars">
+              <!-- Populated dynamically with 12 sample bars -->
+              <div class="ping-bar-slot"><div class="ping-bar-fill" style="height: 18%"></div><span>#1</span></div>
+              <div class="ping-bar-slot"><div class="ping-bar-fill" style="height: 18%"></div><span>#2</span></div>
+              <div class="ping-bar-slot"><div class="ping-bar-fill" style="height: 18%"></div><span>#3</span></div>
+              <div class="ping-bar-slot"><div class="ping-bar-fill" style="height: 18%"></div><span>#4</span></div>
+              <div class="ping-bar-slot"><div class="ping-bar-fill" style="height: 18%"></div><span>#5</span></div>
+              <div class="ping-bar-slot"><div class="ping-bar-fill" style="height: 18%"></div><span>#6</span></div>
+              <div class="ping-bar-slot"><div class="ping-bar-fill" style="height: 18%"></div><span>#7</span></div>
+              <div class="ping-bar-slot"><div class="ping-bar-fill" style="height: 18%"></div><span>#8</span></div>
+              <div class="ping-bar-slot"><div class="ping-bar-fill" style="height: 18%"></div><span>#9</span></div>
+              <div class="ping-bar-slot"><div class="ping-bar-fill" style="height: 18%"></div><span>#10</span></div>
+              <div class="ping-bar-slot"><div class="ping-bar-fill" style="height: 18%"></div><span>#11</span></div>
+              <div class="ping-bar-slot"><div class="ping-bar-fill" style="height: 18%"></div><span>#12</span></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 2. 4 Core Metrics Grid -->
+      <!-- 3. 4 Core Metrics Grid -->
       <div class="speed-metrics-grid">
-        <!-- Metric: Ping -->
-        <div id="cardPing" class="speed-metric-card spotlight-card">
+        <!-- Ping -->
+        <div class="speed-metric-card">
           <div class="metric-accent-bar accent-cyan"></div>
           <div class="metric-header">
             <div class="metric-icon-circle icon-cyan">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
             <span class="metric-title" data-i18n="st.metric_ping">延迟 (Ping)</span>
           </div>
           <div class="metric-body">
-            <div id="pingVal" class="metric-num">12</div>
+            <span class="metric-num" id="pingVal">--</span>
             <span class="metric-unit">ms</span>
           </div>
-          <div class="metric-subtitle" data-i18n="st.metric_ping_sub">网络响应时间</div>
+          <div class="metric-subtitle" id="pingRangeMeta" data-i18n="st.metric_ping_sub">网络往返响应时间</div>
         </div>
 
-        <!-- Metric: Jitter -->
-        <div id="cardJitter" class="speed-metric-card spotlight-card">
-          <div class="metric-accent-bar accent-blue"></div>
+        <!-- Jitter -->
+        <div class="speed-metric-card">
+          <div class="metric-accent-bar accent-cyan"></div>
           <div class="metric-header">
-            <div class="metric-icon-circle icon-blue">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <div class="metric-icon-circle icon-cyan">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg>
             </div>
             <span class="metric-title" data-i18n="st.metric_jitter">抖动 (Jitter)</span>
           </div>
           <div class="metric-body">
-            <div id="jitterVal" class="metric-num">2.1</div>
+            <span class="metric-num" id="jitterVal">--</span>
             <span class="metric-unit">ms</span>
           </div>
-          <div class="metric-subtitle" data-i18n="st.metric_jitter_sub">延迟波动</div>
+          <div class="metric-subtitle" id="jitterStabilityMeta" data-i18n="st.metric_jitter_sub">连续采样延迟波动</div>
         </div>
 
-        <!-- Metric: Download -->
-        <div id="cardDown" class="speed-metric-card spotlight-card">
-          <div class="metric-accent-bar accent-cyan"></div>
+        <!-- Download -->
+        <div class="speed-metric-card">
+          <div class="metric-accent-bar accent-blue"></div>
           <div class="metric-header">
-            <div class="metric-icon-circle icon-cyan">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            <div class="metric-icon-circle icon-blue">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </div>
             <span class="metric-title" data-i18n="st.metric_down">下载速度</span>
           </div>
           <div class="metric-body">
-            <div id="downloadVal" class="metric-num">386.42</div>
+            <span class="metric-num" id="downloadVal">--</span>
             <span class="metric-unit">Mbps</span>
           </div>
-          <div class="metric-subtitle" data-i18n="st.metric_down_sub">当前下载速率</div>
+          <div class="metric-subtitle" id="downloadPeakMeta" data-i18n="st.metric_down_sub">多线程并发下行带宽</div>
         </div>
 
-        <!-- Metric: Upload -->
-        <div id="cardUp" class="speed-metric-card spotlight-card">
+        <!-- Upload -->
+        <div class="speed-metric-card">
           <div class="metric-accent-bar accent-purple"></div>
           <div class="metric-header">
             <div class="metric-icon-circle icon-purple">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
             </div>
             <span class="metric-title" data-i18n="st.metric_up">上传速度</span>
           </div>
           <div class="metric-body">
-            <div id="uploadVal" class="metric-num">82.37</div>
+            <span class="metric-num" id="uploadVal">--</span>
             <span class="metric-unit">Mbps</span>
           </div>
-          <div class="metric-subtitle" data-i18n="st.metric_up_sub">当前上传速率</div>
+          <div class="metric-subtitle" id="uploadPeakMeta" data-i18n="st.metric_up_sub">多线程并发上行带宽</div>
         </div>
       </div>
 
-      <!-- 3. Bottom 2-Card Row: Quality Evaluation & Network Info -->
+      <!-- 4. Global Multi-Target Connectivity Matrix (Real HTTP/TLS Latency Probe) -->
+      <div class="connectivity-matrix-card">
+        <div class="matrix-card-header">
+          <div>
+            <h3 class="matrix-card-title" data-i18n="st.matrix_title">🌐 全球主流站点连通性矩阵 (HTTP/TLS RTT)</h3>
+            <p class="matrix-card-sub" data-i18n="st.matrix_sub">直接从当前浏览器并发探测国内外主流服务响应耗时，快速验证 Wmimo 分流规则与代理链路有效性</p>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" id="reprobeSitesBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg>
+            <span data-i18n="st.reprobe">重新探测</span>
+          </button>
+        </div>
+
+        <div class="connectivity-sites-grid" id="connectivitySitesGrid">
+          <!-- 1. Cloudflare -->
+          <div class="site-probe-card" data-probe-id="cloudflare">
+            <div class="site-probe-top">
+              <div class="site-probe-ident">
+                <span class="site-probe-icon">☁️</span>
+                <div>
+                  <strong>Cloudflare Edge</strong>
+                  <small>speed.cloudflare.com</small>
+                </div>
+              </div>
+              <span class="site-probe-badge" data-probe-val="cloudflare">-- ms</span>
+            </div>
+            <div class="site-probe-bar-track"><div class="site-probe-bar-fill" data-probe-bar="cloudflare" style="width: 0%"></div></div>
+          </div>
+
+          <!-- 2. GitHub -->
+          <div class="site-probe-card" data-probe-id="github">
+            <div class="site-probe-top">
+              <div class="site-probe-ident">
+                <span class="site-probe-icon">🐙</span>
+                <div>
+                  <strong>GitHub</strong>
+                  <small>github.githubassets.com</small>
+                </div>
+              </div>
+              <span class="site-probe-badge" data-probe-val="github">-- ms</span>
+            </div>
+            <div class="site-probe-bar-track"><div class="site-probe-bar-fill" data-probe-bar="github" style="width: 0%"></div></div>
+          </div>
+
+          <!-- 3. Google -->
+          <div class="site-probe-card" data-probe-id="google">
+            <div class="site-probe-top">
+              <div class="site-probe-ident">
+                <span class="site-probe-icon">🔍</span>
+                <div>
+                  <strong>Google</strong>
+                  <small>www.google.com</small>
+                </div>
+              </div>
+              <span class="site-probe-badge" data-probe-val="google">-- ms</span>
+            </div>
+            <div class="site-probe-bar-track"><div class="site-probe-bar-fill" data-probe-bar="google" style="width: 0%"></div></div>
+          </div>
+
+          <!-- 4. YouTube -->
+          <div class="site-probe-card" data-probe-id="youtube">
+            <div class="site-probe-top">
+              <div class="site-probe-ident">
+                <span class="site-probe-icon">▶️</span>
+                <div>
+                  <strong>YouTube 4K CDN</strong>
+                  <small>i.ytimg.com</small>
+                </div>
+              </div>
+              <span class="site-probe-badge" data-probe-val="youtube">-- ms</span>
+            </div>
+            <div class="site-probe-bar-track"><div class="site-probe-bar-fill" data-probe-bar="youtube" style="width: 0%"></div></div>
+          </div>
+
+          <!-- 5. OpenAI -->
+          <div class="site-probe-card" data-probe-id="openai">
+            <div class="site-probe-top">
+              <div class="site-probe-ident">
+                <span class="site-probe-icon">🤖</span>
+                <div>
+                  <strong>OpenAI Static</strong>
+                  <small>cdn.oaistatic.com</small>
+                </div>
+              </div>
+              <span class="site-probe-badge" data-probe-val="openai">-- ms</span>
+            </div>
+            <div class="site-probe-bar-track"><div class="site-probe-bar-fill" data-probe-bar="openai" style="width: 0%"></div></div>
+          </div>
+
+          <!-- 6. Bilibili (Domestic Direct Reference) -->
+          <div class="site-probe-card" data-probe-id="bilibili">
+            <div class="site-probe-top">
+              <div class="site-probe-ident">
+                <span class="site-probe-icon">📺</span>
+                <div>
+                  <strong data-i18n="st.site_bili">Bilibili (国内直连参照)</strong>
+                  <small>s1.hdslb.com</small>
+                </div>
+              </div>
+              <span class="site-probe-badge" data-probe-val="bilibili">-- ms</span>
+            </div>
+            <div class="site-probe-bar-track"><div class="site-probe-bar-fill" data-probe-bar="bilibili" style="width: 0%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Bottom 2-Card Row: Quality Evaluation & Client Network Info -->
       <div class="speed-bottom-grid">
-        <!-- Left Card: Network Quality Evaluation -->
-        <div id="cardQuality" class="speed-quality-card spotlight-card">
+        <!-- Left Card: Quality Evaluation -->
+        <div class="speed-quality-card">
           <div class="quality-badge-wrap">
-            <div class="quality-double-ring">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div class="quality-double-ring" id="qualityBadgeRing">
+              <span class="quality-grade-letter" id="qualityGradeLetter">S</span>
             </div>
           </div>
           <div class="quality-content">
             <div class="quality-header-row">
-              <span class="quality-title" data-i18n="st.quality_title">网络质量：</span>
-              <span id="qualityRatingVal" class="quality-rating-text" data-i18n="st.quality_good">良好</span>
+              <span data-i18n="st.quality_title">网络质量：</span>
+              <span class="quality-rating-text" id="qualityRatingVal" data-i18n="st.quality_standby">待测速评估</span>
             </div>
-            <p id="qualityDesc" class="quality-desc" data-i18n="st.quality_desc_good">您的网络连接非常稳定，满足日常使用需求。</p>
+            <p class="quality-desc" id="qualityDescText" data-i18n="st.quality_desc_standby">
+              点击上方“开始测速”按钮运行上下行带宽与延迟抖动测试，系统将自动生成各应用场景评级。
+            </p>
             <div class="quality-tags-row">
               <span class="quality-tag is-pass" id="tag4k"><span class="tag-check">✓</span> <span data-i18n="st.tag_4k">4K 视频</span></span>
               <span class="quality-tag is-pass" id="tagConf"><span class="tag-check">✓</span> <span data-i18n="st.tag_conf">视频会议</span></span>
@@ -474,38 +633,41 @@
           </div>
         </div>
 
-        <!-- Right Card: Network Diagnostics Information -->
-        <div id="cardNetInfo" class="speed-netinfo-card spotlight-card">
-          <h4 class="netinfo-card-title" data-i18n="st.net_info_title">网络信息</h4>
+        <!-- Right Card: Network Info -->
+        <div class="speed-netinfo-card">
+          <div class="netinfo-header-row">
+            <div class="netinfo-card-title" data-i18n="st.net_info_title">本机出口与连接诊断</div>
+            <button type="button" class="netinfo-refresh-btn" id="refreshDiagBtn" title="重新检测出口 IP 与路由">↻</button>
+          </div>
           <div class="netinfo-grid">
             <div class="netinfo-col">
-              <div class="netinfo-label"><span class="info-icon">🌐</span> <span data-i18n="st.net_ip">公网 IP</span></div>
-              <div class="netinfo-val" id="clientIp">203.0.113.42</div>
+              <span class="netinfo-label" data-i18n="st.net_ip">出口公网 IP</span>
+              <strong class="netinfo-val" id="diagIp" title="--">检测中...</strong>
             </div>
             <div class="netinfo-col">
-              <div class="netinfo-label"><span class="info-icon">📍</span> <span data-i18n="st.net_node">测试节点</span></div>
-              <div class="netinfo-val" id="clientColo">Los Angeles (美国)</div>
+              <span class="netinfo-label" data-i18n="st.net_node">接入节点 / 地区</span>
+              <strong class="netinfo-val" id="diagColo">--</strong>
             </div>
             <div class="netinfo-col">
-              <div class="netinfo-label"><span class="info-icon">⚙️</span> <span data-i18n="st.net_proto">协议</span></div>
-              <div class="netinfo-val" id="clientProto">WireGuard</div>
+              <span class="netinfo-label" data-i18n="st.net_proto">HTTP 协议</span>
+              <strong class="netinfo-val" id="diagProto">HTTP/2</strong>
             </div>
             <div class="netinfo-col">
-              <div class="netinfo-label"><span class="info-icon">🔒</span> <span data-i18n="st.net_tls">TLS 版本</span></div>
-              <div class="netinfo-val" id="clientTls">TLS 1.3</div>
+              <span class="netinfo-label" data-i18n="st.net_tls">加密版本</span>
+              <strong class="netinfo-val" id="diagTls">TLS 1.3</strong>
             </div>
             <div class="netinfo-col">
-              <div class="netinfo-label"><span class="info-icon">📶</span> <span data-i18n="st.net_isp">ISP</span></div>
-              <div class="netinfo-val" id="clientIsp">Cloudflare</div>
+              <span class="netinfo-label" data-i18n="st.net_isp">网络运营商 / ASN</span>
+              <strong class="netinfo-val" id="diagIsp" title="--">--</strong>
             </div>
           </div>
         </div>
       </div>
 
-    </div>
+    </section>
   </main>
 
-  <!-- Site Footer -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -521,20 +683,20 @@
           <h4 data-i18n="footer.nav_title">页面导航</h4>
           <ul class="footer-links">
             <li><a href="download.html" data-i18n="nav.download_center">下载中心</a></li>
-            <li><a href="speedtest.html" data-i18n="nav.speedtest">在线测速</a></li>
-            <li><a href="docs/index.html" data-i18n="nav.docs">使用文档</a></li>
+            <li><a href="speedtest.html" data-i18n="nav.speedtest">速度测试</a></li>
+            <li><a href="docs/index.html" data-i18n="nav.docs">文档</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4 data-i18n="footer.support_title">联系与支持</h4>
           <ul class="footer-links">
-            <li><a href="community.html" data-i18n="nav.about">关于与赞助</a></li>
+            <li><a href="community.html" data-i18n="nav.about">关于</a></li>
             <li><a href="mailto:aisaniya@proton.me" style="display: inline-flex; align-items: center; gap: 6px;">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               <span>aisaniya@proton.me</span>
             </a></li>
-            <li><a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" data-i18n="nav.github">GitHub 仓库</a></li>
+            <li><a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" data-i18n="nav.github">GitHub</a></li>
           </ul>
         </div>
       </div>
@@ -545,6 +707,7 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/speedtest.js"></script>

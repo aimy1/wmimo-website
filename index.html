@@ -25,8 +25,9 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wmimo - Proxy Reimagined | 让网络连接更简单</title>
-  <meta name="description" content="基于 Flutter 与 Mihomo 核心打造的跨平台现代化网络代理客户端，提供沉浸式极速分流、TUN 虚拟网卡系统级接管与无界极客美学。">
+  <meta name="color-scheme" content="dark light">
+  <title>Wmimo - 新一代跨平台全协议网络代理客户端</title>
+  <meta name="description" content="基于 Flutter 与 Mihomo Meta 核心打造的现代化跨平台网络代理客户端。原生支持 Windows、macOS、Linux、Android 与 iOS，提供 L3 TUN 虚拟网卡、Fake-IP 防污染与 Hysteria 2 / VLESS Reality 高速协议栈。">
   <link rel="icon" type="image/png" href="assets/images/app_icon_128.png">
 
   <!-- Core Styles -->
@@ -35,8 +36,14 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/home.css">
 </head>
-<body class="ambient-bg folia-body">
-  <div class="ambient-glow-top"></div>
+<body class="ambient-bg home-body">
+  <!-- Subtle Ambient Grid & Radial Mesh Background -->
+  <div id="fumeBackground" class="home-ambient-canvas" aria-hidden="true">
+    <div class="ambient-orb orb-cyan"></div>
+    <div class="ambient-orb orb-blue"></div>
+    <div class="ambient-orb orb-indigo"></div>
+    <div class="ambient-grid-mesh"></div>
+  </div>
 
   <!-- Header -->
   <header class="site-header">
@@ -50,9 +57,9 @@
         <ul class="nav-desktop">
           <li><a href="index.html" class="nav-link active" data-i18n="nav.home">首页</a></li>
           <li><a href="download.html" class="nav-link" data-i18n="nav.download">下载</a></li>
-          <li><a href="speedtest.html" class="nav-link" data-i18n="nav.speedtest">在线测速</a></li>
-          <li><a href="docs/index.html" class="nav-link" data-i18n="nav.docs">使用文档</a></li>
-          <li><a href="community.html" class="nav-link" data-i18n="nav.about">关于与赞助</a></li>
+          <li><a href="speedtest.html" class="nav-link" data-i18n="nav.speedtest">速度测试</a></li>
+          <li><a href="docs/index.html" class="nav-link" data-i18n="nav.docs">文档</a></li>
+          <li><a href="community.html" class="nav-link" data-i18n="nav.about">关于</a></li>
         </ul>
       </nav>
 
@@ -82,9 +89,9 @@
   <div class="mobile-drawer">
     <a href="index.html" class="nav-link active" data-i18n="nav.home">首页</a>
     <a href="download.html" class="nav-link" data-i18n="nav.download_center">下载中心</a>
-    <a href="speedtest.html" class="nav-link" data-i18n="nav.speedtest">在线测速</a>
-    <a href="docs/index.html" class="nav-link" data-i18n="nav.docs">使用文档</a>
-    <a href="community.html" class="nav-link" data-i18n="nav.about">关于与赞助</a>
+    <a href="speedtest.html" class="nav-link" data-i18n="nav.speedtest">速度测试</a>
+    <a href="docs/index.html" class="nav-link" data-i18n="nav.docs">文档</a>
+    <a href="community.html" class="nav-link" data-i18n="nav.about">关于</a>
     <div class="mobile-drawer-footer">
       <button class="btn btn-secondary mobile-lang-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
@@ -97,242 +104,528 @@
     </div>
   </div>
 
-  <!-- Folia Atmospheric Fixed Background (Glow Orbs, Geometric Cluster, Twinkling Stars) -->
-  <div id="fumeBackground" class="fume-background">
-    <div class="glow glow-1"></div>
-    <div class="glow glow-2"></div>
-    <div class="glow glow-3"></div>
-    <div class="glow glow-4"></div>
-  </div>
+  <!-- Main Content -->
+  <main class="home-main">
 
-  <!-- Giant Kinetic Typography Background Layer -->
-  <div class="typography-layer">
-    <div class="typo typo-1">LIGHTNING IN THE WIRES</div>
-    <div class="typo typo-2" data-i18n="typo.line2">虚空贯通 · 极速分流</div>
-    <div class="typo typo-3">BEYOND BOUNDARIES, UNBOUND</div>
-    <div class="typo typo-4" data-i18n="typo.line4">穿越迷雾与重构链路</div>
-    <div class="typo typo-5">EVERY PACKET, PURE CLARITY</div>
-    <div class="typo typo-6" data-i18n="typo.line6">无界漫游 · 自由而行</div>
-    <div class="typo typo-7">CONNECT THE WORLD IN SILENCE</div>
-    <div class="typo typo-8">MIHOMO KERNEL EMPOWERED</div>
-  </div>
-
-  <!-- Main Scrollable Storyline Content -->
-  <main class="scroll-content">
-
-    <!-- 1. Hero Section -->
-    <section class="section hero-section">
-      <div class="hero-content">
-        <h1 class="title">Wmimo</h1>
-        <p class="subtitle" data-i18n="folia.hero_subtitle">Proxy Reimagined.</p>
-
-        <div class="cta-actions hero-actions">
-          <a id="heroDownloadBtn" href="download.html" class="btn btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            <span data-i18n="folia.btn_download">立即下载</span>
+    <!-- =====================================================================
+         1. HERO SECTION + INTERACTIVE CLIENT WORKBENCH PREVIEW
+         ===================================================================== -->
+    <section class="home-hero-section">
+      <div class="container">
+        <div class="hero-header-stack">
+          <a href="download.html" class="hero-release-pill">
+            <span class="release-pill-dot"></span>
+            <span class="release-pill-tag">v1.2.10.1512</span>
+            <span class="release-pill-text" data-i18n="home.hero_badge">正式版发布 · Mihomo Meta 内核 · 5 大平台全覆盖</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="docs/index.html" class="btn btn-secondary glass" data-i18n="folia.btn_docs">查看文档</a>
-          <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" class="btn btn-secondary glass" data-i18n="folia.btn_github">GitHub 仓库</a>
-        </div>
 
-        <div class="scroll-indicator">
-          <span class="mouse"><span class="wheel"></span></span>
-          <span data-i18n="folia.scroll_explore">向下滑动探索</span>
-        </div>
-      </div>
-    </section>
+          <h1 class="home-hero-title">
+            <span data-i18n="home.hero_title_1">重新定义跨平台</span>
+            <span class="hero-title-accent" data-i18n="home.hero_title_2">全协议网络代理体验</span>
+          </h1>
 
-    <!-- 2. Section: Core & Smart Routing -->
-    <section id="section-core" class="section feature-section">
-      <div class="feature-container">
-        <div class="text-content">
-          <div class="feature-deco">✦</div>
-          <h2 class="feature-title" data-i18n="folia.s1_title">沉浸式内核与极速分流</h2>
-          <p class="feature-desc" data-i18n="folia.s1_desc">
-            打破传统网络代理工具的枯燥与繁杂，Wmimo 将连接速度与稳定性作为视觉交互的核心。深度集成轻量高效的 Mihomo 核心，提供微秒级规则分流与全协议透传，让每一次网络漫游都如行云流水。
+          <p class="home-hero-subtitle" data-i18n="home.hero_subtitle">
+            基于 Flutter 原生渲染与 Mihomo Meta 高性能核心深度构建。提供 L3 级 TUN 虚拟网卡透明接管、微秒级 Fake-IP 防污染分流与新一代抗拥塞协议栈，纯粹无广告，100% 自由开源。
           </p>
+
+          <div class="home-hero-actions">
+            <a id="heroDownloadBtn" href="https://github.com/aimy1/Wmimo/releases/download/v1.2.10.1512/Wmimo-Windows-x64-Setup-v1.2.10.1512.exe" class="btn btn-primary btn-lg hero-primary-cta">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="home.btn_download_smart">立即下载客户端</span>
+            </a>
+            <a href="download.html" class="btn btn-secondary btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span data-i18n="home.btn_all_platforms">全部平台安装包</span>
+            </a>
+            <a href="docs/quickstart.html" class="btn btn-secondary btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+              <span data-i18n="home.btn_quickstart">快速上手指南</span>
+            </a>
+          </div>
+
+          <div id="heroDownloadNote" class="hero-os-detect-note">
+            <span data-i18n="home.os_detect_default">⚡ 自动适配当前系统：Windows / macOS / Linux / Android / iOS</span>
+          </div>
         </div>
-        <div class="visual-content">
-          <div class="glass-card image-card preview-rotator">
-            <div class="preview-slide active">
-              <div class="mockup-inner">
-                <div class="mockup-icon">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+
+        <!-- Interactive Wmimo Client Desktop Workbench Preview -->
+        <div class="client-workbench-wrap" id="clientShowcaseWindow">
+          <div class="workbench-glow-backdrop"></div>
+          <div class="client-window-frame">
+            <!-- Window Titlebar -->
+            <div class="client-titlebar">
+              <div class="window-controls">
+                <span class="win-dot dot-close"></span>
+                <span class="win-dot dot-min"></span>
+                <span class="win-dot dot-max"></span>
+              </div>
+
+              <div class="window-title-center">
+                <img src="assets/images/app_icon_128.png" alt="" width="16" height="16">
+                <span>Wmimo Desktop</span>
+                <span class="window-core-tag">Mihomo Meta Core · v1.2.10</span>
+              </div>
+
+              <div class="window-status-pills">
+                <button type="button" class="tun-live-toggle is-active" id="mockTunToggle" title="点击切换 TUN 虚拟网卡状态">
+                  <span class="tun-dot"></span>
+                  <span data-i18n="home.mock_tun_on">TUN 虚拟网卡: 已开启</span>
+                </button>
+                <div class="mode-segmented-control" role="tablist" aria-label="Outbound Routing Mode">
+                  <button type="button" class="mode-seg-btn is-active" data-mode="rule" data-i18n="home.mock_mode_rule">规则 Rule</button>
+                  <button type="button" class="mode-seg-btn" data-mode="global" data-i18n="home.mock_mode_global">全局 Global</button>
+                  <button type="button" class="mode-seg-btn" data-mode="direct" data-i18n="home.mock_mode_direct">直连 Direct</button>
                 </div>
-                <div class="mockup-title" data-i18n="folia.s1_mock1_title">智能规则与微秒级分流</div>
-                <span class="mockup-badge" data-i18n="folia.s1_mock1_badge">Mihomo Meta 内核驱动</span>
               </div>
             </div>
-            <div class="preview-slide">
-              <div class="mockup-inner">
-                <div class="mockup-icon" style="color: #10b981; border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+
+            <!-- Window Body -->
+            <div class="client-window-body">
+              <!-- Sidebar Navigation -->
+              <aside class="client-sidebar">
+                <div class="sidebar-group-label" data-i18n="home.mock_nav_title">控制台视图</div>
+                <button type="button" class="client-nav-btn is-active" data-view="dashboard">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+                  <span data-i18n="home.mock_tab_dash">仪表盘与节点</span>
+                </button>
+                <button type="button" class="client-nav-btn" data-view="topology">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88"/><circle cx="20" cy="16" r="3"/><path d="M8.12 8.12 12 12"/></svg>
+                  <span data-i18n="home.mock_tab_topo">实时分流拓扑</span>
+                </button>
+                <button type="button" class="client-nav-btn" data-view="kernel">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span data-i18n="home.mock_tab_kernel">Fake-IP 与协议栈</span>
+                </button>
+
+                <div class="sidebar-connection-card">
+                  <div class="conn-card-header">
+                    <span class="conn-pulse-dot"></span>
+                    <span class="conn-card-label" data-i18n="home.mock_active_node">当前连接节点</span>
+                  </div>
+                  <div class="conn-card-node" id="sidebarActiveNodeName">🇭🇰 香港 IEPL 专线 01</div>
+                  <div class="conn-card-meta">
+                    <span id="sidebarActiveProto">Hysteria 2</span>
+                    <span>·</span>
+                    <span class="conn-ping-val" id="sidebarActivePing">18 ms</span>
+                  </div>
                 </div>
-                <div class="mockup-title" data-i18n="folia.s1_mock2_title">低延迟多路复用 Multiplex</div>
-                <span class="mockup-badge" style="color: #34d399; border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.15);" data-i18n="folia.s1_mock2_badge">极低资源占用 · 零抖动</span>
+              </aside>
+
+              <!-- Main Interactive Viewport -->
+              <div class="client-viewport">
+                <!-- VIEW 1: DASHBOARD & NODES -->
+                <div class="client-view-pane is-active" id="view-dashboard">
+                  <!-- Top Telemetry Row -->
+                  <div class="mock-telemetry-grid">
+                    <div class="mock-stat-card">
+                      <div class="mock-stat-head">
+                        <span class="mock-stat-label" data-i18n="home.mock_dl_speed">实时下行速率</span>
+                        <span class="mock-stat-tag cyan">↓ Hysteria 2</span>
+                      </div>
+                      <div class="mock-stat-value" id="mockDownSpeed">48.6 <small>MB/s</small></div>
+                      <div class="mock-stat-sub" data-i18n="home.mock_dl_sub">峰值带宽 520 Mbps · 零丢包</div>
+                    </div>
+
+                    <div class="mock-stat-card">
+                      <div class="mock-stat-head">
+                        <span class="mock-stat-label" data-i18n="home.mock_ul_speed">实时上行速率</span>
+                        <span class="mock-stat-tag purple">↑ QUIC Brutal</span>
+                      </div>
+                      <div class="mock-stat-value" id="mockUpSpeed">11.4 <small>MB/s</small></div>
+                      <div class="mock-stat-sub" data-i18n="home.mock_ul_sub">Full Cone NAT (Type A) 就绪</div>
+                    </div>
+
+                    <div class="mock-stat-card">
+                      <div class="mock-stat-head">
+                        <span class="mock-stat-label" data-i18n="home.mock_dns_label">DNS 防污染引擎</span>
+                        <span class="mock-stat-tag green">Fake-IP</span>
+                      </div>
+                      <div class="mock-stat-value">0.4 <small>ms</small></div>
+                      <div class="mock-stat-sub">198.18.0.1/16 · DoH 加密</div>
+                    </div>
+
+                    <div class="mock-stat-card">
+                      <div class="mock-stat-head">
+                        <span class="mock-stat-label" data-i18n="home.mock_mem_label">内核资源占用</span>
+                        <span class="mock-stat-tag blue">Mihomo</span>
+                      </div>
+                      <div class="mock-stat-value" id="mockConnCount">64 <small>Conns</small></div>
+                      <div class="mock-stat-sub" data-i18n="home.mock_mem_sub">内存 28.4 MB · CPU 0.8%</div>
+                    </div>
+                  </div>
+
+                  <!-- Live Traffic Canvas + Node Selector Split -->
+                  <div class="mock-main-split">
+                    <div class="mock-chart-panel">
+                      <div class="mock-panel-header">
+                        <span class="mock-panel-title" data-i18n="home.mock_traffic_title">实时流量吞吐监控 (TCP / UDP Multiplex)</span>
+                        <div class="mock-chart-legend">
+                          <span><i class="dot-cyan"></i> <span data-i18n="st.legend_download">下载</span></span>
+                          <span><i class="dot-purple"></i> <span data-i18n="st.legend_upload">上传</span></span>
+                        </div>
+                      </div>
+                      <div class="mock-canvas-wrap">
+                        <canvas id="homeTrafficCanvas" width="460" height="145"></canvas>
+                      </div>
+                    </div>
+
+                    <div class="mock-nodes-panel">
+                      <div class="mock-panel-header">
+                        <span class="mock-panel-title" data-i18n="home.mock_nodes_title">智能策略组 · 点击切换节点</span>
+                        <button type="button" class="mock-ping-btn" id="mockRetestBtn" data-i18n="home.mock_btn_ping">⚡ 一键测速</button>
+                      </div>
+                      <div class="mock-node-list" id="mockNodeList">
+                        <button type="button" class="mock-node-item is-selected" data-node="🇭🇰 香港 IEPL 专线 01" data-proto="Hysteria 2" data-ping="18" data-dl="48.6" data-ul="11.4">
+                          <div class="mock-node-info">
+                            <span class="mock-node-name">🇭🇰 香港 IEPL 专线 01</span>
+                            <span class="mock-node-proto">Hysteria 2 · UDP Relay</span>
+                          </div>
+                          <span class="mock-node-ping good">18 ms</span>
+                        </button>
+                        <button type="button" class="mock-node-item" data-node="🇯🇵 日本 东京 Anycast 02" data-proto="VLESS Reality" data-ping="34" data-dl="39.2" data-ul="9.8">
+                          <div class="mock-node-info">
+                            <span class="mock-node-name">🇯🇵 日本 东京 Anycast 02</span>
+                            <span class="mock-node-proto">VLESS Reality · XTLS</span>
+                          </div>
+                          <span class="mock-node-ping good">34 ms</span>
+                        </button>
+                        <button type="button" class="mock-node-item" data-node="🇸🇬 新加坡 CN2 GIA 01" data-proto="TUIC v5" data-ping="46" data-dl="42.1" data-ul="10.5">
+                          <div class="mock-node-info">
+                            <span class="mock-node-name">🇸🇬 新加坡 CN2 GIA 01</span>
+                            <span class="mock-node-proto">TUIC v5 · 0-RTT QUIC</span>
+                          </div>
+                          <span class="mock-node-ping good">46 ms</span>
+                        </button>
+                        <button type="button" class="mock-node-item" data-node="🇺🇸 美西 圣何塞 BGP 03" data-proto="WireGuard" data-ping="118" data-dl="31.5" data-ul="8.2">
+                          <div class="mock-node-info">
+                            <span class="mock-node-name">🇺🇸 美西 圣何塞 BGP 03</span>
+                            <span class="mock-node-proto">WireGuard · L3 Tunnel</span>
+                          </div>
+                          <span class="mock-node-ping mid">118 ms</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- VIEW 2: LIVE ROUTING TOPOLOGY -->
+                <div class="client-view-pane" id="view-topology">
+                  <div class="topo-header-bar">
+                    <div>
+                      <h4 class="topo-title" data-i18n="home.topo_title">微秒级规则匹配与连接嗅探流水线</h4>
+                      <p class="topo-sub" data-i18n="home.topo_sub">自动提取 TLS SNI / QUIC 首包域名，结合 GeoSite、GeoIP 与进程名实现零感精准分流</p>
+                    </div>
+                    <button type="button" class="mock-ping-btn" id="mockSimulatePacketBtn" data-i18n="home.topo_btn_sim">🔄 模拟请求分流</button>
+                  </div>
+
+                  <div class="topo-pipeline-Flow">
+                    <div class="topo-stage">
+                      <span class="topo-stage-badge">STEP 01</span>
+                      <strong data-i18n="home.topo_s1_title">应用 / 终端 / 游戏</strong>
+                      <span class="topo-stage-desc">Browser · Git · Steam · Docker</span>
+                    </div>
+                    <div class="topo-arrow">→</div>
+                    <div class="topo-stage highlight">
+                      <span class="topo-stage-badge">STEP 02</span>
+                      <strong data-i18n="home.topo_s2_title">TUN 虚拟网卡 & Fake-IP</strong>
+                      <span class="topo-stage-desc">L3 Packet Capture · &lt;0.4ms</span>
+                    </div>
+                    <div class="topo-arrow">→</div>
+                    <div class="topo-stage highlight">
+                      <span class="topo-stage-badge">STEP 03</span>
+                      <strong data-i18n="home.topo_s3_title">Sniffer 嗅探 & 规则引擎</strong>
+                      <span class="topo-stage-desc">PROCESS / GEOSITE / GEOIP</span>
+                    </div>
+                    <div class="topo-arrow">→</div>
+                    <div class="topo-stage">
+                      <span class="topo-stage-badge">STEP 04</span>
+                      <strong data-i18n="home.topo_s4_title">多路出站策略组</strong>
+                      <span class="topo-stage-desc">Proxy / Direct / Reject</span>
+                    </div>
+                  </div>
+
+                  <div class="topo-log-table" id="mockRoutingTable">
+                    <div class="topo-log-row">
+                      <span class="log-proto">TCP/443</span>
+                      <span class="log-target">api.github.com</span>
+                      <span class="log-rule">RULE-SET: github</span>
+                      <span class="log-out proxy">🚀 香港 IEPL 专线 01 (18ms)</span>
+                    </div>
+                    <div class="topo-log-row">
+                      <span class="log-proto">UDP/27015</span>
+                      <span class="log-target">steam.exe → 155.133.248.34</span>
+                      <span class="log-rule">PROCESS-NAME: steam.exe</span>
+                      <span class="log-out proxy">🎮 日本 东京 Anycast 02 (Full Cone)</span>
+                    </div>
+                    <div class="topo-log-row">
+                      <span class="log-proto">QUIC/443</span>
+                      <span class="log-target">www.bilibili.com</span>
+                      <span class="log-rule">GEOSITE: cn</span>
+                      <span class="log-out direct">⚡ DIRECT 本地物理网卡直连</span>
+                    </div>
+                    <div class="topo-log-row">
+                      <span class="log-proto">TCP/443</span>
+                      <span class="log-target">chatgpt.com (SNI Sniffed)</span>
+                      <span class="log-rule">GEOSITE: openai</span>
+                      <span class="log-out proxy">🤖 新加坡 CN2 GIA 01 (46ms)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- VIEW 3: FAKE-IP & PROTOCOL STACK -->
+                <div class="client-view-pane" id="view-kernel">
+                  <div class="kernel-spec-grid">
+                    <div class="kernel-spec-card">
+                      <div class="kernel-spec-badge">DNS ENGINE</div>
+                      <h4 data-i18n="home.kern_c1_title">双向防污染 Fake-IP 架构</h4>
+                      <p data-i18n="home.kern_c1_desc">本地从 198.18.0.0/16 保留池瞬时返回映射 IP（耗时 &lt; 0.4ms），由远端代理节点直接完成真实域名解析，彻底根除 DNS 污染与抢答泄露。</p>
+                      <code>enhanced-mode: fake-ip · nameserver-policy: geosite:cn</code>
+                    </div>
+                    <div class="kernel-spec-card">
+                      <div class="kernel-spec-badge">LOOP PROTECTION</div>
+                      <h4 data-i18n="home.kern_c2_title">底层防回环路由隔离</h4>
+                      <p data-i18n="home.kern_c2_desc">通过 Windows 默认网卡绑定、Linux SO_MARK 策略路由、Android VpnService.protect() 自动豁免 Core 出站 Socket，杜绝 TUN 死循环。</p>
+                      <code>auto-route: true · auto-detect-interface: true</code>
+                    </div>
+                    <div class="kernel-spec-card">
+                      <div class="kernel-spec-badge">GAMING NAT</div>
+                      <h4 data-i18n="home.kern_c3_title">Full Cone NAT (Type A) 联机加速</h4>
+                      <p data-i18n="home.kern_c3_desc">完整支持 UDP 端口映射与 Endpoint-Independent NAT，外服主机与 PC 联机自动获得 Open NAT 类型，语音与 P2P 组队畅通无阻。</p>
+                      <code>udp: true · endpoint-independent-nat: true</code>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="preview-slide">
-              <div class="mockup-inner">
-                <div class="mockup-icon" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.1);">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         2. PRODUCT BENTO MATRIX SECTION
+         ===================================================================== -->
+    <section id="section-bento" class="home-section">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-eyebrow" data-i18n="home.bento_eyebrow">CORE ARCHITECTURE · 核心工程架构</span>
+          <h2 class="section-heading" data-i18n="home.bento_title">为速度、稳定与纯粹体验而生</h2>
+          <p class="section-desc" data-i18n="home.bento_subtitle">
+            抛弃传统代理工具的陈旧界面与繁琐配置。Wmimo 将强大的 Mihomo 内核能力封装于现代化的 18px 微卡片体系之中。
+          </p>
+        </div>
+
+        <div class="bento-matrix-grid">
+          <!-- Bento Card 1: Span 7 - Mihomo Core & Smart Routing -->
+          <article class="bento-card bento-span-7">
+            <div class="bento-card-top">
+              <span class="bento-tag cyan">MIHOMO META KERNEL</span>
+              <h3 class="bento-title" data-i18n="home.bento1_title">微秒级智能分流与域名嗅探引擎</h3>
+              <p class="bento-desc" data-i18n="home.bento1_desc">
+                深度集成 Meta 协议栈，原生支持 Rule Providers 远程规则集自动更新、GeoIP/GeoSite 精准分流与进程级路由匹配。内置 TLS SNI 与 QUIC 首包嗅探器，即使应用使用纯 IP 发起连接也能准确还原域名并命中分流策略。
+              </p>
+            </div>
+            <div class="bento-visual-pipeline">
+              <div class="pipeline-chip">
+                <span class="chip-dot green"></span>
+                <div>
+                  <strong>Fake-IP DNS</strong>
+                  <small>&lt; 0.4ms Instant</small>
                 </div>
-                <div class="mockup-title" data-i18n="folia.s1_mock3_title">现代化跨平台交互体验</div>
-                <span class="mockup-badge" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.15);" data-i18n="folia.s1_mock3_badge">原生 Flutter 桌面与移动端</span>
+              </div>
+              <span class="pipeline-connector"></span>
+              <div class="pipeline-chip">
+                <span class="chip-dot cyan"></span>
+                <div>
+                  <strong>TLS / QUIC Sniffer</strong>
+                  <small>SNI Domain Extract</small>
+                </div>
+              </div>
+              <span class="pipeline-connector"></span>
+              <div class="pipeline-chip">
+                <span class="chip-dot blue"></span>
+                <div>
+                  <strong>Rule Providers</strong>
+                  <small>GeoSite · Process</small>
+                </div>
+              </div>
+              <span class="pipeline-connector"></span>
+              <div class="pipeline-chip">
+                <span class="chip-dot purple"></span>
+                <div>
+                  <strong>Smart Outbound</strong>
+                  <small>URL-Test · Fallback</small>
+                </div>
               </div>
             </div>
-            <div class="card-glow"></div>
-          </div>
+          </article>
+
+          <!-- Bento Card 2: Span 5 - Zero Bloat & Performance -->
+          <article class="bento-card bento-span-5">
+            <div class="bento-card-top">
+              <span class="bento-tag green">ZERO BLOATWARE · GPL-3.0</span>
+              <h3 class="bento-title" data-i18n="home.bento2_title">零广告 · 秒速冷启 · 极致轻量</h3>
+              <p class="bento-desc" data-i18n="home.bento2_desc">
+                100% 自由开源，拒绝任何商业推广弹窗、用户遥测追踪与付费锁区。基于 Flutter Impeller/Skia 原生编译，实现 120 FPS 丝滑帧率与超低后台内存驻留。
+              </p>
+            </div>
+            <div class="bento-benchmarks">
+              <div class="bench-row">
+                <div class="bench-meta">
+                  <span data-i18n="home.bench_coldstart">客户端冷启动耗时</span>
+                  <strong class="cyan-text">0.28s</strong>
+                </div>
+                <div class="bench-bar-track"><div class="bench-bar-fill cyan" style="width: 92%"></div></div>
+              </div>
+              <div class="bench-row">
+                <div class="bench-meta">
+                  <span data-i18n="home.bench_memory">后台常驻内存占用</span>
+                  <strong class="green-text">&lt; 32 MB</strong>
+                </div>
+                <div class="bench-bar-track"><div class="bench-bar-fill green" style="width: 88%"></div></div>
+              </div>
+              <div class="bench-row">
+                <div class="bench-meta">
+                  <span data-i18n="home.bench_privacy">广告推送与隐私收集</span>
+                  <strong class="purple-text">0 Telemetry</strong>
+                </div>
+                <div class="bench-bar-track"><div class="bench-bar-fill purple" style="width: 100%"></div></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bento Card 3: Span 5 - Interactive System Tray -->
+          <article class="bento-card bento-span-5">
+            <div class="bento-card-top">
+              <span class="bento-tag blue">NATIVE SYSTEM TRAY</span>
+              <h3 class="bento-title" data-i18n="home.bento3_title">全功能常驻系统托盘</h3>
+              <p class="bento-desc" data-i18n="home.bento3_desc">
+                无需频繁呼出主窗口。任务栏托盘实时动态渲染上下行速率，右键即可秒切出站模式、开关 TUN 网卡或一键复制终端代理环境变量。
+              </p>
+            </div>
+            <div class="tray-preview-box">
+              <div class="tray-menu-header">
+                <span class="tray-status-dot"></span>
+                <span>Wmimo Core · Running</span>
+                <span class="tray-live-rate">↓ 48.6M/s</span>
+              </div>
+              <div class="tray-menu-items">
+                <div class="tray-item active">
+                  <span data-i18n="home.tray_item_mode">✓ 出站模式：规则分流 (Rule)</span>
+                  <kbd>Alt+R</kbd>
+                </div>
+                <div class="tray-item">
+                  <span data-i18n="home.tray_item_tun">✓ TUN 虚拟网卡：已接管</span>
+                  <kbd>Alt+T</kbd>
+                </div>
+                <button type="button" class="tray-item tray-copy-btn" id="homeCopyEnvBtn">
+                  <span data-i18n="home.tray_item_copy">📋 复制终端代理指令 (Shell)</span>
+                  <kbd data-i18n="home.tray_click_try">点击体验</kbd>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bento Card 4: Span 7 - Next-Gen Protocol Matrix -->
+          <article class="bento-card bento-span-7">
+            <div class="bento-card-top">
+              <span class="bento-tag purple">NEXT-GEN PROTOCOL MATRIX</span>
+              <h3 class="bento-title" data-i18n="home.bento4_title">全协议栈深度支持，无惧恶劣弱网</h3>
+              <p class="bento-desc" data-i18n="home.bento4_desc">
+                全面兼容新一代抗拥塞与防主动探测协议。无论是在跨国高丢包晚高峰压榨极限带宽，还是在严苛防火墙环境下保持长连接稳定，皆可从容应对。
+              </p>
+            </div>
+            <div class="proto-matrix-grid">
+              <div class="proto-mini-card">
+                <div class="proto-mini-top">
+                  <strong>Hysteria 2</strong>
+                  <span class="proto-badge cyan">QUIC Brutal</span>
+                </div>
+                <p data-i18n="home.proto_hy2_desc">基于 UDP 的恒定速率拥塞控制，突破晚高峰丢包降速瓶颈。</p>
+              </div>
+              <div class="proto-mini-card">
+                <div class="proto-mini-top">
+                  <strong>VLESS Reality</strong>
+                  <span class="proto-badge purple">XTLS Vision</span>
+                </div>
+                <p data-i18n="home.proto_vless_desc">消除 TLS 指纹与自签证书特征，借用权威站点实现零特征穿透。</p>
+              </div>
+              <div class="proto-mini-card">
+                <div class="proto-mini-top">
+                  <strong>TUIC v5</strong>
+                  <span class="proto-badge green">0-RTT QUIC</span>
+                </div>
+                <p data-i18n="home.proto_tuic_desc">零往返握手延迟与原生 UDP 流多路复用，移动网络切换不断连。</p>
+              </div>
+              <div class="proto-mini-card">
+                <div class="proto-mini-top">
+                  <strong>WireGuard / Trojan</strong>
+                  <span class="proto-badge blue">Enterprise</span>
+                </div>
+                <p data-i18n="home.proto_wg_desc">完整支持 Shadowsocks 2022、VMess、Trojan 与 WireGuard 隧道。</p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- 3. Section: Clean & Focused Experience (Reverse Layout) -->
-    <section id="section-clean" class="section feature-section reverse">
-      <div class="feature-container">
-        <div class="text-content">
-          <div class="feature-deco">●</div>
-          <h2 class="feature-title" data-i18n="folia.s2_title">简洁专注，远离臃肿</h2>
-          <p class="feature-desc" data-i18n="folia.s2_desc">
-            没有打扰注意力的弹窗、繁杂的参数堆砌或任何无用冗余，Wmimo 的视线始终聚焦于连接与效率。全功能系统托盘常驻后台，轻点右键即可秒级切换模式、测速与复制代理命令，让强大隐藏于极简之中。
+    <!-- =====================================================================
+         3. INTERACTIVE TUN VIRTUAL NIC COMPARISON SECTION
+         ===================================================================== -->
+    <section id="section-tun" class="home-section">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-eyebrow" data-i18n="home.tun_eyebrow">L3 VIRTUAL NETWORK ADAPTER · 系统级流量接管</span>
+          <h2 class="section-heading" data-i18n="folia.s4_title">TUN 虚拟网卡系统级接管</h2>
+          <p class="section-desc" data-i18n="folia.s4_desc">
+            在操作系统底层建立虚拟网络适配器，实现全局透明捕获。无需繁复配置每个软件的代理端口，终端命令行、大型网络游戏、后台 Docker 服务与所有原生应用皆能即刻享受极速加速。左右拖拽查看两端对比：
           </p>
         </div>
-        <div class="visual-content stacked-cards">
-          <!-- Card 1 -->
-          <div class="glass-card src-card card-1">
-            <div class="card-header-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <div>
-              <span class="card-tag" data-i18n="folia.s2_c1_tag">ZERO BLOATWARE</span>
-              <h3 class="card-title" data-i18n="folia.s2_c1_title">零广告 · 秒速冷启</h3>
-            </div>
-          </div>
-          <!-- Card 2 -->
-          <div class="glass-card src-card card-2">
-            <div class="card-header-icon" style="color: #a855f7;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
-            </div>
-            <div>
-              <span class="card-tag" data-i18n="folia.s2_c2_tag">DESIGN SYSTEM</span>
-              <h3 class="card-title" data-i18n="folia.s2_c2_title">18px 微卡片设计美学</h3>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div class="glass-card src-card card-3">
-            <div class="card-header-icon" style="color: #38bdf8;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </div>
-            <div>
-              <span class="card-tag" data-i18n="folia.s2_c3_tag">SYSTEM TRAY</span>
-              <h3 class="card-title" data-i18n="folia.s2_c3_title">原生托盘与实时网速</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- 4. Section: Universal Native Deployment (Platform Stacks) -->
-    <section id="section-platform" class="section feature-section">
-      <div class="feature-container">
-        <div class="text-content">
-          <div class="feature-deco">◆</div>
-          <h2 class="feature-title" data-i18n="folia.s3_title">跨平台原生覆盖</h2>
-          <p class="feature-desc" data-i18n="folia.s3_desc">
-            全端一致的高品质使用体验。无论是 Windows 10/11 的桌面生产力环境，Linux 各大主流发行版（Debian / Ubuntu / Arch / Fedora），还是搭载不同架构处理器的 Android 手机与电视盒子，均提供高度优化的原生构建版本。
-          </p>
-        </div>
-        <div class="visual-content stacked-cards">
-          <!-- Card 1: Windows -->
-          <div class="glass-card src-card card-1">
-            <div class="card-header-icon" style="color: #00A4EF;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
-            </div>
-            <div>
-              <span class="card-tag">WINDOWS PLATFORM</span>
-              <h3 class="card-title">Windows x64 / ARM64</h3>
-            </div>
-          </div>
-          <!-- Card 2: Linux -->
-          <div class="glass-card src-card card-2">
-            <div class="card-header-icon" style="color: #FCC624;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2z"/></svg>
-            </div>
-            <div>
-              <span class="card-tag">LINUX DISTRIBUTIONS</span>
-              <h3 class="card-title">Deb / RPM / Arch / Tar</h3>
-            </div>
-          </div>
-          <!-- Card 3: Android -->
-          <div class="glass-card src-card card-3">
-            <div class="card-header-icon" style="color: #3DDC84;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1368 1.0989L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
-            </div>
-            <div>
-              <span class="card-tag">MOBILE ECOSYSTEM</span>
-              <h3 class="card-title">Android 全架构 APK</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. Section: Interactive Comparison Slider (Center Layout) -->
-    <section id="section-tun" class="section feature-section center-align">
-      <div class="feature-container-center">
-        <h2 class="feature-title" data-i18n="folia.s4_title">TUN 虚拟网卡系统级接管</h2>
-        <p class="feature-desc" style="max-width: 720px;" data-i18n="folia.s4_desc">
-          在操作系统底层建立虚拟网络适配器，实现全局透明捕获。无需繁复配置每个软件的代理端口，终端命令行、大型网络游戏、后台 Docker 服务与所有原生应用皆能即刻享受极速加速。左右拖拽查看两端对比：
-        </p>
-
-        <!-- Interactive Drag-to-Compare Slider -->
-        <div class="theme-compare" title="按住并左右拖拽对比 / Drag to Compare">
-          <div class="theme-compare-card">
-            <!-- Right / Base Layer: 普通直连 -->
+        <div class="theme-compare">
+          <div class="theme-compare-card" id="themeCompareCard">
+            <!-- Base Right Side: Standard Direct / System Proxy -->
             <div class="theme-compare-base">
-              <div class="compare-stat-group" style="align-items: flex-end;">
-                <span class="compare-stat-badge bad">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                  280ms 高延迟 · 丢包频繁
-                </span>
+              <div class="compare-side-content compare-right">
+                <div class="compare-stat-badge bad">⏱️ Avg Ping: 215ms · Jitter: 48ms</div>
                 <h3 class="compare-heading gray" data-i18n="folia.s4_base_heading">普通直连 / 基础代理</h3>
-                <ul class="compare-list" style="align-items: flex-end; text-align: right;">
-                  <li><span>仅限浏览器 HTTP 代理生效</span> <span style="color: #ef4444;">✕</span></li>
-                  <li><span>终端 Git / cURL 无法直接穿透</span> <span style="color: #ef4444;">✕</span></li>
-                  <li><span>DNS 容易遭受污染与泄漏</span> <span style="color: #ef4444;">✕</span></li>
+                <ul class="compare-list">
+                  <li data-i18n="home.tun_bad_1">✗ 命令行终端 (Git / Docker / WSL) 需手动配置环境变量</li>
+                  <li data-i18n="home.tun_bad_2">✗ PC 与主机游戏 UDP 流量无法被传统 HTTP 代理捕获</li>
+                  <li data-i18n="home.tun_bad_3">✗ 传统本地 DNS 解析缓慢，易受运营商抢答与污染</li>
+                  <li data-i18n="home.tun_bad_4">✗ 跨国直连丢包严重，对称型 NAT 导致联机失败</li>
                 </ul>
               </div>
             </div>
 
-            <!-- Left / Overlay Layer: Wmimo TUN 智能接管 -->
-            <div class="theme-compare-overlay">
-              <div class="compare-stat-group">
-                <span class="compare-stat-badge good">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                  18ms 极速响应 · 零丢包
-                </span>
+            <!-- Overlay Left Side: Wmimo TUN Mode -->
+            <div class="theme-compare-overlay" id="themeCompareOverlay">
+              <div class="compare-side-content compare-left">
+                <div class="compare-stat-badge good">⚡ Avg Ping: 24ms · Loss: 0.0%</div>
                 <h3 class="compare-heading cyan" data-i18n="folia.s4_over_heading">Wmimo TUN 虚拟网卡</h3>
                 <ul class="compare-list">
-                  <li><span style="color: #10b981;">✓</span> <span>操作系统底层全局透明接管</span></li>
-                  <li><span style="color: #10b981;">✓</span> <span>游戏联机、CLI 终端与守护进程全自动路由</span></li>
-                  <li><span style="color: #10b981;">✓</span> <span>Fake-IP 亚毫秒高速解析与 DNS 防泄漏</span></li>
+                  <li data-i18n="home.tun_good_1">✓ 操作系统 L3 网络层透明接管，全应用零配置即刻加速</li>
+                  <li data-i18n="home.tun_good_2">✓ 完美转发 TCP / UDP / ICMP，原生支持 Full Cone NAT 游戏联机</li>
+                  <li data-i18n="home.tun_good_3">✓ 内置 Fake-IP 内存映射 (&lt;0.4ms)，彻底杜绝 DNS 污染与泄露</li>
+                  <li data-i18n="home.tun_good_4">✓ 智能防回环路由表自动维护，局域网与国内流量毫秒级直连</li>
                 </ul>
               </div>
             </div>
 
-            <!-- Draggable Divider Line & Handle -->
-            <div class="compare-divider theme-compare-divider">
-              <div class="theme-compare-handle">
-                <span></span>
-                <span></span>
+            <!-- Interactive Drag Handle -->
+            <div class="compare-divider" id="themeCompareDivider" role="slider" aria-label="Compare TUN Mode and Direct Connection" aria-valuemin="8" aria-valuemax="92" aria-valuenow="50" tabindex="0">
+              <div class="compare-handle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
               </div>
             </div>
 
-            <!-- Corner Labels -->
             <div class="theme-compare-label theme-compare-label-left" data-i18n="folia.s4_label_left">Wmimo TUN 模式</div>
             <div class="theme-compare-label theme-compare-label-right" data-i18n="folia.s4_label_right">常规普通直连</div>
           </div>
@@ -340,63 +633,140 @@
       </div>
     </section>
 
-    <!-- 6. Section: Multi-Protocol Matrix (Reverse Layout) -->
-    <section id="section-protocols" class="section feature-section reverse">
-      <div class="feature-container">
-        <div class="text-content">
-          <div class="feature-deco">✦</div>
-          <h2 class="feature-title" data-i18n="folia.s5_title">现代多协议矩阵</h2>
-          <p class="feature-desc" data-i18n="folia.s5_desc">
-            全协议栈深度支持。针对复杂异构网络环境，Wmimo 集成了基于 UDP 的下一代抗拥塞协议与伪装穿透方案。无论是低延时视讯通话、高通量 4K 串流，还是大文件并发传输，皆能从容应对。
+    <!-- =====================================================================
+         4. COMPLETE 5-PLATFORM NATIVE ECOSYSTEM SECTION
+         ===================================================================== -->
+    <section id="section-platforms" class="home-section">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-eyebrow" data-i18n="home.plat_eyebrow">UNIVERSAL NATIVE COVERAGE · 全平台原生覆盖</span>
+          <h2 class="section-heading" data-i18n="home.plat_title">一套核心配置，五大操作系统无缝互通</h2>
+          <p class="section-desc" data-i18n="home.plat_subtitle">
+            无论是桌面端生产力工作站还是随身移动设备，Wmimo 均提供针对各平台底层网络栈与 CPU 架构深度优化的原生安装包。
           </p>
         </div>
-        <div class="visual-content stacked-cards">
-          <!-- Card 1 -->
-          <div class="glass-card src-card card-1">
-            <div class="card-header-icon" style="color: #38bdf8;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+
+        <div class="platforms-5-grid">
+          <!-- 1. Windows -->
+          <div class="plat-card">
+            <div class="plat-card-head">
+              <div class="plat-icon-wrap win">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
+              </div>
+              <span class="plat-arch-tag">x64 · ARM64</span>
             </div>
-            <div>
-              <span class="card-tag">NEXT-GEN UDP</span>
-              <h3 class="card-title">Hysteria 2 / TUIC v5</h3>
+            <h3 class="plat-name">Windows</h3>
+            <p class="plat-desc" data-i18n="home.plat_win_desc">支持 Windows 10 / 11，内置高性能 Wintun 驱动、开机静默自启与便携绿色版。</p>
+            <div class="plat-formats">
+              <span>.exe Setup</span>
+              <span>.zip Portable</span>
             </div>
+            <a href="download.html#platform-windows" class="plat-dl-link">
+              <span data-i18n="home.plat_btn_get">获取 Windows 版</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
           </div>
-          <!-- Card 2 -->
-          <div class="glass-card src-card card-2">
-            <div class="card-header-icon" style="color: #00daf5;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+
+          <!-- 2. macOS -->
+          <div class="plat-card">
+            <div class="plat-card-head">
+              <div class="plat-icon-wrap mac">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.37c.61-.75 1.04-1.8 0.92-2.87-.93.04-2.02.63-2.66 1.39-.56.65-.99 1.72-.88 2.76 1.02.08 2.05-.53 2.62-1.28z"/></svg>
+              </div>
+              <span class="plat-arch-tag">Universal</span>
             </div>
-            <div>
-              <span class="card-tag">SECURITY & CAMOUFLAGE</span>
-              <h3 class="card-title">VLESS Reality / Shadowsocks</h3>
+            <h3 class="plat-name">macOS</h3>
+            <p class="plat-desc" data-i18n="home.plat_mac_desc">原生适配 Apple Silicon (M1–M4) 与 Intel 芯片，支持状态栏常驻与 utun 接口接管。</p>
+            <div class="plat-formats">
+              <span>.dmg Universal</span>
+              <span>.app.tar.gz</span>
             </div>
+            <a href="download.html#platform-macos" class="plat-dl-link">
+              <span data-i18n="home.plat_btn_mac">获取 macOS 版</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
           </div>
-          <!-- Card 3 -->
-          <div class="glass-card src-card card-3">
-            <div class="card-header-icon" style="color: #10b981;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+
+          <!-- 3. Linux -->
+          <div class="plat-card">
+            <div class="plat-card-head">
+              <div class="plat-icon-wrap linux">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139z"/></svg>
+              </div>
+              <span class="plat-arch-tag">x86_64</span>
             </div>
-            <div>
-              <span class="card-tag">ENTERPRISE TUNNEL</span>
-              <h3 class="card-title">WireGuard / Trojan</h3>
+            <h3 class="plat-name">Linux</h3>
+            <p class="plat-desc" data-i18n="home.plat_linux_desc">全面覆盖 Ubuntu / Debian、Arch Linux、Fedora / RHEL 及通用发行版打包。</p>
+            <div class="plat-formats">
+              <span>.deb</span>
+              <span>.rpm</span>
+              <span>.pkg.tar.zst</span>
             </div>
+            <a href="download.html#platform-linux" class="plat-dl-link">
+              <span data-i18n="home.plat_btn_linux">获取 Linux 版</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- 4. Android -->
+          <div class="plat-card">
+            <div class="plat-card-head">
+              <div class="plat-icon-wrap android">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1368 1.0989L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/></svg>
+              </div>
+              <span class="plat-arch-tag">ARM64 · v7a · x64</span>
+            </div>
+            <h3 class="plat-name">Android</h3>
+            <p class="plat-desc" data-i18n="home.plat_android_desc">基于系统 VpnService 原生构建，支持分应用代理 (Per-App Proxy)，适配手机与电视盒子。</p>
+            <div class="plat-formats">
+              <span>arm64-v8a</span>
+              <span>Universal APK</span>
+            </div>
+            <a href="download.html#platform-android" class="plat-dl-link">
+              <span data-i18n="home.plat_btn_android">获取 Android 版</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- 5. iOS -->
+          <div class="plat-card">
+            <div class="plat-card-head">
+              <div class="plat-icon-wrap ios">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.37c.61-.75 1.04-1.8 0.92-2.87-.93.04-2.02.63-2.66 1.39-.56.65-.99 1.72-.88 2.76 1.02.08 2.05-.53 2.62-1.28z"/></svg>
+              </div>
+              <span class="plat-arch-tag">iPhone · iPad</span>
+            </div>
+            <h3 class="plat-name">iOS / iPadOS</h3>
+            <p class="plat-desc" data-i18n="home.plat_ios_desc">采用 NetworkExtension 架构，严控 &lt;15MB 扩展内存限制，支持 TrollStore 巨魔与自签安装。</p>
+            <div class="plat-formats">
+              <span>Universal .ipa</span>
+              <span>TrollStore</span>
+            </div>
+            <a href="download.html#platform-ios" class="plat-dl-link">
+              <span data-i18n="home.plat_btn_ios">获取 iOS 版</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 7. Bottom Call to Action Section -->
-    <section id="section-cta" class="section cta-section">
-      <div class="feature-container-center">
-        <div class="cta-box">
-          <h2 class="feature-title" style="margin-bottom: 1rem;" data-i18n="folia.cta_title">开启无界漫游之旅</h2>
-          <p class="feature-desc" style="max-width: 600px; margin-bottom: 2.5rem;" data-i18n="folia.cta_desc">
+    <!-- =====================================================================
+         5. BOTTOM CALL TO ACTION SECTION
+         ===================================================================== -->
+    <section id="section-cta" class="home-section cta-bottom-section">
+      <div class="container">
+        <div class="cta-banner-card">
+          <div class="cta-banner-glow"></div>
+          <span class="section-eyebrow" data-i18n="home.cta_eyebrow">READY TO CONNECT · 即刻启程</span>
+          <h2 class="cta-banner-title" data-i18n="folia.cta_title">开启无界漫游之旅</h2>
+          <p class="cta-banner-desc" data-i18n="folia.cta_desc">
             立即免费下载 Wmimo，体验极致速度、优雅界面与强大的系统级网络掌控力。
           </p>
-          <div class="cta-actions" style="flex-wrap: wrap; justify-content: center;">
-            <a href="download.html" class="btn btn-primary" data-i18n="folia.btn_download_now">下载客户端</a>
-            <a href="docs/index.html" class="btn btn-secondary glass" data-i18n="folia.btn_docs_quick">查看使用文档</a>
-            <a href="speedtest.html" class="btn btn-secondary glass" data-i18n="folia.btn_speedtest">在线网络测速</a>
+          <div class="cta-banner-actions">
+            <a href="download.html" class="btn btn-primary btn-lg" data-i18n="folia.btn_download_now">下载客户端</a>
+            <a href="speedtest.html" class="btn btn-secondary btn-lg" data-i18n="folia.btn_speedtest">在线网络测速</a>
+            <a href="docs/index.html" class="btn btn-secondary btn-lg" data-i18n="folia.btn_docs_quick">查看使用文档</a>
           </div>
         </div>
       </div>
@@ -420,20 +790,20 @@
           <h4 data-i18n="footer.nav_title">页面导航</h4>
           <ul class="footer-links">
             <li><a href="download.html" data-i18n="nav.download_center">下载中心</a></li>
-            <li><a href="speedtest.html" data-i18n="nav.speedtest">在线测速</a></li>
-            <li><a href="docs/index.html" data-i18n="nav.docs">使用文档</a></li>
+            <li><a href="speedtest.html" data-i18n="nav.speedtest">速度测试</a></li>
+            <li><a href="docs/index.html" data-i18n="nav.docs">文档</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4 data-i18n="footer.support_title">联系与支持</h4>
           <ul class="footer-links">
-            <li><a href="community.html" data-i18n="nav.about">关于与赞助</a></li>
+            <li><a href="community.html" data-i18n="nav.about">关于</a></li>
             <li><a href="mailto:aisaniya@proton.me" style="display: inline-flex; align-items: center; gap: 6px;">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               <span>aisaniya@proton.me</span>
             </a></li>
-            <li><a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" data-i18n="nav.github">GitHub 仓库</a></li>
+            <li><a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" data-i18n="nav.github">GitHub</a></li>
           </ul>
         </div>
       </div>
