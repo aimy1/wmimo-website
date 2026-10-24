@@ -2120,3 +2120,184 @@ body.home-body {
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   4. WHY WE BUILD WMIMO (MANIFESTO SECTION)
+   ========================================================================== */
+.home-manifesto-section {
+  padding-block: 44px 64px;
+}
+
+.manifesto-card {
+  max-width: 880px;
+  margin-inline: auto;
+  background: var(--home-surface);
+  border: 1px solid var(--home-border);
+  border-radius: 20px;
+  padding: 38px 44px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.manifesto-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brand-primary), transparent);
+  opacity: 0.7;
+}
+
+.manifesto-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: var(--shadow-hover);
+}
+
+[data-theme="light"] .manifesto-card:hover {
+  border-color: rgba(2, 132, 199, 0.35);
+}
+
+.manifesto-lead {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--home-border);
+  margin-bottom: 26px;
+}
+
+.manifesto-quote-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(0, 188, 223, 0.1);
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 188, 223, 0.22);
+}
+
+.manifesto-lead-text h3 {
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+.manifesto-lead-text p {
+  font-size: 0.95rem;
+  line-height: 1.72;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.manifesto-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.manifesto-paragraph {
+  font-size: 0.93rem;
+  line-height: 1.82;
+  color: var(--text-secondary);
+  margin: 0;
+  text-align: justify;
+}
+
+.manifesto-paragraph-standout {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 10px 16px;
+  border-left: 3px solid var(--brand-primary);
+  background: rgba(0, 188, 223, 0.05);
+  border-radius: 0 8px 8px 0;
+}
+
+[data-theme="light"] .manifesto-paragraph-standout {
+  background: rgba(2, 132, 199, 0.05);
+  border-left-color: var(--brand-primary-dark);
+}
+
+.manifesto-footer-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 24px;
+  border-radius: 14px;
+  background: rgba(0, 188, 223, 0.06);
+  border: 1px solid rgba(0, 188, 223, 0.22);
+}
+
+[data-theme="light"] .manifesto-footer-banner {
+  background: rgba(2, 132, 199, 0.06);
+  border-color: rgba(2, 132, 199, 0.22);
+}
+
+.manifesto-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.manifesto-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+}
+
+.manifesto-closing-statement {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.manifesto-banner-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .manifesto-card {
+    padding: 26px 20px;
+  }
+  .manifesto-lead {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .manifesto-footer-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .manifesto-banner-actions {
+    width: 100%;
+  }
+  .manifesto-banner-actions .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
