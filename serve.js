@@ -74,7 +74,6 @@ server.listen(PORT, '0.0.0.0', () => {
   console.log(`\n========================================`);
   console.log(`  Wmimo Local Server is running!`);
   console.log(`  Local:            http://localhost:${PORT}`);
-  console.log(`  Online Speedtest: http://localhost:${PORT}/speedtest.html`);
   console.log(`  Download Center:  http://localhost:${PORT}/download.html`);
   console.log(`  Docs:             http://localhost:${PORT}/docs/index.html`);
   console.log(`========================================\n`);
