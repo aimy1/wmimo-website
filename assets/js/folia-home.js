@@ -126,9 +126,58 @@
     });
   }
 
+  // =========================================================================
+  // 3. AMBIENT FLOATING CAT LOGOS (Slow Floating & Gentle Parallax Response)
+  // =========================================================================
+  function initFloatingCatsParallax() {
+    const container = document.querySelector('.home-floating-cats');
+    if (!container) return;
+
+    const cats = container.querySelectorAll('.cat-float-item');
+    if (!cats.length) return;
+
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let rafId = null;
+
+    const factors = [0.03, 0.05, 0.025, 0.04, 0.06, 0.035, 0.02, 0.07, 0.045, 0.055, 0.03, 0.08];
+
+    function update() {
+      currentX += (targetX - currentX) * 0.05;
+      currentY += (targetY - currentY) * 0.05;
+
+      cats.forEach((cat, idx) => {
+        const factor = factors[idx % factors.length];
+        const shiftX = (currentX * factor * 60).toFixed(2);
+        const shiftY = (currentY * factor * 60).toFixed(2);
+        cat.style.setProperty('--mx', `${shiftX}px`);
+        cat.style.setProperty('--my', `${shiftY}px`);
+      });
+
+      if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
+        rafId = requestAnimationFrame(update);
+      } else {
+        rafId = null;
+      }
+    }
+
+    window.addEventListener('mousemove', (e) => {
+      const cx = window.innerWidth / 2;
+      const cy = window.innerHeight / 2;
+      targetX = (e.clientX - cx) / cx;
+      targetY = (e.clientY - cy) / cy;
+      if (!rafId) {
+        rafId = requestAnimationFrame(update);
+      }
+    }, { passive: true });
+  }
+
   function initHome() {
     initAppShowcaseStage();
     initTrayCopyButton();
+    initFloatingCatsParallax();
   }
 
   if (document.readyState === 'loading') {
@@ -137,3 +186,4 @@
     initHome();
   }
 })();
+

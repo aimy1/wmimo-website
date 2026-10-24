@@ -35,18 +35,197 @@ body.home-body {
 }
 
 /* ==========================================================================
-   Ambient Background Mesh & Grid (Clean Flat Mode - No Neon Orbs)
+   Ambient Floating Cat Logo Background (cat_icon.png)
+   Irregular sizes slowly drifting across the homepage
    ========================================================================== */
-.home-ambient-canvas {
-  display: none !important;
+.home-floating-cats {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+  z-index: 0;
 }
 
-.ambient-orb {
-  display: none !important;
+.cat-float-item {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+  transform: translate3d(var(--mx, 0px), var(--my, 0px), 0);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ambient-grid-mesh {
-  display: none !important;
+.cat-float-inner {
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.cat-float-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 0 16px rgba(0, 188, 223, 0.22));
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+
+[data-theme="light"] .cat-float-inner img {
+  filter: invert(1) brightness(0.2) drop-shadow(0 4px 12px rgba(15, 23, 42, 0.08));
+}
+
+/* 12 Irregular Sizes & Distributed Positions */
+.cat-item-1  { width: 190px; height: 190px; top: 7%;  left: 3%;   opacity: 0.045; }
+.cat-item-2  { width: 86px;  height: 86px;  top: 12%; right: 9%;  opacity: 0.08;  }
+.cat-item-3  { width: 46px;  height: 46px;  top: 25%; left: 24%;  opacity: 0.095; }
+.cat-item-4  { width: 145px; height: 145px; top: 35%; right: 5%;  opacity: 0.05;  }
+.cat-item-5  { width: 66px;  height: 66px;  top: 48%; left: 8%;   opacity: 0.085; }
+.cat-item-6  { width: 118px; height: 118px; top: 54%; right: 25%; opacity: 0.06;  }
+.cat-item-7  { width: 230px; height: 230px; top: 65%; left: 18%;  opacity: 0.035; }
+.cat-item-8  { width: 36px;  height: 36px;  top: 73%; right: 16%; opacity: 0.11;  }
+.cat-item-9  { width: 98px;  height: 98px;  top: 82%; left: 5%;   opacity: 0.07;  }
+.cat-item-10 { width: 76px;  height: 76px;  top: 87%; right: 8%;  opacity: 0.08;  }
+.cat-item-11 { width: 54px;  height: 54px;  top: 16%; left: 52%;  opacity: 0.09;  }
+.cat-item-12 { width: 28px;  height: 28px;  top: 60%; left: 56%;  opacity: 0.12;  }
+
+[data-theme="light"] .cat-item-1  { opacity: 0.035; }
+[data-theme="light"] .cat-item-2  { opacity: 0.055; }
+[data-theme="light"] .cat-item-3  { opacity: 0.07;  }
+[data-theme="light"] .cat-item-4  { opacity: 0.038; }
+[data-theme="light"] .cat-item-5  { opacity: 0.06;  }
+[data-theme="light"] .cat-item-6  { opacity: 0.045; }
+[data-theme="light"] .cat-item-7  { opacity: 0.024; }
+[data-theme="light"] .cat-item-8  { opacity: 0.08;  }
+[data-theme="light"] .cat-item-9  { opacity: 0.05;  }
+[data-theme="light"] .cat-item-10 { opacity: 0.055; }
+[data-theme="light"] .cat-item-11 { opacity: 0.065; }
+[data-theme="light"] .cat-item-12 { opacity: 0.085; }
+
+/* Individual Slow Organic Drift Keyframe Bindings */
+.cat-item-1  .cat-float-inner { animation: catDrift1  50s ease-in-out infinite; }
+.cat-item-2  .cat-float-inner { animation: catDrift2  38s ease-in-out infinite; }
+.cat-item-3  .cat-float-inner { animation: catDrift3  28s ease-in-out infinite; }
+.cat-item-4  .cat-float-inner { animation: catDrift4  56s ease-in-out infinite; }
+.cat-item-5  .cat-float-inner { animation: catDrift5  34s ease-in-out infinite; }
+.cat-item-6  .cat-float-inner { animation: catDrift6  46s ease-in-out infinite; }
+.cat-item-7  .cat-float-inner { animation: catDrift7  64s ease-in-out infinite; }
+.cat-item-8  .cat-float-inner { animation: catDrift8  26s ease-in-out infinite; }
+.cat-item-9  .cat-float-inner { animation: catDrift9  42s ease-in-out infinite; }
+.cat-item-10 .cat-float-inner { animation: catDrift10 40s ease-in-out infinite; }
+.cat-item-11 .cat-float-inner { animation: catDrift11 32s ease-in-out infinite; }
+.cat-item-12 .cat-float-inner { animation: catDrift12 24s ease-in-out infinite; }
+
+/* Slow Wandering Keyframes Across 2D Space */
+@keyframes catDrift1 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  25%  { transform: translate3d(90px, 70px, 0) rotate(8deg) scale(1.04); }
+  50%  { transform: translate3d(160px, -40px, 0) rotate(-6deg) scale(0.96); }
+  75%  { transform: translate3d(60px, 110px, 0) rotate(10deg) scale(1.02); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes catDrift2 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  25%  { transform: translate3d(-80px, 100px, 0) rotate(-12deg) scale(0.97); }
+  50%  { transform: translate3d(-140px, 30px, 0) rotate(10deg) scale(1.05); }
+  75%  { transform: translate3d(-60px, -70px, 0) rotate(-8deg) scale(0.98); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes catDrift3 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  30%  { transform: translate3d(110px, -80px, 0) rotate(18deg); }
+  60%  { transform: translate3d(150px, 60px, 0) rotate(-14deg); }
+  85%  { transform: translate3d(40px, 90px, 0) rotate(12deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+@keyframes catDrift4 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  25%  { transform: translate3d(-110px, -80px, 0) rotate(-7deg) scale(1.03); }
+  50%  { transform: translate3d(-180px, 40px, 0) rotate(8deg) scale(0.97); }
+  75%  { transform: translate3d(-70px, 100px, 0) rotate(-5deg) scale(1.01); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes catDrift5 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  20%  { transform: translate3d(120px, 80px, 0) rotate(14deg); }
+  50%  { transform: translate3d(70px, 150px, 0) rotate(-10deg); }
+  80%  { transform: translate3d(-50px, 70px, 0) rotate(16deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+@keyframes catDrift6 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  30%  { transform: translate3d(-90px, 110px, 0) rotate(10deg) scale(1.04); }
+  60%  { transform: translate3d(-150px, -50px, 0) rotate(-12deg) scale(0.96); }
+  85%  { transform: translate3d(40px, -90px, 0) rotate(6deg) scale(1.02); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes catDrift7 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  25%  { transform: translate3d(70px, -90px, 0) rotate(-5deg) scale(1.02); }
+  50%  { transform: translate3d(140px, 30px, 0) rotate(6deg) scale(0.98); }
+  75%  { transform: translate3d(60px, 90px, 0) rotate(-4deg) scale(1.01); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes catDrift8 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25%  { transform: translate3d(-100px, -70px, 0) rotate(-20deg); }
+  55%  { transform: translate3d(70px, -110px, 0) rotate(18deg); }
+  80%  { transform: translate3d(110px, 50px, 0) rotate(-15deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+@keyframes catDrift9 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  30%  { transform: translate3d(90px, -100px, 0) rotate(12deg) scale(1.03); }
+  65%  { transform: translate3d(150px, -20px, 0) rotate(-10deg) scale(0.97); }
+  85%  { transform: translate3d(-40px, 60px, 0) rotate(8deg) scale(1.01); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes catDrift10 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25%  { transform: translate3d(-80px, 90px, 0) rotate(15deg); }
+  50%  { transform: translate3d(-140px, -30px, 0) rotate(-14deg); }
+  75%  { transform: translate3d(50px, -80px, 0) rotate(12deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+@keyframes catDrift11 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  35%  { transform: translate3d(80px, 90px, 0) rotate(-16deg); }
+  70%  { transform: translate3d(-60px, 120px, 0) rotate(14deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+@keyframes catDrift12 {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
+  30%  { transform: translate3d(-90px, -80px, 0) rotate(22deg); }
+  65%  { transform: translate3d(70px, -110px, 0) rotate(-20deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-float-inner {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cat-item-1, .cat-item-7 {
+    display: none;
+  }
 }
 
 .home-main,
