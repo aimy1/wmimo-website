@@ -1998,3 +1998,159 @@ body.home-body {
     width: 245px;
   }
 }
+
+/* ==========================================================================
+   Simplified Clean Features & Platforms Matrix
+   ========================================================================== */
+.clean-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 36px;
+}
+
+@media (max-width: 1024px) {
+  .clean-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .clean-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.clean-feat-card {
+  background: var(--home-surface);
+  border: 1px solid var(--home-border);
+  border-radius: 18px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.clean-feat-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--home-border-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.clean-feat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clean-feat-icon.cyan { background: rgba(0, 218, 245, 0.12); color: #00DAF5; }
+.clean-feat-icon.green { background: rgba(16, 185, 129, 0.12); color: #10B981; }
+.clean-feat-icon.purple { background: rgba(168, 85, 247, 0.12); color: #C084FC; }
+.clean-feat-icon.blue { background: rgba(59, 130, 246, 0.12); color: #60A5FA; }
+
+[data-theme="light"] .clean-feat-icon.cyan { color: #0284C7; }
+[data-theme="light"] .clean-feat-icon.purple { color: #7E22CE; }
+[data-theme="light"] .clean-feat-icon.blue { color: #2563EB; }
+
+.clean-feat-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.clean-feat-card p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Clean Platforms Grid */
+.clean-platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+}
+
+@media (max-width: 960px) {
+  .clean-platforms-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .clean-platforms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.clean-plat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  background: var(--home-surface);
+  border: 1px solid var(--home-border);
+  border-radius: 18px;
+  padding: 26px 16px;
+  text-decoration: none;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.clean-plat-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--home-border-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.clean-plat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clean-plat-icon.win { background: rgba(0, 188, 223, 0.12); color: #00DAF5; }
+.clean-plat-icon.mac { background: rgba(148, 163, 184, 0.15); color: var(--text-primary); }
+.clean-plat-icon.linux { background: rgba(245, 158, 11, 0.12); color: #F59E0B; }
+.clean-plat-icon.android { background: rgba(16, 185, 129, 0.12); color: #10B981; }
+.clean-plat-icon.ios { background: rgba(168, 85, 247, 0.12); color: #C084FC; }
+
+.clean-plat-info strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.clean-plat-info span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.clean-plat-footer {
+  margin-top: 32px;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .clean-plat-footer .btn {
+    width: 100%;
+  }
+}
