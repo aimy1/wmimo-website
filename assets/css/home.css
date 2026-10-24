@@ -4,16 +4,16 @@
    ========================================================================== */
 
 :root {
-  --home-surface: rgba(15, 23, 42, 0.72);
-  --home-surface-elevated: rgba(22, 33, 58, 0.85);
-  --home-surface-inner: rgba(8, 13, 26, 0.78);
+  --home-surface: #1C1C1E;
+  --home-surface-elevated: #242426;
+  --home-surface-inner: #161618;
   --home-border: rgba(255, 255, 255, 0.08);
-  --home-border-hover: rgba(0, 218, 245, 0.42);
-  --home-grid-line: rgba(255, 255, 255, 0.03);
-  --home-window-bg: #0B1120;
-  --home-window-sidebar: #080D1A;
-  --home-window-header: #0F172A;
-  --home-shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.07);
+  --home-border-hover: rgba(255, 255, 255, 0.18);
+  --home-grid-line: transparent;
+  --home-window-bg: #121212;
+  --home-window-sidebar: #161618;
+  --home-window-header: #1C1C1E;
+  --home-shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.5);
 }
 
 [data-theme="light"] {
@@ -35,60 +35,18 @@ body.home-body {
 }
 
 /* ==========================================================================
-   Ambient Background Mesh & Grid
+   Ambient Background Mesh & Grid (Clean Flat Mode - No Neon Orbs)
    ========================================================================== */
 .home-ambient-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
+  display: none !important;
 }
 
 .ambient-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(110px);
-  opacity: 0.45;
-}
-
-[data-theme="light"] .ambient-orb {
-  opacity: 0.22;
-}
-
-.orb-cyan {
-  width: 560px;
-  height: 560px;
-  top: -160px;
-  left: 12%;
-  background: radial-gradient(circle, rgba(0, 218, 245, 0.32) 0%, transparent 70%);
-}
-
-.orb-blue {
-  width: 620px;
-  height: 620px;
-  top: 220px;
-  right: 8%;
-  background: radial-gradient(circle, rgba(2, 132, 199, 0.26) 0%, transparent 70%);
-}
-
-.orb-indigo {
-  width: 520px;
-  height: 520px;
-  bottom: 10%;
-  left: 25%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%);
+  display: none !important;
 }
 
 .ambient-grid-mesh {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, var(--home-grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--home-grid-line) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 80% 65% at 50% 25%, #000 35%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 65% at 50% 25%, #000 35%, transparent 100%);
+  display: none !important;
 }
 
 .home-main,
@@ -147,7 +105,6 @@ body.home-body {
   height: 8px;
   border-radius: 50%;
   background: #10B981;
-  box-shadow: 0 0 10px #10B981;
 }
 
 .release-pill-tag {
@@ -156,7 +113,7 @@ body.home-body {
   font-weight: 700;
   padding: 2px 7px;
   border-radius: 999px;
-  background: rgba(0, 218, 245, 0.14);
+  background: rgba(0, 188, 223, 0.12);
   color: var(--brand-primary);
 }
 
@@ -173,17 +130,17 @@ body.home-body {
 }
 
 .hero-title-accent {
-  background: linear-gradient(135deg, #00DAF5 0%, #38BDF8 45%, #818CF8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--brand-primary);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
 }
 
 [data-theme="light"] .hero-title-accent {
-  background: linear-gradient(135deg, #0284C7 0%, #00BCDF 55%, #4F46E5 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #0284C7;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
 }
 
 .home-hero-subtitle {
@@ -327,9 +284,9 @@ body.home-body {
 }
 
 .sc-mode-btn.is-active {
-  background: linear-gradient(135deg, #00BCDF 0%, #0284C7 100%);
+  background: var(--brand-primary);
   color: #FFFFFF;
-  box-shadow: 0 2px 10px rgba(0, 188, 223, 0.35);
+  box-shadow: none;
 }
 
 .app-showcase-stage {
@@ -343,13 +300,7 @@ body.home-body {
 }
 
 .showcase-ambient-halo {
-  position: absolute;
-  inset: 10px;
-  border-radius: 36px;
-  background: radial-gradient(circle at 50% 45%, rgba(0, 218, 245, 0.24) 0%, rgba(59, 130, 246, 0.12) 45%, transparent 72%);
-  filter: blur(28px);
-  pointer-events: none;
-  z-index: 0;
+  display: none !important;
 }
 
 /* 1. Dual / Single Display Deck */
@@ -368,16 +319,16 @@ body.home-body {
   width: 255px;
   border-radius: 16px;
   padding: 5px;
-  background: rgba(15, 23, 42, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.5);
+  background: #1C1C1E;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.55);
   cursor: pointer;
   transition: all 0.42s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
 }
 
 .app-shot-card.shot-light {
-  background: rgba(255, 255, 255, 0.88);
+  background: #FFFFFF;
   border-color: rgba(15, 23, 42, 0.12);
   box-shadow: 0 16px 38px rgba(15, 23, 42, 0.16);
 }
@@ -399,13 +350,13 @@ body.home-body {
   font-size: 0.7rem;
   font-weight: 700;
   z-index: 3;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .shot-theme-badge.dark-badge {
-  background: #0F172A;
-  color: #38BDF8;
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: #1C1C1E;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .shot-theme-badge.light-badge {
@@ -418,8 +369,8 @@ body.home-body {
 .app-showcase-stage.mode-dual .app-shot-card.is-front {
   z-index: 4;
   transform: translate(-38px, 6px) scale(1);
-  border-color: rgba(0, 218, 245, 0.48);
-  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 218, 245, 0.16);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.6);
 }
 
 .app-showcase-stage.mode-dual .app-shot-card:not(.is-front) {
@@ -479,8 +430,8 @@ body.home-body {
   aspect-ratio: 371 / 785;
   border-radius: 16px;
   overflow: hidden;
-  border: 2px solid rgba(0, 218, 245, 0.45);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
   user-select: none;
 }
 
@@ -518,23 +469,23 @@ body.home-body {
   bottom: 0;
   left: 50%;
   width: 2px;
-  background: #00DAF5;
-  box-shadow: 0 0 10px #00DAF5;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: none;
 }
 
 .shot-split-handle {
   position: relative;
   z-index: 2;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: #0F172A;
-  border: 2px solid #00DAF5;
-  color: #00DAF5;
+  background: #1C1C1E;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 14px rgba(0, 218, 245, 0.55);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Floating Callout Badges around Stage */
@@ -2030,13 +1981,13 @@ body.home-body {
   flex-direction: column;
   gap: 12px;
   box-shadow: var(--shadow-card);
-  backdrop-filter: blur(12px);
-  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
 }
 
 .clean-feat-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--home-border-hover);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: #242426;
   box-shadow: var(--shadow-hover);
 }
 
@@ -2047,12 +1998,20 @@ body.home-body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.clean-feat-icon.cyan { background: rgba(0, 218, 245, 0.12); color: #00DAF5; }
-.clean-feat-icon.green { background: rgba(16, 185, 129, 0.12); color: #10B981; }
-.clean-feat-icon.purple { background: rgba(168, 85, 247, 0.12); color: #C084FC; }
-.clean-feat-icon.blue { background: rgba(59, 130, 246, 0.12); color: #60A5FA; }
+.clean-feat-icon.cyan { background: rgba(0, 188, 223, 0.1); color: var(--brand-primary); }
+.clean-feat-icon.green { background: rgba(16, 185, 129, 0.1); color: #10B981; }
+.clean-feat-icon.purple { background: rgba(168, 85, 247, 0.1); color: #A855F7; }
+.clean-feat-icon.blue { background: rgba(59, 130, 246, 0.1); color: #3B82F6; }
+
+[data-theme="light"] .clean-feat-card:hover {
+  background: #FFFFFF;
+  border-color: rgba(2, 132, 199, 0.4);
+}
 
 [data-theme="light"] .clean-feat-icon.cyan { color: #0284C7; }
 [data-theme="light"] .clean-feat-icon.purple { color: #7E22CE; }
@@ -2104,14 +2063,19 @@ body.home-body {
   padding: 20px 12px;
   text-decoration: none;
   box-shadow: var(--shadow-card);
-  backdrop-filter: blur(12px);
-  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
 }
 
 .clean-plat-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--home-border-hover);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: #242426;
   box-shadow: var(--shadow-hover);
+}
+
+[data-theme="light"] .clean-plat-card:hover {
+  background: #FFFFFF;
+  border-color: rgba(2, 132, 199, 0.4);
 }
 
 .clean-plat-icon {
@@ -2121,13 +2085,15 @@ body.home-body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.clean-plat-icon.win { background: rgba(0, 188, 223, 0.12); color: #00DAF5; }
-.clean-plat-icon.mac { background: rgba(148, 163, 184, 0.15); color: var(--text-primary); }
-.clean-plat-icon.linux { background: rgba(245, 158, 11, 0.12); color: #F59E0B; }
-.clean-plat-icon.android { background: rgba(16, 185, 129, 0.12); color: #10B981; }
-.clean-plat-icon.ios { background: rgba(168, 85, 247, 0.12); color: #C084FC; }
+.clean-plat-icon.win { color: var(--brand-primary); }
+.clean-plat-icon.mac { color: var(--text-primary); }
+.clean-plat-icon.linux { color: #F59E0B; }
+.clean-plat-icon.android { color: #10B981; }
+.clean-plat-icon.ios { color: #A855F7; }
 
 .clean-plat-info strong {
   display: block;

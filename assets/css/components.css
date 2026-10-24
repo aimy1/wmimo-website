@@ -90,9 +90,9 @@
   left: 12px;
   right: 12px;
   height: 2px;
-  background: #00daf5;
+  background: var(--brand-primary);
   border-radius: 999px;
-  box-shadow: 0 0 10px rgba(0, 218, 245, 0.9);
+  box-shadow: none;
 }
 
 .nav-actions {
@@ -173,15 +173,15 @@
 }
 
 .lang-capsule-btn.active {
-  background: rgba(0, 218, 245, 0.22);
-  color: #00daf5;
-  box-shadow: 0 0 10px rgba(0, 218, 245, 0.3);
+  background: rgba(0, 188, 223, 0.15);
+  color: var(--brand-primary);
+  box-shadow: none;
 }
 
 [data-theme="light"] .lang-capsule-btn.active {
   background: rgba(0, 188, 223, 0.15);
   color: #0284C7;
-  box-shadow: 0 0 10px rgba(0, 188, 223, 0.2);
+  box-shadow: none;
 }
 
 .lang-toggle-btn {
@@ -310,15 +310,15 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #00BCDF 0%, #0284C7 100%);
+  background: var(--brand-primary);
   color: #FFFFFF !important;
-  box-shadow: 0 4px 18px rgba(var(--brand-primary-rgb), 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #38BDF8 0%, #00BCDF 100%);
-  box-shadow: 0 8px 25px rgba(var(--brand-primary-rgb), 0.45);
-  transform: translateY(-2px);
+  background: #0284C7;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+  transform: translateY(-1px);
 }
 
 .btn-secondary {

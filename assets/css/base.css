@@ -148,42 +148,11 @@ code, pre {
 }
 
 .ambient-glow-top {
-  position: absolute;
-  top: -240px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 800px;
-  height: 550px;
-  background: radial-gradient(circle, var(--hero-glow-1) 0%, rgba(var(--brand-primary-rgb), 0) 70%);
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(50px);
-  animation: auroraFloat 12s ease-in-out infinite alternate;
-}
-
-@media (max-width: 640px) {
-  .ambient-glow-top {
-    width: 360px;
-    height: 360px;
-    top: -120px;
-    filter: blur(35px);
-  }
+  display: none !important;
 }
 
 .ambient-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse at 50% 30%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 80%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 80%);
-  pointer-events: none;
-  z-index: 0;
+  display: none !important;
 }
 
 /* ==========================================================================

@@ -31,44 +31,44 @@
   --transition-normal: 0.25s ease;
 }
 
-/* Deep Obsidian Dark Theme (Default) */
+/* Deep Neutral Dark Theme (Directly aligned with Wmimo Client Software) */
 :root,
 [data-theme="dark"] {
-  --bg-app: #0A0E17;
-  --bg-card: #121929;
-  --bg-card-elevated: #182238;
+  --bg-app: #121212;
+  --bg-card: #1C1C1E;
+  --bg-card-elevated: #242426;
   --bg-subtle: rgba(255, 255, 255, 0.04);
-  --bg-input: #0E1422;
-  --header-bg: rgba(10, 14, 23, 0.85);
+  --bg-input: #1C1C1E;
+  --header-bg: rgba(18, 18, 18, 0.88);
 
-  --border-color: rgba(255, 255, 255, 0.09);
-  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.04);
 
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
+  --text-primary: #F2F2F7;
+  --text-secondary: #8E8E93;
+  --text-muted: #636366;
 
-  --code-bg: #0D121F;
+  --code-bg: #18181A;
   --code-border: rgba(255, 255, 255, 0.08);
-  --code-text: #E2E8F0;
+  --code-text: #F2F2F7;
   
-  --badge-bg: rgba(0, 188, 223, 0.14);
-  --badge-text: #38BDF8;
+  --badge-bg: rgba(0, 188, 223, 0.12);
+  --badge-text: #00BCDF;
 
   --callout-tip-bg: rgba(16, 185, 129, 0.08);
-  --callout-tip-border: rgba(16, 185, 129, 0.3);
+  --callout-tip-border: rgba(16, 185, 129, 0.2);
   --callout-info-bg: rgba(0, 188, 223, 0.08);
-  --callout-info-border: rgba(0, 188, 223, 0.3);
+  --callout-info-border: rgba(0, 188, 223, 0.2);
 
-  --table-head-bg: #141B2D;
+  --table-head-bg: #18181A;
   --table-hover-bg: rgba(255, 255, 255, 0.02);
 
-  --shadow-card: 0 4px 24px -1px rgba(0, 0, 0, 0.35), 0 2px 8px -1px rgba(0, 0, 0, 0.2);
-  --shadow-hover: 0 12px 32px -4px rgba(0, 0, 0, 0.45);
-  --shadow-modal: 0 20px 60px -10px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.1);
-  --ambient-glow: rgba(0, 188, 223, 0.12);
-  --hero-glow-1: rgba(0, 188, 223, 0.16);
-  --grid-line: rgba(255, 255, 255, 0.035);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 8px 28px rgba(0, 0, 0, 0.45);
+  --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.7);
+  --ambient-glow: transparent;
+  --hero-glow-1: transparent;
+  --grid-line: transparent;
 }
 
 /* Light Theme */

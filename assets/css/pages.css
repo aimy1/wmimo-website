@@ -2526,7 +2526,7 @@
 }
 .dl-plat-section[hidden] { display: none; }
 .dl-plat-section.is-highlighted {
-  box-shadow: 0 0 0 2px rgba(var(--brand-primary-rgb), 0.5), 0 0 40px rgba(var(--brand-primary-rgb), 0.15);
+  box-shadow: 0 0 0 2px var(--brand-primary);
 }
 
 .dl-plat-header {
