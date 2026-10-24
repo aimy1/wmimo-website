@@ -972,7 +972,6 @@
   height: 7px;
   border-radius: 50%;
   background: #10B981;
-  box-shadow: 0 0 8px #10B981;
 }
 
 .speedtest-container {
@@ -1022,14 +1021,14 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 2px solid rgba(0, 218, 245, 0.35);
-  background: rgba(0, 218, 245, 0.08);
+  border: 1.5px solid rgba(var(--brand-primary-rgb), 0.3);
+  background: rgba(var(--brand-primary-rgb), 0.06);
   animation: beaconPulse 2.8s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes beaconPulse {
-  0%, 100% { transform: scale(0.96); opacity: 0.8; }
-  50% { transform: scale(1.06); opacity: 1; box-shadow: 0 0 18px rgba(0, 218, 245, 0.4); }
+  0%, 100% { transform: scale(0.96); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
 }
 
 .beacon-inner-dot {
@@ -1038,6 +1037,12 @@
   width: 26px;
   height: 26px;
   border-radius: 50%;
+  background: var(--brand-primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
   background: linear-gradient(135deg, #00daf5 0%, #0284c7 100%);
   color: #FFFFFF;
   display: flex;
@@ -1120,13 +1125,13 @@
 }
 
 .test-step-item.is-active {
-  background: rgba(0, 132, 255, 0.1);
-  border-color: rgba(0, 132, 255, 0.35);
+  background: rgba(var(--brand-primary-rgb), 0.1);
+  border-color: rgba(var(--brand-primary-rgb), 0.35);
 }
 
 .test-step-item.is-completed {
-  background: rgba(0, 218, 245, 0.06);
-  border-color: rgba(0, 218, 245, 0.2);
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.25);
 }
 
 .step-indicator {
@@ -1145,16 +1150,15 @@
 }
 
 .test-step-item.is-active .step-indicator {
-  border-color: #0084ff;
-  background: #0084ff;
+  border-color: var(--brand-primary);
+  background: var(--brand-primary);
   color: #FFFFFF;
-  box-shadow: 0 0 12px rgba(0, 132, 255, 0.7);
 }
 
 .test-step-item.is-completed .step-indicator {
-  border-color: #00daf5;
-  background: rgba(0, 218, 245, 0.14);
-  color: #00daf5;
+  border-color: #10B981;
+  background: rgba(16, 185, 129, 0.14);
+  color: #10B981;
 }
 
 .step-line {
@@ -1165,7 +1169,7 @@
 }
 
 .step-line.is-completed {
-  background: #00daf5;
+  background: #10B981;
 }
 
 .step-content {
@@ -1187,7 +1191,7 @@
 }
 
 .test-step-item.is-active .step-status {
-  color: #00daf5;
+  color: var(--brand-primary);
   font-weight: 700;
 }
 
@@ -1321,25 +1325,119 @@
 }
 
 /* ==========================================================================
-   2. Main 2-Column Telemetry Workbench
+   2. Main Telemetry Workbench & 4 Core Metrics
    ========================================================================== */
 .speedtest-console.telemetry-workbench {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 24px;
-  padding: 28px 32px;
+  padding: 24px;
   margin-bottom: 20px;
-  display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 28px;
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   box-shadow: var(--shadow-card);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease;
 }
 
 .speedtest-console.is-running {
-  border-color: rgba(0, 218, 245, 0.45);
-  box-shadow: 0 0 36px rgba(0, 218, 245, 0.08);
+  border-color: rgba(var(--brand-primary-rgb), 0.45);
+}
+
+/* 4 Core Metrics Grid — Prominent at the Top of Workbench */
+.speed-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 0;
+}
+
+.speed-metric-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-app);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.speed-metric-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-primary);
+}
+
+.metric-accent-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3.5px;
+}
+.metric-accent-bar.accent-cyan { background: var(--brand-primary); }
+.metric-accent-bar.accent-blue { background: #3B82F6; }
+.metric-accent-bar.accent-purple { background: #8B5CF6; }
+
+.metric-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.metric-icon-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.icon-cyan { background: rgba(var(--brand-primary-rgb), 0.12); color: var(--brand-primary); }
+.icon-blue { background: rgba(59, 130, 246, 0.12); color: #38bdf8; }
+.icon-purple { background: rgba(139, 92, 246, 0.12); color: #c084fc; }
+
+.metric-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.metric-body {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.metric-num {
+  font-family: var(--font-mono);
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.metric-unit {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.metric-subtitle {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Telemetry Deck Row: Left Gauge & Right Charts */
+.telemetry-deck-row {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 20px;
+  align-items: stretch;
 }
 
 /* Left Column: Speedometer & Control Deck */
@@ -1348,10 +1446,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(8, 14, 27, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
-  padding: 20px 18px 24px 18px;
+  background: var(--bg-app);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 18px 16px 22px 16px;
 }
 
 .speed-gauge-wrap {
@@ -1370,21 +1468,21 @@
 }
 
 .gauge-plate-disc {
-  fill: #070c18;
-  stroke: rgba(255, 255, 255, 0.06);
+  fill: #161618;
+  stroke: var(--border-color);
   stroke-width: 1;
 }
 
 .gauge-plate-ring {
   fill: none;
-  stroke: rgba(0, 218, 245, 0.14);
+  stroke: rgba(var(--brand-primary-rgb), 0.18);
   stroke-width: 1;
   stroke-dasharray: 2 5;
 }
 
 .gauge-bg-groove {
   fill: none;
-  stroke: rgba(14, 22, 38, 0.9);
+  stroke: #222226;
   stroke-width: 10;
 }
 
@@ -1402,22 +1500,21 @@
   stroke-dasharray: 401.4;
   stroke-dashoffset: 401.4;
   transition: stroke-dashoffset 0.08s cubic-bezier(0.1, 0.9, 0.2, 1);
-  filter: drop-shadow(0 0 8px rgba(0, 220, 255, 0.65));
 }
 
 .gauge-tick-major { stroke-width: 2.2; stroke-linecap: round; }
-.gauge-tick-major.tick-cyan { stroke: #00daf5; }
+.gauge-tick-major.tick-cyan { stroke: var(--brand-primary); }
 .gauge-tick-major.tick-indigo { stroke: #818cf8; }
 .gauge-tick-major.tick-violet { stroke: #c084fc; }
 .gauge-tick-med { stroke-width: 1.5; stroke-linecap: round; }
-.gauge-tick-med.tick-cyan { stroke: rgba(0, 218, 245, 0.7); }
+.gauge-tick-med.tick-cyan { stroke: rgba(var(--brand-primary-rgb), 0.7); }
 .gauge-tick-med.tick-blue { stroke: rgba(59, 130, 246, 0.85); }
 .gauge-tick-med.tick-indigo { stroke: rgba(129, 140, 248, 0.7); }
 .gauge-tick-med.tick-violet { stroke: rgba(192, 132, 252, 0.7); }
-.gauge-tick-minor { stroke: rgba(120, 180, 255, 0.3); stroke-width: 1.1; stroke-linecap: round; }
+.gauge-tick-minor { stroke: rgba(120, 180, 255, 0.25); stroke-width: 1.1; stroke-linecap: round; }
 
 .gauge-tick-label {
-  fill: #94a9c9;
+  fill: var(--text-muted);
   font-family: var(--font-mono);
   font-size: 10.5px;
   font-weight: 600;
@@ -1433,14 +1530,13 @@
 }
 
 .needle-beam {
-  stroke: #00daf5;
+  stroke: var(--brand-primary);
   stroke-width: 2.4;
   stroke-linecap: round;
-  filter: drop-shadow(0 0 6px #00daf5);
 }
 
 .needle-hub {
-  fill: #00daf5;
+  fill: var(--brand-primary);
 }
 
 .gauge-center-content {
@@ -1459,14 +1555,14 @@
   font-size: 2.7rem;
   font-weight: 800;
   letter-spacing: -0.035em;
-  color: #FFFFFF;
+  color: var(--text-primary);
   line-height: 1;
 }
 
 .gauge-speed-unit {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #8fa0bc;
+  color: var(--text-muted);
   margin-top: 4px;
   margin-bottom: 6px;
 }
@@ -1477,7 +1573,7 @@
   gap: 5px;
   font-size: 0.82rem;
   font-weight: 700;
-  color: #00daf5;
+  color: var(--brand-primary);
 }
 
 .gauge-peak-pill {
@@ -1500,27 +1596,28 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-width: 185px;
-  padding: 12px 32px;
+  min-width: 175px;
+  padding: 11px 28px;
   border-radius: 999px;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #00BCDF 0%, #0284C7 100%);
+  background: var(--brand-primary);
   color: #FFFFFF;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0, 188, 223, 0.4);
-  transition: all 0.22s ease;
+  box-shadow: 0 2px 10px rgba(0, 188, 223, 0.28);
+  transition: all 0.2s ease;
 }
 
 .btn-speed-radiant:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 26px rgba(0, 188, 223, 0.55);
+  background: #00A8C8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 188, 223, 0.38);
 }
 
 .btn-speed-radiant.is-testing {
-  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
-  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+  background: #EF4444;
+  box-shadow: 0 2px 10px rgba(239, 68, 68, 0.3);
 }
 
 /* Right Column: Real-Time Charts Deck */
@@ -1532,8 +1629,8 @@
 }
 
 .speed-chart-card-inner {
-  background: #080e1b;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--bg-app);
+  border: 1px solid var(--border-color);
   border-radius: 18px;
   padding: 18px 20px;
   display: flex;
@@ -1568,7 +1665,7 @@
   font-size: 0.7rem;
   padding: 2px 8px;
   border-radius: 6px;
-  background: rgba(0, 218, 245, 0.1);
+  background: rgba(var(--brand-primary-rgb), 0.1);
   color: var(--brand-primary);
 }
 
@@ -1591,8 +1688,8 @@
   height: 7px;
   border-radius: 50%;
 }
-.dot-down { background: #00daf5; box-shadow: 0 0 6px #00daf5; }
-.dot-up { background: #a855f7; box-shadow: 0 0 6px #a855f7; }
+.dot-down { background: var(--brand-primary); }
+.dot-up { background: #a855f7; }
 
 .speed-chart-canvas-wrap {
   width: 100%;
@@ -1643,14 +1740,14 @@
 .chart-progress-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #00daf5 0%, #3b82f6 50%, #a855f7 100%);
+  background: linear-gradient(90deg, var(--brand-primary) 0%, #3b82f6 50%, #a855f7 100%);
   transition: width 0.15s ease;
 }
 
 /* Ping & Jitter Distribution Strip */
 .ping-telemetry-card {
-  background: #080e1b;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--bg-app);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 14px 18px;
 }
@@ -1704,110 +1801,18 @@
   width: 100%;
   min-height: 4px;
   border-radius: 4px 4px 2px 2px;
-  background: rgba(0, 218, 245, 0.25);
+  background: rgba(var(--brand-primary-rgb), 0.2);
   transition: height 0.25s ease, background 0.25s ease;
 }
 
 .ping-bar-fill.is-sampled {
-  background: linear-gradient(180deg, #00daf5 0%, #0284c7 100%);
-  box-shadow: 0 0 8px rgba(0, 218, 245, 0.35);
+  background: var(--brand-primary);
 }
 
 .ping-bar-slot span {
   font-family: var(--font-mono);
   font-size: 0.62rem;
   color: var(--text-muted);
-}
-
-/* ==========================================================================
-   3. 4 Core Metrics Grid
-   ========================================================================== */
-.speed-metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.speed-metric-card {
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 18px;
-  padding: 18px 20px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: var(--shadow-card);
-  transition: all var(--transition-normal);
-}
-
-.speed-metric-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(56, 189, 248, 0.35);
-}
-
-.metric-accent-bar {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 3.5px;
-}
-.metric-accent-bar.accent-cyan { background: #00daf5; }
-.metric-accent-bar.accent-blue { background: #0088ff; }
-.metric-accent-bar.accent-purple { background: #a855f7; }
-
-.metric-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.metric-icon-circle {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.icon-cyan { background: rgba(0, 218, 245, 0.12); color: #00daf5; }
-.icon-blue { background: rgba(0, 136, 255, 0.12); color: #38bdf8; }
-.icon-purple { background: rgba(168, 85, 247, 0.12); color: #c084fc; }
-
-.metric-title {
-  font-size: 0.86rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.metric-body {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  margin-bottom: 4px;
-}
-
-.metric-num {
-  font-family: var(--font-mono);
-  font-size: 2.1rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  line-height: 1;
-}
-
-.metric-unit {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-
-.metric-subtitle {
-  font-size: 0.76rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
 }
 
 /* ==========================================================================
@@ -1982,7 +1987,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
   flex-shrink: 0;
 }
 
@@ -2123,7 +2127,7 @@
 }
 
 @media (max-width: 920px) {
-  .speedtest-console.telemetry-workbench {
+  .telemetry-deck-row {
     grid-template-columns: 1fr;
   }
   .speed-metrics-grid {
@@ -2135,6 +2139,9 @@
 }
 
 @media (max-width: 640px) {
+  .speed-metrics-grid {
+    grid-template-columns: 1fr;
+  }
   .connectivity-sites-grid {
     grid-template-columns: repeat(2, 1fr);
   }

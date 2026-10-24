@@ -255,16 +255,85 @@
         </div>
       </div>
 
-      <!-- 2. Main 2-Column Telemetry Workbench -->
+      <!-- 2. Integrated Core Telemetry Workbench -->
       <div class="speedtest-console telemetry-workbench" id="speedtestConsoleCard">
 
-        <!-- Left Column: Precision Speedometer & Control Deck -->
+        <!-- 4 Core Key Metrics (Primary Summary at the Top of Workbench) -->
+        <div class="speed-metrics-grid">
+<!-- Ping -->
+        <div class="speed-metric-card">
+          <div class="metric-accent-bar accent-cyan"></div>
+          <div class="metric-header">
+            <div class="metric-icon-circle icon-cyan">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <span class="metric-title" data-i18n="st.metric_ping">延迟 (Ping)</span>
+          </div>
+          <div class="metric-body">
+            <span class="metric-num" id="pingVal">--</span>
+            <span class="metric-unit">ms</span>
+          </div>
+          <div class="metric-subtitle" id="pingRangeMeta" data-i18n="st.metric_ping_sub">网络往返响应时间</div>
+        </div>
+
+        <!-- Jitter -->
+        <div class="speed-metric-card">
+          <div class="metric-accent-bar accent-cyan"></div>
+          <div class="metric-header">
+            <div class="metric-icon-circle icon-cyan">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg>
+            </div>
+            <span class="metric-title" data-i18n="st.metric_jitter">抖动 (Jitter)</span>
+          </div>
+          <div class="metric-body">
+            <span class="metric-num" id="jitterVal">--</span>
+            <span class="metric-unit">ms</span>
+          </div>
+          <div class="metric-subtitle" id="jitterStabilityMeta" data-i18n="st.metric_jitter_sub">连续采样延迟波动</div>
+        </div>
+
+        <!-- Download -->
+        <div class="speed-metric-card">
+          <div class="metric-accent-bar accent-blue"></div>
+          <div class="metric-header">
+            <div class="metric-icon-circle icon-blue">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <span class="metric-title" data-i18n="st.metric_down">下载速度</span>
+          </div>
+          <div class="metric-body">
+            <span class="metric-num" id="downloadVal">--</span>
+            <span class="metric-unit">Mbps</span>
+          </div>
+          <div class="metric-subtitle" id="downloadPeakMeta" data-i18n="st.metric_down_sub">多线程并发下行带宽</div>
+        </div>
+
+        <!-- Upload -->
+        <div class="speed-metric-card">
+          <div class="metric-accent-bar accent-purple"></div>
+          <div class="metric-header">
+            <div class="metric-icon-circle icon-purple">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </div>
+            <span class="metric-title" data-i18n="st.metric_up">上传速度</span>
+          </div>
+          <div class="metric-body">
+            <span class="metric-num" id="uploadVal">--</span>
+            <span class="metric-unit">Mbps</span>
+          </div>
+          <div class="metric-subtitle" id="uploadPeakMeta" data-i18n="st.metric_up_sub">多线程并发上行带宽</div>
+        </div>
+        </div>
+
+        <!-- Workbench Body: Gauge & Live Charts -->
+        <div class="telemetry-deck-row">
+<!-- Left Column: Precision Speedometer & Control Deck -->
         <div class="speed-gauge-col telemetry-gauge-deck">
           <div class="speed-gauge-wrap">
             <svg class="speed-gauge-svg" viewBox="0 0 280 230">
               <defs>
                 <linearGradient id="gaugeTrackGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#00daf5"/>
+                  <stop offset="0%" stop-color="#00BCDF"/>
                   <stop offset="50%" stop-color="#3b82f6"/>
                   <stop offset="100%" stop-color="#a855f7"/>
                 </linearGradient>
@@ -432,74 +501,66 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- 3. 4 Core Metrics Grid -->
-      <div class="speed-metrics-grid">
-        <!-- Ping -->
-        <div class="speed-metric-card">
-          <div class="metric-accent-bar accent-cyan"></div>
-          <div class="metric-header">
-            <div class="metric-icon-circle icon-cyan">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <span class="metric-title" data-i18n="st.metric_ping">延迟 (Ping)</span>
-          </div>
-          <div class="metric-body">
-            <span class="metric-num" id="pingVal">--</span>
-            <span class="metric-unit">ms</span>
-          </div>
-          <div class="metric-subtitle" id="pingRangeMeta" data-i18n="st.metric_ping_sub">网络往返响应时间</div>
-        </div>
-
-        <!-- Jitter -->
-        <div class="speed-metric-card">
-          <div class="metric-accent-bar accent-cyan"></div>
-          <div class="metric-header">
-            <div class="metric-icon-circle icon-cyan">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg>
-            </div>
-            <span class="metric-title" data-i18n="st.metric_jitter">抖动 (Jitter)</span>
-          </div>
-          <div class="metric-body">
-            <span class="metric-num" id="jitterVal">--</span>
-            <span class="metric-unit">ms</span>
-          </div>
-          <div class="metric-subtitle" id="jitterStabilityMeta" data-i18n="st.metric_jitter_sub">连续采样延迟波动</div>
-        </div>
-
-        <!-- Download -->
-        <div class="speed-metric-card">
-          <div class="metric-accent-bar accent-blue"></div>
-          <div class="metric-header">
-            <div class="metric-icon-circle icon-blue">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </div>
-            <span class="metric-title" data-i18n="st.metric_down">下载速度</span>
-          </div>
-          <div class="metric-body">
-            <span class="metric-num" id="downloadVal">--</span>
-            <span class="metric-unit">Mbps</span>
-          </div>
-          <div class="metric-subtitle" id="downloadPeakMeta" data-i18n="st.metric_down_sub">多线程并发下行带宽</div>
-        </div>
-
-        <!-- Upload -->
-        <div class="speed-metric-card">
-          <div class="metric-accent-bar accent-purple"></div>
-          <div class="metric-header">
-            <div class="metric-icon-circle icon-purple">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            </div>
-            <span class="metric-title" data-i18n="st.metric_up">上传速度</span>
-          </div>
-          <div class="metric-body">
-            <span class="metric-num" id="uploadVal">--</span>
-            <span class="metric-unit">Mbps</span>
-          </div>
-          <div class="metric-subtitle" id="uploadPeakMeta" data-i18n="st.metric_up_sub">多线程并发上行带宽</div>
         </div>
       </div>
+
+      <!-- 5. Bottom 2-Card Row: Quality Evaluation & Client Network Info -->
+      <div class="speed-bottom-grid">
+        <!-- Left Card: Quality Evaluation -->
+        <div class="speed-quality-card">
+          <div class="quality-badge-wrap">
+            <div class="quality-double-ring" id="qualityBadgeRing">
+              <span class="quality-grade-letter" id="qualityGradeLetter">S</span>
+            </div>
+          </div>
+          <div class="quality-content">
+            <div class="quality-header-row">
+              <span data-i18n="st.quality_title">网络质量：</span>
+              <span class="quality-rating-text" id="qualityRatingVal" data-i18n="st.quality_standby">待测速评估</span>
+            </div>
+            <p class="quality-desc" id="qualityDescText" data-i18n="st.quality_desc_standby">
+              点击上方“开始测速”按钮运行上下行带宽与延迟抖动测试，系统将自动生成各应用场景评级。
+            </p>
+            <div class="quality-tags-row">
+              <span class="quality-tag is-pass" id="tag4k"><span class="tag-check">✓</span> <span data-i18n="st.tag_4k">4K 视频</span></span>
+              <span class="quality-tag is-pass" id="tagConf"><span class="tag-check">✓</span> <span data-i18n="st.tag_conf">视频会议</span></span>
+              <span class="quality-tag is-pass" id="tagGaming"><span class="tag-check">✓</span> <span data-i18n="st.tag_gaming">在线游戏</span></span>
+              <span class="quality-tag is-pass" id="tagDownload"><span class="tag-check">✓</span> <span data-i18n="st.tag_download">大文件下载</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Card: Network Info -->
+        <div class="speed-netinfo-card">
+          <div class="netinfo-header-row">
+            <div class="netinfo-card-title" data-i18n="st.net_info_title">本机出口与连接诊断</div>
+            <button type="button" class="netinfo-refresh-btn" id="refreshDiagBtn" title="重新检测出口 IP 与路由">↻</button>
+          </div>
+          <div class="netinfo-grid">
+            <div class="netinfo-col">
+              <span class="netinfo-label" data-i18n="st.net_ip">出口公网 IP</span>
+              <strong class="netinfo-val" id="diagIp" title="--">检测中...</strong>
+            </div>
+            <div class="netinfo-col">
+              <span class="netinfo-label" data-i18n="st.net_node">接入节点 / 地区</span>
+              <strong class="netinfo-val" id="diagColo">--</strong>
+            </div>
+            <div class="netinfo-col">
+              <span class="netinfo-label" data-i18n="st.net_proto">HTTP 协议</span>
+              <strong class="netinfo-val" id="diagProto">HTTP/2</strong>
+            </div>
+            <div class="netinfo-col">
+              <span class="netinfo-label" data-i18n="st.net_tls">加密版本</span>
+              <strong class="netinfo-val" id="diagTls">TLS 1.3</strong>
+            </div>
+            <div class="netinfo-col">
+              <span class="netinfo-label" data-i18n="st.net_isp">网络运营商 / ASN</span>
+              <strong class="netinfo-val" id="diagIsp" title="--">--</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <!-- 4. Global Multi-Target Connectivity Matrix (Real HTTP/TLS Latency Probe) -->
       <div class="connectivity-matrix-card">
@@ -603,63 +664,6 @@
               <span class="site-probe-badge" data-probe-val="bilibili">-- ms</span>
             </div>
             <div class="site-probe-bar-track"><div class="site-probe-bar-fill" data-probe-bar="bilibili" style="width: 0%"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. Bottom 2-Card Row: Quality Evaluation & Client Network Info -->
-      <div class="speed-bottom-grid">
-        <!-- Left Card: Quality Evaluation -->
-        <div class="speed-quality-card">
-          <div class="quality-badge-wrap">
-            <div class="quality-double-ring" id="qualityBadgeRing">
-              <span class="quality-grade-letter" id="qualityGradeLetter">S</span>
-            </div>
-          </div>
-          <div class="quality-content">
-            <div class="quality-header-row">
-              <span data-i18n="st.quality_title">网络质量：</span>
-              <span class="quality-rating-text" id="qualityRatingVal" data-i18n="st.quality_standby">待测速评估</span>
-            </div>
-            <p class="quality-desc" id="qualityDescText" data-i18n="st.quality_desc_standby">
-              点击上方“开始测速”按钮运行上下行带宽与延迟抖动测试，系统将自动生成各应用场景评级。
-            </p>
-            <div class="quality-tags-row">
-              <span class="quality-tag is-pass" id="tag4k"><span class="tag-check">✓</span> <span data-i18n="st.tag_4k">4K 视频</span></span>
-              <span class="quality-tag is-pass" id="tagConf"><span class="tag-check">✓</span> <span data-i18n="st.tag_conf">视频会议</span></span>
-              <span class="quality-tag is-pass" id="tagGaming"><span class="tag-check">✓</span> <span data-i18n="st.tag_gaming">在线游戏</span></span>
-              <span class="quality-tag is-pass" id="tagDownload"><span class="tag-check">✓</span> <span data-i18n="st.tag_download">大文件下载</span></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Card: Network Info -->
-        <div class="speed-netinfo-card">
-          <div class="netinfo-header-row">
-            <div class="netinfo-card-title" data-i18n="st.net_info_title">本机出口与连接诊断</div>
-            <button type="button" class="netinfo-refresh-btn" id="refreshDiagBtn" title="重新检测出口 IP 与路由">↻</button>
-          </div>
-          <div class="netinfo-grid">
-            <div class="netinfo-col">
-              <span class="netinfo-label" data-i18n="st.net_ip">出口公网 IP</span>
-              <strong class="netinfo-val" id="diagIp" title="--">检测中...</strong>
-            </div>
-            <div class="netinfo-col">
-              <span class="netinfo-label" data-i18n="st.net_node">接入节点 / 地区</span>
-              <strong class="netinfo-val" id="diagColo">--</strong>
-            </div>
-            <div class="netinfo-col">
-              <span class="netinfo-label" data-i18n="st.net_proto">HTTP 协议</span>
-              <strong class="netinfo-val" id="diagProto">HTTP/2</strong>
-            </div>
-            <div class="netinfo-col">
-              <span class="netinfo-label" data-i18n="st.net_tls">加密版本</span>
-              <strong class="netinfo-val" id="diagTls">TLS 1.3</strong>
-            </div>
-            <div class="netinfo-col">
-              <span class="netinfo-label" data-i18n="st.net_isp">网络运营商 / ASN</span>
-              <strong class="netinfo-val" id="diagIsp" title="--">--</strong>
-            </div>
           </div>
         </div>
       </div>
