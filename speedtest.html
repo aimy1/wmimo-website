@@ -126,7 +126,7 @@
             <div class="server-status-label" data-i18n="st.server_connected">当前测速边缘节点</div>
             <div class="server-detail-row">
               <span id="currentServerName">Cloudflare Edge</span>
-              <span>·</span>
+              <span class="server-sep">·</span>
               <span id="currentServerLocation" data-i18n="st.node_loc_auto">全球 Anycast 自动优选</span>
               <span class="server-ping-tag" id="currentServerPing">-- ms</span>
             </div>
@@ -257,6 +257,17 @@
 
       <!-- 2. Integrated Core Telemetry Workbench -->
       <div class="speedtest-console telemetry-workbench" id="speedtestConsoleCard">
+
+        <!-- Workbench Header: Clean status bar inside the workbench -->
+        <div class="workbench-header-bar">
+          <div class="workbench-header-left">
+            <span class="workbench-status-dot"></span>
+            <span class="workbench-title" data-i18n="st.workbench_title">并发遥测工作台 · Live Telemetry</span>
+          </div>
+          <div class="workbench-header-right">
+            <span class="workbench-meta-pill">Multi-Stream HTTP/2 · TLS 1.3</span>
+          </div>
+        </div>
 
         <!-- 4 Core Key Metrics (Primary Summary at the Top of Workbench) -->
         <div class="speed-metrics-grid">
@@ -553,7 +564,7 @@
               <span class="netinfo-label" data-i18n="st.net_tls">加密版本</span>
               <strong class="netinfo-val" id="diagTls">TLS 1.3</strong>
             </div>
-            <div class="netinfo-col">
+            <div class="netinfo-col col-span-2">
               <span class="netinfo-label" data-i18n="st.net_isp">网络运营商 / ASN</span>
               <strong class="netinfo-val" id="diagIsp" title="--">--</strong>
             </div>
@@ -580,8 +591,8 @@
           <div class="site-probe-card" data-probe-id="cloudflare">
             <div class="site-probe-top">
               <div class="site-probe-ident">
-                <span class="site-probe-icon">☁️</span>
-                <div>
+                <div class="site-probe-icon-box">☁️</div>
+                <div class="site-probe-meta">
                   <strong>Cloudflare Edge</strong>
                   <small>speed.cloudflare.com</small>
                 </div>
@@ -595,8 +606,8 @@
           <div class="site-probe-card" data-probe-id="github">
             <div class="site-probe-top">
               <div class="site-probe-ident">
-                <span class="site-probe-icon">🐙</span>
-                <div>
+                <div class="site-probe-icon-box">🐙</div>
+                <div class="site-probe-meta">
                   <strong>GitHub</strong>
                   <small>github.githubassets.com</small>
                 </div>
@@ -610,8 +621,8 @@
           <div class="site-probe-card" data-probe-id="google">
             <div class="site-probe-top">
               <div class="site-probe-ident">
-                <span class="site-probe-icon">🔍</span>
-                <div>
+                <div class="site-probe-icon-box">🔍</div>
+                <div class="site-probe-meta">
                   <strong>Google</strong>
                   <small>www.google.com</small>
                 </div>
@@ -625,8 +636,8 @@
           <div class="site-probe-card" data-probe-id="youtube">
             <div class="site-probe-top">
               <div class="site-probe-ident">
-                <span class="site-probe-icon">▶️</span>
-                <div>
+                <div class="site-probe-icon-box">▶️</div>
+                <div class="site-probe-meta">
                   <strong>YouTube 4K CDN</strong>
                   <small>i.ytimg.com</small>
                 </div>
@@ -640,8 +651,8 @@
           <div class="site-probe-card" data-probe-id="openai">
             <div class="site-probe-top">
               <div class="site-probe-ident">
-                <span class="site-probe-icon">🤖</span>
-                <div>
+                <div class="site-probe-icon-box">🤖</div>
+                <div class="site-probe-meta">
                   <strong>OpenAI Static</strong>
                   <small>cdn.oaistatic.com</small>
                 </div>
@@ -655,8 +666,8 @@
           <div class="site-probe-card" data-probe-id="bilibili">
             <div class="site-probe-top">
               <div class="site-probe-ident">
-                <span class="site-probe-icon">📺</span>
-                <div>
+                <div class="site-probe-icon-box">📺</div>
+                <div class="site-probe-meta">
                   <strong data-i18n="st.site_bili">Bilibili (国内直连参照)</strong>
                   <small>s1.hdslb.com</small>
                 </div>

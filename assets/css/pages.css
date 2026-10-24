@@ -948,9 +948,13 @@
 
 /* ==========================================================================
    SpeedTest Page Styles — Professional Network Telemetry Dashboard
+   Ultra-Clean Modern Aesthetic · Client Dark Palette · Zero Clutter
    ========================================================================== */
+
+/* ---------- Hero Section ---------- */
 .st-hero-compact {
-  padding: 36px 0 24px 0;
+  padding: 38px 0 24px 0;
+  text-align: center;
 }
 
 .st-hero-eyebrow {
@@ -959,12 +963,13 @@
   gap: 8px;
   padding: 5px 14px;
   border-radius: 999px;
-  background: rgba(var(--brand-primary-rgb), 0.1);
-  border: 1px solid rgba(var(--brand-primary-rgb), 0.25);
+  background: rgba(var(--brand-primary-rgb), 0.08);
+  border: 1px solid rgba(var(--brand-primary-rgb), 0.22);
   color: var(--brand-primary);
   font-size: 0.78rem;
   font-weight: 700;
   margin-bottom: 12px;
+  letter-spacing: 0.02em;
 }
 
 .st-live-dot {
@@ -975,26 +980,26 @@
 }
 
 .speedtest-container {
-  max-width: 1120px;
+  max-width: 1140px;
   margin: 0 auto 64px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* ==========================================================================
-   1. Top Server & 5-Stage Telemetry Pipeline Bar
+   1. Top Server & 5-Stage Telemetry Pipeline Toolbar Card
    ========================================================================== */
 .speed-server-bar.telemetry-top-bar {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  padding: 16px 24px;
-  margin-bottom: 20px;
+  padding: 16px 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   box-shadow: var(--shadow-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   flex-wrap: wrap;
 }
 
@@ -1008,9 +1013,9 @@
 
 .server-beacon-badge {
   position: relative;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1020,30 +1025,24 @@
 .beacon-outer-ring {
   position: absolute;
   inset: 0;
-  border-radius: 50%;
-  border: 1.5px solid rgba(var(--brand-primary-rgb), 0.3);
+  border-radius: 12px;
+  border: 1.5px solid rgba(var(--brand-primary-rgb), 0.25);
   background: rgba(var(--brand-primary-rgb), 0.06);
-  animation: beaconPulse 2.8s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  animation: beaconPulse 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes beaconPulse {
-  0%, 100% { transform: scale(0.96); opacity: 0.6; }
-  50% { transform: scale(1.05); opacity: 1; }
+  0%, 100% { transform: scale(0.96); opacity: 0.5; }
+  50% { transform: scale(1.04); opacity: 0.9; }
 }
 
 .beacon-inner-dot {
   position: relative;
   z-index: 1;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
   background: var(--brand-primary);
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-  background: linear-gradient(135deg, #00daf5 0%, #0284c7 100%);
   color: #FFFFFF;
   display: flex;
   align-items: center;
@@ -1057,30 +1056,34 @@
 }
 
 .server-status-label {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 
 .server-detail-row {
   display: flex;
   align-items: center;
-  gap: 7px;
-  font-size: 0.9rem;
+  gap: 8px;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--text-primary);
   flex-wrap: wrap;
 }
 
+.server-sep {
+  color: var(--text-muted);
+}
+
 .server-ping-tag {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  padding: 2px 8px;
+  padding: 2px 7px;
   border-radius: 6px;
-  background: rgba(16, 185, 129, 0.14);
+  background: rgba(16, 185, 129, 0.12);
   color: #10B981;
 }
 
@@ -1088,12 +1091,12 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 14px;
+  padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-app);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -1109,24 +1112,24 @@
 .telemetry-pipeline-strip {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .test-step-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   padding: 6px 10px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid transparent;
+  background: var(--bg-app);
+  border: 1px solid var(--border-color);
   transition: all 0.2s ease;
 }
 
 .test-step-item.is-active {
   background: rgba(var(--brand-primary-rgb), 0.1);
-  border-color: rgba(var(--brand-primary-rgb), 0.35);
+  border-color: rgba(var(--brand-primary-rgb), 0.4);
 }
 
 .test-step-item.is-completed {
@@ -1135,15 +1138,15 @@
 }
 
 .step-indicator {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--text-muted);
   flex-shrink: 0;
@@ -1157,12 +1160,12 @@
 
 .test-step-item.is-completed .step-indicator {
   border-color: #10B981;
-  background: rgba(16, 185, 129, 0.14);
+  background: rgba(16, 185, 129, 0.2);
   color: #10B981;
 }
 
 .step-line {
-  width: 14px;
+  width: 10px;
   height: 2px;
   background: var(--border-color);
   border-radius: 1px;
@@ -1175,18 +1178,18 @@
 .step-content {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .step-title {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 
 .step-status {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
 }
 
@@ -1335,13 +1338,60 @@
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
   box-shadow: var(--shadow-card);
   transition: border-color 0.25s ease;
 }
 
 .speedtest-console.is-running {
   border-color: rgba(var(--brand-primary-rgb), 0.45);
+}
+
+/* Workbench Sub-Header Bar */
+.workbench-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.workbench-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.workbench-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+}
+
+.speedtest-console.is-running .workbench-status-dot {
+  background: #10B981;
+  animation: beaconPulse 1.5s infinite;
+}
+
+.workbench-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.workbench-meta-pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--bg-app);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
 }
 
 /* 4 Core Metrics Grid — Prominent at the Top of Workbench */
@@ -1361,12 +1411,12 @@
   padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  transition: all var(--transition-fast);
+  transition: all 0.2s ease;
 }
 
 .speed-metric-card:hover {
   transform: translateY(-2px);
-  border-color: var(--brand-primary);
+  border-color: rgba(var(--brand-primary-rgb), 0.35);
 }
 
 .metric-accent-bar {
@@ -1390,7 +1440,7 @@
 .metric-icon-circle {
   width: 28px;
   height: 28px;
-  border-radius: 50%;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1415,10 +1465,11 @@
 
 .metric-num {
   font-family: var(--font-mono);
-  font-size: 1.9rem;
+  font-size: 2.1rem;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1;
+  letter-spacing: -0.02em;
 }
 
 .metric-unit {
@@ -1435,8 +1486,8 @@
 /* Telemetry Deck Row: Left Gauge & Right Charts */
 .telemetry-deck-row {
   display: grid;
-  grid-template-columns: 330px 1fr;
-  gap: 20px;
+  grid-template-columns: 320px 1fr;
+  gap: 16px;
   align-items: stretch;
 }
 
@@ -1445,17 +1496,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background: var(--bg-app);
   border: 1px solid var(--border-color);
   border-radius: 18px;
-  padding: 18px 16px 22px 16px;
+  padding: 20px 16px 20px 16px;
 }
 
 .speed-gauge-wrap {
   position: relative;
   width: 280px;
-  height: 225px;
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1475,7 +1526,7 @@
 
 .gauge-plate-ring {
   fill: none;
-  stroke: rgba(var(--brand-primary-rgb), 0.18);
+  stroke: rgba(var(--brand-primary-rgb), 0.15);
   stroke-width: 1;
   stroke-dasharray: 2 5;
 }
@@ -1490,7 +1541,7 @@
   fill: none;
   stroke: url(#gaugeTrackGrad);
   stroke-width: 7.5;
-  opacity: 0.22;
+  opacity: 0.18;
 }
 
 .gauge-progress-arc {
@@ -1502,21 +1553,21 @@
   transition: stroke-dashoffset 0.08s cubic-bezier(0.1, 0.9, 0.2, 1);
 }
 
-.gauge-tick-major { stroke-width: 2.2; stroke-linecap: round; }
+.gauge-tick-major { stroke-width: 2; stroke-linecap: round; }
 .gauge-tick-major.tick-cyan { stroke: var(--brand-primary); }
 .gauge-tick-major.tick-indigo { stroke: #818cf8; }
 .gauge-tick-major.tick-violet { stroke: #c084fc; }
-.gauge-tick-med { stroke-width: 1.5; stroke-linecap: round; }
+.gauge-tick-med { stroke-width: 1.4; stroke-linecap: round; }
 .gauge-tick-med.tick-cyan { stroke: rgba(var(--brand-primary-rgb), 0.7); }
 .gauge-tick-med.tick-blue { stroke: rgba(59, 130, 246, 0.85); }
 .gauge-tick-med.tick-indigo { stroke: rgba(129, 140, 248, 0.7); }
 .gauge-tick-med.tick-violet { stroke: rgba(192, 132, 252, 0.7); }
-.gauge-tick-minor { stroke: rgba(120, 180, 255, 0.25); stroke-width: 1.1; stroke-linecap: round; }
+.gauge-tick-minor { stroke: rgba(255, 255, 255, 0.15); stroke-width: 1; stroke-linecap: round; }
 
 .gauge-tick-label {
   fill: var(--text-muted);
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 600;
   text-anchor: middle;
   dominant-baseline: central;
@@ -1531,7 +1582,7 @@
 
 .needle-beam {
   stroke: var(--brand-primary);
-  stroke-width: 2.4;
+  stroke-width: 2.2;
   stroke-linecap: round;
 }
 
@@ -1541,7 +1592,7 @@
 
 .gauge-center-content {
   position: absolute;
-  top: 90px;
+  top: 86px;
   left: 0;
   right: 0;
   display: flex;
@@ -1552,7 +1603,7 @@
 
 .gauge-speed-val {
   font-family: var(--font-mono);
-  font-size: 2.7rem;
+  font-size: 2.8rem;
   font-weight: 800;
   letter-spacing: -0.035em;
   color: var(--text-primary);
@@ -1560,8 +1611,8 @@
 }
 
 .gauge-speed-unit {
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   color: var(--text-muted);
   margin-top: 4px;
   margin-bottom: 6px;
@@ -1571,35 +1622,45 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   font-weight: 700;
   color: var(--brand-primary);
+  background: rgba(var(--brand-primary-rgb), 0.1);
+  padding: 3px 10px;
+  border-radius: 999px;
 }
 
 .gauge-peak-pill {
   font-family: var(--font-mono);
-  font-size: 0.76rem;
-  color: var(--text-secondary);
-  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-color);
   padding: 4px 12px;
   border-radius: 999px;
-  margin-bottom: 14px;
+  margin: 10px 0 16px 0;
 }
 
 .gauge-peak-pill strong {
   color: var(--brand-primary);
 }
 
+.speedtest-action-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .btn-speed-radiant {
+  width: 100%;
+  max-width: 240px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-width: 175px;
-  padding: 11px 28px;
+  gap: 8px;
+  padding: 12px 28px;
   border-radius: 999px;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 700;
   background: var(--brand-primary);
   color: #FFFFFF;
@@ -1617,7 +1678,7 @@
 
 .btn-speed-radiant.is-testing {
   background: #EF4444;
-  box-shadow: 0 2px 10px rgba(239, 68, 68, 0.3);
+  box-shadow: 0 2px 10px rgba(239, 68, 68, 0.28);
 }
 
 /* Right Column: Real-Time Charts Deck */
@@ -1632,7 +1693,7 @@
   background: var(--bg-app);
   border: 1px solid var(--border-color);
   border-radius: 18px;
-  padding: 18px 20px;
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1643,7 +1704,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   flex-wrap: wrap;
 }
 
@@ -1654,7 +1715,7 @@
 }
 
 .speed-chart-title {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--text-primary);
   margin: 0;
@@ -1662,7 +1723,7 @@
 
 .chart-sub-badge {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   padding: 2px 8px;
   border-radius: 6px;
   background: rgba(var(--brand-primary-rgb), 0.1);
@@ -1672,15 +1733,16 @@
 .speed-chart-legend {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 0.78rem;
+  gap: 12px;
+  font-size: 0.76rem;
+  font-weight: 600;
   color: var(--text-secondary);
 }
 
 .legend-item {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .legend-dot {
@@ -1689,11 +1751,11 @@
   border-radius: 50%;
 }
 .dot-down { background: var(--brand-primary); }
-.dot-up { background: #a855f7; }
+.dot-up { background: #8B5CF6; }
 
 .speed-chart-canvas-wrap {
   width: 100%;
-  height: 145px;
+  height: 140px;
   position: relative;
 }
 
@@ -1704,17 +1766,17 @@
 }
 
 .speed-chart-footer {
-  margin-top: 12px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .chart-footer-meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   color: var(--text-secondary);
 }
 
@@ -1731,7 +1793,7 @@
 
 .chart-progress-track {
   width: 100%;
-  height: 6px;
+  height: 5px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
   overflow: hidden;
@@ -1740,7 +1802,7 @@
 .chart-progress-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--brand-primary) 0%, #3b82f6 50%, #a855f7 100%);
+  background: linear-gradient(90deg, var(--brand-primary) 0%, #3B82F6 50%, #8B5CF6 100%);
   transition: width 0.15s ease;
 }
 
@@ -1749,7 +1811,7 @@
   background: var(--bg-app);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 14px 18px;
+  padding: 12px 18px;
 }
 
 .ping-telemetry-header {
@@ -1757,12 +1819,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   flex-wrap: wrap;
 }
 
 .ping-telemetry-title {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-primary);
 }
@@ -1770,9 +1832,9 @@
 .ping-telemetry-stats {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   color: var(--text-secondary);
 }
 
@@ -1784,7 +1846,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 6px;
-  height: 46px;
+  height: 42px;
   align-items: end;
 }
 
@@ -1794,14 +1856,14 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
 }
 
 .ping-bar-fill {
   width: 100%;
   min-height: 4px;
-  border-radius: 4px 4px 2px 2px;
-  background: rgba(var(--brand-primary-rgb), 0.2);
+  border-radius: 3px 3px 1px 1px;
+  background: rgba(255, 255, 255, 0.06);
   transition: height 0.25s ease, background 0.25s ease;
 }
 
@@ -1822,8 +1884,7 @@
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  padding: 22px 26px;
-  margin-bottom: 20px;
+  padding: 22px 24px;
   box-shadow: var(--shadow-card);
 }
 
@@ -1844,7 +1905,7 @@
 }
 
 .matrix-card-sub {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
   margin: 0;
 }
@@ -1862,12 +1923,14 @@
   padding: 12px 14px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 10px;
-  transition: border-color 0.2s ease;
+  transition: all 0.18s ease;
 }
 
 .site-probe-card:hover {
-  border-color: rgba(0, 218, 245, 0.35);
+  border-color: rgba(var(--brand-primary-rgb), 0.35);
+  transform: translateY(-1px);
 }
 
 .site-probe-top {
@@ -1884,18 +1947,25 @@
   min-width: 0;
 }
 
-.site-probe-icon {
-  font-size: 1.2rem;
-  line-height: 1;
+.site-probe-icon-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
 }
 
-.site-probe-ident div {
+.site-probe-meta {
   display: flex;
   flex-direction: column;
   min-width: 0;
 }
 
-.site-probe-ident strong {
+.site-probe-meta strong {
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -1904,9 +1974,9 @@
   text-overflow: ellipsis;
 }
 
-.site-probe-ident small {
+.site-probe-meta small {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
@@ -1917,9 +1987,9 @@
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 700;
-  padding: 2px 6px;
-  border-radius: 5px;
-  background: rgba(148, 163, 184, 0.12);
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text-secondary);
   flex-shrink: 0;
 }
@@ -1947,7 +2017,7 @@
 .site-probe-bar-track {
   height: 4px;
   border-radius: 999px;
-  background: rgba(148, 163, 184, 0.14);
+  background: rgba(255, 255, 255, 0.06);
   overflow: hidden;
 }
 
@@ -1959,40 +2029,43 @@
 }
 
 /* ==========================================================================
-   5. Bottom 2-Card Row: Quality Evaluation & Network Info
+   5. Bottom 2-Card Bento: Quality Evaluation & Client Network Info
    ========================================================================== */
 .speed-bottom-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 18px;
 }
 
 .speed-quality-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  padding: 24px 26px;
+  padding: 22px 24px;
   display: flex;
-  align-items: center;
-  gap: 22px;
+  align-items: flex-start;
+  gap: 20px;
   box-shadow: var(--shadow-card);
 }
 
+.quality-badge-wrap {
+  flex-shrink: 0;
+}
+
 .quality-double-ring {
-  width: 66px;
-  height: 66px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   border: 2px solid rgba(16, 185, 129, 0.35);
   background: rgba(16, 185, 129, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 
 .quality-grade-letter {
   font-family: var(--font-mono);
-  font-size: 1.65rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: #10B981;
 }
@@ -2003,7 +2076,7 @@
 }
 
 .quality-header-row {
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 6px;
@@ -2014,45 +2087,51 @@
 }
 
 .quality-desc {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-secondary);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   line-height: 1.55;
 }
 
 .quality-tags-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
 }
 
 .quality-tag {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 4px 11px;
-  border-radius: 999px;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 10px;
   font-size: 0.78rem;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-app);
   border: 1px solid var(--border-color);
   color: var(--text-muted);
 }
 
 .quality-tag.is-pass {
-  background: rgba(16, 185, 129, 0.1);
-  border-color: rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.3);
   color: #10B981;
 }
 
+.tag-check {
+  font-weight: 700;
+}
+
+/* Client Diagnostics Card */
 .speed-netinfo-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  padding: 24px 26px;
+  padding: 22px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 14px;
   box-shadow: var(--shadow-card);
 }
 
@@ -2060,24 +2139,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
 }
 
 .netinfo-card-title {
-  font-size: 1.02rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 
 .netinfo-refresh-btn {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 8px;
   border: 1px solid var(--border-color);
   background: var(--bg-app);
   color: var(--text-secondary);
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2092,24 +2170,32 @@
 .netinfo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 10px;
 }
 
 .netinfo-col {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--bg-app);
+  border: 1px solid var(--border-color);
   min-width: 0;
 }
 
+.netinfo-col.col-span-2 {
+  grid-column: span 2;
+}
+
 .netinfo-label {
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
 }
 
 .netinfo-val {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--text-primary);
   white-space: nowrap;
@@ -2126,7 +2212,12 @@
   }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 960px) {
+  .speed-server-bar.telemetry-top-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
   .telemetry-deck-row {
     grid-template-columns: 1fr;
   }
@@ -2148,8 +2239,18 @@
   .netinfo-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .netinfo-col.col-span-2 {
+    grid-column: span 2;
+  }
+  .quality-tags-row {
+    grid-template-columns: 1fr;
+  }
   .step-line {
     display: none;
+  }
+  .telemetry-pipeline-strip {
+    overflow-x: auto;
+    padding-bottom: 4px;
   }
 }
 
@@ -2178,12 +2279,15 @@
 }
 
 /* Speedtest Light Mode */
-[data-theme="light"] .telemetry-gauge-deck {
-  background: #F8FAFC;
-  border-color: #E2E8F0;
-}
+[data-theme="light"] .telemetry-gauge-deck,
 [data-theme="light"] .speed-chart-card-inner,
-[data-theme="light"] .ping-telemetry-card {
+[data-theme="light"] .ping-telemetry-card,
+[data-theme="light"] .speed-metric-card,
+[data-theme="light"] .test-step-item,
+[data-theme="light"] .quality-tag,
+[data-theme="light"] .netinfo-col,
+[data-theme="light"] .site-probe-card,
+[data-theme="light"] .site-probe-icon-box {
   background: #F8FAFC;
   border-color: #E2E8F0;
 }
@@ -2203,6 +2307,9 @@
 [data-theme="light"] .gauge-tick-label {
   fill: #475569;
 }
+[data-theme="light"] .gauge-tick-minor {
+  stroke: rgba(15, 23, 42, 0.15);
+}
 [data-theme="light"] .server-switch-pill {
   background: #F8FAFC;
   border-color: #CBD5E1;
@@ -2212,8 +2319,15 @@
   background: #FFFFFF;
   color: #64748B;
 }
-[data-theme="light"] .chart-progress-track {
+[data-theme="light"] .chart-progress-track,
+[data-theme="light"] .ping-bar-fill,
+[data-theme="light"] .site-probe-bar-track {
   background: #E2E8F0;
+}
+[data-theme="light"] .workbench-meta-pill {
+  background: #F1F5F9;
+  border-color: #E2E8F0;
+  color: #64748B;
 }
 
 /* ==========================================================================
