@@ -138,6 +138,7 @@ wmimo-website/
 │       ├── app_icon_128.png    # 客户端高清图标 (128x128)
 │       ├── app_icon_256.png    # 客户端高清图标 (256x256)
 │       ├── app_icon_512.png    # 客户端高清图标 (512x512)
+│       ├── app_icon_1024.png   # 客户端超清图标 (1024x1024)
 │       ├── donate_qr.png       # Aptos USDT 赞助收款二维码
 │       └── tray.png            # 客户端托盘菜单示意图
 ├── docs/                       # 15 篇体系化实战技术文档
