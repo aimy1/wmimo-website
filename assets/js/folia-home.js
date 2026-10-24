@@ -55,7 +55,7 @@
       });
     }
 
-    // Pixel-aligned 384x735 Split Slider
+    // Pixel-aligned 371x785 Split Slider
     if (splitContainer && splitOverlay && splitDivider) {
       let dragging = false;
       let splitPct = 50;
