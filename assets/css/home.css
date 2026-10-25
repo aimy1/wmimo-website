@@ -349,6 +349,60 @@ body.home-body {
   font-weight: 700;
 }
 
+/* Sell With Boost Listing Badge */
+.hero-boost-badge-wrap {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.boost-badge-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.boost-badge-link:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.boost-badge-link img {
+  display: block;
+  height: 40px;
+  width: auto;
+  border-radius: 8px;
+}
+
+/* Theme switching for SellWithBoost badge */
+.boost-badge-light-wrap {
+  display: none;
+}
+
+.boost-badge-dark-wrap {
+  display: inline-flex;
+}
+
+[data-theme="light"] .boost-badge-light-wrap {
+  display: inline-flex;
+}
+
+[data-theme="light"] .boost-badge-dark-wrap {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .boost-badge-light-wrap {
+    display: inline-flex;
+  }
+  :root:not([data-theme="dark"]) .boost-badge-dark-wrap {
+    display: none;
+  }
+}
+
 /* 4 Real Client Feature Highlights in Left Hero Column */
 .hero-client-highlights {
   display: grid;
