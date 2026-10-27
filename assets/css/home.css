@@ -246,6 +246,8 @@ body.home-body {
   grid-template-columns: 1.08fr 1fr;
   align-items: center;
   gap: 32px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .hero-copy-col {
@@ -253,6 +255,13 @@ body.home-body {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.hero-showcase-col {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .hero-release-pill {
@@ -342,6 +351,8 @@ body.home-body {
   font-size: 0.8rem;
   color: var(--text-muted);
   margin-bottom: 0;
+  max-width: 100%;
+  word-break: break-word;
 }
 
 .hero-os-detect-note strong {
@@ -379,6 +390,7 @@ body.home-body {
   display: block;
   height: 40px;
   width: auto;
+  max-width: 100%;
   border-radius: 8px;
 }
 
@@ -2199,6 +2211,36 @@ body.home-body {
   }
 }
 
+@media (max-width: 768px) {
+  .hero-badges-wrap {
+    justify-content: center;
+    width: 100%;
+    margin-top: 16px;
+    gap: 10px;
+  }
+  .hero-badge-link img {
+    height: 36px;
+  }
+  .hero-release-pill {
+    max-width: 100%;
+    justify-content: center;
+  }
+  .release-pill-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 440px) {
+  .hero-badges-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+}
+
 @media (max-width: 520px) {
   .platforms-5-grid {
     grid-template-columns: 1fr;
@@ -2206,11 +2248,54 @@ body.home-body {
   .mock-telemetry-grid {
     grid-template-columns: 1fr;
   }
+  .home-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
   .home-hero-actions .btn {
     width: 100%;
+    justify-content: center;
+    min-height: 48px;
+    font-size: 0.95rem;
+    border-radius: 12px;
+  }
+  .app-showcase-toolbar {
+    padding: 4px 6px;
+    gap: 6px;
+    justify-content: center;
+  }
+  .showcase-toolbar-label {
+    display: none;
+  }
+  .showcase-mode-pills {
+    width: 100%;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  .sc-mode-btn {
+    flex: 1;
+    padding: 6px 4px;
+    font-size: 0.72rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .app-showcase-stage {
+    min-height: 460px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .showcase-dual-deck {
+    height: 450px;
   }
   .app-shot-card {
-    width: 245px;
+    width: 220px;
+  }
+  .mode-dual .app-shot-card.is-front {
+    transform: translate(-22px, 6px) scale(1);
+  }
+  .app-showcase-stage.mode-dual .app-shot-card:not(.is-front) {
+    transform: translate(30px, -8px) scale(0.92);
   }
 }
 

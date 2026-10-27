@@ -248,6 +248,7 @@ function initMobileNav() {
 
   function closeDrawer() {
     drawer.classList.remove('is-open');
+    document.body.classList.remove('mobile-drawer-open');
     toggleBtn.setAttribute('aria-expanded', 'false');
     toggleBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>`;
   }
@@ -255,6 +256,7 @@ function initMobileNav() {
   toggleBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     const isOpen = drawer.classList.toggle('is-open');
+    document.body.classList.toggle('mobile-drawer-open', isOpen);
     toggleBtn.setAttribute('aria-expanded', isOpen);
     toggleBtn.innerHTML = isOpen
       ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>`

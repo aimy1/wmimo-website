@@ -442,30 +442,78 @@ pre.code-content {
 @media (max-width: 860px) {
   .docs-layout {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 0 60px 0;
+    gap: 16px;
+    padding: 16px 0 40px 0;
+    width: 100%;
+    min-width: 0;
   }
   
   .docs-sidebar {
     position: static;
     height: auto;
-    max-height: 280px;
+    max-height: 220px;
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-card);
+    border-radius: 16px;
     background: var(--bg-card);
-    padding: 16px;
+    padding: 14px;
     margin-bottom: 8px;
     box-shadow: var(--shadow-card);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .sidebar-search-box {
+    min-height: 38px;
+    padding: 6px 10px;
+  }
+
+  .sidebar-search-input {
+    font-size: 0.88rem;
+    height: 24px;
+  }
+
+  .docs-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .docs-article-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .table-wrapper {
+    margin: 12px 0;
+    border-radius: 12px;
+  }
+
+  .table-wrapper table {
+    min-width: 480px;
+  }
+
+  .code-block-wrapper {
+    border-radius: 12px;
+    margin: 12px 0;
+  }
+
+  pre, pre.code-content {
+    padding: 14px;
+    padding-top: 28px;
+    font-size: 0.78rem;
   }
 
   .docs-pagination {
     flex-direction: column;
     gap: 10px;
+    margin-top: 28px;
   }
 
   .docs-pag-btn {
     width: 100%;
     text-align: center;
     align-items: center;
+    min-height: 48px;
+    padding: 12px 14px;
   }
 }

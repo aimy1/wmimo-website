@@ -214,14 +214,21 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--bg-app);
+  background: color-mix(in srgb, var(--bg-app) 94%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 9999;
-  padding: 20px 16px;
+  padding: 20px 16px calc(24px + env(safe-area-inset-bottom, 0px));
   flex-direction: column;
   gap: 8px;
   border-top: 1px solid var(--border-color);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+body.mobile-drawer-open {
+  overflow: hidden !important;
+  touch-action: none;
 }
 
 .mobile-drawer.is-open {
@@ -557,6 +564,19 @@
 }
 
 @media (max-width: 640px) {
+  .header-inner {
+    height: 56px;
+  }
+  .mobile-drawer {
+    top: 56px;
+  }
+  .nav-actions {
+    gap: 8px;
+  }
+  /* Hide desktop secondary action button in header on mobile to prevent navbar overflow */
+  .nav-actions > .btn {
+    display: none !important;
+  }
   .toast-container {
     left: 16px;
     right: 16px;
@@ -566,30 +586,42 @@
   .toast {
     width: 100%;
     justify-content: center;
+    font-size: 0.88rem;
+    padding: 11px 16px;
   }
   .back-to-top-btn {
-    bottom: 16px;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
     right: 16px;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
   }
 }
 
 @media (max-width: 480px) {
   .site-logo span {
-    font-size: 1.12rem;
+    font-size: 1.15rem;
   }
   .site-logo img {
     width: 28px;
     height: 28px;
+    border-radius: 7px;
   }
   .nav-actions {
     gap: 6px;
   }
-  .nav-actions .btn-secondary span {
-    display: none;
+  .lang-capsule {
+    padding: 2px;
   }
-  .nav-actions .btn-secondary {
-    padding: 7px 10px;
+  .lang-capsule-btn {
+    padding: 3px 8px;
+    font-size: 0.74rem;
+  }
+  .theme-toggle-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .mobile-toggle-btn {
+    width: 36px;
+    height: 36px;
   }
 }
