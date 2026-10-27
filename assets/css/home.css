@@ -349,14 +349,17 @@ body.home-body {
   font-weight: 700;
 }
 
-/* Sell With Boost Listing Badge */
+/* Directory & Review Badges (Product Hunt & Sell With Boost) */
+.hero-badges-wrap,
 .hero-boost-badge-wrap {
   margin-top: 18px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
+.hero-badge-link,
 .boost-badge-link {
   display: inline-flex;
   align-items: center;
@@ -365,16 +368,44 @@ body.home-body {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+.hero-badge-link:hover,
 .boost-badge-link:hover {
   opacity: 0.88;
   transform: translateY(-1px);
 }
 
+.hero-badge-link img,
 .boost-badge-link img {
   display: block;
   height: 40px;
   width: auto;
   border-radius: 8px;
+}
+
+/* Theme switching for Product Hunt badge */
+.ph-badge-light-wrap {
+  display: none;
+}
+
+.ph-badge-dark-wrap {
+  display: inline-flex;
+}
+
+[data-theme="light"] .ph-badge-light-wrap {
+  display: inline-flex;
+}
+
+[data-theme="light"] .ph-badge-dark-wrap {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .ph-badge-light-wrap {
+    display: inline-flex;
+  }
+  :root:not([data-theme="dark"]) .ph-badge-dark-wrap {
+    display: none;
+  }
 }
 
 /* Theme switching for SellWithBoost badge */
