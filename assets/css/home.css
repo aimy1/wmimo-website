@@ -568,8 +568,8 @@ body.home-body {
 .app-showcase-stage {
   position: relative;
   width: 100%;
-  max-width: 480px;
-  min-height: 560px;
+  max-width: 540px;
+  min-height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -583,7 +583,7 @@ body.home-body {
 .showcase-dual-deck {
   position: relative;
   width: 100%;
-  height: 550px;
+  height: 370px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -592,12 +592,13 @@ body.home-body {
 
 .app-shot-card {
   position: absolute;
-  width: 255px;
-  border-radius: 16px;
-  padding: 5px;
+  width: 480px;
+  max-width: 90%;
+  border-radius: 14px;
+  padding: 4px;
   background: #1C1C1E;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55);
   cursor: pointer;
   transition: all 0.42s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
@@ -606,15 +607,15 @@ body.home-body {
 .app-shot-card.shot-light {
   background: #FFFFFF;
   border-color: rgba(15, 23, 42, 0.12);
-  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.16);
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.16);
 }
 
 .app-shot-card img {
   width: 100%;
   height: auto;
-  aspect-ratio: 371 / 785;
+  aspect-ratio: 1024 / 668;
   display: block;
-  border-radius: 11px;
+  border-radius: 10px;
 }
 
 .shot-theme-badge {
@@ -644,52 +645,53 @@ body.home-body {
 /* Mode: Dual (Both Dark & Light visible, front vs back) */
 .app-showcase-stage.mode-dual .app-shot-card.is-front {
   z-index: 4;
-  transform: translate(-38px, 6px) scale(1);
+  transform: translate(-18px, 12px) scale(1);
   border-color: rgba(255, 255, 255, 0.22);
   box-shadow: 0 24px 54px rgba(0, 0, 0, 0.6);
 }
 
 .app-showcase-stage.mode-dual .app-shot-card:not(.is-front) {
   z-index: 2;
-  transform: translate(54px, -10px) scale(0.92);
+  transform: translate(18px, -12px) scale(0.94);
   opacity: 0.88;
 }
 
 .app-showcase-stage.mode-dual .app-shot-card:not(.is-front):hover {
   opacity: 0.98;
-  transform: translate(58px, -14px) scale(0.94);
+  transform: translate(20px, -14px) scale(0.96);
 }
 
 /* Mode: Single Dark */
 .app-showcase-stage.mode-dark .shot-dark {
   z-index: 4;
-  transform: translate(0, 0) scale(1.02);
+  transform: translate(0, 0) scale(1);
   opacity: 1;
 }
 .app-showcase-stage.mode-dark .shot-light {
   opacity: 0;
   pointer-events: none;
-  transform: scale(0.85);
+  transform: scale(0.88);
 }
 
 /* Mode: Single Light */
 .app-showcase-stage.mode-light .shot-light {
   z-index: 4;
-  transform: translate(0, 0) scale(1.02);
+  transform: translate(0, 0) scale(1);
   opacity: 1;
 }
 .app-showcase-stage.mode-light .shot-dark {
   opacity: 0;
   pointer-events: none;
-  transform: scale(0.85);
+  transform: scale(0.88);
 }
 
-/* Mode: Split Compare (371x785 Pixel-Aligned Slider) */
+/* Mode: Split Compare (1024x668 Pixel-Aligned Slider) */
 .showcase-split-deck {
   display: none;
   z-index: 5;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .app-showcase-stage.mode-split .showcase-dual-deck {
@@ -702,9 +704,10 @@ body.home-body {
 
 .shot-split-container {
   position: relative;
-  width: 255px;
-  aspect-ratio: 371 / 785;
-  border-radius: 16px;
+  width: 480px;
+  max-width: 90%;
+  aspect-ratio: 1024 / 668;
+  border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
@@ -2281,21 +2284,26 @@ body.home-body {
     text-align: center;
   }
   .app-showcase-stage {
-    min-height: 460px;
+    min-height: 240px;
     max-width: 100%;
     overflow: hidden;
   }
   .showcase-dual-deck {
-    height: 450px;
+    height: 230px;
   }
   .app-shot-card {
-    width: 220px;
+    width: 280px;
+    max-width: 86%;
   }
   .mode-dual .app-shot-card.is-front {
-    transform: translate(-22px, 6px) scale(1);
+    transform: translate(-10px, 8px) scale(1);
   }
   .app-showcase-stage.mode-dual .app-shot-card:not(.is-front) {
-    transform: translate(30px, -8px) scale(0.92);
+    transform: translate(12px, -8px) scale(0.94);
+  }
+  .shot-split-container {
+    width: 280px;
+    max-width: 86%;
   }
 }
 
