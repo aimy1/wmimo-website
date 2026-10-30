@@ -1,9 +1,9 @@
 [
   {
     "platform": "windows",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Windows-x64-Setup-v1.3.3.1519.exe",
-    "sha256": "718b8d0a5054081a7f636f4206b8aa39af61b38535807acca96706e14284a2cf",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Windows-x64-Setup-v1.3.4.1520.exe",
+    "sha256": "8676f54365ddec8ebc1af7673a5cee06d276ccdea661b3281374b20db717ada9",
     "abis": [
       "x86_64",
       "x64",
@@ -19,9 +19,9 @@
   },
   {
     "platform": "windows",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Windows-arm64-Setup-v1.3.3.1519.exe",
-    "sha256": "2e6c0071d123d7ff87dff5fbb05890d244261f82a880613370a3be738e8eedbd",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Windows-arm64-Setup-v1.3.4.1520.exe",
+    "sha256": "727f3f32f9667de025a417901c484b91d0be257666da5e1e6b387e6e40e4649c",
     "abis": [
       "arm64",
       "aarch64"
@@ -36,9 +36,9 @@
   },
   {
     "platform": "android",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Android-arm64-v8a-v1.3.3.1519.apk",
-    "sha256": "ae6fa268a485b4a36678d23d58caf11514dac2333e8523017f5f46bfa3fa7d89",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Android-arm64-v8a-v1.3.4.1520.apk",
+    "sha256": "fd79d932c4c49f9ea75cca749e850d54ce2361d3f9c21c2669b3c399602fe509",
     "abis": [
       "arm64-v8a"
     ],
@@ -52,9 +52,9 @@
   },
   {
     "platform": "android",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Android-armeabi-v7a-v1.3.3.1519.apk",
-    "sha256": "861319abd7bd205aaba051b9688b59435fa01114aa4d9588e961bfdd083c53b9",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Android-armeabi-v7a-v1.3.4.1520.apk",
+    "sha256": "5684a327a04939a10c6902847e6624401224c27df6e56f53738936476b198845",
     "abis": [
       "armeabi-v7a"
     ],
@@ -68,9 +68,9 @@
   },
   {
     "platform": "android",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Android-x86_64-v1.3.3.1519.apk",
-    "sha256": "f082d38f4f735ac0d44602945f493f4196519fb62ee32e18506a438060a45f08",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Android-x86_64-v1.3.4.1520.apk",
+    "sha256": "38b0feef80ac62f874a0ef61d85c917ed86cffe1b0b306ae46d81425a93207da",
     "abis": [
       "x86_64"
     ],
@@ -84,9 +84,9 @@
   },
   {
     "platform": "android",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Android-universal-v1.3.3.1519.apk",
-    "sha256": "361b7a9c1e4c4e8897d97d50d7476021948f9355ba59d57c904e944a5811a8b9",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Android-universal-v1.3.4.1520.apk",
+    "sha256": "d758a010eeee30b1df60fef26df5eca003a1330a5a8de87c34327e8553427d62",
     "abis": [
       "*"
     ],
@@ -100,9 +100,9 @@
   },
   {
     "platform": "linux",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Linux-x64-v1.3.3.1519.deb",
-    "sha256": "d20c016a0bb1e633945ba6ceb31d4baa8b46b43411568031f37beed7cee7242a",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Linux-x64-v1.3.4.1520.deb",
+    "sha256": "650d4f17d8148d657116185a97a2c0e8de15df35dc587f22242149f071496840",
     "abis": [
       "x86_64",
       "x64",
@@ -118,9 +118,9 @@
   },
   {
     "platform": "linux",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Linux-arm64-v1.3.3.1519.deb",
-    "sha256": "e403be64aa6860cf347c74ea7bc95c53239cf326bed344d502dd800d695562e7",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Linux-arm64-v1.3.4.1520.deb",
+    "sha256": "451dd30739ac4ffa95b067ab9ab6ae4e58c3559cc0c3df3bd9b1c8bbd7a5b185",
     "abis": [
       "arm64",
       "aarch64"
@@ -135,9 +135,9 @@
   },
   {
     "platform": "linux",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Linux-x64-v1.3.3.1519.rpm",
-    "sha256": "39b83641a83f6c10c37ac69e7514ba70d3f0b5e7bc063675a2d2dabceabc0933",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Linux-x64-v1.3.4.1520.rpm",
+    "sha256": "24b34d1fa76b5f96e42112da8228906865b93c6df1c82685aeb9c7ea36a93e2f",
     "abis": [
       "x86_64",
       "x64",
@@ -153,9 +153,9 @@
   },
   {
     "platform": "linux",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Linux-arm64-v1.3.3.1519.rpm",
-    "sha256": "4c922a227115acd776a9b1e56554edd1e614ab05981b1c6bea1f83661fa4faf6",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Linux-arm64-v1.3.4.1520.rpm",
+    "sha256": "125e1903991c3cadaeca65cd67716d5d8f666495d19b829c92abe8a09f9527bf",
     "abis": [
       "arm64",
       "aarch64"
@@ -170,9 +170,9 @@
   },
   {
     "platform": "linux",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Linux-x64-v1.3.3.1519.AppImage",
-    "sha256": "5d8cf92a23687b676045929790debfaa94547535be5ddcf514ff698fe3c9a3db",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Linux-x64-v1.3.4.1520.AppImage",
+    "sha256": "4ee5e6833c6e5960a64af545441c0a0f9e7c2f885bbee2c809481c73dd5da9c5",
     "abis": [
       "x86_64",
       "x64",
@@ -188,9 +188,9 @@
   },
   {
     "platform": "linux",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Linux-arm64-v1.3.3.1519.AppImage",
-    "sha256": "7bb842020a84e8d6b9919ea96394d5a8de5b74e4f9db05d525766200a3a835d2",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Linux-arm64-v1.3.4.1520.AppImage",
+    "sha256": "cf617b94511702f4f485bb2fc71b098ab15375c56ac8f8872e61cd21ef04cdac",
     "abis": [
       "arm64",
       "aarch64"
@@ -205,9 +205,9 @@
   },
   {
     "platform": "linux",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Linux-x64-v1.3.3.1519.deb",
-    "sha256": "d20c016a0bb1e633945ba6ceb31d4baa8b46b43411568031f37beed7cee7242a",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Linux-x64-v1.3.4.1520.deb",
+    "sha256": "650d4f17d8148d657116185a97a2c0e8de15df35dc587f22242149f071496840",
     "abis": [
       "x86_64",
       "x64",
@@ -223,9 +223,9 @@
   },
   {
     "platform": "linux",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-Linux-arm64-v1.3.3.1519.deb",
-    "sha256": "e403be64aa6860cf347c74ea7bc95c53239cf326bed344d502dd800d695562e7",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-Linux-arm64-v1.3.4.1520.deb",
+    "sha256": "451dd30739ac4ffa95b067ab9ab6ae4e58c3559cc0c3df3bd9b1c8bbd7a5b185",
     "abis": [
       "arm64",
       "aarch64"
@@ -240,9 +240,9 @@
   },
   {
     "platform": "macos",
-    "version": "1.3.3.1519",
-    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.3.1519/Wmimo-macOS-universal-v1.3.3.1519.dmg",
-    "sha256": "bf2ac274bace01c30a23be48274a125ccb72d1139933df58a2088e21c5b76a19",
+    "version": "1.3.4.1520",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.3.4.1520/Wmimo-macOS-universal-v1.3.4.1520.dmg",
+    "sha256": "5c9ccdce92825fd257f383e7eafbb1209a1e5c49033a396f17961127a4360367",
     "abis": [
       "arm64",
       "x86_64",
