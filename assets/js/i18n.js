@@ -312,6 +312,26 @@
       'docs.item_dev_guide': '跨平台开发实战指南',
       'docs.pag_prev': '上一篇',
       'docs.pag_next': '下一篇',
+      'docs.toc_title': '本页目录',
+      'docs.toc_back_to_top': '返回顶部',
+      'docs.catalog_heading': '📚 知识库完整目录索引',
+      'docs.catalog_sub': '全站 15 篇技术实战指南，覆盖从基础入门到内核调优与跨平台架构的全景知识矩阵。',
+      'docs.read_more': '阅读 →',
+      'docs.card_desc_quickstart': '客户端安装、订阅链接导入与 3 步启动极速代理服务。',
+      'docs.card_desc_modes': '规则、全局与直连三大出站模式详解及智能延迟测速选路。',
+      'docs.card_desc_tun': '全平台接管无代理协议应用流量，Wintun 驱动与自动路由回环隔离。',
+      'docs.card_desc_dns': 'Fake-IP 零等待解析机制、分流 Nameserver 组与防止 DNS 泄漏配置。',
+      'docs.card_desc_rules': '域名后缀、GeoIP、IP-CIDR 与应用进程名 (PROCESS-NAME) 精准策略分流。',
+      'docs.card_desc_protocols': 'VLESS、Trojan、Hysteria2、TUIC v5 与 Full Cone NAT 游戏联机优化。',
+      'docs.card_desc_sniffer': 'TLS SNI 与 HTTP Host 实时嗅探还原，精准矫正 IP 直连请求的分流规则。',
+      'docs.card_desc_groups': 'select、url-test 自动容灾优选与 fallback 备用节点的智能调度链路。',
+      'docs.card_desc_lan': '允许局域网连接，为 PS5、Switch、Xbox 及智能电视快速配置代理加速。',
+      'docs.card_desc_dashboard': 'RESTful API 端口与 Secret 鉴权，对接 Yacd、MetaCubeXD 等 Web 控制台。',
+      'docs.card_desc_subscriptions': '多订阅自动定时刷新与 Rule Provider 远程分流规则集持久化缓存。',
+      'docs.card_desc_clients': '全平台主流 Clash / Mihomo 兼容客户端横向评测与选型指南。',
+      'docs.card_desc_faq': '订阅导入超时、TUN 冲突、Linux 沙盒权限与系统代理常见故障排错。',
+      'docs.card_desc_build': 'Flutter SDK、Go/Rust 交叉编译工具链配置与全平台 Release 打包流程。',
+      'docs.card_desc_dev_guide': '52 节深度实战：TUN/VPN、DNS、路由隔离与 Rust Platform Adapter 全流程解析。',
 
       // Docs Article Content Translations
       'doc_qs.title': "快速上手指南",
@@ -1416,6 +1436,26 @@
       'docs.item_dev_guide': 'Cross-Platform Dev Guide',
       'docs.pag_prev': 'Previous',
       'docs.pag_next': 'Next',
+      'docs.toc_title': 'On this page',
+      'docs.toc_back_to_top': 'Back to top',
+      'docs.catalog_heading': '📚 Full Documentation Catalog',
+      'docs.catalog_sub': 'Comprehensive matrix of 15 technical guides covering quick start, routing optimization, and cross-platform architecture.',
+      'docs.read_more': 'Read guide →',
+      'docs.card_desc_quickstart': 'Client installation, subscription profile import, and 3-step quick proxy launch.',
+      'docs.card_desc_modes': 'Rule, Global, and Direct outbound modes with smart latency benchmarking.',
+      'docs.card_desc_tun': 'System-wide traffic capture for non-proxy apps, Wintun driver, and loopback avoidance.',
+      'docs.card_desc_dns': 'Fake-IP zero-latency resolution, nameserver grouping, and anti-leak configuration.',
+      'docs.card_desc_rules': 'Domain suffix, GeoIP, IP-CIDR, and PROCESS-NAME precision traffic routing.',
+      'docs.card_desc_protocols': 'VLESS, Trojan, Hysteria2, TUIC v5, and Full Cone NAT gaming optimizations.',
+      'docs.card_desc_sniffer': 'Real-time TLS SNI & HTTP Host sniffing to restore accurate domain routing on raw IP connections.',
+      'docs.card_desc_groups': 'Select, url-test auto failover, and fallback proxy group scheduling.',
+      'docs.card_desc_lan': 'Allow LAN connections to accelerate PS5, Switch, Xbox, and Smart TVs on local network.',
+      'docs.card_desc_dashboard': 'RESTful API controller & Secret auth for Yacd, MetaCubeXD, and external dashboards.',
+      'docs.card_desc_subscriptions': 'Auto-refreshing subscription manager & persistent Rule Provider remote sets.',
+      'docs.card_desc_clients': 'Cross-platform comparison and recommendation matrix for Clash & Mihomo clients.',
+      'docs.card_desc_faq': 'Troubleshooting timeouts, TUN conflicts, Linux sandboxing, and system proxy errors.',
+      'docs.card_desc_build': 'Flutter SDK, Go/Rust cross-compilation toolchains, and full platform release builds.',
+      'docs.card_desc_dev_guide': '52-chapter deep dive into TUN/VPN, DNS, routing loop prevention, and Rust platform adapters.',
 
       // Docs Article Content Translations
       'doc_qs.title': "Quick Start Guide",
@@ -2341,6 +2381,7 @@
     } catch (e) {}
 
     applyTranslations(targetLang);
+    try { window.dispatchEvent(new CustomEvent('wmimo:langchange', { detail: { lang: targetLang } })); } catch (e) {}
 
     if (notify && typeof window.showToast === 'function') {
       window.showToast(t('toast.lang_switched', targetLang), 'success');

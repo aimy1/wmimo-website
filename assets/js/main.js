@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStatCounters();
   initDocsSidebarFilter();
   initAssetsFilter();
+  initDocsTableOfContents();
 });
 
 
@@ -497,3 +498,215 @@ function initAssetsFilter() {
 
 
 
+
+/* ==========================================================================
+   Documentation Table of Contents (TOC) & Scrollspy Engine
+   Builds sticky desktop TOC and collapsible mobile TOC with active scrollspy
+   ========================================================================== */
+function initDocsTableOfContents() {
+  const docsLayout = document.querySelector('.docs-layout');
+  const article = document.querySelector('.docs-article');
+  if (!docsLayout || !article) return;
+
+  // Query all H2 and H3 headings in article (skip callouts / code blocks)
+  const headings = Array.from(article.querySelectorAll('h2, h3')).filter(h => {
+    return !h.closest('.callout') && !h.closest('.code-block-wrapper') && h.innerText.trim().length > 0;
+  });
+
+  if (headings.length < 2) return;
+
+  // 1. Assign IDs to headings if missing & append subtle anchor symbol
+  headings.forEach((heading, idx) => {
+    if (!heading.id) {
+      const i18nKey = heading.getAttribute('data-i18n');
+      if (i18nKey) {
+        heading.id = i18nKey.replace(/^doc[a-z_]*\./, '').replace(/_/g, '-');
+      } else {
+        const textSlug = heading.innerText.trim()
+          .toLowerCase()
+          .replace(/[^\w\u4e00-\u9fa5]+/g, '-')
+          .replace(/^-+|-+$/g, '');
+        heading.id = textSlug || `section-${idx + 1}`;
+      }
+    }
+
+    // Add anchor link if not present
+    if (!heading.querySelector('.docs-heading-anchor-link')) {
+      const anchor = document.createElement('a');
+      anchor.className = 'docs-heading-anchor-link';
+      anchor.href = `#${heading.id}`;
+      anchor.setAttribute('aria-label', '永久锚点链接');
+      anchor.textContent = '#';
+      heading.appendChild(anchor);
+    }
+  });
+
+  // 2. Helper to generate TOC link items
+  function getHeadingText(h) {
+    // Clone heading to remove anchor symbol text if present
+    const clone = h.cloneNode(true);
+    const anchor = clone.querySelector('.docs-heading-anchor-link');
+    if (anchor) anchor.remove();
+    return clone.innerText.trim();
+  }
+
+  function buildTocListHtml() {
+    return headings.map(h => {
+      const isH3 = h.tagName.toLowerCase() === 'h3';
+      const depthClass = isH3 ? 'docs-toc-link depth-3' : 'docs-toc-link depth-2';
+      const text = getHeadingText(h);
+      return `<li><a href="#${h.id}" class="${depthClass}" data-target-id="${h.id}">${text}</a></li>`;
+    }).join('');
+  }
+
+  // 3. Desktop Sticky TOC (.docs-toc)
+  let desktopToc = docsLayout.querySelector('.docs-toc');
+  if (!desktopToc) {
+    desktopToc = document.createElement('aside');
+    desktopToc.className = 'docs-toc';
+    desktopToc.id = 'docsToc';
+    docsLayout.appendChild(desktopToc);
+  }
+
+  const tocTitleText = window.WmimoI18n ? window.WmimoI18n.t('docs.toc_title') : '本页目录';
+  const backTopText = window.WmimoI18n ? window.WmimoI18n.t('docs.toc_back_to_top') : '返回顶部';
+
+  desktopToc.innerHTML = `
+    <div class="docs-toc-inner">
+      <div class="docs-toc-header">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="21" y1="10" x2="7" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="7" y2="18"/>
+        </svg>
+        <span data-i18n="docs.toc_title">${tocTitleText}</span>
+      </div>
+      <nav class="docs-toc-nav" id="docsTocNav">
+        <ul class="docs-toc-list">
+          ${buildTocListHtml()}
+        </ul>
+      </nav>
+      <div class="docs-toc-footer">
+        <a href="#top" class="docs-toc-backtop">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+          <span data-i18n="docs.toc_back_to_top">${backTopText}</span>
+        </a>
+      </div>
+    </div>
+  `;
+
+  // 4. Mobile Collapsible TOC (.docs-mobile-toc)
+  let mobileToc = article.querySelector('.docs-mobile-toc');
+  if (!mobileToc) {
+    mobileToc = document.createElement('details');
+    mobileToc.className = 'docs-mobile-toc';
+    mobileToc.id = 'docsMobileToc';
+    const header = article.querySelector('.docs-article-header');
+    if (header && header.nextSibling) {
+      article.insertBefore(mobileToc, header.nextSibling);
+    } else {
+      article.prepend(mobileToc);
+    }
+  }
+
+  const headingCountLabel = (window.WmimoI18n && window.WmimoI18n.getCurrentLang() === 'en')
+    ? `${headings.length} sections`
+    : `${headings.length} 节`;
+
+  mobileToc.innerHTML = `
+    <summary class="docs-mobile-toc-summary">
+      <div class="docs-mobile-toc-title">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="21" y1="10" x2="7" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="7" y2="18"/>
+        </svg>
+        <span data-i18n="docs.toc_title">${tocTitleText}</span>
+        <span class="docs-mobile-toc-count">${headingCountLabel}</span>
+      </div>
+      <svg class="docs-mobile-toc-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <nav class="docs-mobile-toc-nav">
+      <ul class="docs-toc-list">
+        ${buildTocListHtml()}
+      </ul>
+    </nav>
+  `;
+
+  // Close mobile details on link click
+  mobileToc.querySelectorAll('.docs-toc-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileToc.removeAttribute('open');
+    });
+  });
+
+  // Handle back to top smooth scroll
+  const backTopBtn = desktopToc.querySelector('.docs-toc-backtop');
+  if (backTopBtn) {
+    backTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (history.pushState) {
+        history.pushState(null, '', window.location.pathname);
+      }
+    });
+  }
+
+  // Handle smooth scroll & URL hash on TOC link click
+  const allTocLinks = Array.from(document.querySelectorAll('.docs-toc-link'));
+  allTocLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('data-target-id');
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+        if (history.pushState) {
+          history.pushState(null, '', `#${targetId}`);
+        }
+      }
+    });
+  });
+
+  // 5. Scrollspy Navigation
+  function setActiveLink(activeId) {
+    allTocLinks.forEach(link => {
+      const isTarget = link.getAttribute('data-target-id') === activeId;
+      link.classList.toggle('active', isTarget);
+      link.classList.toggle(':target-current', isTarget);
+      link.setAttribute('aria-current', isTarget ? 'true' : 'false');
+      if (isTarget && link.closest('.docs-toc')) {
+        // Keep active link visible in desktop TOC scroll container
+        link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+    });
+  }
+
+  let currentActiveId = headings[0]?.id || '';
+  setActiveLink(currentActiveId);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        currentActiveId = entry.target.id;
+        setActiveLink(currentActiveId);
+      }
+    });
+  }, {
+    rootMargin: '-88px 0px -65% 0px',
+    threshold: 0
+  });
+
+  headings.forEach(h => observer.observe(h));
+
+  // 6. Language sync handler
+  window.addEventListener('wmimo:langchange', () => {
+    headings.forEach(h => {
+      const targetId = h.id;
+      const text = getHeadingText(h);
+      document.querySelectorAll(`.docs-toc-link[data-target-id="${targetId}"]`).forEach(l => {
+        l.textContent = text;
+      });
+    });
+    const newTocTitle = window.WmimoI18n ? window.WmimoI18n.t('docs.toc_title') : '本页目录';
+    const newBackTop = window.WmimoI18n ? window.WmimoI18n.t('docs.toc_back_to_top') : '返回顶部';
+    document.querySelectorAll('[data-i18n="docs.toc_title"]').forEach(el => el.textContent = newTocTitle);
+    document.querySelectorAll('[data-i18n="docs.toc_back_to_top"]').forEach(el => el.textContent = newBackTop);
+  });
+}

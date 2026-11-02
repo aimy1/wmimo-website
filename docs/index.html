@@ -190,6 +190,180 @@
             <li data-i18n-html="doc_qs.import_patch"><strong>配置补丁 (Profile Patch)</strong>：在不改动原订阅的前提下，追加自定义的分流规则与 DNS 策略。</li>
           </ul>
 
+          
+          <!-- Full Documentation Catalog Section -->
+          <div class="docs-catalog-section" id="catalog">
+            <h2 id="docs-catalog-heading" data-i18n="docs.catalog_heading">📚 知识库完整目录索引</h2>
+            <p class="docs-catalog-subtitle" data-i18n="docs.catalog_sub">全站 15 篇技术实战指南，覆盖从基础入门到内核调优与跨平台架构的全景知识矩阵。</p>
+
+            <div class="docs-catalog-matrix">
+              <!-- Group 1: 快速起步 -->
+              <div class="docs-catalog-group">
+                <div class="docs-catalog-group-header">
+                  <span class="docs-catalog-badge badge-green">01</span>
+                  <h3 data-i18n="docs.group_quickstart">快速起步</h3>
+                </div>
+                <div class="docs-catalog-grid">
+                  <a href="index.html" class="docs-catalog-card active">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">⚡</span>
+                      <span class="docs-catalog-time">1 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_quickstart">快速上手指南</h4>
+                    <p data-i18n="docs.card_desc_quickstart">客户端安装、订阅链接导入与 3 步启动极速代理服务。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Group 2: 核心功能与配置 -->
+              <div class="docs-catalog-group">
+                <div class="docs-catalog-group-header">
+                  <span class="docs-catalog-badge badge-blue">02</span>
+                  <h3 data-i18n="docs.group_core">核心功能与配置</h3>
+                </div>
+                <div class="docs-catalog-grid">
+                  <a href="modes.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">⚙️</span>
+                      <span class="docs-catalog-time">3 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_modes">出站与分流模式</h4>
+                    <p data-i18n="docs.card_desc_modes">规则、全局与直连三大出站模式详解及智能延迟测速选路。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                  <a href="tun.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">🛡️</span>
+                      <span class="docs-catalog-time">4 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_tun">TUN 虚拟网卡</h4>
+                    <p data-i18n="docs.card_desc_tun">全平台接管无代理协议应用流量，Wintun 驱动与自动路由回环隔离。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                  <a href="dns.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">🌐</span>
+                      <span class="docs-catalog-time">4 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_dns">DNS 与 Fake-IP 防污染</h4>
+                    <p data-i18n="docs.card_desc_dns">Fake-IP 零等待解析机制、分流 Nameserver 组与防止 DNS 泄漏配置。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                  <a href="rules.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">🎯</span>
+                      <span class="docs-catalog-time">5 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_rules">高级规则与进程分流</h4>
+                    <p data-i18n="docs.card_desc_rules">域名后缀、GeoIP、IP-CIDR 与应用进程名 (PROCESS-NAME) 精准策略分流。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                  <a href="protocols.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">⚡</span>
+                      <span class="docs-catalog-time">3 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_protocols">新一代协议与 NAT</h4>
+                    <p data-i18n="docs.card_desc_protocols">VLESS、Trojan、Hysteria2、TUIC v5 与 Full Cone NAT 游戏联机优化。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                  <a href="sniffer.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">🔍</span>
+                      <span class="docs-catalog-time">3 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_sniffer">域名与协议嗅探器 (Sniffer)</h4>
+                    <p data-i18n="docs.card_desc_sniffer">TLS SNI 与 HTTP Host 实时嗅探还原，精准矫正 IP 直连请求的分流规则。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                  <a href="groups.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">🔀</span>
+                      <span class="docs-catalog-time">4 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_groups">策略组调度与自动容灾</h4>
+                    <p data-i18n="docs.card_desc_groups">select、url-test 自动容灾优选与 fallback 备用节点的智能调度链路。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                  <a href="lan.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">🎮</span>
+                      <span class="docs-catalog-time">3 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_lan">局域网共享与主机代理</h4>
+                    <p data-i18n="docs.card_desc_lan">允许局域网连接，为 PS5、Switch、Xbox 及智能电视快速配置代理加速。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                  <a href="dashboard.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">🖥️</span>
+                      <span class="docs-catalog-time">3 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_dashboard">外部控制器与 Web 仪表盘</h4>
+                    <p data-i18n="docs.card_desc_dashboard">RESTful API 端口与 Secret 鉴权，对接 Yacd、MetaCubeXD 等 Web 控制台。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                  <a href="subscriptions.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">📦</span>
+                      <span class="docs-catalog-time">4 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_subscriptions">订阅管理与远程规则集</h4>
+                    <p data-i18n="docs.card_desc_subscriptions">多订阅自动定时刷新与 Rule Provider 远程分流规则集持久化缓存。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Group 3: 生态体系与实战开发 -->
+              <div class="docs-catalog-group">
+                <div class="docs-catalog-group-header">
+                  <span class="docs-catalog-badge badge-purple">03</span>
+                  <h3 data-i18n="docs.group_ecosystem">生态体系与实战开发</h3>
+                </div>
+                <div class="docs-catalog-grid">
+                  <a href="clients.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">📊</span>
+                      <span class="docs-catalog-time">4 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_clients">客户端生态导航</h4>
+                    <p data-i18n="docs.card_desc_clients">全平台主流 Clash / Mihomo 兼容客户端横向评测与选型指南。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                  <a href="faq.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">❓</span>
+                      <span class="docs-catalog-time">5 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_faq">常见问题排查 (FAQ)</h4>
+                    <p data-i18n="docs.card_desc_faq">订阅导入超时、TUN 冲突、Linux 沙盒权限与系统代理常见故障排错。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                  <a href="build.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">🛠️</span>
+                      <span class="docs-catalog-time">6 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_build">从源码本地编译</h4>
+                    <p data-i18n="docs.card_desc_build">Flutter SDK、Go/Rust 交叉编译工具链配置与全平台 Release 打包流程。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                  <a href="dev-guide.html" class="docs-catalog-card">
+                    <div class="docs-catalog-card-header">
+                      <span class="docs-catalog-icon">🚀</span>
+                      <span class="docs-catalog-time">25 min</span>
+                    </div>
+                    <h4 data-i18n="docs.item_dev_guide">跨平台开发实战指南</h4>
+                    <p data-i18n="docs.card_desc_dev_guide">52 节深度实战：TUN/VPN、DNS、路由隔离与 Rust Platform Adapter 全流程解析。</p>
+                    <span class="docs-catalog-arrow"><span data-i18n="docs.read_more">阅读 →</span></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="docs-pagination">
             <div></div>
             <a href="modes.html" class="docs-pag-btn" style="text-align: right;">
@@ -199,6 +373,9 @@
           </div>
         </article>
       </section>
+
+      <!-- Right Sticky Table of Contents -->
+      <aside class="docs-toc" id="docsToc"></aside>
     </div>
   </main>
 
