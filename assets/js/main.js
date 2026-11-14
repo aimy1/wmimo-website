@@ -29,7 +29,7 @@ function initSpotlight() {
   if (window.matchMedia && !window.matchMedia('(pointer: fine)').matches) return;
 
   const spotlightElements = document.querySelectorAll(
-    '.spotlight-card, .feature-card, .platform-card, .screenshot-wrapper, .download-featured-card, .card, .dl-pkg-card, .dl-smart-console'
+    '.spotlight-card, .feature-card, .platform-card, .screenshot-wrapper, .download-featured-card, .card, .dl-pkg-card, .dl-smart-console, .dl-info-card'
   );
 
   spotlightElements.forEach(el => {
