@@ -197,6 +197,7 @@
     let activeArch = 'all';
 
     function applyFilters() {
+      let globalVisibleIdx = 0;
       platSections.forEach(sec => {
         const platName = sec.getAttribute('data-plat');
         const matchesPlat = activePlat === 'all' || platName === activePlat;
@@ -208,7 +209,14 @@
           const cardArch = card.getAttribute('data-arch') || 'all';
           const matchesArch = activeArch === 'all' || cardArch === activeArch || cardArch === 'universal';
           card.hidden = !matchesArch;
-          if (matchesArch) visibleCards++;
+          if (matchesArch && matchesPlat) {
+            visibleCards++;
+            card.classList.remove('is-filtering-in');
+            card.style.setProperty('--filter-delay', `${Math.min(globalVisibleIdx * 28, 220)}ms`);
+            void card.offsetWidth;
+            card.classList.add('is-filtering-in');
+            globalVisibleIdx++;
+          }
         });
 
         sec.hidden = !(matchesPlat && visibleCards > 0);

@@ -1557,10 +1557,23 @@
   border: 1px solid var(--border-color);
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .dl-pkg-card[hidden] {
   display: none;
+}
+.dl-pkg-card.is-filtering-in {
+  animation: dlCardFilterIn 0.36s cubic-bezier(0.16, 1, 0.3, 1) var(--filter-delay, 0ms) both;
+}
+@keyframes dlCardFilterIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
 }
 .dl-pkg-card:hover {
   transform: translateY(-4px);
