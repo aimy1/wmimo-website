@@ -23,24 +23,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /* ==========================================================================
-   Cursor Spotlight Engine (No 3D Tilt/Deflection)
+   Cursor Spotlight Engine (rAF-Throttled, Fine-Pointer Only)
    ========================================================================== */
 function initSpotlight() {
-  const spotlightElements = document.querySelectorAll('.spotlight-card, .feature-card, .platform-card, .screenshot-wrapper, .download-featured-card, .card');
+  if (window.matchMedia && !window.matchMedia('(pointer: fine)').matches) return;
+
+  const spotlightElements = document.querySelectorAll(
+    '.spotlight-card, .feature-card, .platform-card, .screenshot-wrapper, .download-featured-card, .card, .dl-pkg-card, .dl-smart-console'
+  );
 
   spotlightElements.forEach(el => {
-    // Add spotlight class if not already present
     el.classList.add('spotlight-card');
+    let rafId = null;
+    let lastX = 0;
+    let lastY = 0;
 
     el.addEventListener('mousemove', (e) => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      // Spotlight coordinates
-      el.style.setProperty('--mouse-x', `${x}px`);
-      el.style.setProperty('--mouse-y', `${y}px`);
-    });
+      lastX = e.clientX;
+      lastY = e.clientY;
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        const rect = el.getBoundingClientRect();
+        el.style.setProperty('--mouse-x', `${(lastX - rect.left).toFixed(1)}px`);
+        el.style.setProperty('--mouse-y', `${(lastY - rect.top).toFixed(1)}px`);
+        rafId = null;
+      });
+    }, { passive: true });
   });
 }
 
@@ -48,27 +56,39 @@ function initSpotlight() {
    Scroll-Driven Stagger Reveal Engine
    ========================================================================== */
 function initScrollReveal() {
-  // Automatically tag content elements if not explicitly tagged
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const targets = document.querySelectorAll(
-    '.feature-card, .platform-card, .stat-item, .hero-content > *, .page-hero > *, .docs-article > h2, .docs-article > .callout, .docs-article > .code-block-wrapper, .docs-table-wrapper'
+    '.feature-card, .platform-card, .stat-item, .hero-content > *, .page-hero > *, .dl-smart-console, .dl-pkg-card, .about-pillar-card, .about-tech-card, .about-way-card, .about-sponsor-card, .manifesto-article, .bottom-cta-box, .docs-article > h2, .docs-article > .callout, .docs-article > .code-block-wrapper, .docs-table-wrapper'
   );
 
   targets.forEach((el, i) => {
+    if (prefersReducedMotion) {
+      el.classList.add('is-revealed');
+      return;
+    }
     if (!el.classList.contains('reveal-on-scroll')) {
       el.classList.add('reveal-on-scroll');
+      el.style.setProperty('--reveal-delay', `${(i % 4) * 50}ms`);
     }
   });
+
+  if (prefersReducedMotion) return;
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-revealed');
-        observer.unobserve(entry.target);
+        const target = entry.target;
+        target.classList.add('is-revealed');
+        observer.unobserve(target);
+        setTimeout(() => {
+          target.style.willChange = 'auto';
+        }, 700);
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.08,
+    rootMargin: '0px 0px -32px 0px'
   });
 
   document.querySelectorAll('.reveal-on-scroll, .reveal-stagger').forEach(el => {
@@ -77,28 +97,42 @@ function initScrollReveal() {
 }
 
 /* ==========================================================================
-   Magnetic Hover Micro-Interaction for Primary Buttons
+   Magnetic Hover Micro-Interaction for Primary Buttons (rAF-Throttled)
    ========================================================================== */
 function initMagneticHover() {
+  if (window.matchMedia && !window.matchMedia('(pointer: fine)').matches) return;
+
   const buttons = document.querySelectorAll('.btn-primary, .theme-toggle-btn');
 
   buttons.forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - (rect.left + rect.width / 2);
-      const y = e.clientY - (rect.top + rect.height / 2);
+    let rafId = null;
+    let clientX = 0;
+    let clientY = 0;
 
-      // Subtle attraction
-      btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
-    });
+    btn.addEventListener('mousemove', (e) => {
+      clientX = e.clientX;
+      clientY = e.clientY;
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        const rect = btn.getBoundingClientRect();
+        const x = clientX - (rect.left + rect.width / 2);
+        const y = clientY - (rect.top + rect.height / 2);
+        btn.style.transform = `translate3d(${(x * 0.14).toFixed(2)}px, ${(y * 0.14).toFixed(2)}px, 0)`;
+        rafId = null;
+      });
+    }, { passive: true });
 
     btn.addEventListener('mouseleave', () => {
-      btn.style.transform = 'translate(0px, 0px)';
-      btn.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+      btn.style.transform = 'translate3d(0, 0, 0)';
+      btn.style.transition = 'transform 0.42s cubic-bezier(0.16, 1, 0.3, 1)';
     });
 
     btn.addEventListener('mouseenter', () => {
-      btn.style.transition = 'transform 0.1s ease-out';
+      btn.style.transition = 'transform 0.12s ease-out';
     });
   });
 }
@@ -162,11 +196,14 @@ function initBackToTop() {
   btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>`;
   document.body.appendChild(btn);
 
+  let backToTopTicking = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      btn.classList.add('is-visible');
-    } else {
-      btn.classList.remove('is-visible');
+    if (!backToTopTicking) {
+      backToTopTicking = true;
+      requestAnimationFrame(() => {
+        btn.classList.toggle('is-visible', window.scrollY > 300);
+        backToTopTicking = false;
+      });
     }
   }, { passive: true });
 
@@ -353,15 +390,18 @@ function initHeaderScroll() {
   const header = document.querySelector('.site-header');
   if (!header) return;
 
+  let headerTicking = false;
   function update() {
-    if (window.scrollY > 20) {
-      header.classList.add('is-scrolled');
-    } else {
-      header.classList.remove('is-scrolled');
-    }
+    header.classList.toggle('is-scrolled', window.scrollY > 20);
+    headerTicking = false;
   }
 
-  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('scroll', () => {
+    if (!headerTicking) {
+      headerTicking = true;
+      requestAnimationFrame(update);
+    }
+  }, { passive: true });
   update();
 }
 
