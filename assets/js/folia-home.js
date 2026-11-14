@@ -133,6 +133,13 @@
     const container = document.querySelector('.home-floating-cats');
     if (!container) return;
 
+    if (window.matchMedia && (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      !window.matchMedia('(pointer: fine)').matches
+    )) {
+      return;
+    }
+
     const cats = container.querySelectorAll('.cat-float-item');
     if (!cats.length) return;
 
@@ -145,8 +152,12 @@
     const factors = [0.03, 0.05, 0.025, 0.04, 0.06, 0.035, 0.02, 0.07, 0.045, 0.055, 0.03, 0.08];
 
     function update() {
-      currentX += (targetX - currentX) * 0.05;
-      currentY += (targetY - currentY) * 0.05;
+      if (document.hidden) {
+        rafId = null;
+        return;
+      }
+      currentX += (targetX - currentX) * 0.065;
+      currentY += (targetY - currentY) * 0.065;
 
       cats.forEach((cat, idx) => {
         const factor = factors[idx % factors.length];
@@ -163,7 +174,16 @@
       }
     }
 
+    document.addEventListener('visibilitychange', () => {
+      document.body.classList.toggle('is-page-hidden', document.hidden);
+      if (document.hidden && rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    });
+
     window.addEventListener('mousemove', (e) => {
+      if (document.hidden) return;
       const cx = window.innerWidth / 2;
       const cy = window.innerHeight / 2;
       targetX = (e.clientX - cx) / cx;

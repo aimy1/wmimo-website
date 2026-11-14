@@ -47,6 +47,7 @@ body.home-body {
   user-select: none;
   overflow: hidden;
   z-index: 0;
+  contain: layout style paint;
 }
 
 .cat-float-item {
@@ -55,7 +56,7 @@ body.home-body {
   user-select: none;
   will-change: transform;
   transform: translate3d(var(--mx, 0px), var(--my, 0px), 0);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  backface-visibility: hidden;
 }
 
 .cat-float-inner {
@@ -63,6 +64,11 @@ body.home-body {
   height: 100%;
   transform-origin: center center;
   will-change: transform;
+  backface-visibility: hidden;
+}
+
+body.is-page-hidden .cat-float-inner {
+  animation-play-state: paused !important;
 }
 
 .cat-float-inner img {
@@ -72,12 +78,11 @@ body.home-body {
   object-fit: contain;
   pointer-events: none;
   user-select: none;
-  filter: drop-shadow(0 0 16px rgba(0, 188, 223, 0.22));
-  transition: opacity 0.35s ease, filter 0.35s ease;
+  transition: opacity 0.35s ease;
 }
 
 [data-theme="light"] .cat-float-inner img {
-  filter: invert(1) brightness(0.2) drop-shadow(0 4px 12px rgba(15, 23, 42, 0.08));
+  filter: invert(1) brightness(0.2);
 }
 
 /* 12 Irregular Sizes & Distributed Positions */
