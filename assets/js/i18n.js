@@ -57,7 +57,7 @@
       'showcase.feat4': '轻量化设计，18px 更舒适',
 
       // Legacy Hero Section (Keep for fallback)
-      'hero.tag': '🚀 Wmimo v1.1.0 正式发布',
+      'hero.tag': '🚀 Wmimo v1.3.7.1523 正式发布',
       'hero.title_pre': '极速、优雅、强大的',
       'hero.title_grad': '跨平台网络代理客户端',
       'hero.subtitle': '基于 Flutter 与 Mihomo 核心打造。提供全协议网络支持、TUN 虚拟网卡系统级接管、全功能系统托盘与 18px 微卡片设计美学。',
@@ -131,7 +131,7 @@
       // Download Page
       'dl.hero_title': '下载 Wmimo 客户端',
       'dl.hero_subtitle': '为 Windows、macOS、Linux、Android 与 iOS 平台量身打造的官方正式发行版本。轻巧稳定，原生适配。',
-      'dl.badge_latest': '最新正式版 v1.2.13.1515',
+      'dl.badge_latest': '最新正式版 v1.3.7.1523',
       'dl.smart_rec_title': '推荐下载：Wmimo for {os}',
       'dl.smart_rec_meta': '{pkg} · 架构: x64/arm64 · 官方构建产物',
       'dl.smart_rec_btn': '直接下载 {ext}',
@@ -1186,7 +1186,7 @@
       'showcase.feat4': 'Lightweight Design, 18px Comfort',
 
       // Legacy Hero Section (Keep for fallback)
-      'hero.tag': '🚀 Wmimo v1.1.0 Released',
+      'hero.tag': '🚀 Wmimo v1.3.7.1523 Released',
       'hero.title_pre': 'Fast, Elegant, Powerful',
       'hero.title_grad': 'Cross-Platform Proxy Client',
       'hero.subtitle': 'Crafted with Flutter & Mihomo Core. Features full-protocol networking, system-level TUN virtual NIC take-over, full-featured system tray, and clean 18px micro-card aesthetics.',
@@ -1258,7 +1258,7 @@
       // Download Page
       'dl.hero_title': 'Download Wmimo Client',
       'dl.hero_subtitle': 'Official production release binaries tailored for Windows, macOS, Linux, Android, and iOS. Lightweight, secure, and native.',
-      'dl.badge_latest': 'Latest Stable Release v1.2.13.1515',
+      'dl.badge_latest': 'Latest Stable Release v1.3.7.1523',
       'dl.smart_rec_title': 'Recommended Download: Wmimo for {os}',
       'dl.smart_rec_meta': '{pkg} · Architecture: x64/arm64 · Official Release',
       'dl.smart_rec_btn': 'Download {ext}',
@@ -2129,7 +2129,7 @@
       'home.f4_title': '100% Open Source · Zero Bloat',
       'home.f4_desc': 'GPL-3.0 licensed with zero ads, zero tracking telemetry, and complete transparency for a pure experience.',
       'home.plat_all_link': 'Visit Download Center for all packages and SHA-256 checksums →',
-      'home.hero_badge': 'v1.2.13.1515 Released · Lightweight & Open Source',
+      'home.hero_badge': 'v1.3.7.1523 Released · Lightweight & Open Source',
       'home.hero_title_1': 'Fast, Elegant & Lightweight',
       'home.hero_title_2': 'Cross-Platform Proxy Client',
       'home.hero_subtitle': 'Built on Flutter & Mihomo Meta kernel. Full protocol suite, OS-level TUN takeover, and zero bloatware for a pure connection experience.',

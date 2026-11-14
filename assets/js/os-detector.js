@@ -1,13 +1,13 @@
 /**
  * Smart OS Detection, Direct Release Asset Engine & Download Center Controller for Wmimo
- * Version: v1.3.6.1522
+ * Version: v1.3.7.1523
  * Supports dynamic i18n re-rendering, platform/arch filtering, and one-click SHA-256 copy
  */
 
 (function() {
   'use strict';
 
-  const RELEASE_TAG = 'v1.3.6.1522';
+  const RELEASE_TAG = 'v1.3.7.1523';
   const BASE_URL = `https://github.com/aimy1/Wmimo/releases/download/${RELEASE_TAG}`;
 
   // Standard Official SVG Brand Logos
@@ -40,8 +40,8 @@
         file: `Wmimo-Android-arm64-v8a-${RELEASE_TAG}.apk`,
         url: `${BASE_URL}/Wmimo-Android-arm64-v8a-${RELEASE_TAG}.apk`,
         ext: '.apk',
-        size: '45.15 MB',
-        sha: 'f1736f2fd958d8107f4616b11f236c9803b4dee55da9d3cd6650cb527dfbfc76',
+        size: '45.04 MB',
+        sha: 'ad81dbe0539802aa72068e85f1acc8f3a2616e5774aa9705092ff67d51319ce8',
         altUrl: `${BASE_URL}/Wmimo-Android-universal-${RELEASE_TAG}.apk`,
         altZh: '获取全架构通用版 (Universal APK)',
         altEn: 'Download Universal APK'
@@ -60,7 +60,7 @@
         url: `${BASE_URL}/Wmimo-iOS-universal-${RELEASE_TAG}.ipa`,
         ext: '.ipa',
         size: '19.61 MB',
-        sha: 'eb88639de14b004b6d05c7458d584efd0edbfc4553e58b058fffe9d4227ec325',
+        sha: '3c81a69298cbfe4b98efb6bfdb50ee6a7cb3e72c6317e1d33307e1e68e2041d7',
         altUrl: '#platform-ios',
         altZh: '查看 iOS 安装说明',
         altEn: 'View iOS Details'
@@ -78,8 +78,8 @@
         file: `Wmimo-macOS-universal-${RELEASE_TAG}.dmg`,
         url: `${BASE_URL}/Wmimo-macOS-universal-${RELEASE_TAG}.dmg`,
         ext: '.dmg',
-        size: '89.20 MB',
-        sha: '7121fe954ecb1bceb818cc4f645c285ce1406958994ebfdb9ad30a89190101f5',
+        size: '88.95 MB',
+        sha: '3cce65fc30a3e39e078637aba817f516aee563becc7cd3418e68f97b0509130d',
         altUrl: `${BASE_URL}/Wmimo-macOS-universal-${RELEASE_TAG}.zip`,
         altZh: '获取免挂载归档包 (.zip)',
         altEn: 'Download App Archive (.zip)'
@@ -97,8 +97,8 @@
         file: `Wmimo-Linux-x64-${RELEASE_TAG}.deb`,
         url: `${BASE_URL}/Wmimo-Linux-x64-${RELEASE_TAG}.deb`,
         ext: '.deb',
-        size: '37.71 MB',
-        sha: '27298199bbd19a3d2cb7e9ff0cce28459e964d990102dc467a72b6ec85e80180',
+        size: '37.58 MB',
+        sha: 'bca6d932c679151dca0efcd1b5a86b4bc33e4555908cfb1eb7600ebf01936d75',
         altUrl: `${BASE_URL}/Wmimo-Linux-x64-${RELEASE_TAG}.AppImage`,
         altZh: '获取通用单文件版 (.AppImage)',
         altEn: 'Download Portable (.AppImage)'
@@ -116,8 +116,8 @@
       file: `Wmimo-Windows-x64-Setup-${RELEASE_TAG}.exe`,
         url: `${BASE_URL}/Wmimo-Windows-x64-Setup-${RELEASE_TAG}.exe`,
         ext: '.exe',
-        size: '36.79 MB',
-        sha: '7b42a1bd63de248a70102cbbbc6c65d2e350e3c551b380936ae088c198de3596',
+        size: '36.69 MB',
+        sha: 'ca1b0d432dac21ce5aa6398c3769188907880b62be02713201b9a4f2f745ee34',
       altUrl: `${BASE_URL}/Wmimo-Windows-x64-${RELEASE_TAG}.zip`,
       altZh: '获取便携免安装版 (.zip)',
       altEn: 'Download Portable (.zip)'
