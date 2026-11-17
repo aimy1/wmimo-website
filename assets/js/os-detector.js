@@ -1,13 +1,13 @@
 /**
  * Smart OS Detection, Direct Release Asset Engine & Download Center Controller for Wmimo
- * Version: v1.3.7.1523
+ * Version: v1.3.8.1524
  * Supports dynamic i18n re-rendering, platform/arch filtering, and one-click SHA-256 copy
  */
 
 (function() {
   'use strict';
 
-  const RELEASE_TAG = 'v1.3.7.1523';
+  const RELEASE_TAG = 'v1.3.8.1524';
   const BASE_URL = `https://github.com/aimy1/Wmimo/releases/download/${RELEASE_TAG}`;
 
   // Standard Official SVG Brand Logos
