@@ -26,8 +26,6 @@
     const splitOverlay = document.getElementById('shotSplitOverlay');
     const splitDivider = document.getElementById('shotSplitDivider');
 
-    const splitDeck = document.getElementById('showcaseSplitDeck');
-
     if (!stage) return;
 
     function syncFrontCardWithSiteTheme() {
@@ -43,9 +41,6 @@
         const mode = btn.getAttribute('data-sc-mode') || 'dual';
         modeBtns.forEach(b => b.classList.toggle('is-active', b === btn));
         stage.className = `app-showcase-stage mode-${mode}`;
-        if (splitDeck) {
-          splitDeck.setAttribute('aria-hidden', mode === 'split' ? 'false' : 'true');
-        }
       });
     });
 
@@ -60,7 +55,7 @@
       });
     }
 
-    // Pixel-aligned 1024x668 Split Slider with Pointer Capture
+    // Pixel-aligned 371x785 Split Slider
     if (splitContainer && splitOverlay && splitDivider) {
       let dragging = false;
       let splitPct = 50;
@@ -78,28 +73,17 @@
         setSplit(((clientX - rect.left) / rect.width) * 100);
       };
 
-      const stopDragging = () => {
-        if (!dragging) return;
-        dragging = false;
-        splitContainer.classList.remove('is-dragging');
-      };
-
       splitContainer.addEventListener('pointerdown', (e) => {
         dragging = true;
-        splitContainer.classList.add('is-dragging');
-        if (splitContainer.setPointerCapture) {
-          try { splitContainer.setPointerCapture(e.pointerId); } catch (_) {}
-        }
         updateSplitFromX(e.clientX);
       });
-      splitContainer.addEventListener('pointermove', (e) => {
+      window.addEventListener('pointermove', (e) => {
         if (!dragging) return;
         updateSplitFromX(e.clientX);
       });
-      splitContainer.addEventListener('pointerup', stopDragging);
-      splitContainer.addEventListener('pointercancel', stopDragging);
-      window.addEventListener('pointerup', stopDragging);
-
+      window.addEventListener('pointerup', () => {
+        dragging = false;
+      });
       splitDivider.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') { e.preventDefault(); setSplit(splitPct - 5); }
         if (e.key === 'ArrowRight') { e.preventDefault(); setSplit(splitPct + 5); }
