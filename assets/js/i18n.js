@@ -1134,7 +1134,12 @@
       'home.manifesto_badge': 'OPEN SOURCE · CONTINUOUS EVOLUTION',
       'home.manifesto_closing': 'Wmimo 是一个持续成长的开源项目。我们会继续构建、改进，并努力让它变得更好。',
       'home.manifesto_btn_github': '参与开源构建',
-      'home.manifesto_btn_about': '了解更多初心'
+      'home.manifesto_btn_about': '了解更多初心',
+      'home.blog_meta_type': '工程随笔',
+      'home.spec_core_label': '代理核心',
+      'home.spec_ui_label': '界面框架',
+      'home.spec_plat_label': '支持平台',
+      'home.spec_license_label': '开源协议'
     },
 
     en: {
@@ -2261,7 +2266,12 @@
       'home.manifesto_badge': 'OPEN SOURCE · CONTINUOUS EVOLUTION',
       'home.manifesto_closing': 'Wmimo is an evolving open-source project. We will continue to build, improve, and strive to make it better.',
       'home.manifesto_btn_github': 'Join GitHub Project',
-      'home.manifesto_btn_about': 'Learn More About Us'
+      'home.manifesto_btn_about': 'Learn More About Us',
+      'home.blog_meta_type': 'Engineering Essay',
+      'home.spec_core_label': 'Core Engine',
+      'home.spec_ui_label': 'UI Framework',
+      'home.spec_plat_label': 'Platforms',
+      'home.spec_license_label': 'License'
     }
   };
 
