@@ -166,28 +166,28 @@
                 <tr>
                   <td><strong>Hysteria 2</strong></td>
                   <td data-i18n="doc_proto.hy2_trans">基于 UDP (QUIC Brutal)</td>
-                  <td data-i18n="doc_proto.hy2_adv">突破 TCP 丢包退避限制，自动拥塞感知，晚高峰带宽压榨</td>
-                  <td data-i18n="doc_proto.hy2_scene">跨国高丢包、恶劣弱网、大文件高速下载</td>
+                  <td data-i18n="doc_proto.hy2_adv">突破 TCP 丢包降速限制，依据设定速率与拥塞控制保持吞吐表现</td>
+                  <td data-i18n="doc_proto.hy2_scene">高丢包跨国链路、弱网环境、大文件下载</td>
                 </tr>
                 <tr>
                   <td><strong>TUIC v5</strong></td>
                   <td data-i18n="doc_proto.tuic_trans">基于 UDP (0-RTT QUIC)</td>
-                  <td data-i18n="doc_proto.tuic_adv">握手延迟极低，连接复用性能优异</td>
-                  <td data-i18n="doc_proto.tuic_scene">移动端多基站频繁切换、网页高频冲浪</td>
+                  <td data-i18n="doc_proto.tuic_adv">0-RTT 低握手延迟，原生多路复用</td>
+                  <td data-i18n="doc_proto.tuic_scene">移动端网络切换、高频网页浏览与短连接请求</td>
                 </tr>
                 <tr>
                   <td><strong>VLESS Reality</strong></td>
                   <td data-i18n="doc_proto.vless_trans">基于 TCP/TLS</td>
-                  <td data-i18n="doc_proto.vless_adv">消除自签名证书特征，直接借用目标权威站点 TLS 证书</td>
-                  <td data-i18n="doc_proto.vless_scene">严苛封锁环境、长期稳定办公</td>
+                  <td data-i18n="doc_proto.vless_adv">免去自签名证书指纹特征，复用真实站点 TLS 握手外观</td>
+                  <td data-i18n="doc_proto.vless_scene">高审查网络环境、长期稳定连接</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <h2 data-i18n="doc_proto.h2_nat">🎮 Full Cone NAT（全锥型 NAT）游戏联机优化</h2>
-          <p>
-            在开启 Wmimo 的 TUN 虚拟网卡模式进行外服主机与 PC 联机游戏时，NAT 类型直接决定了能否顺利与队友建立 P2P 直连。
+          <p data-i18n="doc_proto.nat_p1">
+            开启 Wmimo 的 TUN 模式进行海外主机与 PC 联机游戏时，NAT 类型直接决定能否与其他玩家建立 P2P 直连。
           </p>
           <div class="callout callout-info">
             <div class="callout-body">

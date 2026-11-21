@@ -149,18 +149,18 @@
         <article class="docs-article">
           <div class="docs-article-header">
             <h1 data-i18n="doc_sub.title">订阅管理与远程规则集 (Providers)</h1>
-            <p data-i18n="doc_sub.subtitle">深入掌握 Proxy Providers 节点集合并、Rule Providers 远程规则订阅、自动更新策略与 Geo 数据库维护。</p>
+            <p data-i18n="doc_sub.subtitle">深入掌握 Proxy Providers 多订阅聚合、Rule Providers 远程规则订阅、自动更新策略与 Geo 数据库维护。</p>
           </div>
 
           <div class="callout callout-info">
-            <div class="callout-body" data-i18n="doc_sub.intro_callout">
-              💡 <strong>什么是 Provider？</strong> Provider（提供者）是 Mihomo / Clash 核心中用于实现配置模块化与解耦的强大特性。通过 Provider，您可以将节点列表与分流规则托管在外部远程链接或独立本地文件中，实现多订阅动态合并与无人值守静默自动更新。
+            <div class="callout-body" data-i18n-html="doc_sub.intro_callout">
+              💡 <strong>什么是 Provider？</strong> Provider（提供者）是 Mihomo / Clash 核心中用于实现配置模块化与解耦的强大特性。通过 Provider，您可以将节点列表与分流规则托管在外部远程链接或独立本地文件中，实现多订阅动态合并与定时自动更新。
             </div>
           </div>
 
           <h2 data-i18n="doc_sub.h2_proxy_providers">📦 1. 代理集合 (Proxy Providers)</h2>
           <p data-i18n="doc_sub.proxy_providers_desc">
-            Proxy Providers 允许从一个或多个机场订阅链接动态拉取节点，并自动进行本地缓存与健康检查。策略组可以直接引用 Provider 包含的全部节点：
+            Proxy Providers 允许从一个或多个订阅链接动态拉取节点，并自动进行本地缓存与健康检查。策略组可以直接引用 Provider 包含的全部节点：
           </p>
 
           <div class="code-block-wrapper">
@@ -169,10 +169,10 @@
               <button class="code-copy-btn">复制</button>
             </div>
             <pre class="code-content">proxy-providers:
-  Airport-A:
+  Provider-A:
     type: http
     url: "https://example.com/api/v1/client/subscribe?token=xxx"
-    path: ./profiles/proxies/airport-a.yaml
+    path: ./profiles/proxies/provider-a.yaml
     interval: 86400              # 自动更新间隔（秒），86400 为 24 小时
     proxy: DIRECT                # 拉取订阅时使用的出站代理
     filter: "(?i)香港|日本|新加坡" # 正则过滤：仅保留匹配国家/地区的节点
@@ -184,7 +184,7 @@
       timeout: 5000
       lazy: true                 # 仅在策略组被使用时触发测速，节省流量与并发
 
-  Airport-B:
+  Local-Nodes:
     type: file
     path: ./profiles/proxies/custom-nodes.yaml
     health-check:
@@ -195,7 +195,7 @@
 
           <h2 data-i18n="doc_sub.h2_rule_providers">🛡️ 2. 远程分流规则集 (Rule Providers)</h2>
           <p data-i18n="doc_sub.rule_providers_desc">
-            Rule Providers 让你无需在主配置文件中手写成千上万行规则，而是直接订阅由社区（如 Loyalsoldier、MetaCubeX 等）每日维护的高精度分流集：
+            Rule Providers 让您无需在主配置文件中手写成千上万行规则，可以直接引用社区（如 Loyalsoldier、MetaCubeX 等）持续维护的分流规则集：
           </p>
 
           <div class="code-block-wrapper">
@@ -233,7 +233,7 @@
           </div>
 
           <h2 data-i18n="doc_sub.h2_rules_apply">🔗 3. 在 Rules 中引用 Provider 规则</h2>
-          <p data-i18n="doc_sub.rules_apply_desc">
+          <p data-i18n-html="doc_sub.rules_apply_desc">
             在 <code>rules:</code> 段中使用 <code>RULE-SET</code> 指令引用已定义的 Rule Provider：
           </p>
 
@@ -243,11 +243,11 @@
               <button class="code-copy-btn">复制</button>
             </div>
             <pre class="code-content">rules:
-  - RULE-SET,ai-services,🤖 AI服务策略组
+  - RULE-SET,ai-services,AI-Services
   - RULE-SET,direct-domains,DIRECT
-  - RULE-SET,telegram-cidr,✈️ Telegram策略组,no-resolve
+  - RULE-SET,telegram-cidr,Telegram,no-resolve
   - GEOIP,CN,DIRECT
-  - MATCH,🐟 兜底漏网之鱼</pre>
+  - MATCH,Proxy</pre>
           </div>
 
           <h2 data-i18n="doc_sub.h2_geo_db">🌍 4. GeoIP 与 GeoSite 数据库自动更新</h2>

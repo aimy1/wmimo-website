@@ -152,8 +152,8 @@
           </div>
 
           <h2 data-i18n="doc_sniff.h2_how">🔍 嗅探器工作原理</h2>
-          <p>
-            部分移动应用或游戏在联网时直接向目标 IP 发起请求，导致域名分流规则失效。Sniffer 能在 TCP/UDP 握手阶段截获首包，解析真实域名并<strong>重新触发规则匹配</strong>。
+          <p data-i18n-html="doc_sniff.how_desc">
+            部分桌面与移动应用在联网时直接向目标 IP 发起连接，导致基于域名的分流规则无法命中。Sniffer 能在 TLS ClientHello、HTTP 与 QUIC 首包握手阶段提取 SNI/Host 等域名信息，并<strong>重新触发规则匹配</strong>。
           </p>
 
           <h2 data-i18n="doc_sniff.h2_config">🛠️ 标准嗅探器配置示例</h2>

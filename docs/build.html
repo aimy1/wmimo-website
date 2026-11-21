@@ -156,9 +156,10 @@
 
           <h2 data-i18n="doc_bld.h2_env">🛠️ 环境要求</h2>
           <ul>
-            <li><strong>Flutter SDK</strong>: <code>>= 3.35.0</code></li>
-            <li><strong>Dart SDK</strong>: <code>>= 3.12.2</code></li>
+            <li><strong>Flutter SDK</strong>: <code>&gt;= 3.35.0</code></li>
+            <li><strong>Dart SDK</strong>: <code>&gt;= 3.12.2</code></li>
             <li data-i18n-html="doc_bld.env_win"><strong>Windows</strong>: Visual Studio 2022 C++ 桌面开发工作负载</li>
+            <li data-i18n-html="doc_bld.env_mac"><strong>macOS / iOS</strong>: Xcode 15+ 与 CocoaPods 工具链（仅限在 macOS 主机编译）</li>
             <li data-i18n-html="doc_bld.env_linux"><strong>Linux</strong>: <code>gtk3</code>, <code>clang</code>, <code>cmake</code>, <code>ninja-build</code></li>
           </ul>
 
@@ -193,12 +194,18 @@ flutter run</pre>
             <pre class="code-content"># Windows Release (生成 x64 安装程序与便携包)
 flutter build windows --release
 
+# macOS Release (构建 Universal 通用架构 .app / .dmg)
+flutter build macos --release
+
 # Linux Release (一键打包 Deb, RPM, AppImage, Arch 与 Tarball)
 flutter build linux --release
-bash tool/package_linux.sh v1.1.0
+bash tool/package_linux.sh v1.3.9.1525
 
 # Android Release (生成 APK 安装包)
-flutter build apk --release</pre>
+flutter build apk --release
+
+# iOS Release (构建无签名通用 IPA，供自签或 TrollStore 使用)
+flutter build ipa --release --no-codesign</pre>
           </div>
 
           <div class="docs-pagination">
@@ -208,7 +215,7 @@ flutter build apk --release</pre>
             </a>
             <a href="dev-guide.html" class="docs-pag-btn" style="text-align: right;">
               <span class="sub" data-i18n="docs.pag_next">下一篇</span>
-              <span class="title">跨平台开发实战指南 →</span>
+              <span class="title" data-i18n="doc_bld.next_title">跨平台开发实战指南 →</span>
             </a>
           </div>
         </article>

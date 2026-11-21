@@ -158,8 +158,8 @@
           </ul>
 
           <h2 data-i18n="doc_rules.h2_process">🎮 实战：针对应用进程名称分流 (PROCESS-NAME)</h2>
-          <p>
-            无需搜集应用复杂的 CDN 域名或 IP 段，直接按桌面可执行程序名称（<code>.exe</code> / Linux 进程名）精准分流：
+          <p data-i18n-html="doc_rules.process_desc">
+            无需搜集应用复杂的 CDN 域名或 IP 段，直接按桌面应用进程名称（Windows 含 <code>.exe</code> 后缀，macOS 与 Linux 为无后缀可执行文件名）精准分流：
           </p>
           <div class="code-block-wrapper">
             <button class="code-copy-btn">复制</button>
@@ -169,9 +169,9 @@
   - PROCESS-NAME,steamwebhelper.exe,DIRECT
   - PROCESS-NAME,epicgameslauncher.exe,DIRECT
 
-  # 通讯与生产力软件走特定代理组
-  - PROCESS-NAME,telegram.exe,TelegramGroup
-  - PROCESS-NAME,Telegram.exe,TelegramGroup
+  # 通讯与生产力软件按跨平台进程名分流
+  - PROCESS-NAME,Telegram.exe,TelegramGroup  # Windows
+  - PROCESS-NAME,Telegram,TelegramGroup      # macOS / Linux
 
   # 国内服务与局域网直连
   - GEOIP,private,DIRECT,no-resolve

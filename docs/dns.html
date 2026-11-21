@@ -152,13 +152,13 @@
           </div>
 
           <h2 data-i18n="doc_dns.h2_why">⚡ 为什么优先推荐 Fake-IP 模式？</h2>
-          <p>
-            传统的 <code>redir-host</code> 模式必须先在本地发起远程 DNS 查询，不仅存在 50~200ms 的额外等待，未加密的 DNS 还极易被旁路节点篡改或记录。
+          <p data-i18n-html="doc_dns.why_desc">
+            传统的 <code>redir-host</code> 模式必须先完成真实 DNS 查询，不仅存在 50~200ms 的额外往返耗时，明文 DNS 查询也极易遭到中间节点篡改或劫持。
           </p>
           <div class="callout callout-tip">
             <div class="callout-body">
               <strong data-i18n="doc_dns.callout_title">🚀 Fake-IP 工作原理：</strong>
-              当应用发起域名请求时，Wmimo 内置 DNS 立即在本地从预留池（如 <code>198.18.0.0/16</code>）返回一个虚拟 IP（耗时 &lt; 1ms）。当应用向该 IP 发起连接时，Wmimo 拦截并还原原始域名，由远端代理节点直接在本地完成目标域名的真实解析，<strong>彻底杜绝本地 DNS 污染与 DNS 泄露</strong>。
+              <span data-i18n-html="doc_dns.callout_body">当应用发起域名请求时，Wmimo 内置 DNS 立即从预留虚拟网段（如 <code>198.18.0.0/16</code>）瞬时分配一个映射 IP（耗时 &lt; 1ms）。当应用向该 IP 发起连接时，Wmimo 拦截并还原原始域名，将域名随代理请求发送至远端代理服务端完成真实解析，<strong>从根源上避免本地 DNS 污染与泄露</strong>。</span>
             </div>
           </div>
 

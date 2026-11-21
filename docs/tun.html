@@ -155,8 +155,8 @@
 
 
           <h2 data-i18n="doc_tun.h2_overview">🛡️ TUN 模式概述</h2>
-          <p>
-            传统系统代理仅能接管支持 HTTP/Socks5 协议的浏览器应用，而 <strong>TUN 模式</strong> 在操作系统底层创建虚拟网络设备（L3 Virtual Network Device），接管全系统的 IP 层数据包。
+          <p data-i18n-html="doc_tun.overview_desc">
+            传统系统代理仅能接管支持 HTTP / SOCKS5 协议的应用流量，而 <strong>TUN 模式</strong> 在操作系统底层创建虚拟网络设备（L3 Virtual Network Device），接管全系统的 IP 层数据包。
           </p>
           <ul>
             <li data-i18n-html="doc_tun.bullet_apps"><strong>全应用支持</strong>：无缝支持命令行工具（git, curl, docker）、游戏客户端与系统级服务；</li>
@@ -165,12 +165,17 @@
           </ul>
 
           <h2 data-i18n="doc_tun.h2_win">🪟 Windows 配置</h2>
-          <p>
-            在 Wmimo 设置中直接开启 <strong>“TUN 虚拟网卡模式”</strong> 开关。当系统弹出 UAC 提权提示时，点击“是”允许加载 Wintun 驱动即可。
+          <p data-i18n-html="doc_tun.win_desc">
+            在 Wmimo <strong>「概览」</strong> 页或系统托盘中开启 <strong>「TUN 模式」</strong> 开关。首次启用若系统弹出 UAC 提权提示，点击“是”允许加载 Wintun 驱动即可。
+          </p>
+
+          <h2 data-i18n="doc_tun.h2_mac">🍎 macOS 配置</h2>
+          <p data-i18n-html="doc_tun.mac_desc">
+            macOS 通过系统原生 <code>utun</code> 虚拟网卡或 <strong>Network Extension</strong> 接管流量。在 Wmimo <strong>「概览」</strong> 页开启 <strong>「TUN 模式」</strong> 后，按系统弹窗提示授权安装系统扩展与管理员权限即可。
           </p>
 
           <h2 data-i18n="doc_tun.h2_linux">🐧 Linux 权限设置</h2>
-          <p>
+          <p data-i18n-html="doc_tun.linux_desc">
             在 Linux 下，TUN 虚拟网卡创建需要 <code>CAP_NET_ADMIN</code> 权限。您可以通过终端执行以下指令完成提权：
           </p>
           <div class="code-block-wrapper">
@@ -182,8 +187,13 @@
           </div>
 
           <h2 data-i18n="doc_tun.h2_android">📱 Android 移动端</h2>
-          <p>
-            Android 系统由系统级 <strong>VpnService</strong> 原生驱动，首次连接时在弹出的系统 VPN 授权提示中点击“确定”即可。
+          <p data-i18n-html="doc_tun.android_desc">
+            Android 端由系统级 <strong>VpnService</strong> 原生驱动，首次连接时在弹出的系统 VPN 授权提示中点击「确定」即可，并可在客户端内按应用粒度配置分流。
+          </p>
+
+          <h2 data-i18n="doc_tun.h2_ios">📱 iOS 移动端</h2>
+          <p data-i18n-html="doc_tun.ios_desc">
+            iOS 端基于系统 <strong>NetworkExtension</strong>（<code>NEPacketTunnelProvider</code>）框架实现，针对系统严格的 15MB 扩展内存上限做了专门裁剪；首次开启时在系统弹窗中确认「允许添加 VPN 配置」即可接管全机流量。
           </p>
 
           <div class="docs-pagination">
