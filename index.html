@@ -95,419 +95,223 @@
     </div>
   </div>
 
-  <!-- Main Content -->
+  <!-- Main Content: Single Clean Editorial Column -->
   <main class="home-main">
+    <div class="blog-column">
 
-    <!-- =====================================================================
-         1. BLOG MASTHEAD & EDITORIAL PRODUCT FIGURE
-         ===================================================================== -->
-    <section class="blog-masthead-section">
-      <div class="blog-shell">
-
-        <!-- Publication Meta Strip -->
-        <div class="masthead-top-bar">
-          <span class="masthead-kicker" data-i18n="home.masthead_kicker">WMIMO 工程日志</span>
-          <span class="meta-dot" aria-hidden="true">·</span>
-          <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.3.9.1525" target="_blank" rel="noopener" class="masthead-ver-pill">v1.3.9.1525</a>
-          <span class="meta-dot" aria-hidden="true">·</span>
-          <span class="masthead-license">GNU GPL-3.0</span>
-          <span class="meta-dot" aria-hidden="true">·</span>
-          <span class="masthead-platforms" data-i18n="home.hero_badge">正式版发布 · 开源轻量 · 5 大平台支持</span>
+      <!-- 1. Editorial Intro -->
+      <section class="blog-intro">
+        <div class="intro-meta">
+          <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.3.9.1525" target="_blank" rel="noopener" class="intro-version">v1.3.9.1525</a>
+          <span class="meta-sep" aria-hidden="true">·</span>
+          <span>Flutter &amp; Mihomo</span>
+          <span class="meta-sep" aria-hidden="true">·</span>
+          <span>GPL-3.0</span>
         </div>
 
-        <!-- Editorial Headline & Lead -->
-        <header class="masthead-header">
-          <h1 class="home-hero-title">
-            <span data-i18n="home.hero_title_1">极速、优雅、轻量的</span>
-            <span class="hero-title-accent" data-i18n="home.hero_title_2">跨平台网络代理客户端</span>
-          </h1>
-          <p class="home-hero-subtitle" data-i18n="home.hero_subtitle">
-            基于 Flutter 与 Mihomo Meta 核心打造。全协议覆盖、系统级 TUN 网卡接管，零广告干扰，让每一次连接都轻快纯粹。
+        <h1 class="home-hero-title">
+          <span data-i18n="home.hero_title_1">极速、优雅、轻量的</span>
+          <span class="hero-title-accent" data-i18n="home.hero_title_2">跨平台网络代理客户端</span>
+        </h1>
+
+        <p class="home-hero-subtitle" data-i18n="home.hero_subtitle">
+          基于 Flutter 与 Mihomo Meta 核心打造。全协议覆盖、系统级 TUN 网卡接管，零广告干扰，让每一次连接都轻快纯粹。
+        </p>
+
+        <div class="home-hero-actions">
+          <a id="heroDownloadBtn" href="https://github.com/aimy1/Wmimo/releases/download/v1.3.9.1525/Wmimo-Windows-x64-Setup-v1.3.9.1525.exe" class="btn btn-primary btn-lg hero-primary-cta">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="home.btn_download_smart">立即下载客户端</span>
+          </a>
+          <a href="download.html" class="btn btn-secondary btn-lg">
+            <span data-i18n="home.btn_all_platforms">下载中心 / 全部平台</span>
+          </a>
+        </div>
+
+        <div id="heroDownloadNote" class="hero-os-detect-note">
+          <span data-i18n="home.os_detect_default">⚡ 自动适配当前系统 · 100% 自由开源</span>
+        </div>
+      </section>
+
+      <!-- 2. Clean Client Interface Figure -->
+      <figure class="blog-figure">
+        <div class="figure-bar">
+          <span class="figure-label" data-i18n="home.sc_toolbar_label">真实客户端界面</span>
+          <div class="showcase-mode-pills" role="tablist" aria-label="Client Preview Mode">
+            <button type="button" class="sc-mode-btn is-active" data-sc-mode="dark" data-i18n="home.sc_mode_dark">深色</button>
+            <button type="button" class="sc-mode-btn" data-sc-mode="light" data-i18n="home.sc_mode_light">浅色</button>
+            <button type="button" class="sc-mode-btn" data-sc-mode="split" data-i18n="home.sc_mode_split">对比</button>
+          </div>
+        </div>
+
+        <div class="app-showcase-stage mode-dark" id="appShowcaseStage">
+          <div class="showcase-dual-deck" id="showcaseDualDeck">
+            <div class="app-shot-card shot-light" id="shotCardLight">
+              <img src="assets/images/showcase_light.png" alt="Wmimo Client Light Mode Interface" width="1024" height="668" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+            <div class="app-shot-card shot-dark is-front" id="shotCardDark">
+              <img src="assets/images/showcase_dark.png" alt="Wmimo Client Dark Mode Interface" width="1024" height="668" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+          </div>
+
+          <div class="showcase-split-deck" id="showcaseSplitDeck" aria-hidden="true">
+            <div class="shot-split-container" id="shotSplitContainer">
+              <img src="assets/images/showcase_light.png" alt="Wmimo Light Mode" class="shot-split-img base-img" width="1024" height="668" decoding="async" draggable="false">
+              <div class="shot-split-overlay" id="shotSplitOverlay">
+                <img src="assets/images/showcase_dark.png" alt="Wmimo Dark Mode" class="shot-split-img over-img" width="1024" height="668" decoding="async" draggable="false">
+              </div>
+              <div class="shot-split-divider" id="shotSplitDivider" role="slider" aria-label="Drag to compare Dark and Light client themes" aria-valuemin="5" aria-valuemax="95" aria-valuenow="50" tabindex="0">
+                <div class="shot-split-handle">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <figcaption class="blog-figure-caption" data-i18n="home.figure_caption">
+          图 1 · Wmimo 桌面端真实界面，支持明暗主题实时对照、10 分钟流量图表与一键代理切换。
+        </figcaption>
+      </figure>
+
+      <!-- 3. Compact Version Feed -->
+      <section class="blog-releases" aria-labelledby="journalHeading">
+        <div class="releases-head">
+          <h2 id="journalHeading" class="releases-heading" data-i18n="home.journal_title">最新日志与版本动态</h2>
+          <a href="https://github.com/aimy1/Wmimo/releases" target="_blank" rel="noopener" class="releases-all-link" data-i18n="home.journal_all_releases">全部发行版 ↗</a>
+        </div>
+
+        <ul class="releases-list">
+          <li class="release-row">
+            <time datetime="2026-11-21">2026-11-21</time>
+            <span class="release-badge is-beta">BETA</span>
+            <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.4.0.1526" target="_blank" rel="noopener" class="release-title" data-i18n="home.post1_title">
+              v1.4.0.1526 预发布：多跳链式代理、并发网络诊断与带宽波形测速
+            </a>
+          </li>
+          <li class="release-row">
+            <time datetime="2026-11-20">2026-11-20</time>
+            <span class="release-badge is-stable">STABLE</span>
+            <a href="download.html" class="release-title" data-i18n="home.post2_title">
+              v1.3.9.1525 正式版：全平台 21 项构建产物与 SHA-256 校验同步
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 4. Engineering Essay: Why We Build Wmimo -->
+      <article id="section-manifesto" class="manifesto-article">
+        <header class="manifesto-header">
+          <span class="manifesto-eyebrow" data-i18n="home.manifesto_eyebrow">OUR MISSION · 初心与使命</span>
+          <h2 class="manifesto-title" data-i18n="home.manifesto_title">为什么我们做 Wmimo</h2>
+          <p class="manifesto-subtitle" data-i18n="home.manifesto_subtitle">
+            将成熟的代理技术与现代化的软件设计结合，探索简单、直观且纯粹的使用体验。
           </p>
-
-          <div class="home-hero-actions">
-            <a id="heroDownloadBtn" href="https://github.com/aimy1/Wmimo/releases/download/v1.3.9.1525/Wmimo-Windows-x64-Setup-v1.3.9.1525.exe" class="btn btn-primary btn-lg hero-primary-cta">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              <span data-i18n="home.btn_download_smart">立即下载客户端</span>
-            </a>
-            <a href="download.html" class="btn btn-secondary btn-lg">
-              <span data-i18n="home.btn_all_platforms">下载中心 / 全部平台</span>
-            </a>
-            <a href="docs/index.html" class="btn btn-ghost btn-lg masthead-docs-link">
-              <span data-i18n="home.btn_read_docs">阅读文档</span>
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-
-          <div class="masthead-meta-footer">
-            <div id="heroDownloadNote" class="hero-os-detect-note">
-              <span data-i18n="home.os_detect_default">⚡ 自动适配当前系统 · 100% 自由开源</span>
-            </div>
-
-            <!-- Directory Badges -->
-            <div class="hero-badges-wrap">
-              <a href="https://www.producthunt.com/products/wmimo/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-wmimo" target="_blank" rel="noopener noreferrer" class="hero-badge-link ph-badge-light-wrap" aria-label="Review Wmimo on Product Hunt">
-                <img src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1350598&theme=light" alt="Wmimo | Product Hunt" width="250" height="54" style="height: 36px; width: auto;" />
-              </a>
-              <a href="https://www.producthunt.com/products/wmimo/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-wmimo" target="_blank" rel="noopener noreferrer" class="hero-badge-link ph-badge-dark-wrap" aria-label="Review Wmimo on Product Hunt">
-                <img src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1350598&theme=dark" alt="Wmimo | Product Hunt" width="250" height="54" style="height: 36px; width: auto;" />
-              </a>
-              <a href="https://sellwithboost.com" target="_blank" rel="noopener noreferrer" class="hero-badge-link boost-badge-light-wrap" aria-label="Listed on Sell With boost">
-                <img src="https://sellwithboost.com/badge/listing.svg" alt="Listed on Sell With boost" style="height: 36px; width: auto;" />
-              </a>
-              <a href="https://sellwithboost.com" target="_blank" rel="noopener noreferrer" class="hero-badge-link boost-badge-dark-wrap" aria-label="Listed on Sell With boost">
-                <img src="https://sellwithboost.com/badge/listing-dark.svg" alt="Listed on Sell With boost" style="height: 36px; width: auto;" />
-              </a>
-            </div>
-          </div>
         </header>
 
-        <!-- Figure 1: Authentic Client UI Showcase -->
-        <figure class="blog-figure-frame">
-          <div class="app-showcase-toolbar">
-            <span class="showcase-toolbar-label" data-i18n="home.sc_toolbar_label">真实客户端界面</span>
-            <div class="showcase-mode-pills" role="tablist" aria-label="Client Preview Mode">
-              <button type="button" class="sc-mode-btn is-active" data-sc-mode="dual" data-i18n="home.sc_mode_dual">🌓 双主题</button>
-              <button type="button" class="sc-mode-btn" data-sc-mode="split" data-i18n="home.sc_mode_split">↔️ 对比</button>
-              <button type="button" class="sc-mode-btn" data-sc-mode="dark" data-i18n="home.sc_mode_dark">🌙 深色</button>
-              <button type="button" class="sc-mode-btn" data-sc-mode="light" data-i18n="home.sc_mode_light">☀️ 浅色</button>
-            </div>
+        <div class="manifesto-content">
+          <h3 class="manifesto-lead-title" data-i18n="home.manifesto_lead_title">
+            我们想做一款真正好用的代理客户端。
+          </h3>
+
+          <p class="manifesto-lead-desc" data-i18n="home.manifesto_lead_desc">
+            这个领域从来不缺少优秀的开源项目和成熟的解决方案，但我们始终认为，软件不仅应该具备完善的功能，也应该让使用它的过程变得简单、直观。这就是 Wmimo 的起点。
+          </p>
+
+          <h4 class="manifesto-section-tag" data-i18n="home.manifesto_tag_1">01 · 体验与跨平台</h4>
+
+          <p class="manifesto-p" data-i18n="home.manifesto_p1">
+            我们希望将成熟的代理技术与现代化的软件设计结合起来，打造一款注重使用体验、支持多个平台，并且完全免费、开源的代理客户端。无论用户使用 Windows、Linux，还是移动设备，我们都希望 Wmimo 能够尽可能提供一致、自然的使用体验。
+          </p>
+
+          <p class="manifesto-p" data-i18n="home.manifesto_p2">
+            为了实现这个目标，我们不断完善软件的功能与界面，处理不同操作系统之间的差异，优化安装流程，并持续修复问题、改进细节。我们关注的不只是软件能否正常运行，也包括用户能否轻松上手，以及它能否在日常使用中保持可靠。
+          </p>
+
+          <h4 class="manifesto-section-tag" data-i18n="home.manifesto_tag_2">02 · 细节与坚持</h4>
+
+          <p class="manifesto-p" data-i18n="home.manifesto_p3">
+            我们知道，开发一款跨平台软件远没有看起来那么简单。不同平台有不同的系统机制、权限要求和使用习惯。一个功能在某个平台上能够正常工作，并不意味着它可以直接应用到其他平台。这些细节需要时间、耐心和持续的投入。
+          </p>
+
+          <blockquote class="manifesto-quote" data-i18n="home.manifesto_p4">
+            但我们相信，这些工作是值得的。
+          </blockquote>
+
+          <h4 class="manifesto-section-tag" data-i18n="home.manifesto_tag_3">03 · 自由与开源</h4>
+
+          <p class="manifesto-p" data-i18n="home.manifesto_p5">
+            Wmimo 坚持免费和开源。我们希望它是一款任何人都可以自由获取、使用和了解其实现方式的软件，而不是一个以付费门槛限制用户的产品。我们也希望通过持续的开发和改进，让 Wmimo 逐渐成长为一个值得信赖的工具。
+          </p>
+
+          <p class="manifesto-p" data-i18n="home.manifesto_p6">
+            当然，我们还有很多工作要做。功能完善、稳定性、平台适配和整体体验，都有继续提升的空间。我们不会把 Wmimo 描述成一个已经完美的产品，而是希望通过每一次更新，让它变得更好一点。
+          </p>
+
+          <h4 class="manifesto-section-tag" data-i18n="home.manifesto_tag_4">04 · 初心与同行</h4>
+
+          <p class="manifesto-p" data-i18n="home.manifesto_p7">
+            我们创建 Wmimo，不只是为了再做一个代理客户端，而是希望探索一种更好的方式，将复杂的技术转化为简单、实用的软件体验。
+          </p>
+
+          <p class="manifesto-p" data-i18n="home.manifesto_p8">
+            我们期待 Wmimo 能够被更多人发现、使用，也欢迎大家提出建议、报告问题，或参与项目的发展。
+          </p>
+        </div>
+
+        <footer class="manifesto-footer">
+          <p class="manifesto-closing-statement" data-i18n="home.manifesto_closing">
+            Wmimo 是一个持续成长的开源项目。我们会继续构建、改进，并努力让它变得更好。
+          </p>
+          <div class="manifesto-links">
+            <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" data-i18n="home.manifesto_btn_github">参与开源构建</a>
+            <span class="meta-sep" aria-hidden="true">·</span>
+            <a href="community.html" data-i18n="home.manifesto_btn_about">了解更多初心</a>
+            <span class="meta-sep" aria-hidden="true">·</span>
+            <a href="docs/index.html" data-i18n="home.btn_read_docs">阅读文档</a>
           </div>
+        </footer>
+      </article>
 
-          <div class="app-showcase-stage mode-dual" id="appShowcaseStage">
-            <!-- Dual / Single Display Deck -->
-            <div class="showcase-dual-deck" id="showcaseDualDeck">
-              <div class="app-shot-card shot-light" id="shotCardLight" title="点击置顶浅色主题 / Click to focus Light">
-                <div class="shot-theme-badge light-badge" data-i18n="home.sc_badge_light">☀️ 浅色模式</div>
-                <img src="assets/images/showcase_light.png" alt="Wmimo Client Light Mode Interface" width="1024" height="668" loading="eager" fetchpriority="high" decoding="async">
-              </div>
-
-              <div class="app-shot-card shot-dark is-front" id="shotCardDark" title="点击置顶深色主题 / Click to focus Dark">
-                <div class="shot-theme-badge dark-badge" data-i18n="home.sc_badge_dark">🌙 深色模式</div>
-                <img src="assets/images/showcase_dark.png" alt="Wmimo Client Dark Mode Interface" width="1024" height="668" loading="eager" fetchpriority="high" decoding="async">
-              </div>
-            </div>
-
-            <!-- Pixel-Aligned Split Slider Deck -->
-            <div class="showcase-split-deck" id="showcaseSplitDeck" aria-hidden="true">
-              <div class="shot-split-container" id="shotSplitContainer">
-                <img src="assets/images/showcase_light.png" alt="Wmimo Light Mode" class="shot-split-img base-img" width="1024" height="668" decoding="async" draggable="false">
-                <div class="shot-split-overlay" id="shotSplitOverlay">
-                  <img src="assets/images/showcase_dark.png" alt="Wmimo Dark Mode" class="shot-split-img over-img" width="1024" height="668" decoding="async" draggable="false">
-                </div>
-                <div class="shot-split-divider" id="shotSplitDivider" role="slider" aria-label="Drag to compare Dark and Light client themes" aria-valuemin="5" aria-valuemax="95" aria-valuenow="50" tabindex="0">
-                  <div class="shot-split-handle">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"/></svg>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 18 15 12 9 6"/></svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <figcaption class="blog-figure-caption" data-i18n="home.figure_caption">
-            图 1 · Wmimo 桌面端真实界面，支持明暗主题实时对照、10 分钟流量图表与一键代理切换。
-          </figcaption>
-        </figure>
-
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         2. LATEST NOTES & RELEASE JOURNAL FEED
-         ===================================================================== -->
-    <section class="blog-journal-section" aria-labelledby="journalHeading">
-      <div class="blog-shell">
-        <div class="blog-section-head">
-          <div>
-            <h2 id="journalHeading" class="blog-section-title" data-i18n="home.journal_title">最新日志与版本动态</h2>
-            <p class="blog-section-sub" data-i18n="home.journal_sub">围绕版本发布、协议与网络内核实践的近期记录</p>
-          </div>
-          <a href="https://github.com/aimy1/Wmimo/releases" target="_blank" rel="noopener" class="blog-section-more" data-i18n="home.journal_all_releases">全部发行版 ↗</a>
-        </div>
-
-        <div class="journal-list">
-          <!-- Entry 1: Beta Pre-release -->
-          <article class="journal-entry">
-            <div class="journal-entry-meta">
-              <time datetime="2026-11-21">2026-11-21</time>
-              <span class="journal-tag is-beta" data-i18n="home.post1_tag">PRE-RELEASE · BETA</span>
-            </div>
-            <div class="journal-entry-body">
-              <h3 class="journal-entry-title">
-                <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.4.0.1526" target="_blank" rel="noopener" data-i18n="home.post1_title">
-                  v1.4.0.1526 预发布：多跳链式代理、并发网络诊断与带宽波形测速
-                </a>
-              </h3>
-              <p class="journal-entry-desc" data-i18n="home.post1_desc">
-                重构多跳 dialer-proxy 链路编排与排序界面；升级 5 阶段并发链路体检与三阶段测速曲线图；移动端分应用代理支持毫秒级平滑热更新，并完善全部 9 语种界面与《隐私政策》。
-              </p>
-              <a href="https://github.com/aimy1/Wmimo/releases/tag/v1.4.0.1526" target="_blank" rel="noopener" class="journal-read-link" data-i18n="home.post1_link">查看 v1.4.0.1526 发行说明 ↗</a>
-            </div>
-          </article>
-
-          <!-- Entry 2: Current Stable -->
-          <article class="journal-entry">
-            <div class="journal-entry-meta">
-              <time datetime="2026-11-20">2026-11-20</time>
-              <span class="journal-tag is-stable" data-i18n="home.post2_tag">STABLE RELEASE</span>
-            </div>
-            <div class="journal-entry-body">
-              <h3 class="journal-entry-title">
-                <a href="download.html" data-i18n="home.post2_title">
-                  v1.3.9.1525 正式版：全平台 21 项构建产物与 SHA-256 校验同步
-                </a>
-              </h3>
-              <p class="journal-entry-desc" data-i18n="home.post2_desc">
-                覆盖 Windows (x64/ARM64)、macOS (Universal)、Linux (deb/rpm/AppImage/Arch/tar.gz)、Android 全架构及 iOS IPA，内置 Mihomo Meta 核心与防污染 Fake-IP 引擎。
-              </p>
-              <a href="download.html" class="journal-read-link" data-i18n="home.post2_link">前往下载中心 →</a>
-            </div>
-          </article>
-
-          <!-- Entry 3: Core Architecture Note -->
-          <article class="journal-entry">
-            <div class="journal-entry-meta">
-              <time datetime="2026-11-14">2026-11-14</time>
-              <span class="journal-tag" data-i18n="home.post3_tag">ARCHITECTURE</span>
-            </div>
-            <div class="journal-entry-body">
-              <h3 class="journal-entry-title">
-                <a href="docs/dev-guide.html" data-i18n="home.post3_title">
-                  从 Fake-IP 防污染到 L3 TUN 防回环：底层流量接管设计拆解
-                </a>
-              </h3>
-              <p class="journal-entry-desc" data-i18n="home.post3_desc">
-                通过 198.18.0.0/16 保留段映射消除 DNS 抢答泄露，并针对 Windows Wintun、Linux SO_MARK 策略路由与 Android VpnService.protect() 实现全平台隔离。
-              </p>
-              <a href="docs/dev-guide.html" class="journal-read-link" data-i18n="home.post3_link">阅读开发者架构指南 →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         3. WHY WE BUILD WMIMO — TWO-COLUMN ENGINEERING ESSAY
-         ===================================================================== -->
-    <section id="section-manifesto" class="home-manifesto-section">
-      <div class="blog-shell">
-        <div class="essay-grid">
-          <!-- Left Sticky Index Sidebar -->
-          <aside class="essay-aside">
-            <div class="aside-group">
-              <div class="aside-heading" data-i18n="home.aside_outline">文章目录</div>
-              <nav class="aside-toc" aria-label="Article Outline">
-                <a href="#sec-01" data-i18n="home.manifesto_tag_1">01 · 体验与跨平台</a>
-                <a href="#sec-02" data-i18n="home.manifesto_tag_2">02 · 细节与坚持</a>
-                <a href="#sec-03" data-i18n="home.manifesto_tag_3">03 · 自由与开源</a>
-                <a href="#sec-04" data-i18n="home.manifesto_tag_4">04 · 初心与同行</a>
-              </nav>
-            </div>
-
-            <div class="aside-group">
-              <div class="aside-heading" data-i18n="home.aside_meta">项目信息</div>
-              <dl class="aside-spec-list">
-                <div>
-                  <dt data-i18n="home.spec_core_label">代理核心</dt>
-                  <dd>Mihomo Meta</dd>
-                </div>
-                <div>
-                  <dt data-i18n="home.spec_ui_label">界面框架</dt>
-                  <dd>Flutter Native</dd>
-                </div>
-                <div>
-                  <dt data-i18n="home.spec_plat_label">支持平台</dt>
-                  <dd>Win · macOS · Linux · Android · iOS</dd>
-                </div>
-                <div>
-                  <dt data-i18n="home.spec_license_label">开源协议</dt>
-                  <dd>GNU GPL-3.0</dd>
-                </div>
-              </dl>
-            </div>
-
-            <div class="aside-group">
-              <div class="aside-heading" data-i18n="home.aside_links">相关阅读</div>
-              <div class="aside-links">
-                <a href="docs/index.html" data-i18n="nav.docs">文档</a>
-                <a href="community.html" data-i18n="nav.about">关于</a>
-              </div>
-            </div>
-          </aside>
-
-          <!-- Main Prose Column -->
-          <article class="manifesto-article">
-            <header class="manifesto-header">
-              <div class="manifesto-meta-row">
-                <span class="manifesto-eyebrow" data-i18n="home.manifesto_eyebrow">OUR MISSION · 初心与使命</span>
-                <span class="meta-dot" aria-hidden="true">·</span>
-                <span class="manifesto-meta-type" data-i18n="home.blog_meta_type">工程随笔</span>
-              </div>
-              <h2 class="manifesto-title" data-i18n="home.manifesto_title">为什么我们做 Wmimo</h2>
-              <p class="manifesto-subtitle" data-i18n="home.manifesto_subtitle">
-                将成熟的代理技术与现代化的软件设计结合，探索简单、直观且纯粹的使用体验。
-              </p>
-            </header>
-
-            <div class="manifesto-content">
-              <h3 class="manifesto-lead-title" data-i18n="home.manifesto_lead_title">
-                我们想做一款真正好用的代理客户端。
-              </h3>
-
-              <p class="manifesto-lead-desc" data-i18n="home.manifesto_lead_desc">
-                这个领域从来不缺少优秀的开源项目和成熟的解决方案，但我们始终认为，软件不仅应该具备完善的功能，也应该让使用它的过程变得简单、直观。这就是 Wmimo 的起点。
-              </p>
-
-              <h4 id="sec-01" class="manifesto-section-tag" data-i18n="home.manifesto_tag_1">01 · 体验与跨平台</h4>
-
-              <p class="manifesto-p" data-i18n="home.manifesto_p1">
-                我们希望将成熟的代理技术与现代化的软件设计结合起来，打造一款注重使用体验、支持多个平台，并且完全免费、开源的代理客户端。无论用户使用 Windows、Linux，还是移动设备，我们都希望 Wmimo 能够尽可能提供一致、自然的使用体验。
-              </p>
-
-              <p class="manifesto-p" data-i18n="home.manifesto_p2">
-                为了实现这个目标，我们不断完善软件的功能与界面，处理不同操作系统之间的差异，优化安装流程，并持续修复问题、改进细节。我们关注的不只是软件能否正常运行，也包括用户能否轻松上手，以及它能否在日常使用中保持可靠。
-              </p>
-
-              <h4 id="sec-02" class="manifesto-section-tag" data-i18n="home.manifesto_tag_2">02 · 细节与坚持</h4>
-
-              <p class="manifesto-p" data-i18n="home.manifesto_p3">
-                我们知道，开发一款跨平台软件远没有看起来那么简单。不同平台有不同的系统机制、权限要求和使用习惯。一个功能在某个平台上能够正常工作，并不意味着它可以直接应用到其他平台。这些细节需要时间、耐心和持续的投入。
-              </p>
-
-              <blockquote class="manifesto-quote" data-i18n="home.manifesto_p4">
-                但我们相信，这些工作是值得的。
-              </blockquote>
-
-              <h4 id="sec-03" class="manifesto-section-tag" data-i18n="home.manifesto_tag_3">03 · 自由与开源</h4>
-
-              <p class="manifesto-p" data-i18n="home.manifesto_p5">
-                Wmimo 坚持免费和开源。我们希望它是一款任何人都可以自由获取、使用和了解其实现方式的软件，而不是一个以付费门槛限制用户的产品。我们也希望通过持续的开发和改进，让 Wmimo 逐渐成长为一个值得信赖的工具。
-              </p>
-
-              <p class="manifesto-p" data-i18n="home.manifesto_p6">
-                当然，我们还有很多工作要做。功能完善、稳定性、平台适配和整体体验，都有继续提升的空间。我们不会把 Wmimo 描述成一个已经完美的产品，而是希望通过每一次更新，让它变得更好一点。
-              </p>
-
-              <h4 id="sec-04" class="manifesto-section-tag" data-i18n="home.manifesto_tag_4">04 · 初心与同行</h4>
-
-              <p class="manifesto-p" data-i18n="home.manifesto_p7">
-                我们创建 Wmimo，不只是为了再做一个代理客户端，而是希望探索一种更好的方式，将复杂的技术转化为简单、实用的软件体验。
-              </p>
-
-              <p class="manifesto-p" data-i18n="home.manifesto_p8">
-                我们期待 Wmimo 能够被更多人发现、使用，也欢迎大家提出建议、报告问题，或参与项目的发展。
-              </p>
-            </div>
-
-            <!-- Article Footer -->
-            <footer class="manifesto-footer">
-              <div class="manifesto-badge">
-                <span class="manifesto-badge-dot"></span>
-                <span data-i18n="home.manifesto_badge">OPEN SOURCE · CONTINUOUS EVOLUTION</span>
-              </div>
-              <p class="manifesto-closing-statement" data-i18n="home.manifesto_closing">
-                Wmimo 是一个持续成长的开源项目。我们会继续构建、改进，并努力让它变得更好。
-              </p>
-              <div class="manifesto-actions">
-                <a href="https://github.com/aimy1/Wmimo" target="_blank" rel="noopener" class="btn btn-secondary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                  <span data-i18n="home.manifesto_btn_github">参与开源构建</span>
-                </a>
-                <a href="community.html" class="btn btn-secondary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                  <span data-i18n="home.manifesto_btn_about">了解更多初心</span>
-                </a>
-              </div>
-            </footer>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         4. SELECTED TECHNICAL GUIDES INDEX
-         ===================================================================== -->
-    <section class="blog-guides-section" aria-labelledby="guidesHeading">
-      <div class="blog-shell">
-        <div class="blog-section-head">
-          <div>
-            <h2 id="guidesHeading" class="blog-section-title" data-i18n="home.guides_title">精选技术专栏</h2>
-            <p class="blog-section-sub" data-i18n="home.guides_sub">系统整理安装部署、协议选型、路由规则与开发架构共 15 篇文档</p>
-          </div>
-          <a href="docs/index.html" class="blog-section-more" data-i18n="home.guides_all">浏览全部 15 篇文档 →</a>
-        </div>
-
-        <div class="guides-grid">
-          <a href="docs/index.html" class="guide-card">
-            <span class="guide-num">01</span>
-            <h3 class="guide-title" data-i18n="docs.item_quickstart">快速上手指南</h3>
-            <p class="guide-desc" data-i18n="docs.card_desc_quickstart">客户端安装、订阅链接导入与 3 步启动极速代理服务。</p>
-          </a>
-
-          <a href="docs/protocols.html" class="guide-card">
-            <span class="guide-num">02</span>
-            <h3 class="guide-title" data-i18n="docs.item_protocols">新一代协议与 NAT</h3>
-            <p class="guide-desc" data-i18n="docs.card_desc_protocols">VLESS、Trojan、Hysteria2、TUIC v5 与 Full Cone NAT 游戏联机优化。</p>
-          </a>
-
-          <a href="docs/tun.html" class="guide-card">
-            <span class="guide-num">03</span>
-            <h3 class="guide-title" data-i18n="docs.item_tun">TUN 虚拟网卡</h3>
-            <p class="guide-desc" data-i18n="docs.card_desc_tun">全平台接管无代理协议应用流量，Wintun 驱动与自动路由回环隔离。</p>
-          </a>
-
-          <a href="docs/dns.html" class="guide-card">
-            <span class="guide-num">04</span>
-            <h3 class="guide-title" data-i18n="docs.item_dns">DNS 与 Fake-IP 防污染</h3>
-            <p class="guide-desc" data-i18n="docs.card_desc_dns">Fake-IP 零等待解析机制、分流 Nameserver 组与防止 DNS 泄漏配置。</p>
-          </a>
-
-          <a href="docs/rules.html" class="guide-card">
-            <span class="guide-num">05</span>
-            <h3 class="guide-title" data-i18n="docs.item_rules">高级规则与进程分流</h3>
-            <p class="guide-desc" data-i18n="docs.card_desc_rules">域名后缀、GeoIP、IP-CIDR 与应用进程名 (PROCESS-NAME) 精准策略分流。</p>
-          </a>
-
-          <a href="docs/dev-guide.html" class="guide-card">
-            <span class="guide-num">06</span>
-            <h3 class="guide-title" data-i18n="docs.item_dev_guide">跨平台开发实战指南</h3>
-            <p class="guide-desc" data-i18n="docs.card_desc_dev_guide">52 节深度实战：TUN/VPN、DNS、路由隔离与 Rust Platform Adapter 全流程解析。</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         5. COMPACT DOWNLOAD STRIP
-         ===================================================================== -->
-    <section class="home-bottom-cta-section">
-      <div class="blog-shell">
+      <!-- 5. Clean Bottom Download Bar & Badges -->
+      <section class="home-bottom-cta-section">
         <div class="bottom-cta-box">
           <div class="bottom-cta-copy">
-            <div class="bottom-cta-meta-line">
-              <span class="bottom-cta-eyebrow" data-i18n="home.cta_eyebrow">READY TO CONNECT · 即刻启程</span>
-              <span class="meta-dot" aria-hidden="true">·</span>
-              <span class="bottom-cta-version">v1.3.9.1525</span>
-            </div>
             <h2 class="bottom-cta-title" data-i18n="home.cta_title">准备好体验极速、优雅的代理工具了吗？</h2>
-            <p class="bottom-cta-desc" data-i18n="home.cta_subtitle">
-              基于 Flutter 与 Mihomo Meta 核心打造 · 全协议覆盖 · 系统级 TUN 网卡接管 · 100% 自由开源
+            <p class="bottom-cta-meta">
+              <span class="bottom-cta-version">v1.3.9.1525</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span data-i18n="home.os_detect_default">⚡ 自动适配当前系统 · 100% 自由开源</span>
             </p>
           </div>
           <div class="bottom-cta-actions">
-            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.3.9.1525/Wmimo-Windows-x64-Setup-v1.3.9.1525.exe" class="btn btn-primary btn-lg">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <a href="https://github.com/aimy1/Wmimo/releases/download/v1.3.9.1525/Wmimo-Windows-x64-Setup-v1.3.9.1525.exe" class="btn btn-primary">
               <span data-i18n="home.btn_download_smart">立即下载客户端</span>
             </a>
-            <a href="download.html" class="btn btn-secondary btn-lg">
+            <a href="download.html" class="btn btn-secondary">
               <span data-i18n="home.btn_all_platforms">下载中心 / 全部平台</span>
             </a>
           </div>
         </div>
-      </div>
-    </section>
 
+        <div class="hero-badges-wrap">
+          <a href="https://www.producthunt.com/products/wmimo/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-wmimo" target="_blank" rel="noopener noreferrer" class="hero-badge-link ph-badge-light-wrap" aria-label="Review Wmimo on Product Hunt">
+            <img src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1350598&theme=light" alt="Wmimo | Product Hunt" width="250" height="54" style="height: 32px; width: auto;" />
+          </a>
+          <a href="https://www.producthunt.com/products/wmimo/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-wmimo" target="_blank" rel="noopener noreferrer" class="hero-badge-link ph-badge-dark-wrap" aria-label="Review Wmimo on Product Hunt">
+            <img src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1350598&theme=dark" alt="Wmimo | Product Hunt" width="250" height="54" style="height: 32px; width: auto;" />
+          </a>
+          <a href="https://sellwithboost.com" target="_blank" rel="noopener noreferrer" class="hero-badge-link boost-badge-light-wrap" aria-label="Listed on Sell With boost">
+            <img src="https://sellwithboost.com/badge/listing.svg" alt="Listed on Sell With boost" style="height: 32px; width: auto;" />
+          </a>
+          <a href="https://sellwithboost.com" target="_blank" rel="noopener noreferrer" class="hero-badge-link boost-badge-dark-wrap" aria-label="Listed on Sell With boost">
+            <img src="https://sellwithboost.com/badge/listing-dark.svg" alt="Listed on Sell With boost" style="height: 32px; width: auto;" />
+          </a>
+        </div>
+      </section>
+
+    </div>
   </main>
 
   <!-- Site Footer -->
