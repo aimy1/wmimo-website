@@ -28,29 +28,19 @@
 
     if (!stage) return;
 
-    let userPickedMode = false;
-
-    function setStageMode(mode) {
-      stage.className = `app-showcase-stage mode-${mode}`;
-      modeBtns.forEach(b => b.classList.toggle('is-active', b.getAttribute('data-sc-mode') === mode));
-    }
-
     function syncFrontCardWithSiteTheme() {
       const isLight = document.documentElement.getAttribute('data-theme') === 'light';
       if (cardDark && cardLight) {
         cardDark.classList.toggle('is-front', !isLight);
         cardLight.classList.toggle('is-front', isLight);
       }
-      if (!userPickedMode) {
-        setStageMode(isLight ? 'light' : 'dark');
-      }
     }
 
     modeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        userPickedMode = true;
-        const mode = btn.getAttribute('data-sc-mode') || 'dark';
-        setStageMode(mode);
+        const mode = btn.getAttribute('data-sc-mode') || 'dual';
+        modeBtns.forEach(b => b.classList.toggle('is-active', b === btn));
+        stage.className = `app-showcase-stage mode-${mode}`;
       });
     });
 
