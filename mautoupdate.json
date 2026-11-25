@@ -13,8 +13,7 @@
       "*"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -30,8 +29,7 @@
       "*"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -46,8 +44,7 @@
       "*"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -62,8 +59,7 @@
       "*"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -78,8 +74,7 @@
       "*"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -94,8 +89,7 @@
       "*"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -112,8 +106,7 @@
       "deb"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -129,8 +122,7 @@
       "deb"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -147,8 +139,7 @@
       "rpm"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -164,8 +155,7 @@
       "rpm"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -182,8 +172,7 @@
       "appimage"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -199,8 +188,7 @@
       "appimage"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -217,8 +205,7 @@
       "*"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -234,8 +221,7 @@
       "*"
     ],
     "version_channel": [
-      "stable",
-      "beta"
+      "stable"
     ]
   },
   {
@@ -253,7 +239,249 @@
       "*"
     ],
     "version_channel": [
-      "stable",
+      "stable"
+    ]
+  },
+  {
+    "platform": "windows",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Windows-x64-Setup-v1.4.0.1526.exe",
+    "sha256": "a32968834dea59fffac46cc073a64ef445347613fd9e6844561c7cd9649245c1",
+    "abis": [
+      "x86_64",
+      "x64",
+      "*"
+    ],
+    "channels": [
+      "*"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "windows",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Windows-arm64-Setup-v1.4.0.1526.exe",
+    "sha256": "690ad82f8e6c1d8eadbfe81e2c922987fe34c113f9fee61262fc689d0fc9efbe",
+    "abis": [
+      "arm64",
+      "aarch64"
+    ],
+    "channels": [
+      "*"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "android",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Android-arm64-v8a-v1.4.0.1526.apk",
+    "sha256": "77da64d02309f5b98d021b72deb56ad9b2df72cc9a12e8f384e8cb023181f374",
+    "abis": [
+      "arm64-v8a"
+    ],
+    "channels": [
+      "*"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "android",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Android-armeabi-v7a-v1.4.0.1526.apk",
+    "sha256": "1a9e7087e526309978e44da1d8fb4540d0a7a5ce2b733f5a4c805e9ddb1f29eb",
+    "abis": [
+      "armeabi-v7a"
+    ],
+    "channels": [
+      "*"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "android",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Android-x86_64-v1.4.0.1526.apk",
+    "sha256": "8741cab111bc0915b637d65265a93955643f776f60dae93a6338362c37373876",
+    "abis": [
+      "x86_64"
+    ],
+    "channels": [
+      "*"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "android",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Android-universal-v1.4.0.1526.apk",
+    "sha256": "2fe3e0c91e2f92dab7cee3d44e787b400b6e6d84798872f2bef0931496192a32",
+    "abis": [
+      "*"
+    ],
+    "channels": [
+      "*"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "linux",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Linux-x64-v1.4.0.1526.deb",
+    "sha256": "3d49633b94d1a6d4cf066c13dd29b2a4ce63da86d20171b0874b96b4969493b4",
+    "abis": [
+      "x86_64",
+      "x64",
+      "*"
+    ],
+    "channels": [
+      "deb"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "linux",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Linux-arm64-v1.4.0.1526.deb",
+    "sha256": "3c6e33922c5a4faf8f9ced55eefaf0ee4ffd8566fd9fe329a1be3c8809a0b6fc",
+    "abis": [
+      "arm64",
+      "aarch64"
+    ],
+    "channels": [
+      "deb"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "linux",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Linux-x64-v1.4.0.1526.rpm",
+    "sha256": "f9b887db25787b20dec3e9f8f00799a464dbde4fa9c22482c1e60b6e359d4ff7",
+    "abis": [
+      "x86_64",
+      "x64",
+      "*"
+    ],
+    "channels": [
+      "rpm"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "linux",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Linux-arm64-v1.4.0.1526.rpm",
+    "sha256": "fbf07112e834d67b9e0848b7d740308a8522784a0278d2a8a7be8c84c867519d",
+    "abis": [
+      "arm64",
+      "aarch64"
+    ],
+    "channels": [
+      "rpm"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "linux",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Linux-x64-v1.4.0.1526.AppImage",
+    "sha256": "1f379547d691a19e76fdccfdb9c396ce30629b3aa10d421c203d2ad3d1543e76",
+    "abis": [
+      "x86_64",
+      "x64",
+      "*"
+    ],
+    "channels": [
+      "appimage"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "linux",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Linux-arm64-v1.4.0.1526.AppImage",
+    "sha256": "d4443ea258f32224783aaf684b77d73809f4551d60bb5a4598c564d18bca43ed",
+    "abis": [
+      "arm64",
+      "aarch64"
+    ],
+    "channels": [
+      "appimage"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "linux",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Linux-x64-v1.4.0.1526.deb",
+    "sha256": "3d49633b94d1a6d4cf066c13dd29b2a4ce63da86d20171b0874b96b4969493b4",
+    "abis": [
+      "x86_64",
+      "x64",
+      "*"
+    ],
+    "channels": [
+      "*"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "linux",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-Linux-arm64-v1.4.0.1526.deb",
+    "sha256": "3c6e33922c5a4faf8f9ced55eefaf0ee4ffd8566fd9fe329a1be3c8809a0b6fc",
+    "abis": [
+      "arm64",
+      "aarch64"
+    ],
+    "channels": [
+      "*"
+    ],
+    "version_channel": [
+      "beta"
+    ]
+  },
+  {
+    "platform": "macos",
+    "version": "1.4.0.1526",
+    "url": "https://github.com/aimy1/Wmimo/releases/download/v1.4.0.1526/Wmimo-macOS-universal-v1.4.0.1526.dmg",
+    "sha256": "d8bc0a17c987fde5fa4169253d2b1eecbd96433dd9e99e214fb148a0f8b5524d",
+    "abis": [
+      "arm64",
+      "x86_64",
+      "universal",
+      "*"
+    ],
+    "channels": [
+      "*"
+    ],
+    "version_channel": [
       "beta"
     ]
   }
