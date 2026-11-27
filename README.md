@@ -145,7 +145,7 @@ wmimo-website/
 ├── index.html                  # 现代化官方首页
 ├── download.html               # 官方全平台安装包下载中心
 ├── community.html              # 关于 Wmimo 与开源随心赞助中枢
-├── mautoupdate.json            # 官方客户端自动检查更新元数据 (stable: v1.4.2.1528 / beta: v1.4.0.1526)
+├── mautoupdate.json            # 官方客户端自动检查更新元数据 (stable & beta: v1.4.2.1528)
 ├── mconfig.json                # 客户端配置预设模板
 ├── server.js                   # 零依赖本地轻量调试服务器
 └── README.md                   # 本说明文件
